@@ -4,9 +4,7 @@
 
   STREAMER_CONFIG : réglages communs du site (titre, réseaux, liens de navigation,
                     date de mise à jour, journal des changements, mesure d'audience).
-  BATTLEGROUNDS   : la liste des cartes. Chaque carte porte ses "hotspots" : les points
-                    cliquables posés sur la minimap, en pourcentage de sa largeur et de
-                    sa hauteur, pour qu'ils suivent l'image à toutes les tailles d'écran.
+  BATTLEGROUNDS   : la liste des cartes.
 */
 
 const STREAMER_CONFIG = {
@@ -101,8 +99,8 @@ const STREAMER_CONFIG = {
     "enabled": true,
     "autoDate": true,
     "date": {
-      "fr": "7 Septembre 2026",
-      "en": "September 7, 2026"
+      "fr": "4 Octobre 2026",
+      "en": "October 4, 2026"
     },
     "changelog": [
       {
@@ -1426,8 +1424,8 @@ const BATTLEGROUNDS = [
     "hotspots": [
       {
         "id": "pbai38",
-        "x": 12,
-        "y": 12,
+        "x": 49.1,
+        "y": 61.2,
         "type": "objectif",
         "name": {
           "fr": "Cœur-Noir",
@@ -1441,8 +1439,8 @@ const BATTLEGROUNDS = [
       },
       {
         "id": "pbai39",
-        "x": 26,
-        "y": 12,
+        "x": 49.5,
+        "y": 27.6,
         "type": "objectif",
         "name": {
           "fr": "Coffre au trésor",
@@ -1456,8 +1454,8 @@ const BATTLEGROUNDS = [
       },
       {
         "id": "pbai40",
-        "x": 40,
-        "y": 12,
+        "x": 34.3,
+        "y": 62.4,
         "type": "camp",
         "name": {
           "fr": "Camp à doublons — pirates squelettes",
@@ -1471,8 +1469,8 @@ const BATTLEGROUNDS = [
       },
       {
         "id": "pbai41",
-        "x": 54,
-        "y": 12,
+        "x": 30.1,
+        "y": 71.1,
         "type": "camp",
         "name": {
           "fr": "Camp de siège — géants",
@@ -1486,8 +1484,8 @@ const BATTLEGROUNDS = [
       },
       {
         "id": "pbai42",
-        "x": 68,
-        "y": 12,
+        "x": 49.1,
+        "y": 6.3,
         "type": "camp",
         "name": {
           "fr": "Camp de boss — golem sépulcral",
