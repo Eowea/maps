@@ -41,11 +41,11 @@ const BG_HOTSPOT_TYPES = {
   // définit la carte, il passe donc devant les camps.
   objectif: {
     label: { fr: "Objectif", en: "Objective" },
-    icon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="8"/><circle cx="12" cy="12" r="3"/></svg>',
+    icon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><g transform="translate(1 -0.5)"><path d="M5 21V4"/><path d="M5 4h12l-3 4 3 4H5"/></g></svg>',
   },
   camp: {
     label: { fr: "Camp de mercenaires", en: "Mercenary camp" },
-    icon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4 3 20h18L12 4z"/><path d="M12 4v16"/></svg>',
+    icon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><g transform="translate(0 0.5)"><path d="M14.5 17.5 3 6V3h3l11.5 11.5"/><path d="M13 19l6-6"/><path d="M16 16l4 4"/><path d="M14.5 6.5 18 3h3v3l-3.5 3.5"/><path d="M5 14l4 4"/><path d="M7 17l-3 3"/></g></svg>',
   },
   tour: {
     label: { fr: "Tour de guet", en: "Watch tower" },
@@ -53,11 +53,11 @@ const BG_HOTSPOT_TYPES = {
   },
   fontaine: {
     label: { fr: "Fontaine de soins", en: "Healing fountain" },
-    icon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M12 5v14"/><path d="M5 12h14"/></svg>',
+    icon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><g transform="translate(0 0.5)"><path d="M12 3s6 6.5 6 11a6 6 0 0 1-12 0c0-4.5 6-11 6-11z"/></g></svg>',
   },
   autre: {
     label: { fr: "Autre", en: "Other" },
-    icon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="8.5"/><path d="M12 16.5v-5"/><path d="M12 8h.01"/></svg>',
+    icon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><g transform="translate(0 0.25)"><path d="M12 21s-7-6.2-7-11.5a7 7 0 0 1 14 0C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></g></svg>',
   },
 };
 // Un type inconnu (donnée écrite à la main, type retiré plus tard) retombe sur "autre"
@@ -260,7 +260,7 @@ function bgMarqueursHtml(b) {
     const t = bgHotspotType(h.type);
     const titre = bgLoc(h.name) || bgLoc(t.label);
     return `<button class="bg-hotspot" type="button" data-hotspot="${i}" data-type="${bgEsc(bgHotspotTypeKey(h.type))}"
-        style="left:${h.x}%;top:${h.y}%" title="${bgEsc(titre)}" aria-label="${bgEsc(titre)}"></button>`;
+        style="left:${h.x}%;top:${h.y}%" title="${bgEsc(titre)}" aria-label="${bgEsc(titre)}">${t.icon}</button>`;
   }).join('');
 }
 

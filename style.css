@@ -2056,19 +2056,16 @@
 .bg-legend-item[data-type="autre"],
 .hotspot-kind[data-type="autre"]        { --pt-color: var(--blue); --pt-glow: var(--blue-glow); }
 
-/* Les repères reprennent l'hexagone du site (--hex-clip), comme les portraits.
-   Le liseré ne peut pas être une bordure CSS : clip-path la trancherait net sur les
-   diagonales. Deux calques superposés le dessinent — celui du dessous porte la
-   couleur, celui du fond est réduit à l'échelle, ce qui laisse dépasser une
-   épaisseur régulière tout autour.
-   Des pastilles pleines plutôt que des symboles : sur une carte à vingt repères, vingt
-   icônes qui battent en même temps se lisaient comme du bruit. La couleur suffit à
-   reconnaître le type ; la légende et l'infobulle disent le reste. */
+/* Les repères sont des points ronds. Deux calques superposés : celui du dessous fait
+   un liseré sombre, celui du dessus, réduit à l'échelle, la pastille de couleur.
+   Pastille pleine de la couleur du type, avec son symbole en sombre par-dessus, et
+   sans battement permanent : vingt repères qui pulsaient ensemble se lisaient comme
+   du bruit. */
 .bg-hotspot {
     position: absolute;
     transform: translate(-50%, -50%);
-    width: 24px;
-    height: 24px;
+    width: 28px;
+    height: 28px;
     padding: 0;
     display: grid;
     place-items: center;
@@ -2092,14 +2089,16 @@
     content: '';
     position: absolute;
     inset: 0;
-    clip-path: var(--hex-clip);
+    border-radius: 50%;
 }
 /* Le calque du dessous fait le liseré sombre, celui du dessus la pastille de couleur. */
 .bg-hotspot::before { background: rgba(8, 12, 20, .92); transition: background var(--t); }
 .bg-hotspot::after {
     background: var(--pt-color, var(--blue));
-    transform: scale(.7);
+    transform: scale(.84);
 }
+/* Le symbole du type, sombre sur la pastille de couleur, au-dessus des deux calques. */
+.bg-hotspot svg { position: relative; z-index: 1; width: 58%; height: 58%; color: #0b0f17; }
 
 /* Survolée, la pastille grossit et son liseré s'éclaircit. */
 .bg-hotspot:hover,
@@ -2112,7 +2111,7 @@
 .bg-hotspot:focus-visible::before { background: #f4f6fb; }
 
 /* La carte agrandie a la place pour des pastilles un peu plus grandes. */
-.map-zoom-stage .bg-hotspot { width: 28px; height: 28px; }
+.map-zoom-stage .bg-hotspot { width: 32px; height: 32px; }
 
 /* ── Légende : seuls les types réellement posés sur la carte y figurent ── */
 .bg-hotspot-legend {
@@ -2151,7 +2150,7 @@
     height: 13px;
 }
 .bg-legend-dot::before,
-.bg-legend-dot::after { content: ''; position: absolute; inset: 0; clip-path: var(--hex-clip); }
+.bg-legend-dot::after { content: ''; position: absolute; inset: 0; border-radius: 50%; }
 .bg-legend-dot::before { background: rgba(8, 12, 20, .92); }
 .bg-legend-dot::after { background: var(--pt-color, var(--blue)); transform: scale(.7); }
 
@@ -2219,7 +2218,7 @@
 }
 
 @media (max-width: 640px) {
-    .bg-hotspot { width: 20px; height: 20px; }
+    .bg-hotspot { width: 24px; height: 24px; }
 }
 
 /* ═══════════════════════════════════════════════════════════════════════════
@@ -2237,11 +2236,11 @@
 
 .point-list { display: grid; gap: 6px; }
 
-.point-group[data-type="camp"]     { --pt-color: #ff9f43; }
-.point-group[data-type="objectif"] { --pt-color: var(--gold-bright); }
-.point-group[data-type="tour"]     { --pt-color: #6ec6ff; }
-.point-group[data-type="fontaine"] { --pt-color: #5fd48a; }
-.point-group[data-type="autre"]    { --pt-color: var(--blue); }
+.point-group[data-type="camp"]     { --pt-color: #ff9f43; --pt-glow: rgba(255, 159, 67, .45); }
+.point-group[data-type="objectif"] { --pt-color: var(--gold-bright); --pt-glow: var(--gold-glow); }
+.point-group[data-type="tour"]     { --pt-color: #6ec6ff; --pt-glow: rgba(110, 198, 255, .45); }
+.point-group[data-type="fontaine"] { --pt-color: #5fd48a; --pt-glow: rgba(95, 212, 138, .45); }
+.point-group[data-type="autre"]    { --pt-color: var(--blue); --pt-glow: var(--blue-glow); }
 
 /* Ouverte, la famille prend sa couleur : un filet à gauche, un fond à peine teinté et
    un cadre de la même teinte. On voit d'un coup d'œil quelles familles sont choisies
@@ -2284,24 +2283,25 @@
 .point-group > summary:hover { background: color-mix(in srgb, var(--pt-color, var(--blue)) 10%, transparent); }
 .point-group > summary:focus-visible { outline: 2px solid var(--gold-border); outline-offset: -2px; }
 
-/* Même hexagone que les marqueurs de la carte, pour relier les deux d'un coup d'œil. */
+/* La même pastille que les points de la carte — couleur du type, symbole sombre,
+   liseré foncé — pour relier les deux d'un coup d'œil. */
 .point-badge {
     position: relative;
     flex: 0 0 auto;
     width: 26px; height: 26px;
     display: grid; place-items: center;
     line-height: 0;
-    color: var(--pt-color, var(--blue));
-    transition: color var(--t);
+    filter: drop-shadow(0 0 4px var(--pt-glow, var(--blue-glow)));
+    transition: filter var(--t);
 }
 .point-badge::before,
-.point-badge::after { content: ''; position: absolute; inset: 0; clip-path: var(--hex-clip); }
-.point-badge::before { background: var(--pt-color, var(--blue)); }
-.point-badge::after { background: #0c111b; transform: scale(.78); transition: background var(--t); }
-.point-badge svg { position: relative; z-index: 1; width: 13px; height: 13px; }
-/* Famille choisie : l'hexagone se remplit, comme un marqueur survolé sur la carte. */
-.point-group[open] .point-badge { color: #0b0f17; }
-.point-group[open] .point-badge::after { background: var(--pt-color, var(--blue)); }
+.point-badge::after { content: ''; position: absolute; inset: 0; border-radius: 50%; }
+.point-badge::before { background: rgba(8, 12, 20, .92); transition: background var(--t); }
+.point-badge::after { background: var(--pt-color, var(--blue)); transform: scale(.84); }
+.point-badge svg { position: relative; z-index: 1; width: 58%; height: 58%; color: #0b0f17; }
+/* Famille choisie : le liseré s'éclaircit, comme un point survolé sur la carte. */
+.point-group[open] .point-badge { filter: drop-shadow(0 0 7px var(--pt-glow, var(--blue-glow))); }
+.point-group[open] .point-badge::before { background: #f4f6fb; }
 
 .point-group-name {
     color: var(--text-bright);
@@ -2524,7 +2524,7 @@
 
 /* Ajustements propres à la disposition côte à côte : la carte est plus petite qu'en
    pleine largeur, les repères y prenaient proportionnellement trop de place. */
-.bg-map-row .bg-hotspot { width: 20px; height: 20px; }
+.bg-map-row .bg-hotspot { width: 24px; height: 24px; }
 
 /* Dans une colonne de moins de 400 px, une capture par point transforme la liste en
    colonne interminable. Elle reste accessible dans l'infobulle du marqueur — et
@@ -2532,7 +2532,7 @@
 .bg-map-row .point-shots { display: none; }
 
 @media (max-width: 1040px) {
-    .bg-map-row .bg-hotspot { width: 24px; height: 24px; }
+    .bg-map-row .bg-hotspot { width: 28px; height: 28px; }
     .bg-map-row .point-shots { display: grid; }
 }
 
