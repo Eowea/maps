@@ -1652,8 +1652,8 @@ const BATTLEGROUNDS = [
       "en": "Control points that unlock a giant mech, the Triglav Protector, crewed by two players."
     },
     "objectives": {
-      "fr": "Un point de contrôle unique s'active à 3:00, puis toutes les trois minutes après la mort du méca. La capture progresse de 2 % par seconde sur 45 secondes et se met en pause si le point est abandonné plus de douze secondes. L'équipe qui la termine reçoit le protecteur Triglav, un véhicule à deux places : un pilote, un artilleur. Occupées toutes les deux, elles rechargent 25 % plus vite et regagnent 25 % d'énergie en plus. Le méca dure 50 secondes, plus 3 par minute de jeu écoulée.",
-      "en": "A single control point activates at 3:00, then every three minutes after the mech dies. Capture builds at 2% per second over 45 seconds and pauses if the point is left for more than twelve seconds. The team that finishes it gets the Triglav Protector, a two-seat vehicle: one pilot, one gunner. With both seats filled, abilities recharge 25% faster and energy regenerates 25% quicker. The mech lasts 50 seconds, plus 3 per minute of game time elapsed."
+      "fr": "Un point de contrôle s'active à 3:00, puis toutes les trois minutes après la mort du méca, en alternant entre trois emplacements : milieu, haut, puis bas. La capture progresse de 2 % par seconde sur 45 secondes et se met en pause si le point est abandonné plus de douze secondes. L'équipe qui la termine reçoit le protecteur Triglav, un véhicule à deux places : un pilote, un artilleur. Occupées toutes les deux, elles rechargent 25 % plus vite et regagnent 25 % d'énergie en plus. Le méca dure 50 secondes, plus 3 par minute de jeu écoulée.",
+      "en": "A control point activates at 3:00, then every three minutes after the mech dies, cycling through three locations: middle, top, then bottom. Capture builds at 2% per second over 45 seconds and pauses if the point is left for more than twelve seconds. The team that finishes it gets the Triglav Protector, a two-seat vehicle: one pilot, one gunner. With both seats filled, abilities recharge 25% faster and energy regenerates 25% quicker. The mech lasts 50 seconds, plus 3 per minute of game time elapsed."
     },
     "tips": [
       {
@@ -1685,120 +1685,300 @@ const BATTLEGROUNDS = [
       {
         "id": "pfon15",
         "type": "objectif",
-        "x": 12,
-        "y": 12,
+        "x": 50,
+        "y": 54.2,
         "name": {
-          "fr": "Point de contrôle",
-          "en": "Control point"
+          "fr": "Point de contrôle — milieu",
+          "en": "Control point — middle"
         },
         "description": {
-          "fr": "Unique, au centre. S'active à 3:00. La capture monte de 2 % par seconde et se met en pause si personne ne tient le point pendant douze secondes. À 100 %, l'équipe reçoit le protecteur Triglav.",
-          "en": "A single point, at the centre. Activates at 3:00. Capture builds 2% per second and pauses if nobody holds the point for twelve seconds. At 100%, the team receives the Triglav Protector."
+          "fr": "Trois emplacements, un seul actif à la fois : celui du milieu s'active à 3:00, puis celui du haut, puis celui du bas, et le cycle recommence. La capture monte de 2 % par seconde et se met en pause si personne ne tient le point pendant douze secondes. À 100 %, l'équipe reçoit le protecteur Triglav.",
+          "en": "Three locations, only one active at a time: the middle one activates at 3:00, then the top one, then the bottom one, and the cycle repeats. Capture builds 2% per second and pauses if nobody holds the point for twelve seconds. At 100%, the team receives the Triglav Protector."
+        },
+        "image": ""
+      },
+      {
+        "id": "pfon20",
+        "type": "objectif",
+        "x": 50,
+        "y": 10,
+        "name": {
+          "fr": "Point de contrôle — haut",
+          "en": "Control point — top"
+        },
+        "description": {
+          "fr": "Trois emplacements, un seul actif à la fois : celui du milieu s'active à 3:00, puis celui du haut, puis celui du bas, et le cycle recommence. La capture monte de 2 % par seconde et se met en pause si personne ne tient le point pendant douze secondes. À 100 %, l'équipe reçoit le protecteur Triglav.",
+          "en": "Three locations, only one active at a time: the middle one activates at 3:00, then the top one, then the bottom one, and the cycle repeats. Capture builds 2% per second and pauses if nobody holds the point for twelve seconds. At 100%, the team receives the Triglav Protector."
+        },
+        "image": ""
+      },
+      {
+        "id": "pfon21",
+        "type": "objectif",
+        "x": 50,
+        "y": 85,
+        "name": {
+          "fr": "Point de contrôle — bas",
+          "en": "Control point — bottom"
+        },
+        "description": {
+          "fr": "Trois emplacements, un seul actif à la fois : celui du milieu s'active à 3:00, puis celui du haut, puis celui du bas, et le cycle recommence. La capture monte de 2 % par seconde et se met en pause si personne ne tient le point pendant douze secondes. À 100 %, l'équipe reçoit le protecteur Triglav.",
+          "en": "Three locations, only one active at a time: the middle one activates at 3:00, then the top one, then the bottom one, and the cycle repeats. Capture builds 2% per second and pauses if nobody holds the point for twelve seconds. At 100%, the team receives the Triglav Protector."
         },
         "image": ""
       },
       {
         "id": "pfon16",
         "type": "camp",
-        "x": 26,
-        "y": 12,
+        "x": 34.1,
+        "y": 34.1,
         "name": {
-          "fr": "Camp de siège — haut, gauche",
-          "en": "Siege Camp — top, left"
+          "fr": "Camp de siège — fantassins d'assaut, haut gauche",
+          "en": "Siege Camp — Assault Troopers, top left"
         },
         "description": {
-          "fr": "Deux camps sur la voie du haut, des fantassins d'assaut. Disponibles à 0:30, ils réapparaissent 3:00 après avoir été pris.",
-          "en": "Two camps on the top lane, Assault Troopers. Available at 0:30, back 3:00 after being taken."
+          "fr": "Deux camps entre la voie du haut et celle du milieu, près des forts, un de chaque côté. Des fantassins d'assaut, qui poussent ensuite la voie du haut. Disponibles à 0:30, ils réapparaissent 3:00 après avoir été pris.",
+          "en": "Two camps between the top and middle lanes, near the forts, one on each side. Assault Troopers, who then push the top lane. Available at 0:30, back 3:00 after being taken."
         },
         "image": ""
       },
       {
         "id": "pmutmu1e800v",
         "type": "camp",
-        "x": 82,
-        "y": 12,
+        "x": 65.9,
+        "y": 34.1,
         "name": {
-          "fr": "Camp de siège — haut, droite",
-          "en": "Siege Camp — top, right"
+          "fr": "Camp de siège — fantassins d'assaut, haut droite",
+          "en": "Siege Camp — Assault Troopers, top right"
         },
         "description": {
-          "fr": "Deux camps sur la voie du haut, des fantassins d'assaut. Disponibles à 0:30, ils réapparaissent 3:00 après avoir été pris.",
-          "en": "Two camps on the top lane, Assault Troopers. Available at 0:30, back 3:00 after being taken."
+          "fr": "Deux camps entre la voie du haut et celle du milieu, près des forts, un de chaque côté. Des fantassins d'assaut, qui poussent ensuite la voie du haut. Disponibles à 0:30, ils réapparaissent 3:00 après avoir été pris.",
+          "en": "Two camps between the top and middle lanes, near the forts, one on each side. Assault Troopers, who then push the top lane. Available at 0:30, back 3:00 after being taken."
         },
         "image": ""
       },
       {
         "id": "pfon17",
         "type": "camp",
-        "x": 40,
-        "y": 12,
+        "x": 39.1,
+        "y": 60.6,
         "name": {
-          "fr": "Camp de fortification — gauche",
-          "en": "Fortification Camp — left"
+          "fr": "Camp de fortification — bas, gauche",
+          "en": "Fortification Camp — bottom, left"
         },
         "description": {
-          "fr": "Deux camps entre le milieu et le bas. Ils laissent une tourelle à ramasser et à poser où tu veux. Disponibles à 0:30, ils réapparaissent 2:30 après.",
-          "en": "Two camps between mid and bottom. They drop a Turret to pick up and place where you like. Available at 0:30, back 2:30 after."
+          "fr": "Deux camps entre la voie du milieu et celle du bas, près des forts, un de chaque côté. Ils ne poussent pas de voie : ils laissent une tourelle à ramasser et à poser où tu veux. Disponibles à 0:30, ils réapparaissent 2:30 après.",
+          "en": "Two camps between the middle and bottom lanes, near the forts, one on each side. They do not push a lane: they drop a Turret to pick up and place where you like. Available at 0:30, back 2:30 after."
         },
         "image": ""
       },
       {
         "id": "pmutmu1e800w",
         "type": "camp",
-        "x": 12,
-        "y": 26,
+        "x": 60.9,
+        "y": 60.6,
         "name": {
-          "fr": "Camp de fortification — droite",
-          "en": "Fortification Camp — right"
+          "fr": "Camp de fortification — bas, droite",
+          "en": "Fortification Camp — bottom, right"
         },
         "description": {
-          "fr": "Deux camps entre le milieu et le bas. Ils laissent une tourelle à ramasser et à poser où tu veux. Disponibles à 0:30, ils réapparaissent 2:30 après.",
-          "en": "Two camps between mid and bottom. They drop a Turret to pick up and place where you like. Available at 0:30, back 2:30 after."
+          "fr": "Deux camps entre la voie du milieu et celle du bas, près des forts, un de chaque côté. Ils ne poussent pas de voie : ils laissent une tourelle à ramasser et à poser où tu veux. Disponibles à 0:30, ils réapparaissent 2:30 après.",
+          "en": "Two camps between the middle and bottom lanes, near the forts, one on each side. They do not push a lane: they drop a Turret to pick up and place where you like. Available at 0:30, back 2:30 after."
         },
         "image": ""
       },
       {
         "id": "pfon18",
         "type": "camp",
-        "x": 54,
-        "y": 12,
+        "x": 50,
+        "y": 31,
         "name": {
           "fr": "Camp de soutien",
           "en": "Support Camp"
         },
         "description": {
-          "fr": "Un seul camp, entre le haut et le milieu. Il laisse un émetteur biotique. Immunisé contre la corruption. Disponible à 0:30, il réapparaît 3:00 après.",
-          "en": "A single camp, between top and mid. It drops a Biotic Emitter. Immune to Bribe. Available at 0:30, back 3:00 after."
+          "fr": "Un seul camp, au centre entre la voie du haut et celle du milieu. Il laisse un émetteur biotique qui rend 40 % de vie et de mana aux alliés proches en 10 secondes. Immunisé contre la corruption. Disponible à 0:30, il réapparaît 3:00 après.",
+          "en": "A single camp, at the centre between the top and middle lanes. It drops a Biotic Emitter that restores 40% Health and Mana to nearby allies over 10 seconds. Immune to Bribe. Available at 0:30, back 3:00 after."
         },
         "image": ""
       },
       {
         "id": "pfon19",
         "type": "fontaine",
-        "x": 68,
-        "y": 12,
+        "x": 38.6,
+        "y": 19.5,
         "name": {
-          "fr": "Fontaine de soins — côté gauche",
-          "en": "Healing fountain — left side"
+          "fr": "Fontaine de soins — fort haut, gauche",
+          "en": "Healing fountain — top fort, left"
         },
         "description": {
-          "fr": "Deux fontaines, deux minutes de recharge. L'objectif revenant toutes les trois minutes, elle est presque toujours disponible au bon moment.",
-          "en": "Two fountains, two-minute cooldown. With the objective every three minutes, it is nearly always up when it matters."
+          "fr": "Deux minutes de recharge après utilisation. L'objectif revenant toutes les trois minutes, elle est presque toujours disponible au bon moment. Savoir si celle d'en face est disponible change la valeur d'un plongeon autant que les points de vie restants.",
+          "en": "Two-minute cooldown after use. With the objective every three minutes, it is nearly always up when it matters. Knowing whether the enemy one is up changes the worth of a dive as much as their remaining health does."
+        },
+        "image": ""
+      },
+      {
+        "id": "pfon22",
+        "type": "fontaine",
+        "x": 38.6,
+        "y": 49.3,
+        "name": {
+          "fr": "Fontaine de soins — fort milieu, gauche",
+          "en": "Healing fountain — middle fort, left"
+        },
+        "description": {
+          "fr": "Deux minutes de recharge après utilisation. L'objectif revenant toutes les trois minutes, elle est presque toujours disponible au bon moment. Savoir si celle d'en face est disponible change la valeur d'un plongeon autant que les points de vie restants.",
+          "en": "Two-minute cooldown after use. With the objective every three minutes, it is nearly always up when it matters. Knowing whether the enemy one is up changes the worth of a dive as much as their remaining health does."
+        },
+        "image": ""
+      },
+      {
+        "id": "pfon23",
+        "type": "fontaine",
+        "x": 37.4,
+        "y": 70.8,
+        "name": {
+          "fr": "Fontaine de soins — fort bas, gauche",
+          "en": "Healing fountain — bottom fort, left"
+        },
+        "description": {
+          "fr": "Deux minutes de recharge après utilisation. L'objectif revenant toutes les trois minutes, elle est presque toujours disponible au bon moment. Savoir si celle d'en face est disponible change la valeur d'un plongeon autant que les points de vie restants.",
+          "en": "Two-minute cooldown after use. With the objective every three minutes, it is nearly always up when it matters. Knowing whether the enemy one is up changes the worth of a dive as much as their remaining health does."
+        },
+        "image": ""
+      },
+      {
+        "id": "pfon24",
+        "type": "fontaine",
+        "x": 26.8,
+        "y": 36.3,
+        "name": {
+          "fr": "Fontaine de soins — bastion haut, gauche",
+          "en": "Healing fountain — top keep, left"
+        },
+        "description": {
+          "fr": "Deux minutes de recharge après utilisation. L'objectif revenant toutes les trois minutes, elle est presque toujours disponible au bon moment. Savoir si celle d'en face est disponible change la valeur d'un plongeon autant que les points de vie restants.",
+          "en": "Two-minute cooldown after use. With the objective every three minutes, it is nearly always up when it matters. Knowing whether the enemy one is up changes the worth of a dive as much as their remaining health does."
+        },
+        "image": ""
+      },
+      {
+        "id": "pfon25",
+        "type": "fontaine",
+        "x": 28,
+        "y": 51.5,
+        "name": {
+          "fr": "Fontaine de soins — bastion milieu, gauche",
+          "en": "Healing fountain — middle keep, left"
+        },
+        "description": {
+          "fr": "Deux minutes de recharge après utilisation. L'objectif revenant toutes les trois minutes, elle est presque toujours disponible au bon moment. Savoir si celle d'en face est disponible change la valeur d'un plongeon autant que les points de vie restants.",
+          "en": "Two-minute cooldown after use. With the objective every three minutes, it is nearly always up when it matters. Knowing whether the enemy one is up changes the worth of a dive as much as their remaining health does."
+        },
+        "image": ""
+      },
+      {
+        "id": "pfon26",
+        "type": "fontaine",
+        "x": 20.6,
+        "y": 63.6,
+        "name": {
+          "fr": "Fontaine de soins — bastion bas, gauche",
+          "en": "Healing fountain — bottom keep, left"
+        },
+        "description": {
+          "fr": "Deux minutes de recharge après utilisation. L'objectif revenant toutes les trois minutes, elle est presque toujours disponible au bon moment. Savoir si celle d'en face est disponible change la valeur d'un plongeon autant que les points de vie restants.",
+          "en": "Two-minute cooldown after use. With the objective every three minutes, it is nearly always up when it matters. Knowing whether the enemy one is up changes the worth of a dive as much as their remaining health does."
         },
         "image": ""
       },
       {
         "id": "pmutmu1e800x",
         "type": "fontaine",
-        "x": 26,
-        "y": 26,
+        "x": 61.4,
+        "y": 19.5,
         "name": {
-          "fr": "Fontaine de soins — côté droit",
-          "en": "Healing fountain — right side"
+          "fr": "Fontaine de soins — fort haut, droite",
+          "en": "Healing fountain — top fort, right"
         },
         "description": {
-          "fr": "Deux fontaines, deux minutes de recharge. L'objectif revenant toutes les trois minutes, elle est presque toujours disponible au bon moment.",
-          "en": "Two fountains, two-minute cooldown. With the objective every three minutes, it is nearly always up when it matters."
+          "fr": "Deux minutes de recharge après utilisation. L'objectif revenant toutes les trois minutes, elle est presque toujours disponible au bon moment. Savoir si celle d'en face est disponible change la valeur d'un plongeon autant que les points de vie restants.",
+          "en": "Two-minute cooldown after use. With the objective every three minutes, it is nearly always up when it matters. Knowing whether the enemy one is up changes the worth of a dive as much as their remaining health does."
+        },
+        "image": ""
+      },
+      {
+        "id": "pfon27",
+        "type": "fontaine",
+        "x": 61.4,
+        "y": 49.3,
+        "name": {
+          "fr": "Fontaine de soins — fort milieu, droite",
+          "en": "Healing fountain — middle fort, right"
+        },
+        "description": {
+          "fr": "Deux minutes de recharge après utilisation. L'objectif revenant toutes les trois minutes, elle est presque toujours disponible au bon moment. Savoir si celle d'en face est disponible change la valeur d'un plongeon autant que les points de vie restants.",
+          "en": "Two-minute cooldown after use. With the objective every three minutes, it is nearly always up when it matters. Knowing whether the enemy one is up changes the worth of a dive as much as their remaining health does."
+        },
+        "image": ""
+      },
+      {
+        "id": "pfon28",
+        "type": "fontaine",
+        "x": 62.6,
+        "y": 70.8,
+        "name": {
+          "fr": "Fontaine de soins — fort bas, droite",
+          "en": "Healing fountain — bottom fort, right"
+        },
+        "description": {
+          "fr": "Deux minutes de recharge après utilisation. L'objectif revenant toutes les trois minutes, elle est presque toujours disponible au bon moment. Savoir si celle d'en face est disponible change la valeur d'un plongeon autant que les points de vie restants.",
+          "en": "Two-minute cooldown after use. With the objective every three minutes, it is nearly always up when it matters. Knowing whether the enemy one is up changes the worth of a dive as much as their remaining health does."
+        },
+        "image": ""
+      },
+      {
+        "id": "pfon29",
+        "type": "fontaine",
+        "x": 73.2,
+        "y": 36.3,
+        "name": {
+          "fr": "Fontaine de soins — bastion haut, droite",
+          "en": "Healing fountain — top keep, right"
+        },
+        "description": {
+          "fr": "Deux minutes de recharge après utilisation. L'objectif revenant toutes les trois minutes, elle est presque toujours disponible au bon moment. Savoir si celle d'en face est disponible change la valeur d'un plongeon autant que les points de vie restants.",
+          "en": "Two-minute cooldown after use. With the objective every three minutes, it is nearly always up when it matters. Knowing whether the enemy one is up changes the worth of a dive as much as their remaining health does."
+        },
+        "image": ""
+      },
+      {
+        "id": "pfon30",
+        "type": "fontaine",
+        "x": 72,
+        "y": 51.5,
+        "name": {
+          "fr": "Fontaine de soins — bastion milieu, droite",
+          "en": "Healing fountain — middle keep, right"
+        },
+        "description": {
+          "fr": "Deux minutes de recharge après utilisation. L'objectif revenant toutes les trois minutes, elle est presque toujours disponible au bon moment. Savoir si celle d'en face est disponible change la valeur d'un plongeon autant que les points de vie restants.",
+          "en": "Two-minute cooldown after use. With the objective every three minutes, it is nearly always up when it matters. Knowing whether the enemy one is up changes the worth of a dive as much as their remaining health does."
+        },
+        "image": ""
+      },
+      {
+        "id": "pfon31",
+        "type": "fontaine",
+        "x": 79.4,
+        "y": 63.6,
+        "name": {
+          "fr": "Fontaine de soins — bastion bas, droite",
+          "en": "Healing fountain — bottom keep, right"
+        },
+        "description": {
+          "fr": "Deux minutes de recharge après utilisation. L'objectif revenant toutes les trois minutes, elle est presque toujours disponible au bon moment. Savoir si celle d'en face est disponible change la valeur d'un plongeon autant que les points de vie restants.",
+          "en": "Two-minute cooldown after use. With the objective every three minutes, it is nearly always up when it matters. Knowing whether the enemy one is up changes the worth of a dive as much as their remaining health does."
         },
         "image": ""
       }
