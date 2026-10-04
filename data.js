@@ -10,8 +10,8 @@
 const STREAMER_CONFIG = {
   "logoImage": "",
   "siteTitle": {
-    "fr": "EOWEA BUILDS",
-    "en": "EOWEA BUILDS"
+    "fr": "EOWEA MAPS",
+    "en": "EOWEA MAPS"
   },
   "siteSubtitle": {
     "fr": "Recherche le build du héros qui t'intéresse grâce à la barre de recherche, aux filtres ou en cliquant dans la liste. Passe ton curseur sur les sorts et talents pour un descriptif écrit et vidéo.",
@@ -45,6 +45,17 @@ const STREAMER_CONFIG = {
     }
   ],
   "navLinks": [
+    {
+      "enabled": true,
+      "label": {
+        "fr": "Builds",
+        "en": "Builds"
+      },
+      "url": "https://eowea.github.io/builds/",
+      "newTab": false,
+      "showOnBuilds": false,
+      "showOnBattlegrounds": true
+    },
     {
       "enabled": true,
       "label": {
