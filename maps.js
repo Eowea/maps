@@ -19,11 +19,16 @@ const BG_DICT = {
   prevVideo: { fr: "Vidéo précédente", en: "Previous video" },
   nextVideo: { fr: "Vidéo suivante", en: "Next video" },
   // Deux formulations : au bureau l'infobulle suit le survol, au tactile il faut toucher.
-  hotspotHint: { fr: "survole un point pour le détail", en: "hover a marker for details" },
-  hotspotHintTouch: { fr: "touche un point pour le détail", en: "tap a marker for details" },
+  hotspotHint: { fr: "Survole un point pour voir son détail", en: "Hover a marker to see its details" },
+  hotspotHintTouch: { fr: "Touche un point pour voir son détail", en: "Tap a marker to see its details" },
   pointsList: { fr: "Points d'intérêt", en: "Points of interest" },
   noPointsYet: { fr: "Aucun point posé sur cette carte pour le moment.", en: "No markers placed on this map yet." },
-  zoomHint: { fr: "clique la carte pour l'agrandir", en: "click the map to enlarge it" },
+  zoomHint: { fr: "Clique la carte pour l'agrandir", en: "Click the map to enlarge it" },
+  zoomHintTouch: { fr: "Touche la carte pour l'agrandir", en: "Tap the map to enlarge it" },
+  legendHint: { fr: "Clique un type de la légende pour n'afficher que lui", en: "Click a legend type to show only that one" },
+  legendHintTouch: { fr: "Touche un type de la légende pour n'afficher que lui", en: "Tap a legend type to show only that one" },
+  closeZoomHint: { fr: "Clique hors de la carte ou appuie sur Échap pour fermer", en: "Click outside the map or press Esc to close" },
+  closeZoomHintTouch: { fr: "Touche hors de la carte pour fermer", en: "Tap outside the map to close" },
   closeZoom: { fr: "Fermer l'agrandissement", en: "Close the enlarged map" },
   legendFilter: { fr: "Afficher uniquement ce type sur la carte", en: "Show only this type on the map" },
 };
@@ -272,6 +277,23 @@ function bgMarqueursHtml(b) {
    « Fontaine de soins » sur une carte qui n'en a pas ne renseignerait personne.
    Ordonnée comme les groupes de la liste, et non selon l'ordre de saisie des points.
    Produite une seule fois pour la fiche et pour l'agrandissement. */
+/* Mode d'emploi de la minimap, une consigne par geste possible, chacune avec son
+   icône : plus lisible qu'une ligne unique où tout s'enchaînait en majuscules.
+   Le libellé suit l'appareil — survoler au bureau, toucher au tactile. */
+const BG_AIDE_MINIMAP = {
+  point:  { cle: 'hotspotHint',   icone: '<path d="M5 3l14 7-6 2-2 6z"/>' },
+  zoom:   { cle: 'zoomHint',      icone: '<circle cx="11" cy="11" r="6"/><path d="m20 20-4.5-4.5M11 8v6M8 11h6"/>' },
+  legend: { cle: 'legendHint',    icone: '<path d="M4 5h16l-6 7v6l-4 2v-8z"/>' },
+  close:  { cle: 'closeZoomHint', icone: '<path d="M6 6l12 12M18 6 6 18"/>' },
+};
+function bgAideMinimapHtml(gestes) {
+  return `<ul class="bg-minimap-help">${gestes.map(g => {
+    const a = BG_AIDE_MINIMAP[g];
+    const texte = bgT(bgTactile ? a.cle + 'Touch' : a.cle);
+    return `<li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">${a.icone}</svg>${bgEsc(texte)}</li>`;
+  }).join('')}</ul>`;
+}
+
 function bgLegendeHtml(b) {
   const points = bgHotspotsOf(b);
   const types = Object.keys(BG_HOTSPOT_TYPES)
@@ -404,10 +426,7 @@ function renderBgDetail() {
   const points = bgHotspotsOf(b);
   const marqueursHtml = bgMarqueursHtml(b);
   const legendeHtml = bgLegendeHtml(b);
-  const indication = bgT(bgTactile ? 'hotspotHintTouch' : 'hotspotHint');
-  const mentions = [bgEsc(bgT('minimap')) + ' — ' + bgEsc(bgLoc(b.name))];
-  if (points.length) mentions.push(bgEsc(indication));
-  mentions.push(bgEsc(bgT('zoomHint')));
+  const aide = points.length ? ['point', 'zoom', 'legend'] : ['zoom'];
   const minimapHtml = b.minimapImage
     ? `<section class="bg-minimap-section">
         <div class="bg-minimap-frame">
@@ -416,8 +435,8 @@ function renderBgDetail() {
             ${marqueursHtml}
           </div>
         </div>
-        <div class="bg-minimap-caption">${mentions.join(' · ')}</div>
         ${legendeHtml}
+        ${bgAideMinimapHtml(aide)}
       </section>`
     : '';
 
@@ -623,8 +642,9 @@ function bgOpenMapZoom() {
         <img src="${bgEsc(b.minimapImage)}" alt="${bgEsc(bgT('minimap'))} — ${bgEsc(bgLoc(b.name))}" />
         ${bgMarqueursHtml(b)}
       </div>
-      <div class="bg-minimap-caption">${bgEsc(bgT('minimap'))} — ${bgEsc(bgLoc(b.name))}</div>
+      <div class="bg-minimap-caption">${bgEsc(bgLoc(b.name))}</div>
       ${bgLegendeHtml(b)}
+      ${bgAideMinimapHtml(bgHotspotsOf(b).length ? ['point', 'legend', 'close'] : ['close'])}
     </div>`;
   overlay.classList.add('active');
   bgAppliquerFiltre();   // l'agrandissement montre la même sélection que la fiche

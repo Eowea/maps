@@ -833,8 +833,8 @@ const BATTLEGROUNDS = [
           "en": "Prison Camp — top, left"
         },
         "description": {
-          "fr": "Un par équipe. Trois secondes d'incantation lancent la capture ; l'adversaire peut la mettre en pause en incantant à son tour, et l'arrêter après trois secondes sans interruption. Des gardes sortent des maisons voisines — un au départ, jusqu'à quatre à la quatrième phase.",
-          "en": "One per team. A three-second channel starts the capture; the enemy can pause it by channelling in turn, and stop it after three uninterrupted seconds. Guards come out of the nearby houses — one at first, up to four by the fourth phase."
+          "fr": "Deux camps actifs par phase, un par équipe, en haut puis en bas en alternance : tu sais toujours où se jouera le suivant. Trois secondes d'incantation lancent la capture ; l'adversaire peut la mettre en pause en incantant à son tour, et l'arrêter après trois secondes sans interruption. Des gardes sortent des maisons voisines — un au départ, jusqu'à quatre à la quatrième phase.",
+          "en": "Two camps active per phase, one per team, alternating between top and bottom: you always know where the next one will be. A three-second channel starts the capture; the enemy can pause it by channelling in turn, and stop it after three uninterrupted seconds. Guards come out of the nearby houses — one at first, up to four by the fourth phase."
         },
         "image": ""
       },
@@ -848,8 +848,8 @@ const BATTLEGROUNDS = [
           "en": "Prison Camp — top, right"
         },
         "description": {
-          "fr": "Un par équipe. Trois secondes d'incantation lancent la capture ; l'adversaire peut la mettre en pause en incantant à son tour, et l'arrêter après trois secondes sans interruption. Des gardes sortent des maisons voisines — un au départ, jusqu'à quatre à la quatrième phase.",
-          "en": "One per team. A three-second channel starts the capture; the enemy can pause it by channelling in turn, and stop it after three uninterrupted seconds. Guards come out of the nearby houses — one at first, up to four by the fourth phase."
+          "fr": "Deux camps actifs par phase, un par équipe, en haut puis en bas en alternance : tu sais toujours où se jouera le suivant. Trois secondes d'incantation lancent la capture ; l'adversaire peut la mettre en pause en incantant à son tour, et l'arrêter après trois secondes sans interruption. Des gardes sortent des maisons voisines — un au départ, jusqu'à quatre à la quatrième phase.",
+          "en": "Two camps active per phase, one per team, alternating between top and bottom: you always know where the next one will be. A three-second channel starts the capture; the enemy can pause it by channelling in turn, and stop it after three uninterrupted seconds. Guards come out of the nearby houses — one at first, up to four by the fourth phase."
         },
         "image": ""
       },
@@ -863,8 +863,8 @@ const BATTLEGROUNDS = [
           "en": "Prison Camp — bottom, left"
         },
         "description": {
-          "fr": "Un par équipe. Trois secondes d'incantation lancent la capture ; l'adversaire peut la mettre en pause en incantant à son tour, et l'arrêter après trois secondes sans interruption. Des gardes sortent des maisons voisines — un au départ, jusqu'à quatre à la quatrième phase.",
-          "en": "One per team. A three-second channel starts the capture; the enemy can pause it by channelling in turn, and stop it after three uninterrupted seconds. Guards come out of the nearby houses — one at first, up to four by the fourth phase."
+          "fr": "Deux camps actifs par phase, un par équipe, en haut puis en bas en alternance : tu sais toujours où se jouera le suivant. Trois secondes d'incantation lancent la capture ; l'adversaire peut la mettre en pause en incantant à son tour, et l'arrêter après trois secondes sans interruption. Des gardes sortent des maisons voisines — un au départ, jusqu'à quatre à la quatrième phase.",
+          "en": "Two camps active per phase, one per team, alternating between top and bottom: you always know where the next one will be. A three-second channel starts the capture; the enemy can pause it by channelling in turn, and stop it after three uninterrupted seconds. Guards come out of the nearby houses — one at first, up to four by the fourth phase."
         },
         "image": ""
       },
@@ -878,8 +878,8 @@ const BATTLEGROUNDS = [
           "en": "Prison Camp — bottom, right"
         },
         "description": {
-          "fr": "Un par équipe. Trois secondes d'incantation lancent la capture ; l'adversaire peut la mettre en pause en incantant à son tour, et l'arrêter après trois secondes sans interruption. Des gardes sortent des maisons voisines — un au départ, jusqu'à quatre à la quatrième phase.",
-          "en": "One per team. A three-second channel starts the capture; the enemy can pause it by channelling in turn, and stop it after three uninterrupted seconds. Guards come out of the nearby houses — one at first, up to four by the fourth phase."
+          "fr": "Deux camps actifs par phase, un par équipe, en haut puis en bas en alternance : tu sais toujours où se jouera le suivant. Trois secondes d'incantation lancent la capture ; l'adversaire peut la mettre en pause en incantant à son tour, et l'arrêter après trois secondes sans interruption. Des gardes sortent des maisons voisines — un au départ, jusqu'à quatre à la quatrième phase.",
+          "en": "Two camps active per phase, one per team, alternating between top and bottom: you always know where the next one will be. A three-second channel starts the capture; the enemy can pause it by channelling in turn, and stop it after three uninterrupted seconds. Guards come out of the nearby houses — one at first, up to four by the fourth phase."
         },
         "image": ""
       },
@@ -923,8 +923,8 @@ const BATTLEGROUNDS = [
           "en": "Siege Camp — Gnolls, middle left"
         },
         "description": {
-          "fr": "Deux camps sur la voie du milieu, trois gnolls chacun. Ils réduisent l'armure des structures qu'ils frappent. Disponibles à 0:30, ils réapparaissent 1:30 après avoir été pris — le délai le plus court de toutes les cartes.",
-          "en": "Two camps on the middle lane, three Gnolls each. They reduce the Armor of the structures they hit. Available at 0:30, back 1:30 after being taken — the shortest respawn of any map."
+          "fr": "Deux camps sur la voie du milieu, trois gnolls chacun. Ils réduisent l'armure des héros et des structures qu'ils frappent. Disponibles à 0:30, ils réapparaissent 1:30 après avoir été pris.",
+          "en": "Two camps on the middle lane, three Gnolls each. They reduce the Armor of the Heroes and structures they hit. Available at 0:30, back 1:30 after being taken."
         },
         "image": ""
       },
@@ -938,8 +938,8 @@ const BATTLEGROUNDS = [
           "en": "Siege Camp — Gnolls, middle right"
         },
         "description": {
-          "fr": "Deux camps sur la voie du milieu, trois gnolls chacun. Ils réduisent l'armure des structures qu'ils frappent. Disponibles à 0:30, ils réapparaissent 1:30 après avoir été pris — le délai le plus court de toutes les cartes.",
-          "en": "Two camps on the middle lane, three Gnolls each. They reduce the Armor of the structures they hit. Available at 0:30, back 1:30 after being taken — the shortest respawn of any map."
+          "fr": "Deux camps sur la voie du milieu, trois gnolls chacun. Ils réduisent l'armure des héros et des structures qu'ils frappent. Disponibles à 0:30, ils réapparaissent 1:30 après avoir été pris.",
+          "en": "Two camps on the middle lane, three Gnolls each. They reduce the Armor of the Heroes and structures they hit. Available at 0:30, back 1:30 after being taken."
         },
         "image": ""
       },
@@ -1762,8 +1762,8 @@ const BATTLEGROUNDS = [
           "en": "Recon Camp — top"
         },
         "description": {
-          "fr": "Deux camps au centre, en haut et en bas. Une fois pris, le camp se comporte comme une tour de guet et donne la vision. Il réapparaît une seconde après : on peut le reprendre en permanence.",
-          "en": "Two camps at the centre, top and bottom. Once taken, the camp behaves as a watch tower and grants vision. It comes back one second later: it can be retaken constantly."
+          "fr": "Deux camps au centre, en haut et en bas. Une fois pris, le camp se comporte comme une tour de guet et donne la vision. Il réapparaît une seconde après : on peut le reprendre en permanence. Contrairement aux tours de guet classiques, il ne redevient pas neutre au bout de 45 secondes.",
+          "en": "Two camps at the centre, top and bottom. Once taken, the camp behaves as a watch tower and grants vision. It comes back one second later: it can be retaken constantly. Unlike regular watch towers, it does not turn neutral after 45 seconds."
         },
         "image": ""
       },
@@ -1777,8 +1777,8 @@ const BATTLEGROUNDS = [
           "en": "Recon Camp — bottom"
         },
         "description": {
-          "fr": "Deux camps au centre, en haut et en bas. Une fois pris, le camp se comporte comme une tour de guet et donne la vision. Il réapparaît une seconde après : on peut le reprendre en permanence.",
-          "en": "Two camps at the centre, top and bottom. Once taken, the camp behaves as a watch tower and grants vision. It comes back one second later: it can be retaken constantly."
+          "fr": "Deux camps au centre, en haut et en bas. Une fois pris, le camp se comporte comme une tour de guet et donne la vision. Il réapparaît une seconde après : on peut le reprendre en permanence. Contrairement aux tours de guet classiques, il ne redevient pas neutre au bout de 45 secondes.",
+          "en": "Two camps at the centre, top and bottom. Once taken, the camp behaves as a watch tower and grants vision. It comes back one second later: it can be retaken constantly. Unlike regular watch towers, it does not turn neutral after 45 seconds."
         },
         "image": ""
       },
@@ -1792,8 +1792,8 @@ const BATTLEGROUNDS = [
           "en": "Fortification Camp — top, left"
         },
         "description": {
-          "fr": "Deux camps. Ils laissent une tourelle à ramasser, qui inflige 90 dégâts par seconde pendant 45 secondes une fois posée. Disponibles à 0:30, ils réapparaissent 2:30 après.",
-          "en": "Two camps. They drop a Turret to pick up, dealing 90 damage per second for 45 seconds once placed. Available at 0:30, back 2:30 after."
+          "fr": "Deux camps : un mécanicien et une tourelle. Abats le mécanicien en premier, il répare la tourelle. Ils laissent une tourelle à ramasser, qui inflige 90 dégâts par seconde pendant 45 secondes une fois posée. Disponibles à 0:30, ils réapparaissent 2:30 après.",
+          "en": "Two camps: a Mechanic and a Turret. Kill the Mechanic first, it repairs the Turret. They drop a Turret to pick up, dealing 90 damage per second for 45 seconds once placed. Available at 0:30, back 2:30 after."
         },
         "image": ""
       },
@@ -1807,8 +1807,8 @@ const BATTLEGROUNDS = [
           "en": "Fortification Camp — bottom, right"
         },
         "description": {
-          "fr": "Deux camps. Ils laissent une tourelle à ramasser, qui inflige 90 dégâts par seconde pendant 45 secondes une fois posée. Disponibles à 0:30, ils réapparaissent 2:30 après.",
-          "en": "Two camps. They drop a Turret to pick up, dealing 90 damage per second for 45 seconds once placed. Available at 0:30, back 2:30 after."
+          "fr": "Deux camps : un mécanicien et une tourelle. Abats le mécanicien en premier, il répare la tourelle. Ils laissent une tourelle à ramasser, qui inflige 90 dégâts par seconde pendant 45 secondes une fois posée. Disponibles à 0:30, ils réapparaissent 2:30 après.",
+          "en": "Two camps: a Mechanic and a Turret. Kill the Mechanic first, it repairs the Turret. They drop a Turret to pick up, dealing 90 damage per second for 45 seconds once placed. Available at 0:30, back 2:30 after."
         },
         "image": ""
       },
@@ -1822,8 +1822,8 @@ const BATTLEGROUNDS = [
           "en": "Samurai Camp — top, right"
         },
         "description": {
-          "fr": "Deux camps. Ils envoient une unité d'élite dans la voie correspondante, dont la taillade horizontale revient toutes les 8 secondes. Disponibles à 0:30, ils réapparaissent 2:30 après.",
-          "en": "Two camps. They send an elite unit into the matching lane, whose Horizontal Slash comes back every 8 seconds. Available at 0:30, back 2:30 after."
+          "fr": "Deux camps. Ils envoient une unité d'élite dans la voie correspondante, dont la taillade horizontale revient toutes les 8 secondes et vise le héros le plus proche. Insensible aux contrôles. Disponibles à 0:30, ils réapparaissent 2:30 après.",
+          "en": "Two camps. They send an elite unit into the matching lane, whose Horizontal Slash comes back every 8 seconds and targets the closest Hero. Immune to crowd control. Available at 0:30, back 2:30 after."
         },
         "image": ""
       },
@@ -1837,8 +1837,8 @@ const BATTLEGROUNDS = [
           "en": "Samurai Camp — bottom, left"
         },
         "description": {
-          "fr": "Deux camps. Ils envoient une unité d'élite dans la voie correspondante, dont la taillade horizontale revient toutes les 8 secondes. Disponibles à 0:30, ils réapparaissent 2:30 après.",
-          "en": "Two camps. They send an elite unit into the matching lane, whose Horizontal Slash comes back every 8 seconds. Available at 0:30, back 2:30 after."
+          "fr": "Deux camps. Ils envoient une unité d'élite dans la voie correspondante, dont la taillade horizontale revient toutes les 8 secondes et vise le héros le plus proche. Insensible aux contrôles. Disponibles à 0:30, ils réapparaissent 2:30 après.",
+          "en": "Two camps. They send an elite unit into the matching lane, whose Horizontal Slash comes back every 8 seconds and targets the closest Hero. Immune to crowd control. Available at 0:30, back 2:30 after."
         },
         "image": ""
       },
@@ -3138,7 +3138,7 @@ const BATTLEGROUNDS = [
     "id": "champs-eternite",
     "enabled": true,
     "name": {
-      "fr": "Champ de l'éternité",
+      "fr": "Champs de l'éternité",
       "en": "Battlefield of Eternity"
     },
     "image": "assets/maps/champs-eternite/portrait.jpg",
@@ -3340,8 +3340,8 @@ const BATTLEGROUNDS = [
           "en": "Healing fountain — top fort, angelic side"
         },
         "description": {
-          "fr": "Deux minutes de recharge. Sur une carte où la phase d'objectif revient toutes les 1:45, savoir si la fontaine est disponible pèse autant que les points de vie restants.",
-          "en": "Two-minute cooldown. On a map where the objective comes back every 1:45, knowing whether the fountain is up matters as much as the health bars."
+          "fr": "Deux minutes de recharge. L'objectif revenant 1:45 après la mort de l'Immortel en voie, savoir si la fontaine est disponible pèse autant que les points de vie restants.",
+          "en": "Two-minute cooldown. With the objective back 1:45 after the laning Immortal dies, knowing whether the fountain is up matters as much as the health bars."
         },
         "image": ""
       },
@@ -3349,8 +3349,8 @@ const BATTLEGROUNDS = [
         "id": "pboemutr41w52",
         "type": "fontaine",
         "description": {
-          "fr": "Deux minutes de recharge. Sur une carte où la phase d'objectif revient toutes les 1:45, savoir si la fontaine est disponible pèse autant que les points de vie restants.",
-          "en": "Two-minute cooldown. On a map where the objective comes back every 1:45, knowing whether the fountain is up matters as much as the health bars."
+          "fr": "Deux minutes de recharge. L'objectif revenant 1:45 après la mort de l'Immortel en voie, savoir si la fontaine est disponible pèse autant que les points de vie restants.",
+          "en": "Two-minute cooldown. With the objective back 1:45 after the laning Immortal dies, knowing whether the fountain is up matters as much as the health bars."
         },
         "image": "",
         "x": 21.8,
@@ -3364,8 +3364,8 @@ const BATTLEGROUNDS = [
         "id": "pboemutr41w53",
         "type": "fontaine",
         "description": {
-          "fr": "Deux minutes de recharge. Sur une carte où la phase d'objectif revient toutes les 1:45, savoir si la fontaine est disponible pèse autant que les points de vie restants.",
-          "en": "Two-minute cooldown. On a map where the objective comes back every 1:45, knowing whether the fountain is up matters as much as the health bars."
+          "fr": "Deux minutes de recharge. L'objectif revenant 1:45 après la mort de l'Immortel en voie, savoir si la fontaine est disponible pèse autant que les points de vie restants.",
+          "en": "Two-minute cooldown. With the objective back 1:45 after the laning Immortal dies, knowing whether the fountain is up matters as much as the health bars."
         },
         "image": "",
         "x": 22.9,
@@ -3379,8 +3379,8 @@ const BATTLEGROUNDS = [
         "id": "pboemutr41w54",
         "type": "fontaine",
         "description": {
-          "fr": "Deux minutes de recharge. Sur une carte où la phase d'objectif revient toutes les 1:45, savoir si la fontaine est disponible pèse autant que les points de vie restants.",
-          "en": "Two-minute cooldown. On a map where the objective comes back every 1:45, knowing whether the fountain is up matters as much as the health bars."
+          "fr": "Deux minutes de recharge. L'objectif revenant 1:45 après la mort de l'Immortel en voie, savoir si la fontaine est disponible pèse autant que les points de vie restants.",
+          "en": "Two-minute cooldown. With the objective back 1:45 after the laning Immortal dies, knowing whether the fountain is up matters as much as the health bars."
         },
         "image": "",
         "x": 39.3,
@@ -3400,8 +3400,8 @@ const BATTLEGROUNDS = [
           "en": "Healing fountain — top fort, demonic side"
         },
         "description": {
-          "fr": "Deux minutes de recharge. Sur une carte où la phase d'objectif revient toutes les 1:45, savoir si la fontaine est disponible pèse autant que les points de vie restants.",
-          "en": "Two-minute cooldown. On a map where the objective comes back every 1:45, knowing whether the fountain is up matters as much as the health bars."
+          "fr": "Deux minutes de recharge. L'objectif revenant 1:45 après la mort de l'Immortel en voie, savoir si la fontaine est disponible pèse autant que les points de vie restants.",
+          "en": "Two-minute cooldown. With the objective back 1:45 after the laning Immortal dies, knowing whether the fountain is up matters as much as the health bars."
         },
         "image": ""
       },
@@ -3409,8 +3409,8 @@ const BATTLEGROUNDS = [
         "id": "pboemutr41w55",
         "type": "fontaine",
         "description": {
-          "fr": "Deux minutes de recharge. Sur une carte où la phase d'objectif revient toutes les 1:45, savoir si la fontaine est disponible pèse autant que les points de vie restants.",
-          "en": "Two-minute cooldown. On a map where the objective comes back every 1:45, knowing whether the fountain is up matters as much as the health bars."
+          "fr": "Deux minutes de recharge. L'objectif revenant 1:45 après la mort de l'Immortel en voie, savoir si la fontaine est disponible pèse autant que les points de vie restants.",
+          "en": "Two-minute cooldown. With the objective back 1:45 after the laning Immortal dies, knowing whether the fountain is up matters as much as the health bars."
         },
         "image": "",
         "x": 75.5,
@@ -3424,8 +3424,8 @@ const BATTLEGROUNDS = [
         "id": "pboemutr41w56",
         "type": "fontaine",
         "description": {
-          "fr": "Deux minutes de recharge. Sur une carte où la phase d'objectif revient toutes les 1:45, savoir si la fontaine est disponible pèse autant que les points de vie restants.",
-          "en": "Two-minute cooldown. On a map where the objective comes back every 1:45, knowing whether the fountain is up matters as much as the health bars."
+          "fr": "Deux minutes de recharge. L'objectif revenant 1:45 après la mort de l'Immortel en voie, savoir si la fontaine est disponible pèse autant que les points de vie restants.",
+          "en": "Two-minute cooldown. With the objective back 1:45 after the laning Immortal dies, knowing whether the fountain is up matters as much as the health bars."
         },
         "image": "",
         "x": 76.8,
@@ -3439,8 +3439,8 @@ const BATTLEGROUNDS = [
         "id": "pboemutr41w57",
         "type": "fontaine",
         "description": {
-          "fr": "Deux minutes de recharge. Sur une carte où la phase d'objectif revient toutes les 1:45, savoir si la fontaine est disponible pèse autant que les points de vie restants.",
-          "en": "Two-minute cooldown. On a map where the objective comes back every 1:45, knowing whether the fountain is up matters as much as the health bars."
+          "fr": "Deux minutes de recharge. L'objectif revenant 1:45 après la mort de l'Immortel en voie, savoir si la fontaine est disponible pèse autant que les points de vie restants.",
+          "en": "Two-minute cooldown. With the objective back 1:45 after the laning Immortal dies, knowing whether the fountain is up matters as much as the health bars."
         },
         "image": "",
         "x": 61.5,
@@ -3527,8 +3527,8 @@ const BATTLEGROUNDS = [
           "en": "Spider Queen's Altar — top"
         },
         "description": {
-          "fr": "Deux autels au centre, l'un entre la voie du haut et celle du milieu, l'autre entre le milieu et le bas. C'est là qu'on livre les gemmes. 50 pour la première fois, puis 5 de plus à chaque livraison. Mourir avec ses gemmes sur soi, c'est les perdre toutes.",
-          "en": "Two Altars at the centre, one between the top and middle lanes, the other between the middle and bottom lanes. This is where Gems are turned in. 50 the first time, then 5 more each time. Dying with Gems on you means losing them all."
+          "fr": "Deux autels au centre, l'un entre la voie du haut et celle du milieu, l'autre entre le milieu et le bas. C'est là qu'on livre les gemmes. 50 pour la première fois, puis 5 de plus à chaque livraison. Mourir avec ses gemmes, c'est les lâcher au sol : tes alliés ont huit secondes pour les ramasser, sous les yeux de l'adversaire.",
+          "en": "Two Altars at the centre, one between the top and middle lanes, the other between the middle and bottom lanes. This is where Gems are turned in. 50 the first time, then 5 more each time. Dying with Gems drops them on the ground: your allies have eight seconds to pick them up, in full view of the enemy."
         },
         "image": ""
       },
@@ -3542,8 +3542,8 @@ const BATTLEGROUNDS = [
           "en": "Spider Queen's Altar — bottom"
         },
         "description": {
-          "fr": "Deux autels au centre, l'un entre la voie du haut et celle du milieu, l'autre entre le milieu et le bas. C'est là qu'on livre les gemmes. 50 pour la première fois, puis 5 de plus à chaque livraison. Mourir avec ses gemmes sur soi, c'est les perdre toutes.",
-          "en": "Two Altars at the centre, one between the top and middle lanes, the other between the middle and bottom lanes. This is where Gems are turned in. 50 the first time, then 5 more each time. Dying with Gems on you means losing them all."
+          "fr": "Deux autels au centre, l'un entre la voie du haut et celle du milieu, l'autre entre le milieu et le bas. C'est là qu'on livre les gemmes. 50 pour la première fois, puis 5 de plus à chaque livraison. Mourir avec ses gemmes, c'est les lâcher au sol : tes alliés ont huit secondes pour les ramasser, sous les yeux de l'adversaire.",
+          "en": "Two Altars at the centre, one between the top and middle lanes, the other between the middle and bottom lanes. This is where Gems are turned in. 50 the first time, then 5 more each time. Dying with Gems drops them on the ground: your allies have eight seconds to pick them up, in full view of the enemy."
         },
         "image": ""
       },
@@ -4737,8 +4737,8 @@ const BATTLEGROUNDS = [
           "en": "Moon Shrine — top"
         },
         "description": {
-          "fr": "Le second sanctuaire, mêmes règles que celui du soleil. C'est la simultanéité qui compte : perdre l'un pendant qu'on prend l'autre remet le compteur à zéro.",
-          "en": "The second Shrine, same rules as the Sun one. Simultaneity is what counts: losing one while taking the other puts you back to nothing."
+          "fr": "Le second sanctuaire, mêmes règles que celui du soleil. C'est la simultanéité qui compte : perdre l'un pendant qu'on prend l'autre, et la statue reste éteinte.",
+          "en": "The second Shrine, same rules as the Sun one. Simultaneity is what counts: lose one while taking the other, and the statue stays dark."
         },
         "image": "assets/maps/comte-du-dragon/captures/3.jpg"
       },
@@ -5722,8 +5722,8 @@ const BATTLEGROUNDS = [
           "en": "Boss Camp — Archangel"
         },
         "description": {
-          "fr": "Au centre de la carte. Immunisé contre la corruption. Disponible à 5:00, il réapparaît 5:00 après. Le prendre tôt demande une composition faite pour ça.",
-          "en": "At the centre of the map. Immune to Bribe. Available at 5:00, back 5:00 after. Taking it early asks for a composition built for it."
+          "fr": "Au centre de la carte. Une fois pris, il part dans la voie où les structures adverses sont les moins entamées. Immunisé contre la corruption. Disponible à 5:00, il réapparaît 5:00 après. Le prendre tôt demande une composition faite pour ça.",
+          "en": "At the centre of the map. Once taken, it heads for the lane where enemy structures are least damaged. Immune to Bribe. Available at 5:00, back 5:00 after. Taking it early asks for a composition built for it."
         },
         "image": ""
       },
