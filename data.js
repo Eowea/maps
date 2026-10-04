@@ -1424,8 +1424,8 @@ const BATTLEGROUNDS = [
     "hotspots": [
       {
         "id": "pbai38",
-        "x": 49.1,
-        "y": 61.2,
+        "x": 49.6,
+        "y": 60.2,
         "type": "objectif",
         "name": {
           "fr": "Cœur-Noir",
@@ -1440,7 +1440,7 @@ const BATTLEGROUNDS = [
       {
         "id": "pbai39",
         "x": 49.5,
-        "y": 27.6,
+        "y": 27.1,
         "type": "objectif",
         "name": {
           "fr": "Coffre au trésor",
@@ -1454,8 +1454,8 @@ const BATTLEGROUNDS = [
       },
       {
         "id": "pmutm0i5v0w9t",
-        "x": 49.5,
-        "y": 72.3,
+        "x": 49.6,
+        "y": 72,
         "type": "objectif",
         "name": {
           "fr": "Coffre au trésor",
@@ -1544,8 +1544,8 @@ const BATTLEGROUNDS = [
       },
       {
         "id": "pbai42",
-        "x": 49.1,
-        "y": 6.3,
+        "x": 49.5,
+        "y": 7.8,
         "type": "camp",
         "name": {
           "fr": "Camp de boss — golem sépulcral",
