@@ -3450,28 +3450,13 @@ const BATTLEGROUNDS = [
     ],
     "hotspots": [
       {
-        "id": "pdrg1",
-        "type": "objectif",
-        "x": 12,
-        "y": 12,
-        "name": {
-          "fr": "Sanctuaire du soleil",
-          "en": "Sun Shrine"
-        },
-        "description": {
-          "fr": "L'un des deux sanctuaires à tenir. Quatre secondes pour le capturer s'il est neutre, huit s'il appartient à l'adversaire. Le tenir seul ne sert à rien : la statue ne s'active que si les deux sont à toi en même temps.",
-          "en": "One of the two Shrines to hold. Four seconds to capture if neutral, eight if the enemy owns it. Holding it alone achieves nothing: the statue only activates when both are yours at the same time."
-        },
-        "image": "assets/maps/comte-du-dragon/captures/5.jpg"
-      },
-      {
         "id": "pdrg2",
         "type": "objectif",
-        "x": 26,
-        "y": 12,
+        "x": 50.4,
+        "y": 19.1,
         "name": {
-          "fr": "Sanctuaire de la lune",
-          "en": "Moon Shrine"
+          "fr": "Sanctuaire de la lune — haut",
+          "en": "Moon Shrine — top"
         },
         "description": {
           "fr": "Le second sanctuaire, mêmes règles que celui du soleil. C'est la simultanéité qui compte : perdre l'un pendant qu'on prend l'autre remet le compteur à zéro.",
@@ -3480,10 +3465,25 @@ const BATTLEGROUNDS = [
         "image": "assets/maps/comte-du-dragon/captures/3.jpg"
       },
       {
+        "id": "pdrg1",
+        "type": "objectif",
+        "x": 50.3,
+        "y": 78.1,
+        "name": {
+          "fr": "Sanctuaire du soleil — bas",
+          "en": "Sun Shrine — bottom"
+        },
+        "description": {
+          "fr": "L'un des deux sanctuaires à tenir. Quatre secondes pour le capturer s'il est neutre, huit s'il appartient à l'adversaire. Le tenir seul ne sert à rien : la statue ne s'active que si les deux sont à toi en même temps.",
+          "en": "One of the two Shrines to hold. Four seconds to capture if neutral, eight if the enemy owns it. Holding it alone achieves nothing: the statue only activates when both are yours at the same time."
+        },
+        "image": "assets/maps/comte-du-dragon/captures/5.jpg"
+      },
+      {
         "id": "pdrg3",
         "type": "objectif",
-        "x": 40,
-        "y": 12,
+        "x": 50.4,
+        "y": 42,
         "name": {
           "fr": "Statue du chevalier dragon",
           "en": "Dragon Knight's statue"
@@ -3497,8 +3497,8 @@ const BATTLEGROUNDS = [
       {
         "id": "pdrg4",
         "type": "objectif",
-        "x": 54,
-        "y": 12,
+        "x": 50.4,
+        "y": 49.5,
         "name": {
           "fr": "Chevalier dragon",
           "en": "Dragon Knight"
@@ -3512,105 +3512,255 @@ const BATTLEGROUNDS = [
       {
         "id": "pdrg5",
         "type": "camp",
-        "x": 68,
-        "y": 12,
+        "x": 40.6,
+        "y": 43.8,
         "name": {
-          "fr": "Camp de bruisers — haut, côté bleu",
-          "en": "Bruiser Camp — top, blue side"
+          "fr": "Camp de bruisers — haut, gauche",
+          "en": "Bruiser Camp — top, left"
         },
         "description": {
-          "fr": "Trois chevaliers et un sorcier. Le sorcier pose un champ d'armure des sorts qui réduit les dégâts subis par les unités proches. Disponible à 0:30, il réapparaît 4:00 après avoir été pris. À capturer vers 1:30 pour qu'il arrive en ligne avec la vague.",
-          "en": "Three Knights and a Wizard. The Wizard lays a Spell Armor field that cuts the damage nearby units take. Available at 0:30, back 4:00 after being taken. Worth capturing around 1:30 so it reaches the lane with the wave."
+          "fr": "Deux camps entre la voie du haut et celle du milieu, un de chaque côté. Trois chevaliers et un sorcier, qui pose un champ d'armure des sorts autour des unités proches. Disponibles à 0:30, ils réapparaissent 4:00 après avoir été pris. À capturer vers 1:30 pour qu'ils arrivent en ligne avec la vague.",
+          "en": "Two camps between the top and middle lanes, one on each side. Three Knights and a Wizard, who lays a Spell Armor field around nearby units. Available at 0:30, back 4:00 after being taken. Worth capturing around 1:30 so they reach the lane with the wave."
         },
         "image": "assets/maps/comte-du-dragon/captures/2.jpg"
       },
       {
         "id": "pdrg6",
         "type": "camp",
-        "x": 82,
-        "y": 12,
+        "x": 60.1,
+        "y": 43.8,
         "name": {
-          "fr": "Camp de bruisers — haut, côté rouge",
-          "en": "Bruiser Camp — top, red side"
+          "fr": "Camp de bruisers — haut, droite",
+          "en": "Bruiser Camp — top, right"
         },
         "description": {
-          "fr": "Le symétrique du camp d'en face, même composition. Sur cette carte les bruisers sont en haut et le siège en bas : la voie du haut se dispute donc plus longtemps.",
-          "en": "The mirror of the camp opposite, same composition. On this map the Bruisers sit at the top and the Siege camps at the bottom: the top lane is contested longer as a result."
+          "fr": "Deux camps entre la voie du haut et celle du milieu, un de chaque côté. Trois chevaliers et un sorcier, qui pose un champ d'armure des sorts autour des unités proches. Disponibles à 0:30, ils réapparaissent 4:00 après avoir été pris. À capturer vers 1:30 pour qu'ils arrivent en ligne avec la vague.",
+          "en": "Two camps between the top and middle lanes, one on each side. Three Knights and a Wizard, who lays a Spell Armor field around nearby units. Available at 0:30, back 4:00 after being taken. Worth capturing around 1:30 so they reach the lane with the wave."
         },
         "image": "assets/maps/comte-du-dragon/captures/2.jpg"
       },
       {
         "id": "pdrg7",
         "type": "camp",
-        "x": 12,
-        "y": 26,
+        "x": 50.4,
+        "y": 86.1,
         "name": {
           "fr": "Camp de bruisers — bas",
           "en": "Bruiser Camp — bottom"
         },
         "description": {
-          "fr": "Le cinquième camp de la carte, seul de son espèce en bas. Trois chevaliers et un sorcier, comme ceux du haut. Disponible à 0:30, il réapparaît 4:00 après.",
-          "en": "The map's fifth camp, the only one of its kind at the bottom. Three Knights and a Wizard, like those at the top. Available at 0:30, back 4:00 after."
+          "fr": "Le cinquième camp de la carte, au centre sous le sanctuaire du soleil, à égale distance des deux bases. Trois chevaliers et un sorcier, comme ceux du haut. Disponible à 0:30, il réapparaît 4:00 après avoir été pris.",
+          "en": "The map's fifth camp, in the centre below the Sun Shrine, equally far from both bases. Three Knights and a Wizard, like the upper ones. Available at 0:30, back 4:00 after being taken."
         },
         "image": "assets/maps/comte-du-dragon/captures/2.jpg"
       },
       {
         "id": "pdrg8",
         "type": "camp",
-        "x": 26,
-        "y": 26,
+        "x": 40.9,
+        "y": 62,
         "name": {
-          "fr": "Camp de siège — bas, côté bleu",
-          "en": "Siege Camp — bottom, blue side"
+          "fr": "Camp de siège — géants, bas gauche",
+          "en": "Siege Camp — Giants, bottom left"
         },
         "description": {
-          "fr": "Deux géants de siège. Leurs rochers sont esquivables, et ils infligent 100 % de dégâts supplémentaires aux structures. Disponible à 0:30, il réapparaît 3:00 après. À prendre vers 0:42 pour qu'il parte avec la vague.",
-          "en": "Two Siege Giants. Their stones are dodgeable, and they deal 100% bonus damage to Structures. Available at 0:30, back 3:00 after. Worth taking around 0:42 so it leaves with the wave."
+          "fr": "Deux camps entre la voie du milieu et celle du bas, près des forts. Deux géants de siège, aux rochers esquivables, qui infligent 100 % de dégâts supplémentaires aux structures. Disponibles à 0:30, ils réapparaissent 3:00 après. À prendre vers 0:42 pour qu'ils partent avec la vague.",
+          "en": "Two camps between the middle and bottom lanes, near the forts. Two Siege Giants, with dodgeable stones, dealing 100% bonus damage to Structures. Available at 0:30, back 3:00 after. Worth taking around 0:42 so they leave with the wave."
         },
         "image": ""
       },
       {
         "id": "pdrg9",
         "type": "camp",
-        "x": 40,
-        "y": 26,
+        "x": 59.8,
+        "y": 62,
         "name": {
-          "fr": "Camp de siège — bas, côté rouge",
-          "en": "Siege Camp — bottom, red side"
+          "fr": "Camp de siège — géants, bas droite",
+          "en": "Siege Camp — Giants, bottom right"
         },
         "description": {
-          "fr": "Le symétrique du précédent, même composition. Les deux camps de siège sont sur la voie du bas, à l'opposé des bruisers.",
-          "en": "The mirror of the previous one, same composition. Both Siege camps sit on the bottom lane, opposite the Bruisers."
+          "fr": "Deux camps entre la voie du milieu et celle du bas, près des forts. Deux géants de siège, aux rochers esquivables, qui infligent 100 % de dégâts supplémentaires aux structures. Disponibles à 0:30, ils réapparaissent 3:00 après. À prendre vers 0:42 pour qu'ils partent avec la vague.",
+          "en": "Two camps between the middle and bottom lanes, near the forts. Two Siege Giants, with dodgeable stones, dealing 100% bonus damage to Structures. Available at 0:30, back 3:00 after. Worth taking around 0:42 so they leave with the wave."
         },
         "image": ""
       },
       {
         "id": "pdrg10",
         "type": "fontaine",
-        "x": 54,
-        "y": 26,
+        "x": 39.6,
+        "y": 30.8,
         "name": {
-          "fr": "Fontaine de soins — côté bleu",
-          "en": "Healing fountain — blue side"
+          "fr": "Fontaine de soins — fort haut, gauche",
+          "en": "Healing fountain — top fort, left"
         },
         "description": {
-          "fr": "Deux minutes de recharge. L'objectif revenant deux minutes après la mort du dragon, la fontaine se dépense dès qu'elle est prête plutôt que d'être gardée : elle sera de nouveau là au moment voulu.",
-          "en": "Two-minute cooldown. With the objective back two minutes after the Dragon dies, spend the fountain as soon as it is up rather than saving it: it will be there again when it matters."
+          "fr": "Deux minutes de recharge après utilisation. Le dragon revenant deux minutes après sa mort, elle se dépense dès qu'elle est prête plutôt que d'être gardée. Savoir si celle d'en face est disponible change la valeur d'un plongeon autant que les points de vie restants.",
+          "en": "Two-minute cooldown after use. With the Dragon back two minutes after it dies, spend it as soon as it is up rather than saving it. Knowing whether the enemy one is up changes the worth of a dive as much as their remaining health does."
         },
         "image": ""
       },
       {
         "id": "pdrg11",
         "type": "fontaine",
-        "x": 68,
-        "y": 26,
+        "x": 38.8,
+        "y": 50.9,
         "name": {
-          "fr": "Fontaine de soins — côté rouge",
-          "en": "Healing fountain — red side"
+          "fr": "Fontaine de soins — fort milieu, gauche",
+          "en": "Healing fountain — middle fort, left"
         },
         "description": {
-          "fr": "La fontaine adverse. Savoir si elle est disponible change la valeur d'un plongeon dans leur base autant que leurs points de vie restants.",
-          "en": "The enemy fountain. Knowing whether it is up changes the worth of diving their base as much as their remaining health does."
+          "fr": "Deux minutes de recharge après utilisation. Le dragon revenant deux minutes après sa mort, elle se dépense dès qu'elle est prête plutôt que d'être gardée. Savoir si celle d'en face est disponible change la valeur d'un plongeon autant que les points de vie restants.",
+          "en": "Two-minute cooldown after use. With the Dragon back two minutes after it dies, spend it as soon as it is up rather than saving it. Knowing whether the enemy one is up changes the worth of a dive as much as their remaining health does."
+        },
+        "image": ""
+      },
+      {
+        "id": "pdrg12",
+        "type": "fontaine",
+        "x": 39.6,
+        "y": 76.5,
+        "name": {
+          "fr": "Fontaine de soins — fort bas, gauche",
+          "en": "Healing fountain — bottom fort, left"
+        },
+        "description": {
+          "fr": "Deux minutes de recharge après utilisation. Le dragon revenant deux minutes après sa mort, elle se dépense dès qu'elle est prête plutôt que d'être gardée. Savoir si celle d'en face est disponible change la valeur d'un plongeon autant que les points de vie restants.",
+          "en": "Two-minute cooldown after use. With the Dragon back two minutes after it dies, spend it as soon as it is up rather than saving it. Knowing whether the enemy one is up changes the worth of a dive as much as their remaining health does."
+        },
+        "image": ""
+      },
+      {
+        "id": "pdrg13",
+        "type": "fontaine",
+        "x": 27.1,
+        "y": 47.2,
+        "name": {
+          "fr": "Fontaine de soins — bastion haut, gauche",
+          "en": "Healing fountain — top keep, left"
+        },
+        "description": {
+          "fr": "Deux minutes de recharge après utilisation. Le dragon revenant deux minutes après sa mort, elle se dépense dès qu'elle est prête plutôt que d'être gardée. Savoir si celle d'en face est disponible change la valeur d'un plongeon autant que les points de vie restants.",
+          "en": "Two-minute cooldown after use. With the Dragon back two minutes after it dies, spend it as soon as it is up rather than saving it. Knowing whether the enemy one is up changes the worth of a dive as much as their remaining health does."
+        },
+        "image": ""
+      },
+      {
+        "id": "pdrg14",
+        "type": "fontaine",
+        "x": 28.7,
+        "y": 57.7,
+        "name": {
+          "fr": "Fontaine de soins — bastion milieu, gauche",
+          "en": "Healing fountain — middle keep, left"
+        },
+        "description": {
+          "fr": "Deux minutes de recharge après utilisation. Le dragon revenant deux minutes après sa mort, elle se dépense dès qu'elle est prête plutôt que d'être gardée. Savoir si celle d'en face est disponible change la valeur d'un plongeon autant que les points de vie restants.",
+          "en": "Two-minute cooldown after use. With the Dragon back two minutes after it dies, spend it as soon as it is up rather than saving it. Knowing whether the enemy one is up changes the worth of a dive as much as their remaining health does."
+        },
+        "image": ""
+      },
+      {
+        "id": "pdrg15",
+        "type": "fontaine",
+        "x": 21.5,
+        "y": 66.4,
+        "name": {
+          "fr": "Fontaine de soins — bastion bas, gauche",
+          "en": "Healing fountain — bottom keep, left"
+        },
+        "description": {
+          "fr": "Deux minutes de recharge après utilisation. Le dragon revenant deux minutes après sa mort, elle se dépense dès qu'elle est prête plutôt que d'être gardée. Savoir si celle d'en face est disponible change la valeur d'un plongeon autant que les points de vie restants.",
+          "en": "Two-minute cooldown after use. With the Dragon back two minutes after it dies, spend it as soon as it is up rather than saving it. Knowing whether the enemy one is up changes the worth of a dive as much as their remaining health does."
+        },
+        "image": ""
+      },
+      {
+        "id": "pdrg16",
+        "type": "fontaine",
+        "x": 61.1,
+        "y": 30.8,
+        "name": {
+          "fr": "Fontaine de soins — fort haut, droite",
+          "en": "Healing fountain — top fort, right"
+        },
+        "description": {
+          "fr": "Deux minutes de recharge après utilisation. Le dragon revenant deux minutes après sa mort, elle se dépense dès qu'elle est prête plutôt que d'être gardée. Savoir si celle d'en face est disponible change la valeur d'un plongeon autant que les points de vie restants.",
+          "en": "Two-minute cooldown after use. With the Dragon back two minutes after it dies, spend it as soon as it is up rather than saving it. Knowing whether the enemy one is up changes the worth of a dive as much as their remaining health does."
+        },
+        "image": ""
+      },
+      {
+        "id": "pdrg17",
+        "type": "fontaine",
+        "x": 61.9,
+        "y": 51,
+        "name": {
+          "fr": "Fontaine de soins — fort milieu, droite",
+          "en": "Healing fountain — middle fort, right"
+        },
+        "description": {
+          "fr": "Deux minutes de recharge après utilisation. Le dragon revenant deux minutes après sa mort, elle se dépense dès qu'elle est prête plutôt que d'être gardée. Savoir si celle d'en face est disponible change la valeur d'un plongeon autant que les points de vie restants.",
+          "en": "Two-minute cooldown after use. With the Dragon back two minutes after it dies, spend it as soon as it is up rather than saving it. Knowing whether the enemy one is up changes the worth of a dive as much as their remaining health does."
+        },
+        "image": ""
+      },
+      {
+        "id": "pdrg18",
+        "type": "fontaine",
+        "x": 61,
+        "y": 76.6,
+        "name": {
+          "fr": "Fontaine de soins — fort bas, droite",
+          "en": "Healing fountain — bottom fort, right"
+        },
+        "description": {
+          "fr": "Deux minutes de recharge après utilisation. Le dragon revenant deux minutes après sa mort, elle se dépense dès qu'elle est prête plutôt que d'être gardée. Savoir si celle d'en face est disponible change la valeur d'un plongeon autant que les points de vie restants.",
+          "en": "Two-minute cooldown after use. With the Dragon back two minutes after it dies, spend it as soon as it is up rather than saving it. Knowing whether the enemy one is up changes the worth of a dive as much as their remaining health does."
+        },
+        "image": ""
+      },
+      {
+        "id": "pdrg19",
+        "type": "fontaine",
+        "x": 73.6,
+        "y": 47.1,
+        "name": {
+          "fr": "Fontaine de soins — bastion haut, droite",
+          "en": "Healing fountain — top keep, right"
+        },
+        "description": {
+          "fr": "Deux minutes de recharge après utilisation. Le dragon revenant deux minutes après sa mort, elle se dépense dès qu'elle est prête plutôt que d'être gardée. Savoir si celle d'en face est disponible change la valeur d'un plongeon autant que les points de vie restants.",
+          "en": "Two-minute cooldown after use. With the Dragon back two minutes after it dies, spend it as soon as it is up rather than saving it. Knowing whether the enemy one is up changes the worth of a dive as much as their remaining health does."
+        },
+        "image": ""
+      },
+      {
+        "id": "pdrg20",
+        "type": "fontaine",
+        "x": 71.9,
+        "y": 58.1,
+        "name": {
+          "fr": "Fontaine de soins — bastion milieu, droite",
+          "en": "Healing fountain — middle keep, right"
+        },
+        "description": {
+          "fr": "Deux minutes de recharge après utilisation. Le dragon revenant deux minutes après sa mort, elle se dépense dès qu'elle est prête plutôt que d'être gardée. Savoir si celle d'en face est disponible change la valeur d'un plongeon autant que les points de vie restants.",
+          "en": "Two-minute cooldown after use. With the Dragon back two minutes after it dies, spend it as soon as it is up rather than saving it. Knowing whether the enemy one is up changes the worth of a dive as much as their remaining health does."
+        },
+        "image": ""
+      },
+      {
+        "id": "pdrg21",
+        "type": "fontaine",
+        "x": 79.2,
+        "y": 66.3,
+        "name": {
+          "fr": "Fontaine de soins — bastion bas, droite",
+          "en": "Healing fountain — bottom keep, right"
+        },
+        "description": {
+          "fr": "Deux minutes de recharge après utilisation. Le dragon revenant deux minutes après sa mort, elle se dépense dès qu'elle est prête plutôt que d'être gardée. Savoir si celle d'en face est disponible change la valeur d'un plongeon autant que les points de vie restants.",
+          "en": "Two-minute cooldown after use. With the Dragon back two minutes after it dies, spend it as soon as it is up rather than saving it. Knowing whether the enemy one is up changes the worth of a dive as much as their remaining health does."
         },
         "image": ""
       }
