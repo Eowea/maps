@@ -4581,128 +4581,158 @@ const BATTLEGROUNDS = [
       {
         "id": "plab52",
         "type": "objectif",
-        "x": 12,
-        "y": 12,
+        "x": 47.8,
+        "y": 38,
         "name": {
           "fr": "Balise — haut",
           "en": "Beacon — top"
         },
         "description": {
-          "fr": "Deux balises. Trois secondes de capture si elle est neutre, six si l'adversaire la tient. La progression monte de 2 % toutes les 0,75 seconde et remplit la cellule de détention de zergs.",
-          "en": "Two Beacons. Three seconds to capture if neutral, six if the enemy holds it. Progress climbs 2% every 0.75 seconds and fills the Holding Cell with Zerg."
+          "fr": "Deux balises, une au-dessus du centre et une en dessous. Il faut tenir les deux en même temps pour que ta cellule se remplisse. Trois secondes de capture si elle est neutre, six si l'adversaire la tient. La progression monte de 2 % toutes les 0,75 seconde.",
+          "en": "Two Beacons, one above the centre and one below. You must hold both at once for your cell to fill. Three seconds to capture if neutral, six if the enemy holds it. Progress climbs 2% every 0.75 seconds."
         },
         "image": ""
       },
       {
         "id": "pmutmu1e9029",
         "type": "objectif",
-        "x": 82,
-        "y": 12,
+        "x": 47.2,
+        "y": 62.2,
         "name": {
           "fr": "Balise — bas",
           "en": "Beacon — bottom"
         },
         "description": {
-          "fr": "Deux balises. Trois secondes de capture si elle est neutre, six si l'adversaire la tient. La progression monte de 2 % toutes les 0,75 seconde et remplit la cellule de détention de zergs.",
-          "en": "Two Beacons. Three seconds to capture if neutral, six if the enemy holds it. Progress climbs 2% every 0.75 seconds and fills the Holding Cell with Zerg."
+          "fr": "Deux balises, une au-dessus du centre et une en dessous. Il faut tenir les deux en même temps pour que ta cellule se remplisse. Trois secondes de capture si elle est neutre, six si l'adversaire la tient. La progression monte de 2 % toutes les 0,75 seconde.",
+          "en": "Two Beacons, one above the centre and one below. You must hold both at once for your cell to fill. Three seconds to capture if neutral, six if the enemy holds it. Progress climbs 2% every 0.75 seconds."
         },
         "image": ""
       },
       {
         "id": "plab53",
         "type": "objectif",
-        "x": 26,
-        "y": 12,
+        "x": 37.2,
+        "y": 13.9,
         "name": {
-          "fr": "Cellule de détention — gauche",
-          "en": "Holding Cell — left"
+          "fr": "Cellule de détention — haut, gauche",
+          "en": "Holding Cell — top, left"
         },
         "description": {
-          "fr": "Une par équipe. Dès que l'une est pleine, les deux s'ouvrent : ta vague et celle d'en face partent ensemble, dans des voies opposées. La composition dépend du pourcentage atteint.",
-          "en": "One per team. As soon as either is full, both open: your wave and theirs leave together, into opposite lanes. The composition depends on the percentage reached."
+          "fr": "Quatre cellules, deux par voie : une à chaque équipe. À chaque phase, une seule s'active par voie, une de chaque équipe : ta vague et celle d'en face partent donc dans des voies opposées. Dès que l'une est pleine, les deux s'ouvrent. La composition dépend du pourcentage atteint.",
+          "en": "Four cells, two per lane: one for each team. Each phase, only one activates per lane, one from each team: your wave and theirs therefore leave into opposite lanes. As soon as either is full, both open. The composition depends on the percentage reached."
         },
         "image": ""
       },
       {
         "id": "pmutmu1e902a",
         "type": "objectif",
-        "x": 12,
-        "y": 26,
+        "x": 54.4,
+        "y": 13.9,
         "name": {
-          "fr": "Cellule de détention — droite",
-          "en": "Holding Cell — right"
+          "fr": "Cellule de détention — haut, droite",
+          "en": "Holding Cell — top, right"
         },
         "description": {
-          "fr": "Une par équipe. Dès que l'une est pleine, les deux s'ouvrent : ta vague et celle d'en face partent ensemble, dans des voies opposées. La composition dépend du pourcentage atteint.",
-          "en": "One per team. As soon as either is full, both open: your wave and theirs leave together, into opposite lanes. The composition depends on the percentage reached."
+          "fr": "Quatre cellules, deux par voie : une à chaque équipe. À chaque phase, une seule s'active par voie, une de chaque équipe : ta vague et celle d'en face partent donc dans des voies opposées. Dès que l'une est pleine, les deux s'ouvrent. La composition dépend du pourcentage atteint.",
+          "en": "Four cells, two per lane: one for each team. Each phase, only one activates per lane, one from each team: your wave and theirs therefore leave into opposite lanes. As soon as either is full, both open. The composition depends on the percentage reached."
+        },
+        "image": ""
+      },
+      {
+        "id": "plab57",
+        "type": "objectif",
+        "x": 40.6,
+        "y": 85.8,
+        "name": {
+          "fr": "Cellule de détention — bas, gauche",
+          "en": "Holding Cell — bottom, left"
+        },
+        "description": {
+          "fr": "Quatre cellules, deux par voie : une à chaque équipe. À chaque phase, une seule s'active par voie, une de chaque équipe : ta vague et celle d'en face partent donc dans des voies opposées. Dès que l'une est pleine, les deux s'ouvrent. La composition dépend du pourcentage atteint.",
+          "en": "Four cells, two per lane: one for each team. Each phase, only one activates per lane, one from each team: your wave and theirs therefore leave into opposite lanes. As soon as either is full, both open. The composition depends on the percentage reached."
+        },
+        "image": ""
+      },
+      {
+        "id": "plab58",
+        "type": "objectif",
+        "x": 57.4,
+        "y": 85.8,
+        "name": {
+          "fr": "Cellule de détention — bas, droite",
+          "en": "Holding Cell — bottom, right"
+        },
+        "description": {
+          "fr": "Quatre cellules, deux par voie : une à chaque équipe. À chaque phase, une seule s'active par voie, une de chaque équipe : ta vague et celle d'en face partent donc dans des voies opposées. Dès que l'une est pleine, les deux s'ouvrent. La composition dépend du pourcentage atteint.",
+          "en": "Four cells, two per lane: one for each team. Each phase, only one activates per lane, one from each team: your wave and theirs therefore leave into opposite lanes. As soon as either is full, both open. The composition depends on the percentage reached."
         },
         "image": ""
       },
       {
         "id": "plab54",
         "type": "camp",
-        "x": 40,
-        "y": 12,
+        "x": 54.7,
+        "y": 44,
         "name": {
           "fr": "Camp de siège — hellions, haut droite",
           "en": "Siege Camp — Hellbats, top right"
         },
         "description": {
-          "fr": "Un camp par voie, deux hellions chacun. Disponibles à 0:30, ils réapparaissent 3:00 après avoir été pris.",
-          "en": "One camp per lane, two Hellbats each. Available at 0:30, back 3:00 after being taken."
+          "fr": "Deux camps, au nord-est et au sud-ouest du centre, deux hellions chacun. Disponibles à 0:30, ils réapparaissent 3:00 après avoir été pris.",
+          "en": "Two camps, north-east and south-west of the centre, two Hellbats each. Available at 0:30, back 3:00 after being taken."
         },
         "image": ""
       },
       {
         "id": "pmutmu1e902b",
         "type": "camp",
-        "x": 26,
-        "y": 26,
+        "x": 40.6,
+        "y": 55.8,
         "name": {
           "fr": "Camp de siège — hellions, bas gauche",
           "en": "Siege Camp — Hellbats, bottom left"
         },
         "description": {
-          "fr": "Un camp par voie, deux hellions chacun. Disponibles à 0:30, ils réapparaissent 3:00 après avoir été pris.",
-          "en": "One camp per lane, two Hellbats each. Available at 0:30, back 3:00 after being taken."
+          "fr": "Deux camps, au nord-est et au sud-ouest du centre, deux hellions chacun. Disponibles à 0:30, ils réapparaissent 3:00 après avoir été pris.",
+          "en": "Two camps, north-east and south-west of the centre, two Hellbats each. Available at 0:30, back 3:00 after being taken."
         },
         "image": ""
       },
       {
         "id": "plab55",
         "type": "camp",
-        "x": 54,
-        "y": 12,
+        "x": 35.8,
+        "y": 43,
         "name": {
           "fr": "Camp de bruisers — goliaths, haut gauche",
           "en": "Bruiser Camp — Goliaths, top left"
         },
         "description": {
-          "fr": "Un camp par voie : trois goliaths et un corbeau. Disponibles à 0:30, ils réapparaissent 4:00 après.",
-          "en": "One camp per lane: three Goliaths and a Raven. Available at 0:30, back 4:00 after."
+          "fr": "Deux camps, au nord-ouest et au sud-est du centre : trois goliaths et un corbeau. Disponibles à 0:30, ils réapparaissent 4:00 après.",
+          "en": "Two camps, north-west and south-east of the centre: three Goliaths and a Raven. Available at 0:30, back 4:00 after."
         },
         "image": ""
       },
       {
         "id": "pmutmu1e902c",
         "type": "camp",
-        "x": 40,
-        "y": 26,
+        "x": 59.2,
+        "y": 57.3,
         "name": {
           "fr": "Camp de bruisers — goliaths, bas droite",
           "en": "Bruiser Camp — Goliaths, bottom right"
         },
         "description": {
-          "fr": "Un camp par voie : trois goliaths et un corbeau. Disponibles à 0:30, ils réapparaissent 4:00 après.",
-          "en": "One camp per lane: three Goliaths and a Raven. Available at 0:30, back 4:00 after."
+          "fr": "Deux camps, au nord-ouest et au sud-est du centre : trois goliaths et un corbeau. Disponibles à 0:30, ils réapparaissent 4:00 après.",
+          "en": "Two camps, north-west and south-east of the centre: three Goliaths and a Raven. Available at 0:30, back 4:00 after."
         },
         "image": ""
       },
       {
         "id": "plab56",
         "type": "camp",
-        "x": 68,
-        "y": 12,
+        "x": 47.5,
+        "y": 49.8,
         "name": {
           "fr": "Camp de boss — archange",
           "en": "Boss Camp — Archangel"
@@ -4716,8 +4746,8 @@ const BATTLEGROUNDS = [
       {
         "id": "pmutmu1e902d",
         "type": "autre",
-        "x": 54,
-        "y": 26,
+        "x": 45.8,
+        "y": 19.9,
         "name": {
           "fr": "Générateur de globes — haut",
           "en": "Globe Spawner — top"
@@ -4731,8 +4761,8 @@ const BATTLEGROUNDS = [
       {
         "id": "pmutmu1e902e",
         "type": "autre",
-        "x": 68,
-        "y": 26,
+        "x": 49.3,
+        "y": 80.7,
         "name": {
           "fr": "Générateur de globes — bas",
           "en": "Globe Spawner — bottom"
@@ -4744,13 +4774,103 @@ const BATTLEGROUNDS = [
         "image": ""
       },
       {
+        "id": "plab59",
+        "type": "fontaine",
+        "x": 37.2,
+        "y": 28.4,
+        "name": {
+          "fr": "Fontaine de soins — fort haut, gauche",
+          "en": "Healing fountain — top fort, left"
+        },
+        "description": {
+          "fr": "Deux minutes de recharge après utilisation. Savoir si celle d'en face est disponible change la valeur d'un plongeon autant que les points de vie restants.",
+          "en": "Two-minute cooldown after use. Knowing whether the enemy one is up changes the worth of a dive as much as their remaining health does."
+        },
+        "image": ""
+      },
+      {
+        "id": "plab60",
+        "type": "fontaine",
+        "x": 39.9,
+        "y": 74.4,
+        "name": {
+          "fr": "Fontaine de soins — fort bas, gauche",
+          "en": "Healing fountain — bottom fort, left"
+        },
+        "description": {
+          "fr": "Deux minutes de recharge après utilisation. Savoir si celle d'en face est disponible change la valeur d'un plongeon autant que les points de vie restants.",
+          "en": "Two-minute cooldown after use. Knowing whether the enemy one is up changes the worth of a dive as much as their remaining health does."
+        },
+        "image": ""
+      },
+      {
         "id": "pmutmu1e902f",
         "type": "fontaine",
-        "x": 82,
-        "y": 26,
+        "x": 19.7,
+        "y": 37.5,
         "name": {
-          "fr": "Fontaine de soins — côté gauche",
-          "en": "Healing fountain — left side"
+          "fr": "Fontaine de soins — bastion haut, gauche",
+          "en": "Healing fountain — top keep, left"
+        },
+        "description": {
+          "fr": "Deux minutes de recharge après utilisation. Savoir si celle d'en face est disponible change la valeur d'un plongeon autant que les points de vie restants.",
+          "en": "Two-minute cooldown after use. Knowing whether the enemy one is up changes the worth of a dive as much as their remaining health does."
+        },
+        "image": ""
+      },
+      {
+        "id": "plab61",
+        "type": "fontaine",
+        "x": 20.2,
+        "y": 66.3,
+        "name": {
+          "fr": "Fontaine de soins — bastion bas, gauche",
+          "en": "Healing fountain — bottom keep, left"
+        },
+        "description": {
+          "fr": "Deux minutes de recharge après utilisation. Savoir si celle d'en face est disponible change la valeur d'un plongeon autant que les points de vie restants.",
+          "en": "Two-minute cooldown after use. Knowing whether the enemy one is up changes the worth of a dive as much as their remaining health does."
+        },
+        "image": ""
+      },
+      {
+        "id": "plab62",
+        "type": "fontaine",
+        "x": 26,
+        "y": 51.5,
+        "name": {
+          "fr": "Fontaine de soins — devant le noyau, gauche",
+          "en": "Healing fountain — in front of the Core, left"
+        },
+        "description": {
+          "fr": "Deux minutes de recharge après utilisation. Savoir si celle d'en face est disponible change la valeur d'un plongeon autant que les points de vie restants.",
+          "en": "Two-minute cooldown after use. Knowing whether the enemy one is up changes the worth of a dive as much as their remaining health does."
+        },
+        "image": ""
+      },
+      {
+        "id": "plab63",
+        "type": "fontaine",
+        "x": 55.5,
+        "y": 25.7,
+        "name": {
+          "fr": "Fontaine de soins — fort haut, droite",
+          "en": "Healing fountain — top fort, right"
+        },
+        "description": {
+          "fr": "Deux minutes de recharge après utilisation. Savoir si celle d'en face est disponible change la valeur d'un plongeon autant que les points de vie restants.",
+          "en": "Two-minute cooldown after use. Knowing whether the enemy one is up changes the worth of a dive as much as their remaining health does."
+        },
+        "image": ""
+      },
+      {
+        "id": "plab64",
+        "type": "fontaine",
+        "x": 57.6,
+        "y": 72.2,
+        "name": {
+          "fr": "Fontaine de soins — fort bas, droite",
+          "en": "Healing fountain — bottom fort, right"
         },
         "description": {
           "fr": "Deux minutes de recharge après utilisation. Savoir si celle d'en face est disponible change la valeur d'un plongeon autant que les points de vie restants.",
@@ -4761,11 +4881,41 @@ const BATTLEGROUNDS = [
       {
         "id": "pmutmu1e902g",
         "type": "fontaine",
-        "x": 12,
-        "y": 40,
+        "x": 74.7,
+        "y": 34.3,
         "name": {
-          "fr": "Fontaine de soins — côté droit",
-          "en": "Healing fountain — right side"
+          "fr": "Fontaine de soins — bastion haut, droite",
+          "en": "Healing fountain — top keep, right"
+        },
+        "description": {
+          "fr": "Deux minutes de recharge après utilisation. Savoir si celle d'en face est disponible change la valeur d'un plongeon autant que les points de vie restants.",
+          "en": "Two-minute cooldown after use. Knowing whether the enemy one is up changes the worth of a dive as much as their remaining health does."
+        },
+        "image": ""
+      },
+      {
+        "id": "plab65",
+        "type": "fontaine",
+        "x": 75.2,
+        "y": 63,
+        "name": {
+          "fr": "Fontaine de soins — bastion bas, droite",
+          "en": "Healing fountain — bottom keep, right"
+        },
+        "description": {
+          "fr": "Deux minutes de recharge après utilisation. Savoir si celle d'en face est disponible change la valeur d'un plongeon autant que les points de vie restants.",
+          "en": "Two-minute cooldown after use. Knowing whether the enemy one is up changes the worth of a dive as much as their remaining health does."
+        },
+        "image": ""
+      },
+      {
+        "id": "plab66",
+        "type": "fontaine",
+        "x": 68.9,
+        "y": 48.9,
+        "name": {
+          "fr": "Fontaine de soins — devant le noyau, droite",
+          "en": "Healing fountain — in front of the Core, right"
         },
         "description": {
           "fr": "Deux minutes de recharge après utilisation. Savoir si celle d'en face est disponible change la valeur d'un plongeon autant que les points de vie restants.",
