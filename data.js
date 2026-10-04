@@ -2337,8 +2337,8 @@ const BATTLEGROUNDS = [
           "en": "Beleth, the Demon Lord"
         },
         "description": {
-          "fr": "L'Immortel de l'équipe du côté démoniaque. Il occupe la plateforme nord de l'arène et bascule au sud à 50 % de vie. Le faire tomber, c'est libérer Ilarian sur une voie.",
-          "en": "The Immortal fighting for the demonic side. He holds the northern platform of the arena and swaps south at 50% health. Bringing him down releases Ilarian into a lane."
+          "fr": "L'Immortel de l'équipe du côté démoniaque. Au premier affrontement, il occupe la plateforme nord de l'arène et passe à l'ouest à mi-vie ; ensuite, les deux Immortels se placent au hasard, toujours face à face. Le faire tomber, c'est libérer Ilarian sur une voie.",
+          "en": "The Immortal fighting for the demonic side. In the first clash he holds the northern platform of the arena and moves west at half health; after that, both Immortals take random spots, always facing each other. Bringing him down releases Ilarian into a lane."
         },
         "image": "assets/maps/champs-eternite/captures/2.jpg"
       },
@@ -2352,100 +2352,220 @@ const BATTLEGROUNDS = [
           "en": "Ilarian, the Angel"
         },
         "description": {
-          "fr": "L'Immortel de l'équipe du côté angélique. Il occupe la plateforme sud et bascule au nord à 50 % de vie. Les deux Immortels se battent sans jamais s'entamer : tout dépend des héros.",
-          "en": "The Immortal fighting for the angelic side. He holds the southern platform and swaps north at 50% health. The two Immortals fight without ever hurting each other: everything rests on the Heroes."
+          "fr": "L'Immortel de l'équipe du côté angélique. Au premier affrontement, il occupe la plateforme sud et passe à l'est à mi-vie ; ensuite, les positions sont tirées au hasard. Les deux Immortels se battent sans jamais s'entamer : tout dépend des héros.",
+          "en": "The Immortal fighting for the angelic side. In the first clash he holds the southern platform and moves east at half health; after that, positions are random. The two Immortals fight without ever hurting each other: everything rests on the Heroes."
         },
         "image": "assets/maps/champs-eternite/captures/1.jpg"
       },
       {
-        "id": "ca1",
-        "type": "camp",
-        "x": 36.3,
-        "y": 22.8,
+        "id": "pboemutr41w50",
+        "type": "objectif",
+        "x": 43.1,
+        "y": 51.3,
         "name": {
-          "fr": "Camp de mercenaires — côté angélique",
-          "en": "Mercenary camp — angelic side"
+          "fr": "Plateforme des Immortels — ouest",
+          "en": "Immortals' platform — west"
         },
         "description": {
-          "fr": "Le champ de bataille compte quatre camps : deux de siège sur les voies du haut et du bas, deux de bruisers en diagonale. Disponibles dès 0:30, ils réapparaissent en 3:00 pour le siège et 4:00 pour les bruisers.",
-          "en": "The battleground has four camps: two Siege on the top and bottom lanes, two Bruiser set diagonally. Available from 0:30, they respawn in 3:00 for Siege and 4:00 for Bruiser."
+          "fr": "L'une des quatre plateformes de l'arène. Au premier combat, c'est là que les Immortels se replacent à mi-vie — Beleth à l'ouest, Ilarian à l'est — après dix secondes pendant lesquelles ils ne prennent aucun dégât. Ensuite, n'importe quelle paire de plateformes face à face peut servir.",
+          "en": "One of the arena's four platforms. In the first fight, this is where the Immortals reposition at half health — Beleth west, Ilarian east — after ten seconds during which they take no damage. Later on, any facing pair of platforms can be used."
+        },
+        "image": "assets/maps/champs-eternite/captures/4.jpg"
+      },
+      {
+        "id": "pboemutr41w51",
+        "type": "objectif",
+        "x": 55.8,
+        "y": 47.5,
+        "name": {
+          "fr": "Plateforme des Immortels — est",
+          "en": "Immortals' platform — east"
+        },
+        "description": {
+          "fr": "L'une des quatre plateformes de l'arène. Au premier combat, c'est là que les Immortels se replacent à mi-vie — Beleth à l'ouest, Ilarian à l'est — après dix secondes pendant lesquelles ils ne prennent aucun dégât. Ensuite, n'importe quelle paire de plateformes face à face peut servir.",
+          "en": "One of the arena's four platforms. In the first fight, this is where the Immortals reposition at half health — Beleth west, Ilarian east — after ten seconds during which they take no damage. Later on, any facing pair of platforms can be used."
+        },
+        "image": "assets/maps/champs-eternite/captures/4.jpg"
+      },
+      {
+        "id": "ca1",
+        "type": "camp",
+        "x": 37.4,
+        "y": 56.3,
+        "name": {
+          "fr": "Camp de bruisers — damnés, côté angélique",
+          "en": "Bruiser Camp — Fallen, angelic side"
+        },
+        "description": {
+          "fr": "Un chaman damné et deux molosses. En voie, le chaman fait réapparaître ses molosses chaque fois qu'ils meurent : il faut l'abattre en premier. Ils infligent 100 % de dégâts supplémentaires aux serviteurs, aux structures et aux invocations. Ce camp part dans la voie du bas. Disponible à 0:30, il réapparaît 4:00 après ; il disparaît quand un Immortel part en voie et revient à sa mort.",
+          "en": "A Fallen Shaman and two Fallen Hounds. In lane, the Shaman brings his Hounds back every time they die: kill him first. They deal 100% bonus damage to minions, structures and summons. This camp goes down the bottom lane. Available at 0:30, back 4:00 after; it vanishes while an Immortal is in lane and returns when it dies."
         },
         "image": ""
       },
       {
         "id": "ca2",
         "type": "camp",
-        "x": 63.3,
-        "y": 75,
+        "x": 61.5,
+        "y": 43,
         "name": {
-          "fr": "Camp de mercenaires — côté démoniaque",
-          "en": "Mercenary camp — demonic side"
+          "fr": "Camp de bruisers — damnés, côté démoniaque",
+          "en": "Bruiser Camp — Fallen, demonic side"
         },
         "description": {
-          "fr": "Le symétrique du camp d'en face. Les bruisers infligent 100 % de dégâts supplémentaires aux serviteurs et aux structures ; les impaleurs du camp de siège frappent les bâtiments sans entrer à leur portée.",
-          "en": "The mirror of the camp opposite. Bruisers deal 100% bonus damage to minions and structures; the Siege camp Impalers hit buildings without walking into their range."
-        },
-        "image": "assets/maps/champs-eternite/captures/5.jpg"
-      },
-      {
-        "id": "fo1",
-        "type": "fontaine",
-        "x": 26.4,
-        "y": 14.4,
-        "name": {
-          "fr": "Fontaine de soins — côté angélique",
-          "en": "Healing fountain — angelic side"
-        },
-        "description": {
-          "fr": "Deux minutes de recharge. Sur une carte où la phase d'objectif revient toutes les 1:45, savoir si la fontaine est disponible pèse autant que les points de vie restants.",
-          "en": "Two-minute cooldown. On a map where the objective comes back every 1:45, knowing whether the fountain is up matters as much as the health bars."
-        },
-        "image": ""
-      },
-      {
-        "id": "pmutmu1e801d",
-        "type": "fontaine",
-        "x": 12,
-        "y": 12,
-        "name": {
-          "fr": "Fontaine de soins — côté démoniaque",
-          "en": "Healing fountain — demonic side"
-        },
-        "description": {
-          "fr": "Deux minutes de recharge. Sur une carte où la phase d'objectif revient toutes les 1:45, savoir si la fontaine est disponible pèse autant que les points de vie restants.",
-          "en": "Two-minute cooldown. On a map where the objective comes back every 1:45, knowing whether the fountain is up matters as much as the health bars."
+          "fr": "Un chaman damné et deux molosses. En voie, le chaman fait réapparaître ses molosses chaque fois qu'ils meurent : il faut l'abattre en premier. Ils infligent 100 % de dégâts supplémentaires aux serviteurs, aux structures et aux invocations. Ce camp part dans la voie du haut. Disponible à 0:30, il réapparaît 4:00 après ; il disparaît quand un Immortel part en voie et revient à sa mort.",
+          "en": "A Fallen Shaman and two Fallen Hounds. In lane, the Shaman brings his Hounds back every time they die: kill him first. They deal 100% bonus damage to minions, structures and summons. This camp goes down the top lane. Available at 0:30, back 4:00 after; it vanishes while an Immortal is in lane and returns when it dies."
         },
         "image": ""
       },
       {
         "id": "pmutmu1e801e",
         "type": "camp",
-        "x": 40,
-        "y": 12,
+        "x": 48.6,
+        "y": 4,
         "name": {
           "fr": "Camp de siège — empaleurs, haut",
           "en": "Siege Camp — Impalers, top"
         },
         "description": {
-          "fr": "Trois empaleurs : des unités à distance qui frappent les structures sans s'exposer, mais nettoient mal les vagues. Le camp disparaît quand un Immortel part en voie et revient à sa mort.",
-          "en": "Three Impalers: ranged units that hit Structures from safety but clear waves poorly. The camp disappears when an Immortal goes down a lane and comes back when it dies."
+          "fr": "Trois empaleurs : des unités à distance qui frappent les structures sans s'exposer, mais nettoient mal les vagues. Disponible à 0:30, il réapparaît 3:00 après ; il disparaît quand un Immortel part en voie et revient à sa mort.",
+          "en": "Three Impalers: ranged units that hit Structures from safety but clear waves poorly. Available at 0:30, back 3:00 after; it vanishes while an Immortal is in lane and returns when it dies."
         },
         "image": ""
       },
       {
         "id": "pmutmu1e801f",
         "type": "camp",
-        "x": 54,
-        "y": 12,
+        "x": 50.6,
+        "y": 91.3,
         "name": {
           "fr": "Camp de siège — empaleurs, bas",
           "en": "Siege Camp — Impalers, bottom"
         },
         "description": {
-          "fr": "Trois empaleurs : des unités à distance qui frappent les structures sans s'exposer, mais nettoient mal les vagues. Le camp disparaît quand un Immortel part en voie et revient à sa mort.",
-          "en": "Three Impalers: ranged units that hit Structures from safety but clear waves poorly. The camp disappears when an Immortal goes down a lane and comes back when it dies."
+          "fr": "Trois empaleurs : des unités à distance qui frappent les structures sans s'exposer, mais nettoient mal les vagues. Disponible à 0:30, il réapparaît 3:00 après ; il disparaît quand un Immortel part en voie et revient à sa mort.",
+          "en": "Three Impalers: ranged units that hit Structures from safety but clear waves poorly. Available at 0:30, back 3:00 after; it vanishes while an Immortal is in lane and returns when it dies."
         },
         "image": ""
+      },
+      {
+        "id": "fo1",
+        "type": "fontaine",
+        "x": 37.3,
+        "y": 17.9,
+        "name": {
+          "fr": "Fontaine de soins — fort haut, côté angélique",
+          "en": "Healing fountain — top fort, angelic side"
+        },
+        "description": {
+          "fr": "Deux minutes de recharge. Sur une carte où la phase d'objectif revient toutes les 1:45, savoir si la fontaine est disponible pèse autant que les points de vie restants.",
+          "en": "Two-minute cooldown. On a map where the objective comes back every 1:45, knowing whether the fountain is up matters as much as the health bars."
+        },
+        "image": ""
+      },
+      {
+        "id": "pboemutr41w52",
+        "type": "fontaine",
+        "description": {
+          "fr": "Deux minutes de recharge. Sur une carte où la phase d'objectif revient toutes les 1:45, savoir si la fontaine est disponible pèse autant que les points de vie restants.",
+          "en": "Two-minute cooldown. On a map where the objective comes back every 1:45, knowing whether the fountain is up matters as much as the health bars."
+        },
+        "image": "",
+        "x": 21.8,
+        "y": 33.7,
+        "name": {
+          "fr": "Fontaine de soins — bastion haut, côté angélique",
+          "en": "Healing fountain — top keep, angelic side"
+        }
+      },
+      {
+        "id": "pboemutr41w53",
+        "type": "fontaine",
+        "description": {
+          "fr": "Deux minutes de recharge. Sur une carte où la phase d'objectif revient toutes les 1:45, savoir si la fontaine est disponible pèse autant que les points de vie restants.",
+          "en": "Two-minute cooldown. On a map where the objective comes back every 1:45, knowing whether the fountain is up matters as much as the health bars."
+        },
+        "image": "",
+        "x": 22.9,
+        "y": 69.6,
+        "name": {
+          "fr": "Fontaine de soins — bastion bas, côté angélique",
+          "en": "Healing fountain — bottom keep, angelic side"
+        }
+      },
+      {
+        "id": "pboemutr41w54",
+        "type": "fontaine",
+        "description": {
+          "fr": "Deux minutes de recharge. Sur une carte où la phase d'objectif revient toutes les 1:45, savoir si la fontaine est disponible pèse autant que les points de vie restants.",
+          "en": "Two-minute cooldown. On a map where the objective comes back every 1:45, knowing whether the fountain is up matters as much as the health bars."
+        },
+        "image": "",
+        "x": 39.3,
+        "y": 83.6,
+        "name": {
+          "fr": "Fontaine de soins — fort bas, côté angélique",
+          "en": "Healing fountain — bottom fort, angelic side"
+        }
+      },
+      {
+        "id": "pmutmu1e801d",
+        "type": "fontaine",
+        "x": 59.3,
+        "y": 16,
+        "name": {
+          "fr": "Fontaine de soins — fort haut, côté démoniaque",
+          "en": "Healing fountain — top fort, demonic side"
+        },
+        "description": {
+          "fr": "Deux minutes de recharge. Sur une carte où la phase d'objectif revient toutes les 1:45, savoir si la fontaine est disponible pèse autant que les points de vie restants.",
+          "en": "Two-minute cooldown. On a map where the objective comes back every 1:45, knowing whether the fountain is up matters as much as the health bars."
+        },
+        "image": ""
+      },
+      {
+        "id": "pboemutr41w55",
+        "type": "fontaine",
+        "description": {
+          "fr": "Deux minutes de recharge. Sur une carte où la phase d'objectif revient toutes les 1:45, savoir si la fontaine est disponible pèse autant que les points de vie restants.",
+          "en": "Two-minute cooldown. On a map where the objective comes back every 1:45, knowing whether the fountain is up matters as much as the health bars."
+        },
+        "image": "",
+        "x": 75.5,
+        "y": 29.8,
+        "name": {
+          "fr": "Fontaine de soins — bastion haut, côté démoniaque",
+          "en": "Healing fountain — top keep, demonic side"
+        }
+      },
+      {
+        "id": "pboemutr41w56",
+        "type": "fontaine",
+        "description": {
+          "fr": "Deux minutes de recharge. Sur une carte où la phase d'objectif revient toutes les 1:45, savoir si la fontaine est disponible pèse autant que les points de vie restants.",
+          "en": "Two-minute cooldown. On a map where the objective comes back every 1:45, knowing whether the fountain is up matters as much as the health bars."
+        },
+        "image": "",
+        "x": 76.8,
+        "y": 65.5,
+        "name": {
+          "fr": "Fontaine de soins — bastion bas, côté démoniaque",
+          "en": "Healing fountain — bottom keep, demonic side"
+        }
+      },
+      {
+        "id": "pboemutr41w57",
+        "type": "fontaine",
+        "description": {
+          "fr": "Deux minutes de recharge. Sur une carte où la phase d'objectif revient toutes les 1:45, savoir si la fontaine est disponible pèse autant que les points de vie restants.",
+          "en": "Two-minute cooldown. On a map where the objective comes back every 1:45, knowing whether the fountain is up matters as much as the health bars."
+        },
+        "image": "",
+        "x": 61.5,
+        "y": 81.5,
+        "name": {
+          "fr": "Fontaine de soins — fort bas, côté démoniaque",
+          "en": "Healing fountain — bottom fort, demonic side"
+        }
       }
     ],
     "guideVideos": []
