@@ -25,6 +25,7 @@ const BG_DICT = {
   noPointsYet: { fr: "Aucun point posé sur cette carte pour le moment.", en: "No markers placed on this map yet." },
   zoomHint: { fr: "clique la carte pour l'agrandir", en: "click the map to enlarge it" },
   closeZoom: { fr: "Fermer l'agrandissement", en: "Close the enlarged map" },
+  legendFilter: { fr: "Afficher uniquement ce type sur la carte", en: "Show only this type on the map" },
 };
 
 const bgTactile = window.matchMedia('(hover: none), (pointer: coarse)').matches;
@@ -273,7 +274,7 @@ function bgLegendeHtml(b) {
     .filter(k => points.some(h => bgHotspotTypeKey(h.type) === k));
   if (!types.length) return '';
   return `<div class="bg-hotspot-legend">${types.map(k =>
-    `<span class="bg-legend-item" data-type="${k}">${BG_HOTSPOT_TYPES[k].icon}${bgEsc(bgLoc(BG_HOTSPOT_TYPES[k].label))}</span>`
+    `<button class="bg-legend-item" type="button" data-type="${k}" aria-pressed="false" title="${bgEsc(bgT('legendFilter'))}">${BG_HOTSPOT_TYPES[k].icon}${bgEsc(bgLoc(BG_HOTSPOT_TYPES[k].label))}</button>`
   ).join('')}</div>`;
 }
 
@@ -589,6 +590,7 @@ function bgCloseMapZoom() {
   if (!overlay) return;
   overlay.addEventListener('click', (e) => {
     if (e.target.closest('.bg-hotspot')) return;
+    if (e.target.closest('.bg-legend-item')) return;   // la légende filtre, elle ne ferme pas
     if (e.target.closest('.map-zoom-close')) { bgCloseMapZoom(); return; }
     // Tout ce qui n'est pas l'image ferme : le fond, mais aussi la marge, le bandeau
     // et la légende, qui ne sont pas interactifs.
@@ -604,9 +606,25 @@ let bgTypeFiltre = null;
 function bgAppliquerFiltre() {
   document.querySelectorAll('.bg-minimap-stage .bg-hotspot').forEach(m =>
     m.classList.toggle('is-filtered-out', !!bgTypeFiltre && m.dataset.type !== bgTypeFiltre));
-  document.querySelectorAll('.bg-legend-item').forEach(l =>
-    l.classList.toggle('is-dim', !!bgTypeFiltre && l.dataset.type !== bgTypeFiltre));
+  document.querySelectorAll('.bg-legend-item').forEach(l => {
+    l.classList.toggle('is-dim', !!bgTypeFiltre && l.dataset.type !== bgTypeFiltre);
+    l.classList.toggle('is-active', l.dataset.type === bgTypeFiltre);
+    l.setAttribute('aria-pressed', String(l.dataset.type === bgTypeFiltre));
+  });
 }
+
+/* Même filtre depuis la légende, sous la carte comme dans l'agrandissement. La liste
+   suit : la famille choisie s'y ouvre, ou se referme si on reclique le même type. */
+function bgChoisirType(type) {
+  bgTypeFiltre = bgTypeFiltre === type ? null : type;
+  bgEls.detailView.querySelectorAll('details.point-group').forEach(g => { g.open = g.dataset.type === bgTypeFiltre; });
+  bgHideHotspotTip(true);
+  bgAppliquerFiltre();
+}
+document.addEventListener('click', (e) => {
+  const item = e.target.closest('.bg-legend-item');
+  if (item) bgChoisirType(item.dataset.type);
+});
 (function bindBgTypeFilter() {
   // « toggle » ne remonte pas : on l'écoute en phase de capture.
   bgEls.detailView.addEventListener('toggle', (e) => {

@@ -2138,9 +2138,20 @@
     color: var(--text-dim);
     text-transform: uppercase;
     letter-spacing: .04em;
-    transition: opacity var(--t);
+    /* Un bouton : un clic n'y laisse que ce type sur la carte. */
+    font-family: inherit;
+    background: none;
+    border: 0;
+    border-radius: 4px;
+    padding: 3px 6px;
+    cursor: pointer;
+    transition: opacity var(--t), color var(--t), background var(--t);
 }
+/* Grisé quand un autre type est choisi, mais le survol le rallume : il reste cliquable. */
 .bg-legend-item.is-dim { opacity: .35; }
+.bg-legend-item:hover,
+.bg-legend-item:focus-visible { color: var(--text); background: rgba(255, 255, 255, .06); outline: none; opacity: 1; }
+.bg-legend-item.is-active { color: var(--gold-bright); background: rgba(255, 255, 255, .06); }
 .bg-legend-item svg { width: 14px; height: 14px; color: var(--pt-color, var(--blue)); }
 
 /* ── Infobulle du point ──
