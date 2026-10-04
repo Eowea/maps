@@ -2044,6 +2044,10 @@
 .bg-legend-item[data-type="objectif"],
 .hotspot-kind[data-type="objectif"]     { --pt-color: var(--gold-bright); --pt-glow: var(--gold-glow); }
 
+.bg-hotspot[data-type="batiment"],
+.bg-legend-item[data-type="batiment"],
+.hotspot-kind[data-type="batiment"]     { --pt-color: #b794f6; --pt-glow: rgba(183, 148, 246, .45); }
+
 .bg-hotspot[data-type="tour"],
 .bg-legend-item[data-type="tour"],
 .hotspot-kind[data-type="tour"]         { --pt-color: #6ec6ff; --pt-glow: rgba(110, 198, 255, .45); }
@@ -2238,6 +2242,7 @@
 
 .point-group[data-type="camp"]     { --pt-color: #ff9f43; --pt-glow: rgba(255, 159, 67, .45); }
 .point-group[data-type="objectif"] { --pt-color: var(--gold-bright); --pt-glow: var(--gold-glow); }
+.point-group[data-type="batiment"] { --pt-color: #b794f6; --pt-glow: rgba(183, 148, 246, .45); }
 .point-group[data-type="tour"]     { --pt-color: #6ec6ff; --pt-glow: rgba(110, 198, 255, .45); }
 .point-group[data-type="fontaine"] { --pt-color: #5fd48a; --pt-glow: rgba(95, 212, 138, .45); }
 .point-group[data-type="autre"]    { --pt-color: var(--blue); --pt-glow: var(--blue-glow); }

@@ -47,6 +47,10 @@ const BG_HOTSPOT_TYPES = {
     label: { fr: "Camp de mercenaires", en: "Mercenary camp" },
     icon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><g transform="translate(0 0.5)"><path d="M14.5 17.5 3 6V3h3l11.5 11.5"/><path d="M13 19l6-6"/><path d="M16 16l4 4"/><path d="M14.5 6.5 18 3h3v3l-3.5 3.5"/><path d="M5 14l4 4"/><path d="M7 17l-3 3"/></g></svg>',
   },
+  batiment: {
+    label: { fr: "Bâtiment", en: "Structure" },
+    icon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 21V10L5 7V3h3v2h2V3h4v2h2V3h3v4l-2 3v11z"/><path d="M10 21v-4a2 2 0 0 1 4 0v4"/></svg>',
+  },
   tour: {
     label: { fr: "Tour de guet", en: "Watch tower" },
     icon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12s3.8-6.5 10-6.5S22 12 22 12s-3.8 6.5-10 6.5S2 12 2 12z"/><circle cx="12" cy="12" r="2.6"/></svg>',
