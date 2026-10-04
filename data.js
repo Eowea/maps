@@ -260,8 +260,8 @@ const BATTLEGROUNDS = [
       {
         "id": "p1",
         "type": "camp",
-        "x": 16,
-        "y": 37.5,
+        "x": 34.8,
+        "y": 37,
         "name": {
           "fr": "Camp de sapeurs — haut",
           "en": "Sapper Camp — top"
@@ -275,8 +275,8 @@ const BATTLEGROUNDS = [
       {
         "id": "pmutmu1e8000",
         "type": "camp",
-        "x": 12,
-        "y": 12,
+        "x": 34.8,
+        "y": 65.6,
         "name": {
           "fr": "Camp de sapeurs — bas",
           "en": "Sapper Camp — bottom"
@@ -290,8 +290,8 @@ const BATTLEGROUNDS = [
       {
         "id": "p2",
         "type": "camp",
-        "x": 16,
-        "y": 65.5,
+        "x": 26.3,
+        "y": 46.6,
         "name": {
           "fr": "Camp de géants de siège — haut, gauche",
           "en": "Siege Camp — top, left"
@@ -305,8 +305,8 @@ const BATTLEGROUNDS = [
       {
         "id": "pmutmu1e8001",
         "type": "camp",
-        "x": 26,
-        "y": 12,
+        "x": 43.3,
+        "y": 57.6,
         "name": {
           "fr": "Camp de géants de siège — bas, droite",
           "en": "Siege Camp — bottom, right"
@@ -319,9 +319,9 @@ const BATTLEGROUNDS = [
       },
       {
         "id": "pmutmu1e8002",
-        "type": "objectif",
-        "x": 40,
-        "y": 12,
+        "type": "autre",
+        "x": 34.4,
+        "y": 30.1,
         "name": {
           "fr": "Entrée de la mine — voie du haut",
           "en": "Mine entrance — top lane"
@@ -334,9 +334,9 @@ const BATTLEGROUNDS = [
       },
       {
         "id": "pmutmu1e8003",
-        "type": "objectif",
-        "x": 54,
-        "y": 12,
+        "type": "autre",
+        "x": 35.2,
+        "y": 73,
         "name": {
           "fr": "Entrée de la mine — voie du bas",
           "en": "Mine entrance — bottom lane"
@@ -349,9 +349,9 @@ const BATTLEGROUNDS = [
       },
       {
         "id": "pmutmu1e8004",
-        "type": "objectif",
-        "x": 68,
-        "y": 12,
+        "type": "autre",
+        "x": 26.1,
+        "y": 53.5,
         "name": {
           "fr": "Entrée de la mine — gauche",
           "en": "Mine entrance — left"
@@ -364,9 +364,9 @@ const BATTLEGROUNDS = [
       },
       {
         "id": "pmutmu1e8005",
-        "type": "objectif",
-        "x": 82,
-        "y": 12,
+        "type": "autre",
+        "x": 43.7,
+        "y": 48.9,
         "name": {
           "fr": "Entrée de la mine — droite",
           "en": "Mine entrance — right"
@@ -380,8 +380,8 @@ const BATTLEGROUNDS = [
       {
         "id": "pmutmu1e8006",
         "type": "tour",
-        "x": 12,
-        "y": 26,
+        "x": 29.5,
+        "y": 55.9,
         "name": {
           "fr": "Tour de guet — gauche",
           "en": "Watch Tower — left"
@@ -395,8 +395,8 @@ const BATTLEGROUNDS = [
       {
         "id": "pmutmu1e8007",
         "type": "tour",
-        "x": 26,
-        "y": 26,
+        "x": 40,
+        "y": 45.5,
         "name": {
           "fr": "Tour de guet — droite",
           "en": "Watch Tower — right"
@@ -410,11 +410,11 @@ const BATTLEGROUNDS = [
       {
         "id": "pmutmu1e8008",
         "type": "fontaine",
-        "x": 40,
-        "y": 26,
+        "x": 15.1,
+        "y": 32.2,
         "name": {
-          "fr": "Fontaine de soins — côté gauche",
-          "en": "Healing fountain — left side"
+          "fr": "Fontaine de soins — bastion haut, gauche",
+          "en": "Healing fountain — top keep, left"
         },
         "description": {
           "fr": "Deux minutes de recharge après utilisation. Savoir si celle d'en face est disponible change la valeur d'un plongeon autant que les points de vie restants.",
@@ -423,17 +423,302 @@ const BATTLEGROUNDS = [
         "image": ""
       },
       {
+        "id": "pminmutqob2x0",
+        "type": "fontaine",
+        "description": {
+          "fr": "Deux minutes de recharge après utilisation. Savoir si celle d'en face est disponible change la valeur d'un plongeon autant que les points de vie restants.",
+          "en": "Two-minute cooldown after use. Knowing whether the enemy one is up changes the worth of a dive as much as their remaining health does."
+        },
+        "image": "",
+        "x": 15.1,
+        "y": 71.3,
+        "name": {
+          "fr": "Fontaine de soins — bastion bas, gauche",
+          "en": "Healing fountain — bottom keep, left"
+        }
+      },
+      {
+        "id": "pminmutqob2x1",
+        "type": "fontaine",
+        "description": {
+          "fr": "Deux minutes de recharge après utilisation. Savoir si celle d'en face est disponible change la valeur d'un plongeon autant que les points de vie restants.",
+          "en": "Two-minute cooldown after use. Knowing whether the enemy one is up changes the worth of a dive as much as their remaining health does."
+        },
+        "image": "",
+        "x": 27.5,
+        "y": 18.4,
+        "name": {
+          "fr": "Fontaine de soins — fort haut, gauche",
+          "en": "Healing fountain — top fort, left"
+        }
+      },
+      {
+        "id": "pminmutqob2x2",
+        "type": "fontaine",
+        "description": {
+          "fr": "Deux minutes de recharge après utilisation. Savoir si celle d'en face est disponible change la valeur d'un plongeon autant que les points de vie restants.",
+          "en": "Two-minute cooldown after use. Knowing whether the enemy one is up changes the worth of a dive as much as their remaining health does."
+        },
+        "image": "",
+        "x": 27,
+        "y": 84.3,
+        "name": {
+          "fr": "Fontaine de soins — fort bas, gauche",
+          "en": "Healing fountain — bottom fort, left"
+        }
+      },
+      {
         "id": "pmutmu1e8009",
         "type": "fontaine",
-        "x": 54,
-        "y": 26,
+        "x": 54.4,
+        "y": 30.6,
         "name": {
-          "fr": "Fontaine de soins — côté droit",
-          "en": "Healing fountain — right side"
+          "fr": "Fontaine de soins — bastion haut, droite",
+          "en": "Healing fountain — top keep, right"
         },
         "description": {
           "fr": "Deux minutes de recharge après utilisation. Savoir si celle d'en face est disponible change la valeur d'un plongeon autant que les points de vie restants.",
           "en": "Two-minute cooldown after use. Knowing whether the enemy one is up changes the worth of a dive as much as their remaining health does."
+        },
+        "image": ""
+      },
+      {
+        "id": "pminmutqob2x3",
+        "type": "fontaine",
+        "description": {
+          "fr": "Deux minutes de recharge après utilisation. Savoir si celle d'en face est disponible change la valeur d'un plongeon autant que les points de vie restants.",
+          "en": "Two-minute cooldown after use. Knowing whether the enemy one is up changes the worth of a dive as much as their remaining health does."
+        },
+        "image": "",
+        "x": 54.4,
+        "y": 69.2,
+        "name": {
+          "fr": "Fontaine de soins — bastion bas, droite",
+          "en": "Healing fountain — bottom keep, right"
+        }
+      },
+      {
+        "id": "pminmutqob2x4",
+        "type": "fontaine",
+        "description": {
+          "fr": "Deux minutes de recharge après utilisation. Savoir si celle d'en face est disponible change la valeur d'un plongeon autant que les points de vie restants.",
+          "en": "Two-minute cooldown after use. Knowing whether the enemy one is up changes the worth of a dive as much as their remaining health does."
+        },
+        "image": "",
+        "x": 42.5,
+        "y": 16.6,
+        "name": {
+          "fr": "Fontaine de soins — fort haut, droite",
+          "en": "Healing fountain — top fort, right"
+        }
+      },
+      {
+        "id": "pminmutqob2x5",
+        "type": "fontaine",
+        "description": {
+          "fr": "Deux minutes de recharge après utilisation. Savoir si celle d'en face est disponible change la valeur d'un plongeon autant que les points de vie restants.",
+          "en": "Two-minute cooldown after use. Knowing whether the enemy one is up changes the worth of a dive as much as their remaining health does."
+        },
+        "image": "",
+        "x": 42,
+        "y": 82.6,
+        "name": {
+          "fr": "Fontaine de soins — fort bas, droite",
+          "en": "Healing fountain — bottom fort, right"
+        }
+      },
+      {
+        "id": "pminmutqob2x6",
+        "type": "objectif",
+        "x": 82.7,
+        "y": 48.3,
+        "name": {
+          "fr": "Golem sépulcral souterrain",
+          "en": "Underground Grave Golem"
+        },
+        "description": {
+          "fr": "Au centre de la mine. Il lâche 8 crânes à chaque quart de vie perdu, puis 6 à sa mort : 38 en tout, plus d'un tiers des 110 crânes de la phase.",
+          "en": "In the middle of the Mines. It drops 8 skulls for every quarter of health lost, then 6 on death: 38 in total, over a third of the phase's 110 skulls."
+        },
+        "image": ""
+      },
+      {
+        "id": "pminmutqob2x7",
+        "type": "objectif",
+        "x": 77,
+        "y": 24.8,
+        "name": {
+          "fr": "Mineurs morts-vivants — haut, gauche",
+          "en": "Risen Miners — top, left"
+        },
+        "description": {
+          "fr": "L'un des huit groupes de mineurs morts-vivants, toujours au même endroit. Celui-ci compte quatre mineurs à 2 crânes chacun : 8 crânes.",
+          "en": "One of the eight groups of Risen Miners, always in the same spot. This one has four miners worth 2 skulls each: 8 skulls."
+        },
+        "image": ""
+      },
+      {
+        "id": "pminmutqob2x8",
+        "type": "objectif",
+        "x": 74.1,
+        "y": 36.5,
+        "name": {
+          "fr": "Mineurs morts-vivants — gauche",
+          "en": "Risen Miners — left"
+        },
+        "description": {
+          "fr": "L'un des huit groupes de mineurs morts-vivants, toujours au même endroit. Celui-ci compte quatre mineurs à 2 crânes chacun : 8 crânes.",
+          "en": "One of the eight groups of Risen Miners, always in the same spot. This one has four miners worth 2 skulls each: 8 skulls."
+        },
+        "image": ""
+      },
+      {
+        "id": "pminmutqob2x9",
+        "type": "objectif",
+        "x": 91.5,
+        "y": 59.4,
+        "name": {
+          "fr": "Mineurs morts-vivants — droite",
+          "en": "Risen Miners — right"
+        },
+        "description": {
+          "fr": "L'un des huit groupes de mineurs morts-vivants, toujours au même endroit. Celui-ci compte quatre mineurs à 2 crânes chacun : 8 crânes.",
+          "en": "One of the eight groups of Risen Miners, always in the same spot. This one has four miners worth 2 skulls each: 8 skulls."
+        },
+        "image": ""
+      },
+      {
+        "id": "pminmutqob2xa",
+        "type": "objectif",
+        "x": 89.9,
+        "y": 72.2,
+        "name": {
+          "fr": "Mineurs morts-vivants — bas, droite",
+          "en": "Risen Miners — bottom, right"
+        },
+        "description": {
+          "fr": "L'un des huit groupes de mineurs morts-vivants, toujours au même endroit. Celui-ci compte quatre mineurs à 2 crânes chacun : 8 crânes.",
+          "en": "One of the eight groups of Risen Miners, always in the same spot. This one has four miners worth 2 skulls each: 8 skulls."
+        },
+        "image": ""
+      },
+      {
+        "id": "pminmutqob2xb",
+        "type": "objectif",
+        "x": 88.1,
+        "y": 23.3,
+        "name": {
+          "fr": "Mineurs morts-vivants — haut, droite",
+          "en": "Risen Miners — top, right"
+        },
+        "description": {
+          "fr": "L'un des huit groupes de mineurs morts-vivants, toujours au même endroit. Celui-ci compte cinq mineurs à 2 crânes chacun : 10 crânes.",
+          "en": "One of the eight groups of Risen Miners, always in the same spot. This one has five miners worth 2 skulls each: 10 skulls."
+        },
+        "image": ""
+      },
+      {
+        "id": "pminmutqob2xc",
+        "type": "objectif",
+        "x": 84.7,
+        "y": 31.8,
+        "name": {
+          "fr": "Mineurs morts-vivants — haut, centre",
+          "en": "Risen Miners — top, centre"
+        },
+        "description": {
+          "fr": "L'un des huit groupes de mineurs morts-vivants, toujours au même endroit. Celui-ci compte cinq mineurs à 2 crânes chacun : 10 crânes.",
+          "en": "One of the eight groups of Risen Miners, always in the same spot. This one has five miners worth 2 skulls each: 10 skulls."
+        },
+        "image": ""
+      },
+      {
+        "id": "pminmutqob2xd",
+        "type": "objectif",
+        "x": 81.4,
+        "y": 64.1,
+        "name": {
+          "fr": "Mineurs morts-vivants — bas, centre",
+          "en": "Risen Miners — bottom, centre"
+        },
+        "description": {
+          "fr": "L'un des huit groupes de mineurs morts-vivants, toujours au même endroit. Celui-ci compte cinq mineurs à 2 crânes chacun : 10 crânes.",
+          "en": "One of the eight groups of Risen Miners, always in the same spot. This one has five miners worth 2 skulls each: 10 skulls."
+        },
+        "image": ""
+      },
+      {
+        "id": "pminmutqob2xe",
+        "type": "objectif",
+        "x": 77.8,
+        "y": 73.1,
+        "name": {
+          "fr": "Mineurs morts-vivants — bas, gauche",
+          "en": "Risen Miners — bottom, left"
+        },
+        "description": {
+          "fr": "L'un des huit groupes de mineurs morts-vivants, toujours au même endroit. Celui-ci compte cinq mineurs à 2 crânes chacun : 10 crânes.",
+          "en": "One of the eight groups of Risen Miners, always in the same spot. This one has five miners worth 2 skulls each: 10 skulls."
+        },
+        "image": ""
+      },
+      {
+        "id": "pminmutqob2xf",
+        "type": "autre",
+        "x": 82.8,
+        "y": 16.8,
+        "name": {
+          "fr": "Sortie de la mine — haut",
+          "en": "Mine exit — top"
+        },
+        "description": {
+          "fr": "L'une des quatre sorties du souterrain : en haut, en bas, à gauche et à droite. On remonte à la surface en interagissant avec le puits, ou d'un simple ordre de déplacement vers la surface.",
+          "en": "One of the four ways out of the underground: top, bottom, left and right. Interact with the shaft, or simply order a move to the surface, to climb back up."
+        },
+        "image": ""
+      },
+      {
+        "id": "pminmutqob2xg",
+        "type": "autre",
+        "x": 76.3,
+        "y": 48.6,
+        "name": {
+          "fr": "Sortie de la mine — gauche",
+          "en": "Mine exit — left"
+        },
+        "description": {
+          "fr": "L'une des quatre sorties du souterrain : en haut, en bas, à gauche et à droite. On remonte à la surface en interagissant avec le puits, ou d'un simple ordre de déplacement vers la surface.",
+          "en": "One of the four ways out of the underground: top, bottom, left and right. Interact with the shaft, or simply order a move to the surface, to climb back up."
+        },
+        "image": ""
+      },
+      {
+        "id": "pminmutqob2xh",
+        "type": "autre",
+        "x": 89.4,
+        "y": 48,
+        "name": {
+          "fr": "Sortie de la mine — droite",
+          "en": "Mine exit — right"
+        },
+        "description": {
+          "fr": "L'une des quatre sorties du souterrain : en haut, en bas, à gauche et à droite. On remonte à la surface en interagissant avec le puits, ou d'un simple ordre de déplacement vers la surface.",
+          "en": "One of the four ways out of the underground: top, bottom, left and right. Interact with the shaft, or simply order a move to the surface, to climb back up."
+        },
+        "image": ""
+      },
+      {
+        "id": "pminmutqob2xi",
+        "type": "autre",
+        "x": 82.9,
+        "y": 79.2,
+        "name": {
+          "fr": "Sortie de la mine — bas",
+          "en": "Mine exit — bottom"
+        },
+        "description": {
+          "fr": "L'une des quatre sorties du souterrain : en haut, en bas, à gauche et à droite. On remonte à la surface en interagissant avec le puits, ou d'un simple ordre de déplacement vers la surface.",
+          "en": "One of the four ways out of the underground: top, bottom, left and right. Interact with the shaft, or simply order a move to the surface, to climb back up."
         },
         "image": ""
       }
