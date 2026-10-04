@@ -70,7 +70,7 @@
   <select id="choixCarte"></select>
   <button id="vueJeu" class="actif" title="Caméra inclinée, comme en jeu">Vue jeu</button>
   <button id="vueDessus" title="Vue de dessus, comme la minimap">Vue de dessus</button>
-  <label title="Hauteur du relief">Relief <input id="relief" type="range" min="0" max="10" step="0.5" value="4"></label>
+  <label title="Hauteur du relief">Relief <input id="relief" type="range" autocomplete="off" min="0" max="10" step="0.5" value="4"></label>
   <button id="decors" class="actif" hidden title="Bâtiments, arbres et rochers extraits du jeu">Décors 3D</button>
 </div>
 <div class="legende" id="legende"></div>
@@ -111,8 +111,11 @@ controls.minDistance = 15;
 controls.maxDistance = 220;
 controls.screenSpacePanning = false;
 
-scene.add(new THREE.HemisphereLight(0xdfe8ff, 0x2a2018, 1.1));
-const soleil = new THREE.DirectionalLight(0xfff1dd, 1.6);
+// Les textures du jeu sont pensées pour un éclairage généreux : sans ça, tout paraît terne.
+renderer.toneMapping = THREE.ACESFilmicToneMapping;
+renderer.toneMappingExposure = 1.25;
+scene.add(new THREE.HemisphereLight(0xeef3ff, 0x4a4036, 2.0));
+const soleil = new THREE.DirectionalLight(0xfff1dd, 2.4);
 soleil.position.set(-60, 90, 40);
 scene.add(soleil);
 
@@ -157,7 +160,7 @@ function hauteurJeu(x, y) {
 }
 // Unités du monde 3D par case du jeu, et hauteur du monde pour une altitude du jeu.
 const uniteCase = (k) => k * LARGEUR / jeu.largImg;
-const altitude = (z, k) => (z - jeu.calage.hauteurReference) * uniteCase(k) * (relief / 4);
+const altitude = (z, k) => (z - jeu.reference) * uniteCase(k) * (relief / 4);
 
 // u, v entre 0 et 1, v = 0 en haut de l'image.
 function hauteur(u, v) {
@@ -334,6 +337,7 @@ function vue(type) {
 $('vueJeu').onclick = () => vue('jeu');
 $('vueDessus').onclick = () => vue('dessus');
 $('relief').oninput = (e) => { relief = Number(e.target.value); if (terrain) appliquerRelief(); };
+$('relief').value = relief;   // le navigateur peut restaurer une ancienne valeur du curseur
 
 /* ── Chargement d'une carte ────────────────────────────────────────────── */
 async function charger(id) {
@@ -359,7 +363,8 @@ async function charger(id) {
       fetch(`${dossier}/terrain.bin`).then(r => r.ok ? r.arrayBuffer() : null),
     ]);
     if (calage && sc && bin) {
-      jeu = { calage, terrain: new Float32Array(bin), dim: sc.dim, largImg: img.width, hautImg: img.height };
+      jeu = { calage, terrain: new Float32Array(bin), dim: sc.dim, largImg: img.width, hautImg: img.height,
+              reference: sc.hauteurReference ?? calage.hauteurReference };
       scene3d = sc;
     }
   } catch { jeu = null; }

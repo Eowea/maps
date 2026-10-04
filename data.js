@@ -2186,8 +2186,8 @@ const BATTLEGROUNDS = [
       {
         "id": "ptou20",
         "type": "objectif",
-        "x": 12,
-        "y": 12,
+        "x": 40.6,
+        "y": 34.6,
         "name": {
           "fr": "Autel — haut, gauche",
           "en": "Altar — top, left"
@@ -2201,8 +2201,8 @@ const BATTLEGROUNDS = [
       {
         "id": "pmutmu1e800y",
         "type": "objectif",
-        "x": 68,
-        "y": 12,
+        "x": 59.6,
+        "y": 34.3,
         "name": {
           "fr": "Autel — haut, droite",
           "en": "Altar — top, right"
@@ -2216,8 +2216,8 @@ const BATTLEGROUNDS = [
       {
         "id": "pmutmu1e800z",
         "type": "objectif",
-        "x": 82,
-        "y": 12,
+        "x": 50,
+        "y": 64.3,
         "name": {
           "fr": "Autel — milieu",
           "en": "Altar — middle"
@@ -2231,8 +2231,8 @@ const BATTLEGROUNDS = [
       {
         "id": "pmutmu1e8010",
         "type": "objectif",
-        "x": 12,
-        "y": 26,
+        "x": 50,
+        "y": 88,
         "name": {
           "fr": "Autel — bas",
           "en": "Altar — bottom"
@@ -2246,23 +2246,98 @@ const BATTLEGROUNDS = [
       {
         "id": "ptou21",
         "type": "objectif",
-        "x": 26,
-        "y": 12,
+        "x": 34,
+        "y": 22.1,
         "name": {
-          "fr": "Clocher",
-          "en": "Bell Tower"
+          "fr": "Clocher — haut, gauche",
+          "en": "Bell Tower — top, left"
         },
         "description": {
-          "fr": "Les forts et bastions de la carte. Détruire celui d'en face le fait passer sous ton contrôle. Ils deviennent des bastions à l'ouverture du portail, vers 12:00. En tenir six déclenche un bombardement automatique.",
-          "en": "The map's Forts and Keeps. Destroying an enemy one brings it under your control. They upgrade to Keeps when the Waygate opens, around 12:00. Holding six triggers an automatic bombardment."
+          "fr": "Six clochers, trois par équipe, un sur chaque voie : ce sont les forts de la carte. Détruire celui d'en face le fait passer sous ton contrôle. Ils deviennent des bastions à l'ouverture du portail, vers 12:00. En tenir six déclenche un bombardement automatique.",
+          "en": "Six Bell Towers, three per team, one on each lane: they are the map's Forts. Destroying an enemy one brings it under your control. They upgrade to Keeps when the Waygate opens, around 12:00. Holding six triggers an automatic bombardment."
+        },
+        "image": ""
+      },
+      {
+        "id": "ptou24",
+        "type": "objectif",
+        "x": 36.7,
+        "y": 49.9,
+        "name": {
+          "fr": "Clocher — milieu, gauche",
+          "en": "Bell Tower — middle, left"
+        },
+        "description": {
+          "fr": "Six clochers, trois par équipe, un sur chaque voie : ce sont les forts de la carte. Détruire celui d'en face le fait passer sous ton contrôle. Ils deviennent des bastions à l'ouverture du portail, vers 12:00. En tenir six déclenche un bombardement automatique.",
+          "en": "Six Bell Towers, three per team, one on each lane: they are the map's Forts. Destroying an enemy one brings it under your control. They upgrade to Keeps when the Waygate opens, around 12:00. Holding six triggers an automatic bombardment."
+        },
+        "image": ""
+      },
+      {
+        "id": "ptou25",
+        "type": "objectif",
+        "x": 35.6,
+        "y": 79.7,
+        "name": {
+          "fr": "Clocher — bas, gauche",
+          "en": "Bell Tower — bottom, left"
+        },
+        "description": {
+          "fr": "Six clochers, trois par équipe, un sur chaque voie : ce sont les forts de la carte. Détruire celui d'en face le fait passer sous ton contrôle. Ils deviennent des bastions à l'ouverture du portail, vers 12:00. En tenir six déclenche un bombardement automatique.",
+          "en": "Six Bell Towers, three per team, one on each lane: they are the map's Forts. Destroying an enemy one brings it under your control. They upgrade to Keeps when the Waygate opens, around 12:00. Holding six triggers an automatic bombardment."
+        },
+        "image": ""
+      },
+      {
+        "id": "ptou26",
+        "type": "objectif",
+        "x": 66,
+        "y": 22.1,
+        "name": {
+          "fr": "Clocher — haut, droite",
+          "en": "Bell Tower — top, right"
+        },
+        "description": {
+          "fr": "Six clochers, trois par équipe, un sur chaque voie : ce sont les forts de la carte. Détruire celui d'en face le fait passer sous ton contrôle. Ils deviennent des bastions à l'ouverture du portail, vers 12:00. En tenir six déclenche un bombardement automatique.",
+          "en": "Six Bell Towers, three per team, one on each lane: they are the map's Forts. Destroying an enemy one brings it under your control. They upgrade to Keeps when the Waygate opens, around 12:00. Holding six triggers an automatic bombardment."
+        },
+        "image": ""
+      },
+      {
+        "id": "ptou27",
+        "type": "objectif",
+        "x": 63.3,
+        "y": 49.9,
+        "name": {
+          "fr": "Clocher — milieu, droite",
+          "en": "Bell Tower — middle, right"
+        },
+        "description": {
+          "fr": "Six clochers, trois par équipe, un sur chaque voie : ce sont les forts de la carte. Détruire celui d'en face le fait passer sous ton contrôle. Ils deviennent des bastions à l'ouverture du portail, vers 12:00. En tenir six déclenche un bombardement automatique.",
+          "en": "Six Bell Towers, three per team, one on each lane: they are the map's Forts. Destroying an enemy one brings it under your control. They upgrade to Keeps when the Waygate opens, around 12:00. Holding six triggers an automatic bombardment."
+        },
+        "image": ""
+      },
+      {
+        "id": "ptou28",
+        "type": "objectif",
+        "x": 64.4,
+        "y": 79.7,
+        "name": {
+          "fr": "Clocher — bas, droite",
+          "en": "Bell Tower — bottom, right"
+        },
+        "description": {
+          "fr": "Six clochers, trois par équipe, un sur chaque voie : ce sont les forts de la carte. Détruire celui d'en face le fait passer sous ton contrôle. Ils deviennent des bastions à l'ouverture du portail, vers 12:00. En tenir six déclenche un bombardement automatique.",
+          "en": "Six Bell Towers, three per team, one on each lane: they are the map's Forts. Destroying an enemy one brings it under your control. They upgrade to Keeps when the Waygate opens, around 12:00. Holding six triggers an automatic bombardment."
         },
         "image": ""
       },
       {
         "id": "ptou22",
         "type": "camp",
-        "x": 40,
-        "y": 12,
+        "x": 50,
+        "y": 8.3,
         "name": {
           "fr": "Camp de sapeurs — haut",
           "en": "Sapper Camp — top"
@@ -2276,8 +2351,8 @@ const BATTLEGROUNDS = [
       {
         "id": "pmutmu1e8011",
         "type": "camp",
-        "x": 26,
-        "y": 26,
+        "x": 41.6,
+        "y": 63.2,
         "name": {
           "fr": "Camp de sapeurs — bas, gauche",
           "en": "Sapper Camp — bottom, left"
@@ -2291,8 +2366,8 @@ const BATTLEGROUNDS = [
       {
         "id": "pmutmu1e8012",
         "type": "camp",
-        "x": 40,
-        "y": 26,
+        "x": 58.4,
+        "y": 63.2,
         "name": {
           "fr": "Camp de sapeurs — bas, droite",
           "en": "Sapper Camp — bottom, right"
@@ -2306,8 +2381,8 @@ const BATTLEGROUNDS = [
       {
         "id": "ptou23",
         "type": "camp",
-        "x": 54,
-        "y": 12,
+        "x": 49.6,
+        "y": 29.5,
         "name": {
           "fr": "Camp de boss — cavalier sans tête",
           "en": "Boss Camp — Headless Horseman"
@@ -2321,8 +2396,8 @@ const BATTLEGROUNDS = [
       {
         "id": "pmutmu1e8013",
         "type": "autre",
-        "x": 54,
-        "y": 26,
+        "x": 21.5,
+        "y": 53.8,
         "name": {
           "fr": "Portail — gauche",
           "en": "Waygate — left"
@@ -2336,8 +2411,8 @@ const BATTLEGROUNDS = [
       {
         "id": "pmutmu1e8014",
         "type": "autre",
-        "x": 68,
-        "y": 26,
+        "x": 78.5,
+        "y": 54,
         "name": {
           "fr": "Portail — droite",
           "en": "Waygate — right"
@@ -2349,13 +2424,58 @@ const BATTLEGROUNDS = [
         "image": ""
       },
       {
+        "id": "ptou29",
+        "type": "autre",
+        "x": 50,
+        "y": 55.6,
+        "name": {
+          "fr": "Portail — sortie",
+          "en": "Waygate — exit"
+        },
+        "description": {
+          "fr": "Là où débouchent les deux portails, juste sous le centre de la voie du milieu. Fermée tant que les portails ne sont pas ouverts, vers 12:00.",
+          "en": "Where both Waygates come out, just south of the centre of the middle lane. Sealed until the Waygates open, around 12:00."
+        },
+        "image": ""
+      },
+      {
         "id": "pmutmu1e8015",
         "type": "fontaine",
-        "x": 82,
-        "y": 26,
+        "x": 36,
+        "y": 18.6,
         "name": {
-          "fr": "Fontaine de soins — côté gauche",
-          "en": "Healing fountain — left side"
+          "fr": "Fontaine de soins — fort haut, gauche",
+          "en": "Healing fountain — top fort, left"
+        },
+        "description": {
+          "fr": "Deux minutes de recharge après utilisation. Savoir si celle d'en face est disponible change la valeur d'un plongeon autant que les points de vie restants.",
+          "en": "Two-minute cooldown after use. Knowing whether the enemy one is up changes the worth of a dive as much as their remaining health does."
+        },
+        "image": ""
+      },
+      {
+        "id": "ptou30",
+        "type": "fontaine",
+        "x": 37.1,
+        "y": 54.5,
+        "name": {
+          "fr": "Fontaine de soins — fort milieu, gauche",
+          "en": "Healing fountain — middle fort, left"
+        },
+        "description": {
+          "fr": "Deux minutes de recharge après utilisation. Savoir si celle d'en face est disponible change la valeur d'un plongeon autant que les points de vie restants.",
+          "en": "Two-minute cooldown after use. Knowing whether the enemy one is up changes the worth of a dive as much as their remaining health does."
+        },
+        "image": ""
+      },
+      {
+        "id": "ptou31",
+        "type": "fontaine",
+        "x": 36,
+        "y": 83.7,
+        "name": {
+          "fr": "Fontaine de soins — fort bas, gauche",
+          "en": "Healing fountain — bottom fort, left"
         },
         "description": {
           "fr": "Deux minutes de recharge après utilisation. Savoir si celle d'en face est disponible change la valeur d'un plongeon autant que les points de vie restants.",
@@ -2366,11 +2486,41 @@ const BATTLEGROUNDS = [
       {
         "id": "pmutmu1e8016",
         "type": "fontaine",
-        "x": 12,
-        "y": 40,
+        "x": 64,
+        "y": 18.6,
         "name": {
-          "fr": "Fontaine de soins — côté droit",
-          "en": "Healing fountain — right side"
+          "fr": "Fontaine de soins — fort haut, droite",
+          "en": "Healing fountain — top fort, right"
+        },
+        "description": {
+          "fr": "Deux minutes de recharge après utilisation. Savoir si celle d'en face est disponible change la valeur d'un plongeon autant que les points de vie restants.",
+          "en": "Two-minute cooldown after use. Knowing whether the enemy one is up changes the worth of a dive as much as their remaining health does."
+        },
+        "image": ""
+      },
+      {
+        "id": "ptou32",
+        "type": "fontaine",
+        "x": 62.9,
+        "y": 54.5,
+        "name": {
+          "fr": "Fontaine de soins — fort milieu, droite",
+          "en": "Healing fountain — middle fort, right"
+        },
+        "description": {
+          "fr": "Deux minutes de recharge après utilisation. Savoir si celle d'en face est disponible change la valeur d'un plongeon autant que les points de vie restants.",
+          "en": "Two-minute cooldown after use. Knowing whether the enemy one is up changes the worth of a dive as much as their remaining health does."
+        },
+        "image": ""
+      },
+      {
+        "id": "ptou33",
+        "type": "fontaine",
+        "x": 64,
+        "y": 83.7,
+        "name": {
+          "fr": "Fontaine de soins — fort bas, droite",
+          "en": "Healing fountain — bottom fort, right"
         },
         "description": {
           "fr": "Deux minutes de recharge après utilisation. Savoir si celle d'en face est disponible change la valeur d'un plongeon autant que les points de vie restants.",

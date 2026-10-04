@@ -1,0 +1,8 @@
+{
+  "commentaire": "Passage des coordonnées du jeu (cases) aux pixels de la minimap du site, ajusté sur les 12 fontaines (erreur moyenne 0,27 %).",
+  "hauteurReference": 7.9,
+  "zones": [
+    { "nom": "carte", "siY": [-999, 999], "x0": 0, "px0": 248.31, "y0": 0, "py0": 2144.72, "pxParCase": 9.2859 }
+  ],
+  "limitePx": 999999
+}
