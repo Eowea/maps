@@ -1453,6 +1453,36 @@ const BATTLEGROUNDS = [
         "image": ""
       },
       {
+        "id": "pmutm0i5v0w9t",
+        "x": 49.5,
+        "y": 72.3,
+        "type": "objectif",
+        "name": {
+          "fr": "Coffre au trésor",
+          "en": "Treasure Chest"
+        },
+        "description": {
+          "fr": "Cinq doublons par coffre. Le premier apparaît à 1:30 sur la voie du haut, puis toutes les trois minutes, par deux puis par trois.",
+          "en": "Five Doubloons per chest. The first appears at 1:30 on the top lane, then every three minutes, in twos and then threes."
+        },
+        "image": ""
+      },
+      {
+        "id": "pmutm0d83dc6m",
+        "x": 49.6,
+        "y": 45.7,
+        "type": "objectif",
+        "name": {
+          "fr": "Coffre au trésor",
+          "en": "Treasure Chest"
+        },
+        "description": {
+          "fr": "Cinq doublons par coffre. Le premier apparaît à 1:30 sur la voie du haut, puis toutes les trois minutes, par deux puis par trois.",
+          "en": "Five Doubloons per chest. The first appears at 1:30 on the top lane, then every three minutes, in twos and then threes."
+        },
+        "image": ""
+      },
+      {
         "id": "pbai40",
         "x": 34.3,
         "y": 62.4,
