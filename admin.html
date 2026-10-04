@@ -245,6 +245,31 @@
     background:#000;cursor:crosshair;
   }
   .adm-map-stage img{display:block;width:auto;max-width:100%;max-height:460px;user-select:none;}
+  /* Barres de repérage : une horizontale et une verticale qui suivent le curseur (ou le
+     point qu'on glisse) sur toute la carte, plus les deux axes du milieu en pointillés. */
+  .adm-map-tools{display:flex;align-items:center;gap:14px;margin-bottom:8px;font-size:12px;color:var(--text-dim);}
+  .adm-map-tools label{display:flex;align-items:center;gap:6px;margin:0;cursor:pointer;text-transform:none;font-size:12px;letter-spacing:0;color:var(--text);flex:0 0 auto;white-space:nowrap;}
+  .adm-map-tools input{width:auto;margin:0;}
+  .adm-guide,.adm-guide-mid,.adm-guide-label{position:absolute;pointer-events:none;display:none;}
+  .adm-map-stage.guides-on .adm-guide-mid{display:block;}
+  .adm-map-stage.guides-on.guides-live .adm-guide,
+  .adm-map-stage.guides-on.guides-live .adm-guide-label{display:block;}
+  .adm-guide-h,.adm-guide-mid-h{left:0;right:0;height:0;}
+  .adm-guide-v,.adm-guide-mid-v{top:0;bottom:0;width:0;}
+  .adm-guide-h{border-top:1px solid var(--gold-bright);box-shadow:0 0 0 .5px rgba(0,0,0,.6);}
+  .adm-guide-v{border-left:1px solid var(--gold-bright);box-shadow:0 0 0 .5px rgba(0,0,0,.6);}
+  .adm-guide-mid-h{top:50%;border-top:1px dashed rgba(255,255,255,.35);}
+  .adm-guide-mid-v{left:50%;border-left:1px dashed rgba(255,255,255,.35);}
+  .adm-guide-label{
+    z-index:3;line-height:1.2;font-size:11px;font-weight:700;white-space:nowrap;font-variant-numeric:tabular-nums;
+    padding:2px 6px;border-radius:4px;background:rgba(8,12,20,.9);color:var(--gold-bright);
+    border:1px solid var(--gold-border);transform:translate(8px,8px);
+  }
+  .adm-guide-label.flip-x{transform:translate(calc(-100% - 8px),8px);}
+  .adm-guide-label.flip-y{transform:translate(8px,calc(-100% - 8px));}
+  .adm-guide-label.flip-x.flip-y{transform:translate(calc(-100% - 8px),calc(-100% - 8px));}
+  /* Points déjà alignés sur une des barres : on voit tout de suite avec qui on s'aligne. */
+  .adm-hotspot.is-aligned{filter:drop-shadow(0 0 1px #000) drop-shadow(0 0 6px var(--gold-bright));}
   .adm-hotspot[data-type="camp"],     .adm-point-pastille[data-type="camp"]     {--pt-color:#ff9f43;}
   .adm-hotspot[data-type="objectif"], .adm-point-pastille[data-type="objectif"] {--pt-color:var(--gold-bright);}
   .adm-hotspot[data-type="tour"],     .adm-point-pastille[data-type="tour"]     {--pt-color:#6ec6ff;}
@@ -1684,10 +1709,20 @@ function renderHotspotsTab(bg){
         ouvre un popup avec sa capture et sa description.
       </small>
       <div class="adm-map-wrap">
-        <div class="adm-map-stage" data-map-stage>
+        <div class="adm-map-tools">
+          <label><input type="checkbox" ${guidesActifs ? 'checked' : ''} onchange="basculerGuides(this.checked)" />
+            Barres de repérage</label>
+          <span>Une barre horizontale et une verticale suivent le curseur ; les points déjà alignés s'illuminent.</span>
+        </div>
+        <div class="adm-map-stage${guidesActifs ? ' guides-on' : ''}" data-map-stage>
           <img src="${assetRawUrl(bg.minimapImage)}" alt="Minimap" draggable="false"
                onerror="this.closest('.adm-map-stage').innerHTML='&lt;div style=&quot;padding:20px;color:var(--text-dim);font-size:13px;line-height:1.6;&quot;&gt;La minimap n\\'a pas pu être chargée depuis GitHub.&lt;br&gt;Vérifie que le fichier est bien poussé sur le dépôt.&lt;/div&gt;'" />
+          <div class="adm-guide-mid adm-guide-mid-h"></div>
+          <div class="adm-guide-mid adm-guide-mid-v"></div>
+          <div class="adm-guide adm-guide-h"></div>
+          <div class="adm-guide adm-guide-v"></div>
           ${marqueurs}
+          <div class="adm-guide-label"></div>
         </div>
       </div>
       ${blocs ? `
@@ -1807,6 +1842,45 @@ function centrerSurPoint(hi){
    conteneur : le panneau se re-rend entièrement à chaque changement d'onglet. */
 let pointDrag = null;
 let glissementRecent = false;   // un clic qui termine un glissement ne doit rien poser
+
+/* Barres de repérage. Le choix est retenu sur l'appareil : c'est une préférence de
+   travail, pas une donnée du site. */
+let guidesActifs = (() => { try { return localStorage.getItem('eowea_bg_admin_guides') === '1'; } catch(e){ return false; } })();
+
+function basculerGuides(actif){
+  guidesActifs = actif;
+  try { localStorage.setItem('eowea_bg_admin_guides', actif ? '1' : '0'); } catch(e){}
+  const stage = document.querySelector('[data-map-stage]');
+  if (!stage) return;
+  stage.classList.toggle('guides-on', actif);
+  if (!actif) masquerGuides(stage);
+}
+
+// « exclu » : le point qu'on survole ou qu'on glisse, aligné avec lui-même par définition.
+function placerGuides(stage, pos, exclu){
+  stage.classList.add('guides-live');
+  stage.querySelector('.adm-guide-h').style.top = pos.y + '%';
+  stage.querySelector('.adm-guide-v').style.left = pos.x + '%';
+  const label = stage.querySelector('.adm-guide-label');
+  label.style.left = pos.x + '%';
+  label.style.top = pos.y + '%';
+  label.textContent = `${fmtCoord(pos.x)} % / ${fmtCoord(pos.y)} %`;
+  // Près des bords droit et bas, l'étiquette passe de l'autre côté pour rester lisible.
+  label.classList.toggle('flip-x', pos.x > 75);
+  label.classList.toggle('flip-y', pos.y > 88);
+  const points = BATTLEGROUNDS[currentMapIndex]?.hotspots || [];
+  stage.querySelectorAll('.adm-hotspot').forEach(el => {
+    const hi = Number(el.dataset.point);
+    const h = points[hi];
+    el.classList.toggle('is-aligned', !!h && hi !== exclu
+      && (Math.abs(h.x - pos.x) <= 0.5 || Math.abs(h.y - pos.y) <= 0.5));
+  });
+}
+
+function masquerGuides(stage){
+  stage.classList.remove('guides-live');
+  stage.querySelectorAll('.adm-hotspot.is-aligned').forEach(el => el.classList.remove('is-aligned'));
+}
 (function bindHotspotEditor(){
   const container = document.getElementById('contentEl');
 
@@ -1844,6 +1918,24 @@ let glissementRecent = false;   // un clic qui termine un glissement ne doit rie
     pointDrag.pos = pos;
     pointDrag.el.style.left = pos.x + '%';
     pointDrag.el.style.top = pos.y + '%';
+  });
+
+  // Barres de repérage : elles suivent le point glissé, sinon se calent sur le point
+  // survolé (pour voir ce qui est aligné avec lui), sinon suivent le curseur.
+  document.addEventListener('pointermove', (e) => {
+    if (!guidesActifs) return;
+    const stage = document.querySelector('[data-map-stage]');
+    if (!stage) return;
+    if (pointDrag){
+      if (pointDrag.pos) placerGuides(stage, pointDrag.pos, pointDrag.index);
+      return;
+    }
+    if (!stage.contains(e.target)){ masquerGuides(stage); return; }
+    const marqueur = e.target.closest('.adm-hotspot');
+    const hi = marqueur ? Number(marqueur.dataset.point) : -1;
+    const h = BATTLEGROUNDS[currentMapIndex]?.hotspots?.[hi];
+    const pos = h ? { x: h.x, y: h.y } : positionRelative(stage, e.clientX, e.clientY);
+    if (pos) placerGuides(stage, pos, hi);
   });
 
   document.addEventListener('pointerup', () => {
