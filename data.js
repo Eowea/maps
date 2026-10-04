@@ -1653,8 +1653,8 @@ const BATTLEGROUNDS = [
       {
         "id": "ptem10",
         "type": "objectif",
-        "x": 12,
-        "y": 12,
+        "x": 50.6,
+        "y": 50.5,
         "name": {
           "fr": "Convoi",
           "en": "Payload"
@@ -1668,8 +1668,8 @@ const BATTLEGROUNDS = [
       {
         "id": "ptem11",
         "type": "tour",
-        "x": 26,
-        "y": 12,
+        "x": 43.3,
+        "y": 13,
         "name": {
           "fr": "Camp de reconnaissance — haut",
           "en": "Recon Camp — top"
@@ -1683,8 +1683,8 @@ const BATTLEGROUNDS = [
       {
         "id": "pmutmu1e800r",
         "type": "tour",
-        "x": 82,
-        "y": 12,
+        "x": 58.1,
+        "y": 87.6,
         "name": {
           "fr": "Camp de reconnaissance — bas",
           "en": "Recon Camp — bottom"
@@ -1698,8 +1698,8 @@ const BATTLEGROUNDS = [
       {
         "id": "ptem12",
         "type": "camp",
-        "x": 40,
-        "y": 12,
+        "x": 39.9,
+        "y": 39.4,
         "name": {
           "fr": "Camp de fortification — haut, gauche",
           "en": "Fortification Camp — top, left"
@@ -1713,8 +1713,8 @@ const BATTLEGROUNDS = [
       {
         "id": "pmutmu1e800s",
         "type": "camp",
-        "x": 12,
-        "y": 26,
+        "x": 61.4,
+        "y": 61.1,
         "name": {
           "fr": "Camp de fortification — bas, droite",
           "en": "Fortification Camp — bottom, right"
@@ -1728,8 +1728,8 @@ const BATTLEGROUNDS = [
       {
         "id": "ptem13",
         "type": "camp",
-        "x": 54,
-        "y": 12,
+        "x": 69.7,
+        "y": 48.4,
         "name": {
           "fr": "Camp de samouraïs — haut, droite",
           "en": "Samurai Camp — top, right"
@@ -1743,8 +1743,8 @@ const BATTLEGROUNDS = [
       {
         "id": "pmutmu1e800t",
         "type": "camp",
-        "x": 26,
-        "y": 26,
+        "x": 31.6,
+        "y": 52.1,
         "name": {
           "fr": "Camp de samouraïs — bas, gauche",
           "en": "Samurai Camp — bottom, left"
@@ -1758,30 +1758,120 @@ const BATTLEGROUNDS = [
       {
         "id": "ptem14",
         "type": "fontaine",
-        "x": 68,
-        "y": 12,
+        "x": 39.1,
+        "y": 23.9,
         "name": {
-          "fr": "Fontaine de soins — côté gauche",
-          "en": "Healing fountain — left side"
+          "fr": "Fontaine de soins — fort haut, gauche",
+          "en": "Healing fountain — top fort, left"
         },
         "description": {
-          "fr": "Plusieurs fontaines réparties sur les deux voies, deux minutes de recharge chacune.",
-          "en": "Several fountains spread along both lanes, two-minute cooldown each."
+          "fr": "Deux minutes de recharge après utilisation. Savoir si celle d'en face est disponible change la valeur d'un plongeon autant que les points de vie restants.",
+          "en": "Two-minute cooldown after use. Knowing whether the enemy one is up changes the worth of a dive as much as their remaining health does."
+        },
+        "image": ""
+      },
+      {
+        "id": "ptem15",
+        "type": "fontaine",
+        "x": 38.8,
+        "y": 77.7,
+        "name": {
+          "fr": "Fontaine de soins — fort bas, gauche",
+          "en": "Healing fountain — bottom fort, left"
+        },
+        "description": {
+          "fr": "Deux minutes de recharge après utilisation. Savoir si celle d'en face est disponible change la valeur d'un plongeon autant que les points de vie restants.",
+          "en": "Two-minute cooldown after use. Knowing whether the enemy one is up changes the worth of a dive as much as their remaining health does."
+        },
+        "image": ""
+      },
+      {
+        "id": "ptem16",
+        "type": "fontaine",
+        "x": 22.5,
+        "y": 28.8,
+        "name": {
+          "fr": "Fontaine de soins — bastion haut, gauche",
+          "en": "Healing fountain — top keep, left"
+        },
+        "description": {
+          "fr": "Deux minutes de recharge après utilisation. Savoir si celle d'en face est disponible change la valeur d'un plongeon autant que les points de vie restants.",
+          "en": "Two-minute cooldown after use. Knowing whether the enemy one is up changes the worth of a dive as much as their remaining health does."
+        },
+        "image": ""
+      },
+      {
+        "id": "ptem17",
+        "type": "fontaine",
+        "x": 23.4,
+        "y": 70.7,
+        "name": {
+          "fr": "Fontaine de soins — bastion bas, gauche",
+          "en": "Healing fountain — bottom keep, left"
+        },
+        "description": {
+          "fr": "Deux minutes de recharge après utilisation. Savoir si celle d'en face est disponible change la valeur d'un plongeon autant que les points de vie restants.",
+          "en": "Two-minute cooldown after use. Knowing whether the enemy one is up changes the worth of a dive as much as their remaining health does."
         },
         "image": ""
       },
       {
         "id": "pmutmu1e800u",
         "type": "fontaine",
-        "x": 40,
-        "y": 26,
+        "x": 62.5,
+        "y": 22.9,
         "name": {
-          "fr": "Fontaine de soins — côté droit",
-          "en": "Healing fountain — right side"
+          "fr": "Fontaine de soins — fort haut, droite",
+          "en": "Healing fountain — top fort, right"
         },
         "description": {
-          "fr": "Plusieurs fontaines réparties sur les deux voies, deux minutes de recharge chacune.",
-          "en": "Several fountains spread along both lanes, two-minute cooldown each."
+          "fr": "Deux minutes de recharge après utilisation. Savoir si celle d'en face est disponible change la valeur d'un plongeon autant que les points de vie restants.",
+          "en": "Two-minute cooldown after use. Knowing whether the enemy one is up changes the worth of a dive as much as their remaining health does."
+        },
+        "image": ""
+      },
+      {
+        "id": "ptem18",
+        "type": "fontaine",
+        "x": 62.2,
+        "y": 76.7,
+        "name": {
+          "fr": "Fontaine de soins — fort bas, droite",
+          "en": "Healing fountain — bottom fort, right"
+        },
+        "description": {
+          "fr": "Deux minutes de recharge après utilisation. Savoir si celle d'en face est disponible change la valeur d'un plongeon autant que les points de vie restants.",
+          "en": "Two-minute cooldown after use. Knowing whether the enemy one is up changes the worth of a dive as much as their remaining health does."
+        },
+        "image": ""
+      },
+      {
+        "id": "ptem19",
+        "type": "fontaine",
+        "x": 77.9,
+        "y": 29.9,
+        "name": {
+          "fr": "Fontaine de soins — bastion haut, droite",
+          "en": "Healing fountain — top keep, right"
+        },
+        "description": {
+          "fr": "Deux minutes de recharge après utilisation. Savoir si celle d'en face est disponible change la valeur d'un plongeon autant que les points de vie restants.",
+          "en": "Two-minute cooldown after use. Knowing whether the enemy one is up changes the worth of a dive as much as their remaining health does."
+        },
+        "image": ""
+      },
+      {
+        "id": "ptem20",
+        "type": "fontaine",
+        "x": 78.8,
+        "y": 71.8,
+        "name": {
+          "fr": "Fontaine de soins — bastion bas, droite",
+          "en": "Healing fountain — bottom keep, right"
+        },
+        "description": {
+          "fr": "Deux minutes de recharge après utilisation. Savoir si celle d'en face est disponible change la valeur d'un plongeon autant que les points de vie restants.",
+          "en": "Two-minute cooldown after use. Knowing whether the enemy one is up changes the worth of a dive as much as their remaining health does."
         },
         "image": ""
       }
@@ -2582,8 +2672,8 @@ const BATTLEGROUNDS = [
       {
         "id": "psan24",
         "type": "objectif",
-        "x": 12,
-        "y": 12,
+        "x": 50,
+        "y": 13.7,
         "name": {
           "fr": "Sanctuaire — haut",
           "en": "Shrine — top"
@@ -2597,8 +2687,8 @@ const BATTLEGROUNDS = [
       {
         "id": "pmutmu1e8017",
         "type": "objectif",
-        "x": 82,
-        "y": 12,
+        "x": 50,
+        "y": 43.8,
         "name": {
           "fr": "Sanctuaire — milieu",
           "en": "Shrine — middle"
@@ -2612,8 +2702,8 @@ const BATTLEGROUNDS = [
       {
         "id": "pmutmu1e8018",
         "type": "objectif",
-        "x": 12,
-        "y": 26,
+        "x": 50,
+        "y": 70.2,
         "name": {
           "fr": "Sanctuaire — bas",
           "en": "Shrine — bottom"
@@ -2627,120 +2717,270 @@ const BATTLEGROUNDS = [
       {
         "id": "psan25",
         "type": "objectif",
-        "x": 26,
-        "y": 12,
+        "x": 53,
+        "y": 43.8,
         "name": {
           "fr": "Dominateur",
           "en": "Punisher"
         },
         "description": {
-          "fr": "Invoqué par la première équipe à tuer 40 gardiens. Il arrive avec l'un de trois pouvoirs — arcanique, glacial ou mortier — et s'en prend aux portes en priorité.",
-          "en": "Summoned by the first team to kill 40 Guardians. It arrives with one of three powers — Arcane, Frost or Mortar — and goes for the gates first."
-        },
-        "image": ""
-      },
-      {
-        "id": "psan26",
-        "type": "camp",
-        "x": 40,
-        "y": 12,
-        "name": {
-          "fr": "Camp de siège — empaleurs, milieu gauche",
-          "en": "Siege Camp — Impalers, middle left"
-        },
-        "description": {
-          "fr": "Deux camps au milieu, un en bas, trois empaleurs chacun. Disponibles à 0:30, ils réapparaissent 3:00 après avoir été pris.",
-          "en": "Two camps at mid, one at the bottom, three Impalers each. Available at 0:30, back 3:00 after being taken."
-        },
-        "image": ""
-      },
-      {
-        "id": "pmutmu1e8019",
-        "type": "camp",
-        "x": 26,
-        "y": 26,
-        "name": {
-          "fr": "Camp de siège — empaleurs, milieu droite",
-          "en": "Siege Camp — Impalers, middle right"
-        },
-        "description": {
-          "fr": "Deux camps au milieu, un en bas, trois empaleurs chacun. Disponibles à 0:30, ils réapparaissent 3:00 après avoir été pris.",
-          "en": "Two camps at mid, one at the bottom, three Impalers each. Available at 0:30, back 3:00 after being taken."
-        },
-        "image": ""
-      },
-      {
-        "id": "pmutmu1e801a",
-        "type": "camp",
-        "x": 40,
-        "y": 26,
-        "name": {
-          "fr": "Camp de siège — empaleurs, bas",
-          "en": "Siege Camp — Impalers, bottom"
-        },
-        "description": {
-          "fr": "Deux camps au milieu, un en bas, trois empaleurs chacun. Disponibles à 0:30, ils réapparaissent 3:00 après avoir été pris.",
-          "en": "Two camps at mid, one at the bottom, three Impalers each. Available at 0:30, back 3:00 after being taken."
+          "fr": "Il apparaît au sanctuaire qui vient d'être remporté. Invoqué par la première équipe à tuer 40 gardiens. Il arrive avec l'un de trois pouvoirs — arcanique, glacial ou mortier — et s'en prend aux portes en priorité.",
+          "en": "It appears at the Shrine that was just won. Summoned by the first team to kill 40 Guardians. It arrives with one of three powers — Arcane, Frost or Mortar — and goes for the gates first."
         },
         "image": ""
       },
       {
         "id": "psan27",
         "type": "camp",
-        "x": 54,
-        "y": 12,
+        "x": 35.5,
+        "y": 38.7,
         "name": {
           "fr": "Camp de bruisers — damnés, haut gauche",
           "en": "Bruiser Camp — Fallen, top left"
         },
         "description": {
-          "fr": "Deux camps sur la voie du haut : un chaman damné et deux molosses. Le chaman réinvoque des molosses au fil du combat. Disponibles à 0:30, ils réapparaissent 4:00 après.",
-          "en": "Two camps on the top lane: a Fallen Shaman and two Hounds. The Shaman keeps summoning new Hounds as the fight goes on. Available at 0:30, back 4:00 after."
+          "fr": "Deux camps entre la voie du haut et celle du milieu, un de chaque côté : un chaman damné et deux molosses. Le chaman réinvoque des molosses au fil du combat. Disponibles à 0:30, ils réapparaissent 4:00 après.",
+          "en": "Two camps between the top and middle lanes, one on each side: a Fallen Shaman and two Demon Dogs. The Shaman summons more Dogs as the fight goes on. Available at 0:30, back 4:00 after."
         },
         "image": ""
       },
       {
         "id": "pmutmu1e801b",
         "type": "camp",
-        "x": 54,
-        "y": 26,
+        "x": 64.5,
+        "y": 38.7,
         "name": {
           "fr": "Camp de bruisers — damnés, haut droite",
           "en": "Bruiser Camp — Fallen, top right"
         },
         "description": {
-          "fr": "Deux camps sur la voie du haut : un chaman damné et deux molosses. Le chaman réinvoque des molosses au fil du combat. Disponibles à 0:30, ils réapparaissent 4:00 après.",
-          "en": "Two camps on the top lane: a Fallen Shaman and two Hounds. The Shaman keeps summoning new Hounds as the fight goes on. Available at 0:30, back 4:00 after."
+          "fr": "Deux camps entre la voie du haut et celle du milieu, un de chaque côté : un chaman damné et deux molosses. Le chaman réinvoque des molosses au fil du combat. Disponibles à 0:30, ils réapparaissent 4:00 après.",
+          "en": "Two camps between the top and middle lanes, one on each side: a Fallen Shaman and two Demon Dogs. The Shaman summons more Dogs as the fight goes on. Available at 0:30, back 4:00 after."
+        },
+        "image": ""
+      },
+      {
+        "id": "psan26",
+        "type": "camp",
+        "x": 40.6,
+        "y": 66.4,
+        "name": {
+          "fr": "Camp de siège — empaleurs, milieu gauche",
+          "en": "Siege Camp — Impalers, middle left"
+        },
+        "description": {
+          "fr": "Trois camps : deux entre la voie du milieu et celle du bas, un de chaque côté, et un au centre sous la voie du bas. Trois empaleurs chacun. Disponibles à 0:30, ils réapparaissent 3:00 après avoir été pris.",
+          "en": "Three camps: two between the middle and bottom lanes, one on each side, and one at the centre below the bottom lane. Three Impalers each. Available at 0:30, back 3:00 after being taken."
+        },
+        "image": ""
+      },
+      {
+        "id": "pmutmu1e8019",
+        "type": "camp",
+        "x": 59.4,
+        "y": 66.4,
+        "name": {
+          "fr": "Camp de siège — empaleurs, milieu droite",
+          "en": "Siege Camp — Impalers, middle right"
+        },
+        "description": {
+          "fr": "Trois camps : deux entre la voie du milieu et celle du bas, un de chaque côté, et un au centre sous la voie du bas. Trois empaleurs chacun. Disponibles à 0:30, ils réapparaissent 3:00 après avoir été pris.",
+          "en": "Three camps: two between the middle and bottom lanes, one on each side, and one at the centre below the bottom lane. Three Impalers each. Available at 0:30, back 3:00 after being taken."
+        },
+        "image": ""
+      },
+      {
+        "id": "pmutmu1e801a",
+        "type": "camp",
+        "x": 50,
+        "y": 90.4,
+        "name": {
+          "fr": "Camp de siège — empaleurs, bas",
+          "en": "Siege Camp — Impalers, bottom"
+        },
+        "description": {
+          "fr": "Trois camps : deux entre la voie du milieu et celle du bas, un de chaque côté, et un au centre sous la voie du bas. Trois empaleurs chacun. Disponibles à 0:30, ils réapparaissent 3:00 après avoir été pris.",
+          "en": "Three camps: two between the middle and bottom lanes, one on each side, and one at the centre below the bottom lane. Three Impalers each. Available at 0:30, back 3:00 after being taken."
         },
         "image": ""
       },
       {
         "id": "psan28",
         "type": "fontaine",
-        "x": 68,
-        "y": 12,
+        "x": 38,
+        "y": 22,
         "name": {
-          "fr": "Fontaine de soins — côté gauche",
-          "en": "Healing fountain — left side"
+          "fr": "Fontaine de soins — fort haut, gauche",
+          "en": "Healing fountain — top fort, left"
         },
         "description": {
-          "fr": "Deux fontaines, deux minutes de recharge chacune.",
-          "en": "Two fountains, two-minute cooldown each."
+          "fr": "Deux minutes de recharge après utilisation. Savoir si celle d'en face est disponible change la valeur d'un plongeon autant que les points de vie restants.",
+          "en": "Two-minute cooldown after use. Knowing whether the enemy one is up changes the worth of a dive as much as their remaining health does."
+        },
+        "image": ""
+      },
+      {
+        "id": "psan29",
+        "type": "fontaine",
+        "x": 39.4,
+        "y": 60.5,
+        "name": {
+          "fr": "Fontaine de soins — fort milieu, gauche",
+          "en": "Healing fountain — middle fort, left"
+        },
+        "description": {
+          "fr": "Deux minutes de recharge après utilisation. Savoir si celle d'en face est disponible change la valeur d'un plongeon autant que les points de vie restants.",
+          "en": "Two-minute cooldown after use. Knowing whether the enemy one is up changes the worth of a dive as much as their remaining health does."
+        },
+        "image": ""
+      },
+      {
+        "id": "psan30",
+        "type": "fontaine",
+        "x": 38.4,
+        "y": 85.4,
+        "name": {
+          "fr": "Fontaine de soins — fort bas, gauche",
+          "en": "Healing fountain — bottom fort, left"
+        },
+        "description": {
+          "fr": "Deux minutes de recharge après utilisation. Savoir si celle d'en face est disponible change la valeur d'un plongeon autant que les points de vie restants.",
+          "en": "Two-minute cooldown after use. Knowing whether the enemy one is up changes the worth of a dive as much as their remaining health does."
+        },
+        "image": ""
+      },
+      {
+        "id": "psan31",
+        "type": "fontaine",
+        "x": 25.1,
+        "y": 45.5,
+        "name": {
+          "fr": "Fontaine de soins — bastion haut, gauche",
+          "en": "Healing fountain — top keep, left"
+        },
+        "description": {
+          "fr": "Deux minutes de recharge après utilisation. Savoir si celle d'en face est disponible change la valeur d'un plongeon autant que les points de vie restants.",
+          "en": "Two-minute cooldown after use. Knowing whether the enemy one is up changes the worth of a dive as much as their remaining health does."
+        },
+        "image": ""
+      },
+      {
+        "id": "psan32",
+        "type": "fontaine",
+        "x": 25.5,
+        "y": 60.5,
+        "name": {
+          "fr": "Fontaine de soins — bastion milieu, gauche",
+          "en": "Healing fountain — middle keep, left"
+        },
+        "description": {
+          "fr": "Deux minutes de recharge après utilisation. Savoir si celle d'en face est disponible change la valeur d'un plongeon autant que les points de vie restants.",
+          "en": "Two-minute cooldown after use. Knowing whether the enemy one is up changes the worth of a dive as much as their remaining health does."
+        },
+        "image": ""
+      },
+      {
+        "id": "psan33",
+        "type": "fontaine",
+        "x": 17.5,
+        "y": 75.1,
+        "name": {
+          "fr": "Fontaine de soins — bastion bas, gauche",
+          "en": "Healing fountain — bottom keep, left"
+        },
+        "description": {
+          "fr": "Deux minutes de recharge après utilisation. Savoir si celle d'en face est disponible change la valeur d'un plongeon autant que les points de vie restants.",
+          "en": "Two-minute cooldown after use. Knowing whether the enemy one is up changes the worth of a dive as much as their remaining health does."
         },
         "image": ""
       },
       {
         "id": "pmutmu1e801c",
         "type": "fontaine",
-        "x": 68,
-        "y": 26,
+        "x": 62,
+        "y": 22,
         "name": {
-          "fr": "Fontaine de soins — côté droit",
-          "en": "Healing fountain — right side"
+          "fr": "Fontaine de soins — fort haut, droite",
+          "en": "Healing fountain — top fort, right"
         },
         "description": {
-          "fr": "Deux fontaines, deux minutes de recharge chacune.",
-          "en": "Two fountains, two-minute cooldown each."
+          "fr": "Deux minutes de recharge après utilisation. Savoir si celle d'en face est disponible change la valeur d'un plongeon autant que les points de vie restants.",
+          "en": "Two-minute cooldown after use. Knowing whether the enemy one is up changes the worth of a dive as much as their remaining health does."
+        },
+        "image": ""
+      },
+      {
+        "id": "psan34",
+        "type": "fontaine",
+        "x": 60.6,
+        "y": 60.5,
+        "name": {
+          "fr": "Fontaine de soins — fort milieu, droite",
+          "en": "Healing fountain — middle fort, right"
+        },
+        "description": {
+          "fr": "Deux minutes de recharge après utilisation. Savoir si celle d'en face est disponible change la valeur d'un plongeon autant que les points de vie restants.",
+          "en": "Two-minute cooldown after use. Knowing whether the enemy one is up changes the worth of a dive as much as their remaining health does."
+        },
+        "image": ""
+      },
+      {
+        "id": "psan35",
+        "type": "fontaine",
+        "x": 61.6,
+        "y": 85.4,
+        "name": {
+          "fr": "Fontaine de soins — fort bas, droite",
+          "en": "Healing fountain — bottom fort, right"
+        },
+        "description": {
+          "fr": "Deux minutes de recharge après utilisation. Savoir si celle d'en face est disponible change la valeur d'un plongeon autant que les points de vie restants.",
+          "en": "Two-minute cooldown after use. Knowing whether the enemy one is up changes the worth of a dive as much as their remaining health does."
+        },
+        "image": ""
+      },
+      {
+        "id": "psan36",
+        "type": "fontaine",
+        "x": 74.9,
+        "y": 45.5,
+        "name": {
+          "fr": "Fontaine de soins — bastion haut, droite",
+          "en": "Healing fountain — top keep, right"
+        },
+        "description": {
+          "fr": "Deux minutes de recharge après utilisation. Savoir si celle d'en face est disponible change la valeur d'un plongeon autant que les points de vie restants.",
+          "en": "Two-minute cooldown after use. Knowing whether the enemy one is up changes the worth of a dive as much as their remaining health does."
+        },
+        "image": ""
+      },
+      {
+        "id": "psan37",
+        "type": "fontaine",
+        "x": 74.5,
+        "y": 60.5,
+        "name": {
+          "fr": "Fontaine de soins — bastion milieu, droite",
+          "en": "Healing fountain — middle keep, right"
+        },
+        "description": {
+          "fr": "Deux minutes de recharge après utilisation. Savoir si celle d'en face est disponible change la valeur d'un plongeon autant que les points de vie restants.",
+          "en": "Two-minute cooldown after use. Knowing whether the enemy one is up changes the worth of a dive as much as their remaining health does."
+        },
+        "image": ""
+      },
+      {
+        "id": "psan38",
+        "type": "fontaine",
+        "x": 82.5,
+        "y": 75.1,
+        "name": {
+          "fr": "Fontaine de soins — bastion bas, droite",
+          "en": "Healing fountain — bottom keep, right"
+        },
+        "description": {
+          "fr": "Deux minutes de recharge après utilisation. Savoir si celle d'en face est disponible change la valeur d'un plongeon autant que les points de vie restants.",
+          "en": "Two-minute cooldown after use. Knowing whether the enemy one is up changes the worth of a dive as much as their remaining health does."
         },
         "image": ""
       }
@@ -3097,86 +3337,176 @@ const BATTLEGROUNDS = [
       {
         "id": "ptom29",
         "type": "objectif",
-        "x": 12,
-        "y": 12,
+        "x": 50,
+        "y": 40,
         "name": {
-          "fr": "Autel de la reine araignée",
-          "en": "Spider Queen's Altar"
+          "fr": "Autel de la reine araignée — haut",
+          "en": "Spider Queen's Altar — top"
         },
         "description": {
-          "fr": "C'est là qu'on livre les gemmes. 50 pour la première fois, puis 5 de plus à chaque livraison. Mourir avec ses gemmes sur soi, c'est les perdre toutes.",
-          "en": "This is where Gems are handed in. 50 the first time, then 5 more with each turn-in. Dying with your Gems loses every one."
+          "fr": "Deux autels au centre, l'un entre la voie du haut et celle du milieu, l'autre entre le milieu et le bas. C'est là qu'on livre les gemmes. 50 pour la première fois, puis 5 de plus à chaque livraison. Mourir avec ses gemmes sur soi, c'est les perdre toutes.",
+          "en": "Two Altars at the centre, one between the top and middle lanes, the other between the middle and bottom lanes. This is where Gems are turned in. 50 the first time, then 5 more each time. Dying with Gems on you means losing them all."
+        },
+        "image": ""
+      },
+      {
+        "id": "ptom33",
+        "type": "objectif",
+        "x": 50,
+        "y": 61,
+        "name": {
+          "fr": "Autel de la reine araignée — bas",
+          "en": "Spider Queen's Altar — bottom"
+        },
+        "description": {
+          "fr": "Deux autels au centre, l'un entre la voie du haut et celle du milieu, l'autre entre le milieu et le bas. C'est là qu'on livre les gemmes. 50 pour la première fois, puis 5 de plus à chaque livraison. Mourir avec ses gemmes sur soi, c'est les perdre toutes.",
+          "en": "Two Altars at the centre, one between the top and middle lanes, the other between the middle and bottom lanes. This is where Gems are turned in. 50 the first time, then 5 more each time. Dying with Gems on you means losing them all."
         },
         "image": ""
       },
       {
         "id": "ptom30",
         "type": "camp",
-        "x": 26,
-        "y": 12,
+        "x": 37,
+        "y": 56,
         "name": {
-          "fr": "Camp de bruisers — chevaliers, milieu gauche",
-          "en": "Bruiser Camp — Knights, middle left"
+          "fr": "Camp de bruisers — chevaliers, bas gauche",
+          "en": "Bruiser Camp — Knights, bottom left"
         },
         "description": {
-          "fr": "Deux camps sur la voie du milieu : trois chevaliers et un sorcier, qui pose un champ d'armure des sorts. Disponibles à 0:30, ils réapparaissent 4:00 après.",
-          "en": "Two camps on the middle lane: three Knights and a Wizard, who lays a Spell Armor field. Available at 0:30, back 4:00 after."
+          "fr": "Deux camps entre la voie du milieu et celle du bas, contre les murs intérieurs, un de chaque côté : trois chevaliers et un sorcier, qui pose un champ d'armure des sorts. Disponibles à 0:30, ils réapparaissent 4:00 après.",
+          "en": "Two camps between the middle and bottom lanes, against the inner walls, one on each side: three Knights and a Wizard, who lays a Spell Armor field. Available at 0:30, back 4:00 after."
         },
         "image": ""
       },
       {
         "id": "pmutmu1e801g",
         "type": "camp",
-        "x": 68,
-        "y": 12,
+        "x": 63,
+        "y": 56,
         "name": {
-          "fr": "Camp de bruisers — chevaliers, milieu droite",
-          "en": "Bruiser Camp — Knights, middle right"
+          "fr": "Camp de bruisers — chevaliers, bas droite",
+          "en": "Bruiser Camp — Knights, bottom right"
         },
         "description": {
-          "fr": "Deux camps sur la voie du milieu : trois chevaliers et un sorcier, qui pose un champ d'armure des sorts. Disponibles à 0:30, ils réapparaissent 4:00 après.",
-          "en": "Two camps on the middle lane: three Knights and a Wizard, who lays a Spell Armor field. Available at 0:30, back 4:00 after."
+          "fr": "Deux camps entre la voie du milieu et celle du bas, contre les murs intérieurs, un de chaque côté : trois chevaliers et un sorcier, qui pose un champ d'armure des sorts. Disponibles à 0:30, ils réapparaissent 4:00 après.",
+          "en": "Two camps between the middle and bottom lanes, against the inner walls, one on each side: three Knights and a Wizard, who lays a Spell Armor field. Available at 0:30, back 4:00 after."
         },
         "image": ""
       },
       {
         "id": "ptom31",
         "type": "camp",
-        "x": 40,
-        "y": 12,
+        "x": 50,
+        "y": 88.5,
         "name": {
-          "fr": "Camp de siège — géants",
-          "en": "Siege Camp — Giants"
+          "fr": "Camp de siège — géants, bas",
+          "en": "Siege Camp — Giants, bottom"
         },
         "description": {
-          "fr": "Sur la voie du bas, deux géants de siège qui infligent 100 % de dégâts supplémentaires aux structures. Disponible à 0:30, il réapparaît 3:00 après.",
-          "en": "On the bottom lane, two Siege Giants dealing 100% bonus damage to Structures. Available at 0:30, back 3:00 after."
+          "fr": "Un seul camp, en bas au centre : deux géants de siège qui infligent 100 % de dégâts supplémentaires aux structures. Disponible à 0:30, il réapparaît 3:00 après.",
+          "en": "A single camp, at the bottom centre: two Siege Giants dealing 100% bonus damage to Structures. Available at 0:30, back 3:00 after."
         },
         "image": ""
       },
       {
         "id": "ptom32",
         "type": "camp",
-        "x": 54,
-        "y": 12,
+        "x": 50,
+        "y": 15.5,
         "name": {
           "fr": "Camp de boss — golem de sable",
           "en": "Boss Camp — Sand Golem"
         },
         "description": {
-          "fr": "Sur la voie du haut. Disponible à 5:00, il réapparaît 5:00 après avoir été pris. Immunisé contre la corruption. Le garder en combat empêche le camp de disparaître pendant la phase des tisserands.",
-          "en": "On the top lane. Available at 5:00, back 5:00 after being taken. Immune to Bribe. Keeping it engaged stops the camp vanishing during the Webweaver phase."
+          "fr": "En haut au centre de la carte. Disponible à 5:00, il réapparaît 5:00 après avoir été pris. Immunisé contre la corruption. Le garder en combat empêche le camp de disparaître pendant la phase des tisserands.",
+          "en": "At the top centre of the map. Available at 5:00, back 5:00 after being taken. Immune to Bribe. Keeping it engaged stops the camp vanishing during the Webweaver phase."
         },
         "image": ""
       },
       {
         "id": "pmutmu1e801h",
         "type": "fontaine",
-        "x": 82,
-        "y": 12,
+        "x": 42,
+        "y": 31.4,
         "name": {
-          "fr": "Fontaine de soins — côté gauche",
-          "en": "Healing fountain — left side"
+          "fr": "Fontaine de soins — fort haut, gauche",
+          "en": "Healing fountain — top fort, left"
+        },
+        "description": {
+          "fr": "Deux minutes de recharge après utilisation. Savoir si celle d'en face est disponible change la valeur d'un plongeon autant que les points de vie restants.",
+          "en": "Two-minute cooldown after use. Knowing whether the enemy one is up changes the worth of a dive as much as their remaining health does."
+        },
+        "image": ""
+      },
+      {
+        "id": "ptom34",
+        "type": "fontaine",
+        "x": 42.5,
+        "y": 54.5,
+        "name": {
+          "fr": "Fontaine de soins — fort milieu, gauche",
+          "en": "Healing fountain — middle fort, left"
+        },
+        "description": {
+          "fr": "Deux minutes de recharge après utilisation. Savoir si celle d'en face est disponible change la valeur d'un plongeon autant que les points de vie restants.",
+          "en": "Two-minute cooldown after use. Knowing whether the enemy one is up changes the worth of a dive as much as their remaining health does."
+        },
+        "image": ""
+      },
+      {
+        "id": "ptom35",
+        "type": "fontaine",
+        "x": 42.4,
+        "y": 71,
+        "name": {
+          "fr": "Fontaine de soins — fort bas, gauche",
+          "en": "Healing fountain — bottom fort, left"
+        },
+        "description": {
+          "fr": "Deux minutes de recharge après utilisation. Savoir si celle d'en face est disponible change la valeur d'un plongeon autant que les points de vie restants.",
+          "en": "Two-minute cooldown after use. Knowing whether the enemy one is up changes the worth of a dive as much as their remaining health does."
+        },
+        "image": ""
+      },
+      {
+        "id": "ptom36",
+        "type": "fontaine",
+        "x": 30.5,
+        "y": 22.5,
+        "name": {
+          "fr": "Fontaine de soins — bastion haut, gauche",
+          "en": "Healing fountain — top keep, left"
+        },
+        "description": {
+          "fr": "Deux minutes de recharge après utilisation. Savoir si celle d'en face est disponible change la valeur d'un plongeon autant que les points de vie restants.",
+          "en": "Two-minute cooldown after use. Knowing whether the enemy one is up changes the worth of a dive as much as their remaining health does."
+        },
+        "image": ""
+      },
+      {
+        "id": "ptom37",
+        "type": "fontaine",
+        "x": 33.2,
+        "y": 46.5,
+        "name": {
+          "fr": "Fontaine de soins — bastion milieu, gauche",
+          "en": "Healing fountain — middle keep, left"
+        },
+        "description": {
+          "fr": "Deux minutes de recharge après utilisation. Savoir si celle d'en face est disponible change la valeur d'un plongeon autant que les points de vie restants.",
+          "en": "Two-minute cooldown after use. Knowing whether the enemy one is up changes the worth of a dive as much as their remaining health does."
+        },
+        "image": ""
+      },
+      {
+        "id": "ptom38",
+        "type": "fontaine",
+        "x": 27.5,
+        "y": 58.7,
+        "name": {
+          "fr": "Fontaine de soins — bastion bas, gauche",
+          "en": "Healing fountain — bottom keep, left"
         },
         "description": {
           "fr": "Deux minutes de recharge après utilisation. Savoir si celle d'en face est disponible change la valeur d'un plongeon autant que les points de vie restants.",
@@ -3187,11 +3517,86 @@ const BATTLEGROUNDS = [
       {
         "id": "pmutmu1e801i",
         "type": "fontaine",
-        "x": 12,
-        "y": 26,
+        "x": 58.1,
+        "y": 31.4,
         "name": {
-          "fr": "Fontaine de soins — côté droit",
-          "en": "Healing fountain — right side"
+          "fr": "Fontaine de soins — fort haut, droite",
+          "en": "Healing fountain — top fort, right"
+        },
+        "description": {
+          "fr": "Deux minutes de recharge après utilisation. Savoir si celle d'en face est disponible change la valeur d'un plongeon autant que les points de vie restants.",
+          "en": "Two-minute cooldown after use. Knowing whether the enemy one is up changes the worth of a dive as much as their remaining health does."
+        },
+        "image": ""
+      },
+      {
+        "id": "ptom39",
+        "type": "fontaine",
+        "x": 57.2,
+        "y": 54.5,
+        "name": {
+          "fr": "Fontaine de soins — fort milieu, droite",
+          "en": "Healing fountain — middle fort, right"
+        },
+        "description": {
+          "fr": "Deux minutes de recharge après utilisation. Savoir si celle d'en face est disponible change la valeur d'un plongeon autant que les points de vie restants.",
+          "en": "Two-minute cooldown after use. Knowing whether the enemy one is up changes the worth of a dive as much as their remaining health does."
+        },
+        "image": ""
+      },
+      {
+        "id": "ptom40",
+        "type": "fontaine",
+        "x": 57.7,
+        "y": 71,
+        "name": {
+          "fr": "Fontaine de soins — fort bas, droite",
+          "en": "Healing fountain — bottom fort, right"
+        },
+        "description": {
+          "fr": "Deux minutes de recharge après utilisation. Savoir si celle d'en face est disponible change la valeur d'un plongeon autant que les points de vie restants.",
+          "en": "Two-minute cooldown after use. Knowing whether the enemy one is up changes the worth of a dive as much as their remaining health does."
+        },
+        "image": ""
+      },
+      {
+        "id": "ptom41",
+        "type": "fontaine",
+        "x": 69.6,
+        "y": 22.1,
+        "name": {
+          "fr": "Fontaine de soins — bastion haut, droite",
+          "en": "Healing fountain — top keep, right"
+        },
+        "description": {
+          "fr": "Deux minutes de recharge après utilisation. Savoir si celle d'en face est disponible change la valeur d'un plongeon autant que les points de vie restants.",
+          "en": "Two-minute cooldown after use. Knowing whether the enemy one is up changes the worth of a dive as much as their remaining health does."
+        },
+        "image": ""
+      },
+      {
+        "id": "ptom42",
+        "type": "fontaine",
+        "x": 67,
+        "y": 46.5,
+        "name": {
+          "fr": "Fontaine de soins — bastion milieu, droite",
+          "en": "Healing fountain — middle keep, right"
+        },
+        "description": {
+          "fr": "Deux minutes de recharge après utilisation. Savoir si celle d'en face est disponible change la valeur d'un plongeon autant que les points de vie restants.",
+          "en": "Two-minute cooldown after use. Knowing whether the enemy one is up changes the worth of a dive as much as their remaining health does."
+        },
+        "image": ""
+      },
+      {
+        "id": "ptom43",
+        "type": "fontaine",
+        "x": 72.7,
+        "y": 58.9,
+        "name": {
+          "fr": "Fontaine de soins — bastion bas, droite",
+          "en": "Healing fountain — bottom keep, right"
         },
         "description": {
           "fr": "Deux minutes de recharge après utilisation. Savoir si celle d'en face est disponible change la valeur d'un plongeon autant que les points de vie restants.",
@@ -3253,8 +3658,8 @@ const BATTLEGROUNDS = [
       {
         "id": "ptem33",
         "type": "objectif",
-        "x": 12,
-        "y": 12,
+        "x": 50,
+        "y": 13,
         "name": {
           "fr": "Temple — haut",
           "en": "Temple — top"
@@ -3268,8 +3673,8 @@ const BATTLEGROUNDS = [
       {
         "id": "pmutmu1e801j",
         "type": "objectif",
-        "x": 82,
-        "y": 12,
+        "x": 50,
+        "y": 43,
         "name": {
           "fr": "Temple — milieu",
           "en": "Temple — middle"
@@ -3283,8 +3688,8 @@ const BATTLEGROUNDS = [
       {
         "id": "pmutmu1e801k",
         "type": "objectif",
-        "x": 12,
-        "y": 26,
+        "x": 50,
+        "y": 90,
         "name": {
           "fr": "Temple — bas",
           "en": "Temple — bottom"
@@ -3298,8 +3703,8 @@ const BATTLEGROUNDS = [
       {
         "id": "ptem34",
         "type": "tour",
-        "x": 26,
-        "y": 12,
+        "x": 50,
+        "y": 34.5,
         "name": {
           "fr": "Tour de guet",
           "en": "Watch Tower"
@@ -3313,86 +3718,161 @@ const BATTLEGROUNDS = [
       {
         "id": "ptem35",
         "type": "camp",
-        "x": 40,
-        "y": 12,
+        "x": 35.9,
+        "y": 37.6,
         "name": {
           "fr": "Camp de bruisers — chevaliers, haut gauche",
           "en": "Bruiser Camp — Knights, top left"
         },
         "description": {
-          "fr": "Deux camps sur la voie du haut : trois chevaliers et un sorcier, qui pose un champ d'armure des sorts. Disponibles à 0:30, ils réapparaissent 4:00 après.",
-          "en": "Two camps on the top lane: three Knights and a Wizard, who lays a Spell Armor field. Available at 0:30, back 4:00 after."
+          "fr": "Deux camps entre la voie du haut et celle du milieu, un de chaque côté : trois chevaliers et un sorcier, qui pose un champ d'armure des sorts. Disponibles à 0:30, ils réapparaissent 4:00 après.",
+          "en": "Two camps between the top and middle lanes, one on each side: three Knights and a Wizard, who lays a Spell Armor field. Available at 0:30, back 4:00 after."
         },
         "image": ""
       },
       {
         "id": "pmutmu1e801l",
         "type": "camp",
-        "x": 26,
-        "y": 26,
+        "x": 64.1,
+        "y": 37.8,
         "name": {
           "fr": "Camp de bruisers — chevaliers, haut droite",
           "en": "Bruiser Camp — Knights, top right"
         },
         "description": {
-          "fr": "Deux camps sur la voie du haut : trois chevaliers et un sorcier, qui pose un champ d'armure des sorts. Disponibles à 0:30, ils réapparaissent 4:00 après.",
-          "en": "Two camps on the top lane: three Knights and a Wizard, who lays a Spell Armor field. Available at 0:30, back 4:00 after."
+          "fr": "Deux camps entre la voie du haut et celle du milieu, un de chaque côté : trois chevaliers et un sorcier, qui pose un champ d'armure des sorts. Disponibles à 0:30, ils réapparaissent 4:00 après.",
+          "en": "Two camps between the top and middle lanes, one on each side: three Knights and a Wizard, who lays a Spell Armor field. Available at 0:30, back 4:00 after."
         },
         "image": ""
       },
       {
         "id": "ptem36",
         "type": "camp",
-        "x": 54,
-        "y": 12,
+        "x": 40.4,
+        "y": 68.6,
         "name": {
           "fr": "Camp de siège — géants, bas gauche",
           "en": "Siege Camp — Giants, bottom left"
         },
         "description": {
-          "fr": "Deux camps sur la voie du bas, deux géants chacun. Leurs rochers sont esquivables, et ils infligent 100 % de dégâts supplémentaires aux structures. Disponibles à 0:30, ils réapparaissent 3:00 après.",
-          "en": "Two camps on the bottom lane, two Giants each. Their stones are dodgeable, and they deal 100% bonus damage to Structures. Available at 0:30, back 3:00 after."
+          "fr": "Deux camps entre la voie du milieu et celle du bas, un de chaque côté, deux géants chacun. Leurs rochers sont esquivables, et ils infligent 100 % de dégâts supplémentaires aux structures. Disponibles à 0:30, ils réapparaissent 3:00 après.",
+          "en": "Two camps between the middle and bottom lanes, one on each side, two Giants each. Their stones are dodgeable, and they deal 100% bonus damage to Structures. Available at 0:30, back 3:00 after."
         },
         "image": ""
       },
       {
         "id": "pmutmu1e801m",
         "type": "camp",
-        "x": 40,
-        "y": 26,
+        "x": 59.6,
+        "y": 68.6,
         "name": {
           "fr": "Camp de siège — géants, bas droite",
           "en": "Siege Camp — Giants, bottom right"
         },
         "description": {
-          "fr": "Deux camps sur la voie du bas, deux géants chacun. Leurs rochers sont esquivables, et ils infligent 100 % de dégâts supplémentaires aux structures. Disponibles à 0:30, ils réapparaissent 3:00 après.",
-          "en": "Two camps on the bottom lane, two Giants each. Their stones are dodgeable, and they deal 100% bonus damage to Structures. Available at 0:30, back 3:00 after."
+          "fr": "Deux camps entre la voie du milieu et celle du bas, un de chaque côté, deux géants chacun. Leurs rochers sont esquivables, et ils infligent 100 % de dégâts supplémentaires aux structures. Disponibles à 0:30, ils réapparaissent 3:00 après.",
+          "en": "Two camps between the middle and bottom lanes, one on each side, two Giants each. Their stones are dodgeable, and they deal 100% bonus damage to Structures. Available at 0:30, back 3:00 after."
         },
         "image": ""
       },
       {
         "id": "ptem37",
         "type": "camp",
-        "x": 68,
-        "y": 12,
+        "x": 49.7,
+        "y": 65.3,
         "name": {
           "fr": "Camp de boss — golem de sable",
           "en": "Boss Camp — Sand Golem"
         },
         "description": {
-          "fr": "Sur la voie du bas. Écrasement toutes les 10 secondes, tourbillon de sable toutes les 15. Immunisé contre la corruption. Disponible à 5:00, il réapparaît 5:00 après.",
-          "en": "On the bottom lane. Mega Smash every 10 seconds, Whirling Sands every 15. Immune to Bribe. Available at 5:00, back 5:00 after."
+          "fr": "Au centre, entre la voie du milieu et celle du bas. Écrasement toutes les 10 secondes, tourbillon de sable toutes les 15. Immunisé contre la corruption. Disponible à 5:00, il réapparaît 5:00 après.",
+          "en": "At the centre, between the middle and bottom lanes. Mega Smash every 10 seconds, Whirling Sands every 15. Immune to Bribe. Available at 5:00, back 5:00 after."
         },
         "image": ""
       },
       {
         "id": "pmutmu1e801n",
         "type": "fontaine",
-        "x": 54,
-        "y": 26,
+        "x": 38.2,
+        "y": 22.5,
         "name": {
-          "fr": "Fontaine de soins — côté gauche",
-          "en": "Healing fountain — left side"
+          "fr": "Fontaine de soins — fort haut, gauche",
+          "en": "Healing fountain — top fort, left"
+        },
+        "description": {
+          "fr": "Deux minutes de recharge après utilisation. Savoir si celle d'en face est disponible change la valeur d'un plongeon autant que les points de vie restants.",
+          "en": "Two-minute cooldown after use. Knowing whether the enemy one is up changes the worth of a dive as much as their remaining health does."
+        },
+        "image": ""
+      },
+      {
+        "id": "ptem38",
+        "type": "fontaine",
+        "x": 40.5,
+        "y": 51.2,
+        "name": {
+          "fr": "Fontaine de soins — fort milieu, gauche",
+          "en": "Healing fountain — middle fort, left"
+        },
+        "description": {
+          "fr": "Deux minutes de recharge après utilisation. Savoir si celle d'en face est disponible change la valeur d'un plongeon autant que les points de vie restants.",
+          "en": "Two-minute cooldown after use. Knowing whether the enemy one is up changes the worth of a dive as much as their remaining health does."
+        },
+        "image": ""
+      },
+      {
+        "id": "ptem39",
+        "type": "fontaine",
+        "x": 38.9,
+        "y": 81.3,
+        "name": {
+          "fr": "Fontaine de soins — fort bas, gauche",
+          "en": "Healing fountain — bottom fort, left"
+        },
+        "description": {
+          "fr": "Deux minutes de recharge après utilisation. Savoir si celle d'en face est disponible change la valeur d'un plongeon autant que les points de vie restants.",
+          "en": "Two-minute cooldown after use. Knowing whether the enemy one is up changes the worth of a dive as much as their remaining health does."
+        },
+        "image": ""
+      },
+      {
+        "id": "ptem40",
+        "type": "fontaine",
+        "x": 24.4,
+        "y": 37.5,
+        "name": {
+          "fr": "Fontaine de soins — bastion haut, gauche",
+          "en": "Healing fountain — top keep, left"
+        },
+        "description": {
+          "fr": "Deux minutes de recharge après utilisation. Savoir si celle d'en face est disponible change la valeur d'un plongeon autant que les points de vie restants.",
+          "en": "Two-minute cooldown after use. Knowing whether the enemy one is up changes the worth of a dive as much as their remaining health does."
+        },
+        "image": ""
+      },
+      {
+        "id": "ptem41",
+        "type": "fontaine",
+        "x": 27,
+        "y": 51,
+        "name": {
+          "fr": "Fontaine de soins — bastion milieu, gauche",
+          "en": "Healing fountain — middle keep, left"
+        },
+        "description": {
+          "fr": "Deux minutes de recharge après utilisation. Savoir si celle d'en face est disponible change la valeur d'un plongeon autant que les points de vie restants.",
+          "en": "Two-minute cooldown after use. Knowing whether the enemy one is up changes the worth of a dive as much as their remaining health does."
+        },
+        "image": ""
+      },
+      {
+        "id": "ptem42",
+        "type": "fontaine",
+        "x": 20.8,
+        "y": 59.8,
+        "name": {
+          "fr": "Fontaine de soins — bastion bas, gauche",
+          "en": "Healing fountain — bottom keep, left"
         },
         "description": {
           "fr": "Deux minutes de recharge après utilisation. Savoir si celle d'en face est disponible change la valeur d'un plongeon autant que les points de vie restants.",
@@ -3403,11 +3883,86 @@ const BATTLEGROUNDS = [
       {
         "id": "pmutmu1e801o",
         "type": "fontaine",
-        "x": 68,
-        "y": 26,
+        "x": 61.4,
+        "y": 22.4,
         "name": {
-          "fr": "Fontaine de soins — côté droit",
-          "en": "Healing fountain — right side"
+          "fr": "Fontaine de soins — fort haut, droite",
+          "en": "Healing fountain — top fort, right"
+        },
+        "description": {
+          "fr": "Deux minutes de recharge après utilisation. Savoir si celle d'en face est disponible change la valeur d'un plongeon autant que les points de vie restants.",
+          "en": "Two-minute cooldown after use. Knowing whether the enemy one is up changes the worth of a dive as much as their remaining health does."
+        },
+        "image": ""
+      },
+      {
+        "id": "ptem43",
+        "type": "fontaine",
+        "x": 59.5,
+        "y": 51.1,
+        "name": {
+          "fr": "Fontaine de soins — fort milieu, droite",
+          "en": "Healing fountain — middle fort, right"
+        },
+        "description": {
+          "fr": "Deux minutes de recharge après utilisation. Savoir si celle d'en face est disponible change la valeur d'un plongeon autant que les points de vie restants.",
+          "en": "Two-minute cooldown after use. Knowing whether the enemy one is up changes the worth of a dive as much as their remaining health does."
+        },
+        "image": ""
+      },
+      {
+        "id": "ptem44",
+        "type": "fontaine",
+        "x": 61,
+        "y": 81.4,
+        "name": {
+          "fr": "Fontaine de soins — fort bas, droite",
+          "en": "Healing fountain — bottom fort, right"
+        },
+        "description": {
+          "fr": "Deux minutes de recharge après utilisation. Savoir si celle d'en face est disponible change la valeur d'un plongeon autant que les points de vie restants.",
+          "en": "Two-minute cooldown after use. Knowing whether the enemy one is up changes the worth of a dive as much as their remaining health does."
+        },
+        "image": ""
+      },
+      {
+        "id": "ptem45",
+        "type": "fontaine",
+        "x": 75.3,
+        "y": 37.8,
+        "name": {
+          "fr": "Fontaine de soins — bastion haut, droite",
+          "en": "Healing fountain — top keep, right"
+        },
+        "description": {
+          "fr": "Deux minutes de recharge après utilisation. Savoir si celle d'en face est disponible change la valeur d'un plongeon autant que les points de vie restants.",
+          "en": "Two-minute cooldown after use. Knowing whether the enemy one is up changes the worth of a dive as much as their remaining health does."
+        },
+        "image": ""
+      },
+      {
+        "id": "ptem46",
+        "type": "fontaine",
+        "x": 72.6,
+        "y": 51.2,
+        "name": {
+          "fr": "Fontaine de soins — bastion milieu, droite",
+          "en": "Healing fountain — middle keep, right"
+        },
+        "description": {
+          "fr": "Deux minutes de recharge après utilisation. Savoir si celle d'en face est disponible change la valeur d'un plongeon autant que les points de vie restants.",
+          "en": "Two-minute cooldown after use. Knowing whether the enemy one is up changes the worth of a dive as much as their remaining health does."
+        },
+        "image": ""
+      },
+      {
+        "id": "ptem47",
+        "type": "fontaine",
+        "x": 79.1,
+        "y": 59.9,
+        "name": {
+          "fr": "Fontaine de soins — bastion bas, droite",
+          "en": "Healing fountain — bottom keep, right"
         },
         "description": {
           "fr": "Deux minutes de recharge après utilisation. Savoir si celle d'en face est disponible change la valeur d'un plongeon autant que les points de vie restants.",
