@@ -21,6 +21,8 @@ const BG_DICT = {
   heroRotationTitle: { fr: "Rotation gratuite", en: "Free Rotation" },
   heroRotationError: { fr: "Rotation indisponible pour le moment.", en: "Rotation unavailable right now." },
   homeLoading: { fr: "Chargement…", en: "Loading…" },
+  footerNote: { fr: "Une erreur sur une carte, un point d'intérêt ou un conseil ?", en: "Spotted a mistake on a map, a marker or a tip?" },
+  footerContact: { fr: "Contact", en: "Contact" },
   prevVideo: { fr: "Vidéo précédente", en: "Previous video" },
   nextVideo: { fr: "Vidéo suivante", en: "Next video" },
   // Deux formulations : au bureau l'infobulle suit le survol, au tactile il faut toucher.
@@ -931,6 +933,22 @@ function renderBgAll() {
   renderBgList();
   renderBgDetail();
   bgUpdateHash();
+  renderBgFooter();
+}
+
+/* Pied de page : une phrase et un lien vers la page de contact, partagée avec le
+   site des builds. Le lien emporte la carte ouverte : la page de contact s'en sert
+   pour proposer un retour dessus. Appelé après bgUpdateHash(), pour lire le bon fragment. */
+function renderBgFooter() {
+  const pied = document.getElementById('siteFooter');
+  if (!pied) return;
+  const retour = (location.hash || '').replace(/^#/, '');
+  const cible = BG_BUILDS_URL + 'contact.html?depuis=maps' + (retour ? '&retour=' + encodeURIComponent(retour) : '');
+  pied.innerHTML = `<span class="footer-note">${bgEsc(bgT('footerNote'))}</span>`
+    + `<a class="footer-link" href="${bgEsc(cible)}">`
+    + `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2.5" y="4.5" width="19" height="15" rx="2"/><path d="m3 7 9 6 9-6"/></svg>`
+    + `<span>${bgEsc(bgT('footerContact'))}</span></a>`;
+  pied.hidden = false;
 }
 
 bgEls.bgList.addEventListener('click', (e) => {

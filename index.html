@@ -76,9 +76,16 @@
         <p class="section-note" id="bgNote">Choisis une carte dans la liste, ou utilise la recherche ci-dessus.</p>
         <div class="hero-list" id="bgList" role="listbox" aria-label="Liste des cartes"></div>
       </aside>
-      <section class="panel content" id="detailViewWrap">
-        <div id="detailView"></div>
-      </section>
+      <!-- Colonne de droite : le contenu et le pied de page descendent ensemble, comme
+           sur le site des builds. Sinon la barre se cale sous la colonne la plus haute. -->
+      <div class="layout-main">
+        <section class="panel content" id="detailViewWrap">
+          <div id="detailView"></div>
+        </section>
+
+        <!-- Rempli par renderBgFooter() : le libellé suit la langue choisie. -->
+        <footer class="panel site-footer" id="siteFooter" hidden></footer>
+      </div>
     </main>
   </div>
 
