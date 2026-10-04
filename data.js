@@ -2875,7 +2875,7 @@ const BATTLEGROUNDS = [
           "fr": "Le pirate fantôme à qui l'on livre les doublons, cinq secondes d'incantation. 8 pour la première fois, plus 2 à chaque paiement déjà fait. Une fois servi, il bombarde les forts adverses depuis son navire.",
           "en": "The ghost pirate you hand the Doubloons to, on a five-second channel. 8 the first time, plus 2 for each payment already made. Once served, he bombards the enemy forts from his ship."
         },
-        "image": ""
+        "image": "assets/maps/baie-coeur-noir/captures/3.jpg"
       },
       {
         "id": "pbai39",
@@ -2883,29 +2883,14 @@ const BATTLEGROUNDS = [
         "x": 49.4,
         "y": 27.6,
         "name": {
-          "fr": "Coffre au trésor",
-          "en": "Treasure Chest"
+          "fr": "Coffre au trésor — haut",
+          "en": "Treasure Chest — top"
         },
         "description": {
           "fr": "Cinq doublons par coffre. Le premier apparaît à 1:30 sur la voie du haut, puis toutes les trois minutes, par deux puis par trois.",
           "en": "Five Doubloons per chest. The first appears at 1:30 on the top lane, then every three minutes, in twos and then threes."
         },
-        "image": ""
-      },
-      {
-        "id": "pmutm0i5v0w9t",
-        "type": "objectif",
-        "x": 49.4,
-        "y": 72.2,
-        "name": {
-          "fr": "Coffre au trésor",
-          "en": "Treasure Chest"
-        },
-        "description": {
-          "fr": "Cinq doublons par coffre. Le premier apparaît à 1:30 sur la voie du haut, puis toutes les trois minutes, par deux puis par trois.",
-          "en": "Five Doubloons per chest. The first appears at 1:30 on the top lane, then every three minutes, in twos and then threes."
-        },
-        "image": ""
+        "image": "assets/maps/baie-coeur-noir/captures/1.jpg"
       },
       {
         "id": "pmutm0d83dc6m",
@@ -2913,12 +2898,57 @@ const BATTLEGROUNDS = [
         "x": 49.4,
         "y": 45.4,
         "name": {
-          "fr": "Coffre au trésor",
-          "en": "Treasure Chest"
+          "fr": "Coffre au trésor — milieu",
+          "en": "Treasure Chest — middle"
         },
         "description": {
           "fr": "Cinq doublons par coffre. Le premier apparaît à 1:30 sur la voie du haut, puis toutes les trois minutes, par deux puis par trois.",
           "en": "Five Doubloons per chest. The first appears at 1:30 on the top lane, then every three minutes, in twos and then threes."
+        },
+        "image": "assets/maps/baie-coeur-noir/captures/1.jpg"
+      },
+      {
+        "id": "pmutm0i5v0w9t",
+        "type": "objectif",
+        "x": 49.4,
+        "y": 72.2,
+        "name": {
+          "fr": "Coffre au trésor — bas",
+          "en": "Treasure Chest — bottom"
+        },
+        "description": {
+          "fr": "Cinq doublons par coffre. Le premier apparaît à 1:30 sur la voie du haut, puis toutes les trois minutes, par deux puis par trois.",
+          "en": "Five Doubloons per chest. The first appears at 1:30 on the top lane, then every three minutes, in twos and then threes."
+        },
+        "image": "assets/maps/baie-coeur-noir/captures/1.jpg"
+      },
+      {
+        "id": "pmutmu1e801p",
+        "type": "camp",
+        "x": 41,
+        "y": 25.8,
+        "name": {
+          "fr": "Camp à doublons — haut, gauche",
+          "en": "Doubloon Camp — top, left"
+        },
+        "description": {
+          "fr": "Quatre camps de deux pirates squelettes : deux entre la voie du haut et celle du milieu, deux entre le milieu et le bas. Ils ne poussent pas de voie : ils donnent deux doublons. Disponibles à 0:30, ils réapparaissent 2:30 après.",
+          "en": "Four camps of two Skeletal Pirates: two between the top and middle lanes, two between the middle and bottom lanes. They do not push a lane: they hand over two Doubloons. Available at 0:30, back 2:30 after."
+        },
+        "image": ""
+      },
+      {
+        "id": "pbaidmutqvgli",
+        "type": "camp",
+        "x": 57.9,
+        "y": 25.8,
+        "name": {
+          "fr": "Camp à doublons — haut, droite",
+          "en": "Doubloon Camp — top, right"
+        },
+        "description": {
+          "fr": "Quatre camps de deux pirates squelettes : deux entre la voie du haut et celle du milieu, deux entre le milieu et le bas. Ils ne poussent pas de voie : ils donnent deux doublons. Disponibles à 0:30, ils réapparaissent 2:30 après.",
+          "en": "Four camps of two Skeletal Pirates: two between the top and middle lanes, two between the middle and bottom lanes. They do not push a lane: they hand over two Doubloons. Available at 0:30, back 2:30 after."
         },
         "image": ""
       },
@@ -2928,27 +2958,12 @@ const BATTLEGROUNDS = [
         "x": 34.4,
         "y": 63.6,
         "name": {
-          "fr": "Camp à doublons — pirates squelettes",
-          "en": "Doubloon Camp — Skeletal Pirates"
+          "fr": "Camp à doublons — bas, gauche",
+          "en": "Doubloon Camp — bottom, left"
         },
         "description": {
-          "fr": "Deux camps de deux pirates squelettes. Ils ne poussent pas de voie : ils donnent deux doublons. Disponibles à 0:30, ils réapparaissent 2:30 après.",
-          "en": "Two camps of two Skeletal Pirates. They do not push a lane: they hand over two Doubloons. Available at 0:30, back 2:30 after."
-        },
-        "image": ""
-      },
-      {
-        "id": "pmutmu1e801p",
-        "type": "camp",
-        "x": 12,
-        "y": 12,
-        "name": {
-          "fr": "Camp à doublons — entre haut et milieu, gauche",
-          "en": "Doubloon Camp — between top and middle, left"
-        },
-        "description": {
-          "fr": "Deux camps de deux pirates squelettes. Ils ne poussent pas de voie : ils donnent deux doublons. Disponibles à 0:30, ils réapparaissent 2:30 après.",
-          "en": "Two camps of two Skeletal Pirates. They do not push a lane: they hand over two Doubloons. Available at 0:30, back 2:30 after."
+          "fr": "Quatre camps de deux pirates squelettes : deux entre la voie du haut et celle du milieu, deux entre le milieu et le bas. Ils ne poussent pas de voie : ils donnent deux doublons. Disponibles à 0:30, ils réapparaissent 2:30 après.",
+          "en": "Four camps of two Skeletal Pirates: two between the top and middle lanes, two between the middle and bottom lanes. They do not push a lane: they hand over two Doubloons. Available at 0:30, back 2:30 after."
         },
         "image": ""
       },
@@ -2958,12 +2973,12 @@ const BATTLEGROUNDS = [
         "x": 64.4,
         "y": 63.4,
         "name": {
-          "fr": "Camp à doublons — pirates squelettes",
-          "en": "Doubloon Camp — Skeletal Pirates"
+          "fr": "Camp à doublons — bas, droite",
+          "en": "Doubloon Camp — bottom, right"
         },
         "description": {
-          "fr": "Deux camps de deux pirates squelettes. Ils ne poussent pas de voie : ils donnent deux doublons. Disponibles à 0:30, ils réapparaissent 2:30 après.",
-          "en": "Two camps of two Skeletal Pirates. They do not push a lane: they hand over two Doubloons. Available at 0:30, back 2:30 after."
+          "fr": "Quatre camps de deux pirates squelettes : deux entre la voie du haut et celle du milieu, deux entre le milieu et le bas. Ils ne poussent pas de voie : ils donnent deux doublons. Disponibles à 0:30, ils réapparaissent 2:30 après.",
+          "en": "Four camps of two Skeletal Pirates: two between the top and middle lanes, two between the middle and bottom lanes. They do not push a lane: they hand over two Doubloons. Available at 0:30, back 2:30 after."
         },
         "image": ""
       },
@@ -2973,8 +2988,8 @@ const BATTLEGROUNDS = [
         "x": 29.9,
         "y": 70.7,
         "name": {
-          "fr": "Camp de siège — géants",
-          "en": "Siege Camp — Giants"
+          "fr": "Camp de siège — géants, bas gauche",
+          "en": "Siege Camp — Giants, bottom left"
         },
         "description": {
           "fr": "Deux camps sur la voie du bas, deux géants chacun. Ils rejoignent la voie et rapportent deux doublons. Disponibles à 0:30, ils réapparaissent 3:00 après.",
@@ -2988,8 +3003,8 @@ const BATTLEGROUNDS = [
         "x": 69,
         "y": 70.9,
         "name": {
-          "fr": "Camp de siège — géants",
-          "en": "Siege Camp — Giants"
+          "fr": "Camp de siège — géants, bas droite",
+          "en": "Siege Camp — Giants, bottom right"
         },
         "description": {
           "fr": "Deux camps sur la voie du bas, deux géants chacun. Ils rejoignent la voie et rapportent deux doublons. Disponibles à 0:30, ils réapparaissent 3:00 après.",
@@ -3013,28 +3028,13 @@ const BATTLEGROUNDS = [
         "image": ""
       },
       {
-        "id": "pmutmu1e901r",
-        "type": "camp",
-        "x": 40,
-        "y": 12,
-        "name": {
-          "fr": "Camp de bruisers — haut, gauche",
-          "en": "Bruiser Camp — top, left"
-        },
-        "description": {
-          "fr": "Trois chevaliers et un sorcier, qui pose un champ d'armure des sorts autour des unités proches. Comme tous les camps de la carte, il rapporte deux doublons. Disponible à 0:30, il réapparaît 4:00 après avoir été pris.",
-          "en": "Three Knights and a Wizard, who lays a Spell Armor field around nearby units. Like every camp on this map, it pays two Doubloons. Available at 0:30, back 4:00 after being taken."
-        },
-        "image": ""
-      },
-      {
         "id": "pmutmu1e901s",
         "type": "camp",
         "x": 32.1,
         "y": 34.7,
         "name": {
-          "fr": "Camp de bruisers — haut, droite",
-          "en": "Bruiser Camp — top, right"
+          "fr": "Camp de bruisers — haut, gauche",
+          "en": "Bruiser Camp — top, left"
         },
         "description": {
           "fr": "Trois chevaliers et un sorcier, qui pose un champ d'armure des sorts autour des unités proches. Comme tous les camps de la carte, il rapporte deux doublons. Disponible à 0:30, il réapparaît 4:00 après avoir été pris.",
@@ -3108,23 +3108,8 @@ const BATTLEGROUNDS = [
         "x": 37.5,
         "y": 22.6,
         "name": {
-          "fr": "Fontaine de soins — côté gauche",
-          "en": "Healing fountain — left side"
-        },
-        "description": {
-          "fr": "Deux minutes de recharge après utilisation. Savoir si celle d'en face est disponible change la valeur d'un plongeon autant que les points de vie restants.",
-          "en": "Two-minute cooldown after use. Knowing whether the enemy one is up changes the worth of a dive as much as their remaining health does."
-        },
-        "image": ""
-      },
-      {
-        "id": "pmutpq8w4kdn3",
-        "type": "fontaine",
-        "x": 16.6,
-        "y": 38.5,
-        "name": {
-          "fr": "Fontaine de soins — côté gauche",
-          "en": "Healing fountain — left side"
+          "fr": "Fontaine de soins — fort haut, gauche",
+          "en": "Healing fountain — top fort, left"
         },
         "description": {
           "fr": "Deux minutes de recharge après utilisation. Savoir si celle d'en face est disponible change la valeur d'un plongeon autant que les points de vie restants.",
@@ -3138,23 +3123,8 @@ const BATTLEGROUNDS = [
         "x": 39,
         "y": 34.4,
         "name": {
-          "fr": "Fontaine de soins — côté gauche",
-          "en": "Healing fountain — left side"
-        },
-        "description": {
-          "fr": "Deux minutes de recharge après utilisation. Savoir si celle d'en face est disponible change la valeur d'un plongeon autant que les points de vie restants.",
-          "en": "Two-minute cooldown after use. Knowing whether the enemy one is up changes the worth of a dive as much as their remaining health does."
-        },
-        "image": ""
-      },
-      {
-        "id": "pmutpqcqt2kd9",
-        "type": "fontaine",
-        "x": 28,
-        "y": 60.4,
-        "name": {
-          "fr": "Fontaine de soins — côté gauche",
-          "en": "Healing fountain — left side"
+          "fr": "Fontaine de soins — fort milieu, gauche",
+          "en": "Healing fountain — middle fort, left"
         },
         "description": {
           "fr": "Deux minutes de recharge après utilisation. Savoir si celle d'en face est disponible change la valeur d'un plongeon autant que les points de vie restants.",
@@ -3168,8 +3138,38 @@ const BATTLEGROUNDS = [
         "x": 37.4,
         "y": 86,
         "name": {
-          "fr": "Fontaine de soins — côté gauche",
-          "en": "Healing fountain — left side"
+          "fr": "Fontaine de soins — fort bas, gauche",
+          "en": "Healing fountain — bottom fort, left"
+        },
+        "description": {
+          "fr": "Deux minutes de recharge après utilisation. Savoir si celle d'en face est disponible change la valeur d'un plongeon autant que les points de vie restants.",
+          "en": "Two-minute cooldown after use. Knowing whether the enemy one is up changes the worth of a dive as much as their remaining health does."
+        },
+        "image": ""
+      },
+      {
+        "id": "pmutpq8w4kdn3",
+        "type": "fontaine",
+        "x": 16.6,
+        "y": 38.5,
+        "name": {
+          "fr": "Fontaine de soins — bastion haut, gauche",
+          "en": "Healing fountain — top keep, left"
+        },
+        "description": {
+          "fr": "Deux minutes de recharge après utilisation. Savoir si celle d'en face est disponible change la valeur d'un plongeon autant que les points de vie restants.",
+          "en": "Two-minute cooldown after use. Knowing whether the enemy one is up changes the worth of a dive as much as their remaining health does."
+        },
+        "image": ""
+      },
+      {
+        "id": "pmutpqcqt2kd9",
+        "type": "fontaine",
+        "x": 28,
+        "y": 60.4,
+        "name": {
+          "fr": "Fontaine de soins — bastion milieu, gauche",
+          "en": "Healing fountain — middle keep, left"
         },
         "description": {
           "fr": "Deux minutes de recharge après utilisation. Savoir si celle d'en face est disponible change la valeur d'un plongeon autant que les points de vie restants.",
@@ -3183,8 +3183,8 @@ const BATTLEGROUNDS = [
         "x": 17,
         "y": 71.3,
         "name": {
-          "fr": "Fontaine de soins — côté gauche",
-          "en": "Healing fountain — left side"
+          "fr": "Fontaine de soins — bastion bas, gauche",
+          "en": "Healing fountain — bottom keep, left"
         },
         "description": {
           "fr": "Deux minutes de recharge après utilisation. Savoir si celle d'en face est disponible change la valeur d'un plongeon autant que les points de vie restants.",
@@ -3198,23 +3198,8 @@ const BATTLEGROUNDS = [
         "x": 61.5,
         "y": 22.9,
         "name": {
-          "fr": "Fontaine de soins — côté droit",
-          "en": "Healing fountain — right side"
-        },
-        "description": {
-          "fr": "Deux minutes de recharge après utilisation. Savoir si celle d'en face est disponible change la valeur d'un plongeon autant que les points de vie restants.",
-          "en": "Two-minute cooldown after use. Knowing whether the enemy one is up changes the worth of a dive as much as their remaining health does."
-        },
-        "image": ""
-      },
-      {
-        "id": "pmutpp73biwn7",
-        "type": "fontaine",
-        "x": 82.2,
-        "y": 38.5,
-        "name": {
-          "fr": "Fontaine de soins — côté droit",
-          "en": "Healing fountain — right side"
+          "fr": "Fontaine de soins — fort haut, droite",
+          "en": "Healing fountain — top fort, right"
         },
         "description": {
           "fr": "Deux minutes de recharge après utilisation. Savoir si celle d'en face est disponible change la valeur d'un plongeon autant que les points de vie restants.",
@@ -3228,23 +3213,8 @@ const BATTLEGROUNDS = [
         "x": 60.3,
         "y": 34.6,
         "name": {
-          "fr": "Fontaine de soins — côté droit",
-          "en": "Healing fountain — right side"
-        },
-        "description": {
-          "fr": "Deux minutes de recharge après utilisation. Savoir si celle d'en face est disponible change la valeur d'un plongeon autant que les points de vie restants.",
-          "en": "Two-minute cooldown after use. Knowing whether the enemy one is up changes the worth of a dive as much as their remaining health does."
-        },
-        "image": ""
-      },
-      {
-        "id": "pmutpp8t6jkye",
-        "type": "fontaine",
-        "x": 70.8,
-        "y": 60.5,
-        "name": {
-          "fr": "Fontaine de soins — côté droit",
-          "en": "Healing fountain — right side"
+          "fr": "Fontaine de soins — fort milieu, droite",
+          "en": "Healing fountain — middle fort, right"
         },
         "description": {
           "fr": "Deux minutes de recharge après utilisation. Savoir si celle d'en face est disponible change la valeur d'un plongeon autant que les points de vie restants.",
@@ -3258,8 +3228,38 @@ const BATTLEGROUNDS = [
         "x": 61.4,
         "y": 85.9,
         "name": {
-          "fr": "Fontaine de soins — côté droit",
-          "en": "Healing fountain — right side"
+          "fr": "Fontaine de soins — fort bas, droite",
+          "en": "Healing fountain — bottom fort, right"
+        },
+        "description": {
+          "fr": "Deux minutes de recharge après utilisation. Savoir si celle d'en face est disponible change la valeur d'un plongeon autant que les points de vie restants.",
+          "en": "Two-minute cooldown after use. Knowing whether the enemy one is up changes the worth of a dive as much as their remaining health does."
+        },
+        "image": ""
+      },
+      {
+        "id": "pmutpp73biwn7",
+        "type": "fontaine",
+        "x": 82.2,
+        "y": 38.5,
+        "name": {
+          "fr": "Fontaine de soins — bastion haut, droite",
+          "en": "Healing fountain — top keep, right"
+        },
+        "description": {
+          "fr": "Deux minutes de recharge après utilisation. Savoir si celle d'en face est disponible change la valeur d'un plongeon autant que les points de vie restants.",
+          "en": "Two-minute cooldown after use. Knowing whether the enemy one is up changes the worth of a dive as much as their remaining health does."
+        },
+        "image": ""
+      },
+      {
+        "id": "pmutpp8t6jkye",
+        "type": "fontaine",
+        "x": 70.8,
+        "y": 60.5,
+        "name": {
+          "fr": "Fontaine de soins — bastion milieu, droite",
+          "en": "Healing fountain — middle keep, right"
         },
         "description": {
           "fr": "Deux minutes de recharge après utilisation. Savoir si celle d'en face est disponible change la valeur d'un plongeon autant que les points de vie restants.",
@@ -3273,8 +3273,8 @@ const BATTLEGROUNDS = [
         "x": 81.8,
         "y": 71.1,
         "name": {
-          "fr": "Fontaine de soins — côté droit",
-          "en": "Healing fountain — right side"
+          "fr": "Fontaine de soins — bastion bas, droite",
+          "en": "Healing fountain — bottom keep, right"
         },
         "description": {
           "fr": "Deux minutes de recharge après utilisation. Savoir si celle d'en face est disponible change la valeur d'un plongeon autant que les points de vie restants.",
