@@ -247,9 +247,25 @@
   .adm-map-stage img{display:block;width:auto;max-width:100%;max-height:460px;user-select:none;}
   /* Barres de repérage : une horizontale et une verticale qui suivent le curseur (ou le
      point qu'on glisse) sur toute la carte, plus les deux axes du milieu en pointillés. */
-  .adm-map-tools{display:flex;align-items:center;gap:14px;margin-bottom:8px;font-size:12px;color:var(--text-dim);}
+  .adm-map-tools{display:flex;align-items:center;flex-wrap:wrap;gap:8px 14px;margin-bottom:8px;font-size:12px;color:var(--text-dim);}
+  /* Taille d'affichage de la minimap. Les points sont en pourcentage de l'image : ils
+     restent à leur place quelle que soit la taille choisie. */
+  .adm-map-size{display:inline-flex;flex:0 0 auto;border:1px solid var(--border);border-radius:6px;overflow:hidden;}
+  .adm-map-size button{padding:4px 10px;font-size:12px;border:0;border-radius:0;background:none;color:var(--text-dim);box-shadow:none;}
+  .adm-map-size button + button{border-left:1px solid var(--border);}
+  .adm-map-size button:hover{color:var(--text);background:rgba(255,255,255,.05);}
+  .adm-map-size button.active{color:var(--gold-bright);background:var(--gold-soft);}
+  .adm-map-scroll.taille-large .adm-map-stage{display:block;}
+  .adm-map-scroll.taille-large .adm-map-stage img{width:100%;max-height:none;}
+  /* Taille réelle : un pixel de l'image pour un pixel d'écran, dans un cadre qui défile
+     dans les deux sens. */
+  .adm-map-scroll.taille-reelle{overflow:auto;max-height:78vh;border:1px solid var(--border);border-radius:var(--radius);background:#000;}
+  .adm-map-scroll.taille-reelle .adm-map-stage{max-width:none;border:0;border-radius:0;}
+  .adm-map-scroll.taille-reelle .adm-map-stage img{width:auto;max-width:none;max-height:none;}
   .adm-map-tools label{display:flex;align-items:center;gap:6px;margin:0;cursor:pointer;text-transform:none;font-size:12px;letter-spacing:0;color:var(--text);flex:0 0 auto;white-space:nowrap;}
   .adm-map-tools input{width:auto;margin:0;}
+  .adm-map-tools .adm-undo{margin-left:auto;flex:0 0 auto;padding:4px 10px;font-size:12px;white-space:nowrap;}
+  .adm-map-tools .adm-undo:disabled{opacity:.4;cursor:default;}
   .adm-guide,.adm-guide-mid,.adm-guide-label{position:absolute;pointer-events:none;display:none;}
   .adm-map-stage.guides-on .adm-guide-mid{display:block;}
   .adm-map-stage.guides-on.guides-live .adm-guide,
@@ -1716,9 +1732,17 @@ function renderHotspotsTab(bg){
           <label><input type="checkbox" ${guidesActifs ? 'checked' : ''} onchange="basculerGuides(this.checked)" />
             Barres de repérage</label>
           <span>Une barre horizontale et une verticale suivent le curseur ; les points déjà alignés s'illuminent.</span>
+          <span class="adm-map-size" role="group" aria-label="Taille de la carte">
+            ${TAILLES_CARTE.map(t => `<button type="button" data-taille="${t.cle}" class="${tailleCarte === t.cle ? 'active' : ''}"
+              title="${t.aide}" onclick="changerTailleCarte('${t.cle}')">${t.libelle}</button>`).join('')}
+          </span>
+          <button class="ghost adm-undo" id="admUndoBtn" type="button" onclick="annulerDeplacement()"
+            title="Remettre le dernier point déplacé à sa place (Ctrl+Z)" ${pileDeplacements().length ? '' : 'disabled'}>${libelleAnnuler()}</button>
         </div>
+        <div class="adm-map-scroll taille-${tailleCarte}" data-map-scroll>
         <div class="adm-map-stage${guidesActifs ? ' guides-on' : ''}" data-map-stage>
           <img src="${assetRawUrl(bg.minimapImage)}" alt="Minimap" draggable="false"
+               onload="if (tailleCarte === 'reelle') montrerPointSelectionne()"
                onerror="this.closest('.adm-map-stage').innerHTML='&lt;div style=&quot;padding:20px;color:var(--text-dim);font-size:13px;line-height:1.6;&quot;&gt;La minimap n\\'a pas pu être chargée depuis GitHub.&lt;br&gt;Vérifie que le fichier est bien poussé sur le dépôt.&lt;/div&gt;'" />
           <div class="adm-guide-mid adm-guide-mid-h"></div>
           <div class="adm-guide-mid adm-guide-mid-v"></div>
@@ -1726,6 +1750,7 @@ function renderHotspotsTab(bg){
           <div class="adm-guide adm-guide-v"></div>
           ${marqueurs}
           <div class="adm-guide-label"></div>
+        </div>
         </div>
       </div>
       ${blocs ? `
@@ -1839,12 +1864,115 @@ function centrerSurPoint(hi){
   selectionnerPoint(hi);
   const stage = document.querySelector('[data-map-stage]');
   if (stage) stage.scrollIntoView({ block: 'nearest', behavior: 'smooth' });
+  // En taille réelle la carte déborde de son cadre : on amène le point lui-même au centre.
+  if (tailleCarte === 'reelle') montrerPointSelectionne();
+}
+
+/* Taille d'affichage de la minimap, retenue sur l'appareil comme les barres de repérage. */
+const TAILLES_CARTE = [
+  { cle: 'ajustee', libelle: 'Ajustée',      aide: "La carte entière, 460 pixels de haut au plus" },
+  { cle: 'large',   libelle: 'Grande',       aide: "Toute la largeur du panneau" },
+  { cle: 'reelle',  libelle: 'Taille réelle', aide: "Un pixel de l'image pour un pixel d'écran — la carte défile dans son cadre" },
+];
+let tailleCarte = (() => {
+  try {
+    const t = localStorage.getItem('eowea_bg_admin_taille_carte');
+    return TAILLES_CARTE.some(x => x.cle === t) ? t : 'ajustee';
+  } catch(e){ return 'ajustee'; }
+})();
+
+function changerTailleCarte(taille){
+  tailleCarte = taille;
+  try { localStorage.setItem('eowea_bg_admin_taille_carte', taille); } catch(e){}
+  const cadre = document.querySelector('[data-map-scroll]');
+  if (cadre) cadre.className = 'adm-map-scroll taille-' + taille;
+  document.querySelectorAll('.adm-map-size button').forEach(b => b.classList.toggle('active', b.dataset.taille === taille));
+  if (taille === 'reelle') montrerPointSelectionne();
+}
+
+// Fait défiler le cadre en taille réelle jusqu'au point sélectionné (le centre sinon).
+function montrerPointSelectionne(){
+  const cadre = document.querySelector('[data-map-scroll]');
+  if (!cadre) return;
+  const marqueur = cadre.querySelector('.adm-hotspot.is-selected');
+  const c = cadre.getBoundingClientRect();
+  if (marqueur){
+    const m = marqueur.getBoundingClientRect();
+    cadre.scrollLeft += (m.left + m.width / 2) - (c.left + c.width / 2);
+    cadre.scrollTop  += (m.top + m.height / 2) - (c.top + c.height / 2);
+  } else {
+    cadre.scrollLeft = (cadre.scrollWidth - cadre.clientWidth) / 2;
+    cadre.scrollTop  = (cadre.scrollHeight - cadre.clientHeight) / 2;
+  }
 }
 
 /* Pose et déplacement des points. La délégation est posée une seule fois sur le
    conteneur : le panneau se re-rend entièrement à chaque changement d'onglet. */
 let pointDrag = null;
 let glissementRecent = false;   // un clic qui termine un glissement ne doit rien poser
+
+/* Annuler un déplacement : Ctrl+Z, ou le bouton « Annuler » au-dessus de la carte.
+   Une pile par carte. Chaque entrée retient le point lui-même (et non son numéro, que
+   dupliquer ou supprimer un point décalerait) et la position qu'il avait avant. */
+const historiqueDeplacements = new WeakMap();
+function pileDeplacements(){
+  const bg = BATTLEGROUNDS?.[currentMapIndex];
+  if (!bg) return [];
+  if (!historiqueDeplacements.has(bg)) historiqueDeplacements.set(bg, []);
+  return historiqueDeplacements.get(bg);
+}
+function libelleAnnuler(){
+  const n = pileDeplacements().length;
+  return n ? `↶ Annuler (${n})` : '↶ Annuler';
+}
+function majBoutonAnnuler(){
+  const bouton = document.getElementById('admUndoBtn');
+  if (!bouton) return;
+  bouton.disabled = !pileDeplacements().length;
+  bouton.textContent = libelleAnnuler();
+}
+// « clavier » : une rafale de flèches sur le même point ne compte que pour un seul
+// déplacement — sinon il faudrait autant de Ctrl+Z que d'appuis sur une flèche.
+function memoriserDeplacement(h, x, y, clavier = false){
+  const pile = pileDeplacements();
+  const dernier = pile[pile.length - 1];
+  if (clavier && dernier && dernier.clavier && dernier.point === h && Date.now() - dernier.t < 1000){
+    dernier.t = Date.now();
+    return;
+  }
+  pile.push({ point: h, x, y, clavier, t: Date.now() });
+  if (pile.length > 100) pile.shift();
+  majBoutonAnnuler();
+}
+function annulerDeplacement(){
+  const bg = BATTLEGROUNDS?.[currentMapIndex];
+  if (!bg) return false;
+  const pile = pileDeplacements();
+  let entree = pile.pop();
+  // Un point supprimé entre-temps n'a plus de place à retrouver : on passe au suivant.
+  while (entree && !bg.hotspots.includes(entree.point)) entree = pile.pop();
+  majBoutonAnnuler();
+  if (!entree) return false;
+  entree.point.x = entree.x;
+  entree.point.y = entree.y;
+  const hi = bg.hotspots.indexOf(entree.point);
+  const marqueur = document.querySelector(`.adm-hotspot[data-point="${hi}"]`);
+  if (marqueur){
+    marqueur.style.left = entree.x + '%';
+    marqueur.style.top = entree.y + '%';
+  }
+  majCoordsPoint(hi);
+  markDirty();
+  selectionnerPoint(hi, false);
+  return true;
+}
+document.addEventListener('keydown', (e) => {
+  if (!(e.ctrlKey || e.metaKey) || e.shiftKey || e.altKey || e.key.toLowerCase() !== 'z') return;
+  // Dans un champ de texte, Ctrl+Z garde son rôle habituel : annuler la frappe.
+  if (e.target.closest && e.target.closest('input, textarea, select, [contenteditable]')) return;
+  if (currentTab !== 'points') return;
+  if (annulerDeplacement()) e.preventDefault();
+});
 
 /* Barres de repérage. Le choix est retenu sur l'appareil : c'est une préférence de
    travail, pas une donnée du site. */
@@ -1949,6 +2077,7 @@ function masquerGuides(stage){
     if (!d.bouge || !d.pos) return;
     const h = BATTLEGROUNDS[currentMapIndex]?.hotspots?.[d.index];
     if (h){
+      memoriserDeplacement(h, h.x, h.y);
       h.x = d.pos.x;
       h.y = d.pos.y;
       markDirty();
@@ -1982,6 +2111,7 @@ function masquerGuides(stage){
     e.preventDefault();   // sinon la page défile en même temps
     const pas = e.shiftKey ? 1 : 0.1;
     const borner = (v) => Math.round(Math.min(100, Math.max(0, v)) * 10) / 10;
+    memoriserDeplacement(h, h.x, h.y, true);
     h.x = borner(h.x + dir[0] * pas);
     h.y = borner(h.y + dir[1] * pas);
     marqueur.style.left = h.x + '%';
