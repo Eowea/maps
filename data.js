@@ -494,8 +494,8 @@ const BATTLEGROUNDS = [
       {
         "id": "ppas1",
         "type": "objectif",
-        "x": 12,
-        "y": 12,
+        "x": 44.4,
+        "y": 41.8,
         "name": {
           "fr": "Camp d'emprisonnement — haut, gauche",
           "en": "Prison Camp — top, left"
@@ -509,8 +509,8 @@ const BATTLEGROUNDS = [
       {
         "id": "pmutmu1e800a",
         "type": "objectif",
-        "x": 82,
-        "y": 12,
+        "x": 55.9,
+        "y": 38,
         "name": {
           "fr": "Camp d'emprisonnement — haut, droite",
           "en": "Prison Camp — top, right"
@@ -524,8 +524,8 @@ const BATTLEGROUNDS = [
       {
         "id": "pmutmu1e800b",
         "type": "objectif",
-        "x": 12,
-        "y": 26,
+        "x": 44.5,
+        "y": 60.4,
         "name": {
           "fr": "Camp d'emprisonnement — bas, gauche",
           "en": "Prison Camp — bottom, left"
@@ -539,8 +539,8 @@ const BATTLEGROUNDS = [
       {
         "id": "pmutmu1e800c",
         "type": "objectif",
-        "x": 26,
-        "y": 26,
+        "x": 55.9,
+        "y": 56.3,
         "name": {
           "fr": "Camp d'emprisonnement — bas, droite",
           "en": "Prison Camp — bottom, right"
@@ -554,8 +554,8 @@ const BATTLEGROUNDS = [
       {
         "id": "ppas2",
         "type": "autre",
-        "x": 26,
-        "y": 12,
+        "x": 22.4,
+        "y": 50.6,
         "name": {
           "fr": "Général — gauche",
           "en": "General — left"
@@ -569,8 +569,8 @@ const BATTLEGROUNDS = [
       {
         "id": "pmutmu1e800d",
         "type": "autre",
-        "x": 40,
-        "y": 26,
+        "x": 77,
+        "y": 47.7,
         "name": {
           "fr": "Général — droite",
           "en": "General — right"
@@ -584,8 +584,8 @@ const BATTLEGROUNDS = [
       {
         "id": "ppas3",
         "type": "camp",
-        "x": 40,
-        "y": 12,
+        "x": 36.5,
+        "y": 56.7,
         "name": {
           "fr": "Camp de siège — gnolls, milieu gauche",
           "en": "Siege Camp — Gnolls, middle left"
@@ -599,8 +599,8 @@ const BATTLEGROUNDS = [
       {
         "id": "pmutmu1e800e",
         "type": "camp",
-        "x": 54,
-        "y": 26,
+        "x": 63.4,
+        "y": 41.4,
         "name": {
           "fr": "Camp de siège — gnolls, milieu droite",
           "en": "Siege Camp — Gnolls, middle right"
@@ -614,8 +614,8 @@ const BATTLEGROUNDS = [
       {
         "id": "ppas4",
         "type": "camp",
-        "x": 54,
-        "y": 12,
+        "x": 48.1,
+        "y": 19.6,
         "name": {
           "fr": "Camp de boss — géant de glace, haut",
           "en": "Boss Camp — Ice Giant, top"
@@ -629,8 +629,8 @@ const BATTLEGROUNDS = [
       {
         "id": "pmutmu1e800f",
         "type": "camp",
-        "x": 68,
-        "y": 26,
+        "x": 51.9,
+        "y": 77.6,
         "name": {
           "fr": "Camp de boss — géant de glace, bas",
           "en": "Boss Camp — Ice Giant, bottom"
@@ -644,11 +644,41 @@ const BATTLEGROUNDS = [
       {
         "id": "ppas5",
         "type": "fontaine",
-        "x": 68,
-        "y": 12,
+        "x": 25.6,
+        "y": 38.3,
         "name": {
-          "fr": "Fontaine de soins — côté gauche",
-          "en": "Healing fountain — left side"
+          "fr": "Fontaine de soins — haut, gauche",
+          "en": "Healing fountain — top, left"
+        },
+        "description": {
+          "fr": "Deux minutes de recharge. À dépenser avant 1:00 pour la retrouver disponible au premier objectif.",
+          "en": "Two-minute cooldown. Spend it before 1:00 to have it back for the first objective."
+        },
+        "image": ""
+      },
+      {
+        "id": "paltmutq392v0",
+        "type": "fontaine",
+        "x": 31.6,
+        "y": 52.8,
+        "name": {
+          "fr": "Fontaine de soins — milieu, gauche",
+          "en": "Healing fountain — middle, left"
+        },
+        "description": {
+          "fr": "Deux minutes de recharge. À dépenser avant 1:00 pour la retrouver disponible au premier objectif.",
+          "en": "Two-minute cooldown. Spend it before 1:00 to have it back for the first objective."
+        },
+        "image": ""
+      },
+      {
+        "id": "paltmutq392v1",
+        "type": "fontaine",
+        "x": 27.7,
+        "y": 62.4,
+        "name": {
+          "fr": "Fontaine de soins — bas, gauche",
+          "en": "Healing fountain — bottom, left"
         },
         "description": {
           "fr": "Deux minutes de recharge. À dépenser avant 1:00 pour la retrouver disponible au premier objectif.",
@@ -659,15 +689,135 @@ const BATTLEGROUNDS = [
       {
         "id": "pmutmu1e800g",
         "type": "fontaine",
-        "x": 82,
-        "y": 26,
+        "x": 72.4,
+        "y": 35.8,
         "name": {
-          "fr": "Fontaine de soins — côté droit",
-          "en": "Healing fountain — right side"
+          "fr": "Fontaine de soins — haut, droite",
+          "en": "Healing fountain — top, right"
         },
         "description": {
           "fr": "Deux minutes de recharge. À dépenser avant 1:00 pour la retrouver disponible au premier objectif.",
           "en": "Two-minute cooldown. Spend it before 1:00 to have it back for the first objective."
+        },
+        "image": ""
+      },
+      {
+        "id": "paltmutq392v2",
+        "type": "fontaine",
+        "x": 68.4,
+        "y": 45.3,
+        "name": {
+          "fr": "Fontaine de soins — milieu, droite",
+          "en": "Healing fountain — middle, right"
+        },
+        "description": {
+          "fr": "Deux minutes de recharge. À dépenser avant 1:00 pour la retrouver disponible au premier objectif.",
+          "en": "Two-minute cooldown. Spend it before 1:00 to have it back for the first objective."
+        },
+        "image": ""
+      },
+      {
+        "id": "paltmutq392v3",
+        "type": "fontaine",
+        "x": 74.7,
+        "y": 60.2,
+        "name": {
+          "fr": "Fontaine de soins — bas, droite",
+          "en": "Healing fountain — bottom, right"
+        },
+        "description": {
+          "fr": "Deux minutes de recharge. À dépenser avant 1:00 pour la retrouver disponible au premier objectif.",
+          "en": "Two-minute cooldown. Spend it before 1:00 to have it back for the first objective."
+        },
+        "image": ""
+      },
+      {
+        "id": "paltmutq392v4",
+        "type": "autre",
+        "x": 41.3,
+        "y": 33.3,
+        "name": {
+          "fr": "Fosse de boue — haut, gauche",
+          "en": "Mud Pit — top, left"
+        },
+        "description": {
+          "fr": "Six fosses aux abords de la zone centrale, près des voies latérales. Un héros qui y entre perd 16 % de vitesse de déplacement par seconde, jusqu'à 60 %, tant qu'il y reste ; une fois sur la terre ferme, il la regagne à raison de 50 % par seconde.",
+          "en": "Six pits at the edges of the middle area, close to the side lanes. A Hero who steps in loses 16% Movement Speed per second, up to 60%, for as long as they stay; back on solid ground, they regain it at 50% per second."
+        },
+        "image": ""
+      },
+      {
+        "id": "paltmutq392v5",
+        "type": "autre",
+        "x": 49.4,
+        "y": 32.8,
+        "name": {
+          "fr": "Fosse de boue — haut, milieu",
+          "en": "Mud Pit — top, middle"
+        },
+        "description": {
+          "fr": "Six fosses aux abords de la zone centrale, près des voies latérales. Un héros qui y entre perd 16 % de vitesse de déplacement par seconde, jusqu'à 60 %, tant qu'il y reste ; une fois sur la terre ferme, il la regagne à raison de 50 % par seconde.",
+          "en": "Six pits at the edges of the middle area, close to the side lanes. A Hero who steps in loses 16% Movement Speed per second, up to 60%, for as long as they stay; back on solid ground, they regain it at 50% per second."
+        },
+        "image": ""
+      },
+      {
+        "id": "paltmutq392v6",
+        "type": "autre",
+        "x": 61,
+        "y": 37.6,
+        "name": {
+          "fr": "Fosse de boue — haut, droite",
+          "en": "Mud Pit — top, right"
+        },
+        "description": {
+          "fr": "Six fosses aux abords de la zone centrale, près des voies latérales. Un héros qui y entre perd 16 % de vitesse de déplacement par seconde, jusqu'à 60 %, tant qu'il y reste ; une fois sur la terre ferme, il la regagne à raison de 50 % par seconde.",
+          "en": "Six pits at the edges of the middle area, close to the side lanes. A Hero who steps in loses 16% Movement Speed per second, up to 60%, for as long as they stay; back on solid ground, they regain it at 50% per second."
+        },
+        "image": ""
+      },
+      {
+        "id": "paltmutq392v7",
+        "type": "autre",
+        "x": 38.9,
+        "y": 60,
+        "name": {
+          "fr": "Fosse de boue — bas, gauche",
+          "en": "Mud Pit — bottom, left"
+        },
+        "description": {
+          "fr": "Six fosses aux abords de la zone centrale, près des voies latérales. Un héros qui y entre perd 16 % de vitesse de déplacement par seconde, jusqu'à 60 %, tant qu'il y reste ; une fois sur la terre ferme, il la regagne à raison de 50 % par seconde.",
+          "en": "Six pits at the edges of the middle area, close to the side lanes. A Hero who steps in loses 16% Movement Speed per second, up to 60%, for as long as they stay; back on solid ground, they regain it at 50% per second."
+        },
+        "image": ""
+      },
+      {
+        "id": "paltmutq392v8",
+        "type": "autre",
+        "x": 49.9,
+        "y": 64.3,
+        "name": {
+          "fr": "Fosse de boue — bas, milieu",
+          "en": "Mud Pit — bottom, middle"
+        },
+        "description": {
+          "fr": "Six fosses aux abords de la zone centrale, près des voies latérales. Un héros qui y entre perd 16 % de vitesse de déplacement par seconde, jusqu'à 60 %, tant qu'il y reste ; une fois sur la terre ferme, il la regagne à raison de 50 % par seconde.",
+          "en": "Six pits at the edges of the middle area, close to the side lanes. A Hero who steps in loses 16% Movement Speed per second, up to 60%, for as long as they stay; back on solid ground, they regain it at 50% per second."
+        },
+        "image": ""
+      },
+      {
+        "id": "paltmutq392v9",
+        "type": "autre",
+        "x": 58.3,
+        "y": 63.8,
+        "name": {
+          "fr": "Fosse de boue — bas, droite",
+          "en": "Mud Pit — bottom, right"
+        },
+        "description": {
+          "fr": "Six fosses aux abords de la zone centrale, près des voies latérales. Un héros qui y entre perd 16 % de vitesse de déplacement par seconde, jusqu'à 60 %, tant qu'il y reste ; une fois sur la terre ferme, il la regagne à raison de 50 % par seconde.",
+          "en": "Six pits at the edges of the middle area, close to the side lanes. A Hero who steps in loses 16% Movement Speed per second, up to 60%, for as long as they stay; back on solid ground, they regain it at 50% per second."
         },
         "image": ""
       }
