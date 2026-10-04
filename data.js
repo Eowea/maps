@@ -2595,8 +2595,8 @@ const BATTLEGROUNDS = [
       {
         "id": "pmutnovld3wh1",
         "type": "fontaine",
-        "x": 37.6,
-        "y": 85.8,
+        "x": 39.2,
+        "y": 34.1,
         "name": {
           "fr": "Fontaine de soins — côté gauche",
           "en": "Healing fountain — left side"
@@ -2610,8 +2610,8 @@ const BATTLEGROUNDS = [
       {
         "id": "pmutnouk4z7im",
         "type": "fontaine",
-        "x": 39.4,
-        "y": 33.8,
+        "x": 37.1,
+        "y": 85.8,
         "name": {
           "fr": "Fontaine de soins — côté gauche",
           "en": "Healing fountain — left side"
@@ -2640,8 +2640,8 @@ const BATTLEGROUNDS = [
       {
         "id": "pmutnpxef0of5",
         "type": "fontaine",
-        "x": 61.5,
-        "y": 86.3,
+        "x": 60.3,
+        "y": 34.6,
         "name": {
           "fr": "Fontaine de soins — côté droit",
           "en": "Healing fountain — right side"
@@ -2655,8 +2655,8 @@ const BATTLEGROUNDS = [
       {
         "id": "pmutnpwqx37v1",
         "type": "fontaine",
-        "x": 60,
-        "y": 33.8,
+        "x": 61.9,
+        "y": 85.8,
         "name": {
           "fr": "Fontaine de soins — côté droit",
           "en": "Healing fountain — right side"
