@@ -833,8 +833,8 @@ const BATTLEGROUNDS = [
           "en": "Siege Camp — middle, left"
         },
         "description": {
-          "fr": "Trois camps, un par voie, deux géants de siège chacun. Ils infligent 100 % de dégâts supplémentaires aux structures. Disponibles à 0:30, ils réapparaissent 3:00 après avoir été pris.",
-          "en": "Three camps, one per lane, two Siege Giants each. They deal 100% bonus damage to Structures. Available at 0:30, back 3:00 after being taken."
+          "fr": "Quatre camps — à gauche de la voie du haut, deux au milieu, à droite de la voie du bas —, deux géants de siège chacun. Ils infligent 100 % de dégâts supplémentaires aux structures. Disponibles à 0:30, ils réapparaissent 3:00 après avoir été pris.",
+          "en": "Four camps — left of the top lane, two in the middle, right of the bottom lane — with two Siege Giants each. They deal 100% bonus damage to Structures. Available at 0:30, back 3:00 after being taken."
         },
         "image": ""
       },
@@ -848,8 +848,8 @@ const BATTLEGROUNDS = [
           "en": "Siege Camp — middle, right"
         },
         "description": {
-          "fr": "Trois camps, un par voie, deux géants de siège chacun. Ils infligent 100 % de dégâts supplémentaires aux structures. Disponibles à 0:30, ils réapparaissent 3:00 après avoir été pris.",
-          "en": "Three camps, one per lane, two Siege Giants each. They deal 100% bonus damage to Structures. Available at 0:30, back 3:00 after being taken."
+          "fr": "Quatre camps — à gauche de la voie du haut, deux au milieu, à droite de la voie du bas —, deux géants de siège chacun. Ils infligent 100 % de dégâts supplémentaires aux structures. Disponibles à 0:30, ils réapparaissent 3:00 après avoir été pris.",
+          "en": "Four camps — left of the top lane, two in the middle, right of the bottom lane — with two Siege Giants each. They deal 100% bonus damage to Structures. Available at 0:30, back 3:00 after being taken."
         },
         "image": ""
       },
@@ -863,8 +863,8 @@ const BATTLEGROUNDS = [
           "en": "Siege Camp — bottom, right"
         },
         "description": {
-          "fr": "Trois camps, un par voie, deux géants de siège chacun. Ils infligent 100 % de dégâts supplémentaires aux structures. Disponibles à 0:30, ils réapparaissent 3:00 après avoir été pris.",
-          "en": "Three camps, one per lane, two Siege Giants each. They deal 100% bonus damage to Structures. Available at 0:30, back 3:00 after being taken."
+          "fr": "Quatre camps — à gauche de la voie du haut, deux au milieu, à droite de la voie du bas —, deux géants de siège chacun. Ils infligent 100 % de dégâts supplémentaires aux structures. Disponibles à 0:30, ils réapparaissent 3:00 après avoir été pris.",
+          "en": "Four camps — left of the top lane, two in the middle, right of the bottom lane — with two Siege Giants each. They deal 100% bonus damage to Structures. Available at 0:30, back 3:00 after being taken."
         },
         "image": ""
       },

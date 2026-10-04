@@ -260,7 +260,7 @@ function bgMarqueursHtml(b) {
     const t = bgHotspotType(h.type);
     const titre = bgLoc(h.name) || bgLoc(t.label);
     return `<button class="bg-hotspot" type="button" data-hotspot="${i}" data-type="${bgEsc(bgHotspotTypeKey(h.type))}"
-        style="left:${h.x}%;top:${h.y}%" title="${bgEsc(titre)}" aria-label="${bgEsc(titre)}">${t.icon}</button>`;
+        style="left:${h.x}%;top:${h.y}%" title="${bgEsc(titre)}" aria-label="${bgEsc(titre)}"></button>`;
   }).join('');
 }
 
@@ -274,13 +274,65 @@ function bgLegendeHtml(b) {
     .filter(k => points.some(h => bgHotspotTypeKey(h.type) === k));
   if (!types.length) return '';
   return `<div class="bg-hotspot-legend">${types.map(k =>
-    `<button class="bg-legend-item" type="button" data-type="${k}" aria-pressed="false" title="${bgEsc(bgT('legendFilter'))}">${BG_HOTSPOT_TYPES[k].icon}${bgEsc(bgLoc(BG_HOTSPOT_TYPES[k].label))}</button>`
+    `<button class="bg-legend-item" type="button" data-type="${k}" aria-pressed="false" title="${bgEsc(bgT('legendFilter'))}"><span class="bg-legend-dot" aria-hidden="true"></span>${bgEsc(bgLoc(BG_HOTSPOT_TYPES[k].label))}</button>`
   ).join('')}</div>`;
 }
 
 /* Le même contenu que les infobulles, mais en clair dans la page : lisible au doigt
    sans viser un marqueur de 32 pixels, parcourable au clavier, et présent dans le
    document pour qui cherche un camp par son nom. */
+/* Les instances d'un même point (les six tributs, les deux camps de siège…) partagent
+   souvent la même description : listées une par une, la liste répétait le même pavé
+   six fois. Elles sont réunies en une seule fiche, la description une fois, et chaque
+   emplacement en pastille. Un point sans description reste seul. */
+function bgRegrouperPoints(items) {
+  const paquets = [];
+  const parTexte = new Map();
+  for (const it of items) {
+    const texte = bgLoc(it.h.description);
+    let p = texte ? parTexte.get(texte) : null;
+    if (!p) {
+      p = { texte, items: [] };
+      if (texte) parTexte.set(texte, p);
+      paquets.push(p);
+    }
+    p.items.push(it);
+  }
+  return paquets;
+}
+
+// Le titre est la partie commune des noms (« Camp de siège — géants »), les pastilles
+// ce qui les distingue (« haut gauche », « bas droite »). La coupe se fait à un
+// séparateur, jamais au milieu d'un mot.
+function bgTitreEtLieux(noms, defaut) {
+  if (noms.length === 1) return { titre: noms[0] || defaut, lieux: [] };
+  let commun = noms[0];
+  for (const n of noms) {
+    let k = 0;
+    while (k < commun.length && k < n.length && commun[k] === n[k]) k++;
+    commun = commun.slice(0, k);
+  }
+  let coupe;
+  if (noms.some(n => n.length === commun.length)) {
+    coupe = commun.length;   // un nom est entièrement contenu dans les autres
+  } else {
+    const tiret = commun.lastIndexOf(' — '), virgule = commun.lastIndexOf(', ');
+    coupe = Math.max(tiret >= 0 ? tiret + 3 : -1, virgule >= 0 ? virgule + 2 : -1);
+    if (coupe < 0) coupe = commun.lastIndexOf(' ') + 1;
+  }
+  const titre = commun.slice(0, coupe).replace(/[\s,—-]+$/, '');
+  let lieux = noms.map(n => n.slice(coupe).trim());
+  // Noms identiques (trois « Coffre au trésor ») : on les numérote.
+  if (lieux.every(l => !l)) lieux = noms.map((n, k) => String(k + 1));
+  lieux = titre ? lieux.map((l, k) => l || String(k + 1)) : noms;
+  // Même emplacement plusieurs fois (trois fontaines « côté gauche ») : on les numérote,
+  // sinon trois pastilles identiques allument trois marqueurs différents.
+  const total = {}, vus = {};
+  lieux.forEach(l => { total[l] = (total[l] || 0) + 1; });
+  lieux = lieux.map(l => total[l] > 1 ? `${l} ${(vus[l] = (vus[l] || 0) + 1)}` : l);
+  return { titre: titre || defaut, lieux };
+}
+
 function bgPointsListHtml(b) {
   const points = bgHotspotsOf(b);
   if (!points.length) return `<div class="empty-state">${bgT('noPointsYet')}</div>`;
@@ -308,14 +360,21 @@ function bgPointsListHtml(b) {
         <span class="point-chevron" aria-hidden="true">▸</span>
       </summary>
       <div class="point-group-body">
-        ${g.items.map(({ h, i }) => {
-          const titre = bgLoc(h.name) || bgLoc(g.t.label);
-          const texte = bgLoc(h.description);
+        ${bgRegrouperPoints(g.items).map(p => {
+          const { titre, lieux } = bgTitreEtLieux(p.items.map(({ h }) => bgLoc(h.name)), bgLoc(g.t.label));
+          const indices = p.items.map(({ i }) => i).join(' ');
+          const images = [...new Set(p.items.map(({ h }) => h.image).filter(Boolean))];
           return `
-            <article class="point-item" data-point-row="${i}">
-              <h4 class="point-name">${bgEsc(titre)}</h4>
-              ${texte ? `<p>${bgEsc(texte)}</p>` : ''}
-              ${h.image ? `<div class="point-shot"><img src="${bgEsc(h.image)}" alt="${bgEsc(titre)}" loading="lazy" onerror="this.parentNode.remove()" /></div>` : ''}
+            <article class="point-item" data-points="${indices}">
+              <div class="point-item-head">
+                <h4 class="point-name">${bgEsc(titre)}</h4>
+                ${p.items.length > 1 ? `<span class="point-item-count">×${p.items.length}</span>` : ''}
+              </div>
+              ${lieux.length ? `<div class="point-locs">${lieux.map((l, k) =>
+                `<span class="point-loc" data-points="${p.items[k].i}">${bgEsc(l)}</span>`).join('')}</div>` : ''}
+              ${p.texte ? `<p>${bgEsc(p.texte)}</p>` : ''}
+              ${images.length ? `<div class="point-shots">${images.map(src =>
+                `<div class="point-shot"><img src="${bgEsc(src)}" alt="${bgEsc(titre)}" loading="lazy" onerror="this.parentNode.remove()" /></div>`).join('')}</div>` : ''}
             </article>`;
         }).join('')}
       </div>
@@ -324,7 +383,7 @@ function bgPointsListHtml(b) {
 
 function renderBgDetail() {
   // La liste est reconstruite avec toutes ses familles repliées : plus rien à filtrer.
-  bgTypeFiltre = null;
+  bgTypesFiltres.clear();
   const b = bgCurrent();
   if (!b) {
     bgEls.detailView.innerHTML = `<div class="empty-state">${bgT('selectPrompt')}</div>`;
@@ -412,10 +471,11 @@ let bgTipRaf = 0;
    surligne son entrée, survoler une entrée allume son marqueur. Sans ça, on ne sait
    pas lequel des onze points on est en train de lire. */
 function bgEchoListe(index) {
-  bgEls.detailView.querySelectorAll('.point-item.is-echo').forEach(e => e.classList.remove('is-echo'));
+  bgEls.detailView.querySelectorAll('.point-item.is-echo, .point-loc.is-echo').forEach(e => e.classList.remove('is-echo'));
   if (index == null) return;
-  const item = bgEls.detailView.querySelector('.point-item[data-point-row="' + index + '"]');
-  if (item) item.classList.add('is-echo');
+  // La fiche qui contient ce point, et sa pastille s'il partage la fiche avec d'autres.
+  bgEls.detailView.querySelectorAll('.point-item[data-points~="' + index + '"], .point-loc[data-points~="' + index + '"]')
+    .forEach(e => e.classList.add('is-echo'));
 }
 
 function bgHideHotspotTip(immediat = false) {
@@ -598,27 +658,31 @@ function bgCloseMapZoom() {
   });
 })();
 
-/* Ouvrir une famille de points dans la liste ne laisse sur la carte que les marqueurs
-   de ce type : sur une carte à vingt points, c'est ce qui permet de retrouver « les
-   camps » d'un coup d'œil. Une seule famille ouverte à la fois, pour que la liste et
-   la carte disent toujours la même chose. La refermer fait revenir tous les marqueurs. */
-let bgTypeFiltre = null;
+/* Ouvrir une famille de points dans la liste, ou cliquer son type dans la légende,
+   ne laisse sur la carte que les marqueurs de ce type : sur une carte à vingt points,
+   c'est ce qui permet de retrouver « les camps » d'un coup d'œil. Plusieurs types se
+   cumulent (camps + tours, par exemple). Liste et légende restent synchronisées : une
+   famille ouverte = un type choisi. Aucun type choisi = tous les marqueurs. */
+const bgTypesFiltres = new Set();
 function bgAppliquerFiltre() {
+  const actif = bgTypesFiltres.size > 0;
   document.querySelectorAll('.bg-minimap-stage .bg-hotspot').forEach(m =>
-    m.classList.toggle('is-filtered-out', !!bgTypeFiltre && m.dataset.type !== bgTypeFiltre));
+    m.classList.toggle('is-filtered-out', actif && !bgTypesFiltres.has(m.dataset.type)));
   document.querySelectorAll('.bg-legend-item').forEach(l => {
-    l.classList.toggle('is-dim', !!bgTypeFiltre && l.dataset.type !== bgTypeFiltre);
-    l.classList.toggle('is-active', l.dataset.type === bgTypeFiltre);
-    l.setAttribute('aria-pressed', String(l.dataset.type === bgTypeFiltre));
+    const choisi = bgTypesFiltres.has(l.dataset.type);
+    l.classList.toggle('is-dim', actif && !choisi);
+    l.classList.toggle('is-active', choisi);
+    l.setAttribute('aria-pressed', String(choisi));
   });
 }
 
-/* Même filtre depuis la légende, sous la carte comme dans l'agrandissement. La liste
-   suit : la famille choisie s'y ouvre, ou se referme si on reclique le même type. */
+// Ajoute ou retire un type de la sélection, et ouvre ou referme sa famille dans la liste.
 function bgChoisirType(type) {
-  bgTypeFiltre = bgTypeFiltre === type ? null : type;
-  bgEls.detailView.querySelectorAll('details.point-group').forEach(g => { g.open = g.dataset.type === bgTypeFiltre; });
-  bgHideHotspotTip(true);
+  if (bgTypesFiltres.has(type)) bgTypesFiltres.delete(type);
+  else bgTypesFiltres.add(type);
+  const groupe = bgEls.detailView.querySelector(`details.point-group[data-type="${type}"]`);
+  if (groupe) groupe.open = bgTypesFiltres.has(type);
+  bgHideHotspotTip(true);   // l'infobulle pourrait pointer sur un marqueur désormais masqué
   bgAppliquerFiltre();
 }
 document.addEventListener('click', (e) => {
@@ -626,19 +690,16 @@ document.addEventListener('click', (e) => {
   if (item) bgChoisirType(item.dataset.type);
 });
 (function bindBgTypeFilter() {
-  // « toggle » ne remonte pas : on l'écoute en phase de capture.
+  // « toggle » ne remonte pas : on l'écoute en phase de capture. Il se déclenche aussi
+  // quand bgChoisirType ouvre la famille : la sélection est alors déjà à jour.
   bgEls.detailView.addEventListener('toggle', (e) => {
     const groupe = e.target;
     if (!groupe.matches || !groupe.matches('details.point-group')) return;
-    if (groupe.open) {
-      bgEls.detailView.querySelectorAll('details.point-group[open]').forEach(g => { if (g !== groupe) g.open = false; });
-      bgTypeFiltre = groupe.dataset.type;
-    } else if (bgTypeFiltre === groupe.dataset.type) {
-      bgTypeFiltre = null;
-    } else {
-      return;   // une famille refermée par la ligne ci-dessus : le filtre est déjà le bon
-    }
-    bgHideHotspotTip(true);   // l'infobulle pourrait pointer sur un marqueur désormais masqué
+    const type = groupe.dataset.type;
+    if (groupe.open === bgTypesFiltres.has(type)) return;
+    if (groupe.open) bgTypesFiltres.add(type);
+    else bgTypesFiltres.delete(type);
+    bgHideHotspotTip(true);
     bgAppliquerFiltre();
   }, true);
 })();
@@ -646,27 +707,37 @@ document.addEventListener('click', (e) => {
 /* Survoler un point de la liste allume son marqueur sur la carte : c'est ce qui relie
    le texte à son emplacement, sans rien demander au lecteur. */
 (function bindBgPointEcho() {
+  // Une fiche porte les numéros de tous ses emplacements, une pastille le sien seul :
+  // survoler la fiche allume tous ses marqueurs, survoler une pastille le seul concerné.
   let minuterie = null;
-  const marqueur = (el) => bgEls.detailView.querySelector('.bg-hotspot[data-hotspot="' + el.dataset.pointRow + '"]');
-  const eteindre = () => bgEls.detailView.querySelectorAll('.bg-hotspot.is-echo').forEach(m => m.classList.remove('is-echo'));
-
-  bgEls.detailView.addEventListener('mouseover', (e) => {
-    const item = e.target.closest('.point-item');
-    if (!item) return;
-    const m = marqueur(item);
-    // Déjà allumé : on ne retouche à rien. Repasser la classe relancerait le battement
+  let allumes = '';
+  const cible = (el) => el && el.closest && el.closest('.point-loc, .point-item');
+  const eteindre = () => {
+    allumes = '';
+    bgEls.detailView.querySelectorAll('.bg-hotspot.is-echo').forEach(m => m.classList.remove('is-echo'));
+  };
+  const allumer = (el) => {
+    // Déjà allumés : on ne retouche à rien. Repasser la classe relancerait le battement
     // depuis le début à chaque fois que le curseur passe du titre au texte.
-    if (!m || m.classList.contains('is-echo')) return;
+    if (el.dataset.points === allumes) return;
     clearTimeout(minuterie);
     eteindre();
-    m.classList.add('is-echo');
+    allumes = el.dataset.points;
+    allumes.split(' ').forEach(i => {
+      const m = bgEls.detailView.querySelector('.bg-hotspot[data-hotspot="' + i + '"]');
+      if (m) m.classList.add('is-echo');
+    });
+  };
+
+  bgEls.detailView.addEventListener('mouseover', (e) => {
+    const el = cible(e.target);
+    if (el) allumer(el);
   });
   bgEls.detailView.addEventListener('mouseout', (e) => {
-    const item = e.target.closest('.point-item');
-    if (!item) return;
-    // mouseout se déclenche aussi en passant d'un enfant à l'autre à l'intérieur du
-    // bloc. On n'éteint que si le curseur quitte réellement le bloc.
-    if (item.contains(e.relatedTarget)) return;
+    if (!cible(e.target)) return;
+    // mouseout se déclenche aussi en passant d'un enfant à l'autre : tant que le curseur
+    // reste dans une fiche, c'est mouseover qui choisit quoi allumer.
+    if (cible(e.relatedTarget)) return;
     eteindre();
   });
   // Au tactile il n'y a pas de survol : un appui allume le marqueur le temps de le
@@ -674,13 +745,10 @@ document.addEventListener('click', (e) => {
   // que le curseur est toujours sur le point.
   if (bgTactile) {
     bgEls.detailView.addEventListener('click', (e) => {
-      const item = e.target.closest('.point-item');
-      if (!item) return;
-      clearTimeout(minuterie);
-      eteindre();
-      const m = marqueur(item);
-      if (!m) return;
-      m.classList.add('is-echo');
+      const el = cible(e.target);
+      if (!el) return;
+      allumes = '';
+      allumer(el);
       minuterie = setTimeout(eteindre, 1600);
     });
   }
