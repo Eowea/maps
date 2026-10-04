@@ -206,11 +206,11 @@ const BATTLEGROUNDS = [
     "image": "assets/maps/mine-hantee/portrait.jpg",
     "minimapImage": "assets/maps/mine-hantee/minimap.jpg",
     "headline": {
-      "fr": "Deux lignes en surface, une mine ouverte en permanence en dessous. La première équipe à y ramasser 55 crânes maudits déclenche les golems sépulcraux.",
+      "fr": "Deux voies en surface, une mine ouverte en permanence en dessous. La première équipe à y ramasser 55 crânes maudits déclenche les golems sépulcraux.",
       "en": "Two lanes above ground, a permanently open mine below. The first team to gather 55 Cursed Skulls down there triggers the Grave Golems."
     },
     "objectives": {
-      "fr": "À 3:00, l'armée de morts-vivants se lève dans la mine, qui reste ouverte jusqu'à la fin de la partie. Huit groupes de mineurs et un golem sépulcral y lâchent 110 crânes maudits en tout : chaque mineur en donne 2, et le golem souterrain 8 par tranche de 25 % de vie perdue, plus 6 à sa mort — 38 à lui seul. La première équipe à en ramasser 55 met fin à la phase. Les deux camps reçoivent alors leur propre golem sépulcral, qui part pousser une ligne : chaque crâne récolté lui ajoute 7 % de puissance. L'armée réapparaît 2:00 après la mort des golems.",
+      "fr": "À 3:00, l'armée de morts-vivants se lève dans la mine, qui reste ouverte jusqu'à la fin de la partie. Huit groupes de mineurs et un golem sépulcral y lâchent 110 crânes maudits en tout : chaque mineur en donne 2, et le golem souterrain 8 par tranche de 25 % de vie perdue, plus 6 à sa mort — 38 à lui seul. La première équipe à en ramasser 55 met fin à la phase. Les deux camps reçoivent alors leur propre golem sépulcral, qui part pousser une voie : chaque crâne récolté lui ajoute 7 % de puissance. L'armée réapparaît 2:00 après la mort des golems.",
       "en": "At 3:00 the Undead Army rises inside the mine, which then stays open for the rest of the game. Eight groups of miners and one Grave Golem drop 110 Cursed Skulls in total: each miner gives 2, and the underground Golem gives 8 for every 25% of health it loses, plus 6 on death — 38 on its own. The first team to gather 55 ends the phase. Both sides then get their own Grave Golem, which walks down a lane to push: every skull collected adds 7% to its power. The Army returns 2:00 after the Golems die."
     },
     "tips": [
@@ -235,7 +235,7 @@ const BATTLEGROUNDS = [
         "en": "Follow up with the Siege Camp around 2:20–2:40, right before the Army spawns: the giants push while all ten Heroes are underground."
       },
       {
-        "fr": "Descendre à cinq n'a rien d'obligatoire. Si ton équipe pousse mieux qu'elle ne se bat, laisser une ligne travailler pendant que les autres ramassent rapporte parfois plus que les crânes eux-mêmes.",
+        "fr": "Descendre à cinq n'a rien d'obligatoire. Si ton équipe pousse mieux qu'elle ne se bat, laisser quelqu'un travailler une voie pendant que les autres ramassent rapporte parfois plus que les crânes eux-mêmes.",
         "en": "Going down five-strong is never mandatory. If your team pushes better than it fights, leaving someone to work a lane while the rest collect can pay more than the skulls themselves."
       },
       {
@@ -267,7 +267,7 @@ const BATTLEGROUNDS = [
           "en": "Sapper Camp — top"
         },
         "description": {
-          "fr": "Un au centre de chaque ligne. Trois sapeurs qui foncent sur la première structure venue et explosent dessus. Disponible à 0:30, réapparaît 2:30 après avoir été pris. Un étourdissement, un silence ou une projection suffit à interrompre leur course.",
+          "fr": "Un au centre de chaque voie. Trois sapeurs qui foncent sur la première structure venue et explosent dessus. Disponible à 0:30, réapparaît 2:30 après avoir été pris. Un étourdissement, un silence ou une projection suffit à interrompre leur course.",
           "en": "One in the middle of each lane. Three Sappers that sprint at the nearest structure and explode on it. Available at 0:30, respawns 2:30 after being taken. A stun, a silence or a knockback is enough to stop their run."
         },
         "image": ""
@@ -282,7 +282,7 @@ const BATTLEGROUNDS = [
           "en": "Sapper Camp — bottom"
         },
         "description": {
-          "fr": "Un au centre de chaque ligne. Trois sapeurs qui foncent sur la première structure venue et explosent dessus. Disponible à 0:30, réapparaît 2:30 après avoir été pris. Un étourdissement, un silence ou une projection suffit à interrompre leur course.",
+          "fr": "Un au centre de chaque voie. Trois sapeurs qui foncent sur la première structure venue et explosent dessus. Disponible à 0:30, réapparaît 2:30 après avoir été pris. Un étourdissement, un silence ou une projection suffit à interrompre leur course.",
           "en": "One in the middle of each lane. Three Sappers that sprint at the nearest structure and explode on it. Available at 0:30, respawns 2:30 after being taken. A stun, a silence or a knockback is enough to stop their run."
         },
         "image": ""
@@ -297,7 +297,7 @@ const BATTLEGROUNDS = [
           "en": "Siege Camp — top, left"
         },
         "description": {
-          "fr": "À gauche de la ligne du haut et à droite de la ligne du bas. Deux géants qui lancent des rochers esquivables et infligent 100 % de dégâts supplémentaires aux structures, sans avoir besoin de s'en approcher. Disponible à 0:30, réapparaît 3:00 après avoir été pris.",
+          "fr": "À gauche de la voie du haut et à droite de la voie du bas. Deux géants qui lancent des rochers esquivables et infligent 100 % de dégâts supplémentaires aux structures, sans avoir besoin de s'en approcher. Disponible à 0:30, réapparaît 3:00 après avoir été pris.",
           "en": "Left side of the top lane, right side of the bottom lane. Two Siege Giants that throw dodgeable boulders and deal 100% bonus damage to structures, without having to close in. Available at 0:30, respawns 3:00 after being taken."
         },
         "image": ""
@@ -312,7 +312,7 @@ const BATTLEGROUNDS = [
           "en": "Siege Camp — bottom, right"
         },
         "description": {
-          "fr": "À gauche de la ligne du haut et à droite de la ligne du bas. Deux géants qui lancent des rochers esquivables et infligent 100 % de dégâts supplémentaires aux structures, sans avoir besoin de s'en approcher. Disponible à 0:30, réapparaît 3:00 après avoir été pris.",
+          "fr": "À gauche de la voie du haut et à droite de la voie du bas. Deux géants qui lancent des rochers esquivables et infligent 100 % de dégâts supplémentaires aux structures, sans avoir besoin de s'en approcher. Disponible à 0:30, réapparaît 3:00 après avoir été pris.",
           "en": "Left side of the top lane, right side of the bottom lane. Two Siege Giants that throw dodgeable boulders and deal 100% bonus damage to structures, without having to close in. Available at 0:30, respawns 3:00 after being taken."
         },
         "image": ""
@@ -755,7 +755,7 @@ const BATTLEGROUNDS = [
         "en": "Before diving the General: bring a Keep below 50% Health if two remain, below 30% if only one does."
       },
       {
-        "fr": "Le premier objectif rapporte peu. Soaker les lignes pendant qu'il se joue vaut souvent mieux que de le contester à cinq.",
+        "fr": "Le premier objectif rapporte peu. Rester dans les voies pour récupérer l'expérience pendant qu'il se joue vaut souvent mieux que de le contester à cinq.",
         "en": "The first objective pays little. Soaking the lanes while it plays out often beats contesting it five-strong."
       },
       {
@@ -1222,7 +1222,7 @@ const BATTLEGROUNDS = [
         "en": "Six camps on this map, more than most: four Siege and two Bruiser. There is always something to take."
       },
       {
-        "fr": "Prends le camp de siège du milieu entre 0:30 et 0:42 : il arrive en ligne devant tes serviteurs.",
+        "fr": "Prends le camp de siège du milieu entre 0:30 et 0:42 : il arrive dans la voie devant tes serviteurs.",
         "en": "Take the middle Siege Camp between 0:30 and 0:42: it reaches the lane ahead of your minions."
       },
       {
@@ -1892,8 +1892,8 @@ const BATTLEGROUNDS = [
       "en": "Control points that unlock a giant mech, the Triglav Protector, crewed by two players."
     },
     "objectives": {
-      "fr": "Un point de contrôle s'active à 3:00, puis toutes les trois minutes après la mort du méca, en alternant entre trois emplacements : milieu, haut, puis bas. La capture progresse de 2 % par seconde sur 45 secondes et se met en pause si le point est abandonné plus de douze secondes. L'équipe qui la termine reçoit le protecteur Triglav, un véhicule à deux places : un pilote, un artilleur. Occupées toutes les deux, elles rechargent 25 % plus vite et regagnent 25 % d'énergie en plus. Le méca dure 50 secondes, plus 3 par minute de jeu écoulée.",
-      "en": "A control point activates at 3:00, then every three minutes after the mech dies, cycling through three locations: middle, top, then bottom. Capture builds at 2% per second over 45 seconds and pauses if the point is left for more than twelve seconds. The team that finishes it gets the Triglav Protector, a two-seat vehicle: one pilot, one gunner. With both seats filled, abilities recharge 25% faster and energy regenerates 25% quicker. The mech lasts 50 seconds, plus 3 per minute of game time elapsed."
+      "fr": "Un point de contrôle s'active à 3:00, puis toutes les trois minutes après la mort du méca, en alternant entre trois emplacements : milieu, haut, puis bas. La capture progresse de 2 % par seconde, soit une cinquantaine de secondes, et se met en pause si le point est abandonné plus de douze secondes. L'équipe qui la termine reçoit le protecteur Triglav, un véhicule à deux places : un pilote, un artilleur. Occupées toutes les deux, ses dégâts bonus et la vitesse de recharge de ses compétences montent de 40 %. Le méca dure 50 secondes, plus 3 par minute de jeu écoulée.",
+      "en": "A control point activates at 3:00, then every three minutes after the mech dies, cycling through three locations: middle, top, then bottom. Capture builds at 2% per second, around fifty seconds in all, and pauses if the point is left for more than twelve seconds. The team that finishes it gets the Triglav Protector, a two-seat vehicle: one pilot, one gunner. With both seats filled, its bonus damage and cooldown speed rise by 40%. The mech lasts 50 seconds, plus 3 per minute of game time elapsed."
     },
     "tips": [
       {
@@ -2239,8 +2239,8 @@ const BATTLEGROUNDS = [
       "en": "The Cores cannot be touched: you win by activating Altars, and every Bell Tower you hold adds damage."
     },
     "objectives": {
-      "fr": "Les idoles ont 40 points de vie et ne peuvent pas être attaquées directement. On les entame par les autels, qui s'élèvent à partir de 3:00 : six secondes d'incantation pour en capturer un, puis 1 point de dégât à l'idole adverse quatre secondes plus tard — plus 1 par clocher que ton équipe contrôle. Les clochers sont les forts et bastions de la carte : les détruire les fait passer chez toi. Tenir les six d'un coup déclenche un bombardement automatique.",
-      "en": "The Cores have 40 Health and cannot be attacked directly. You chip at them through the Altars, which rise from 3:00 onward: a six-second channel to capture one, then 1 damage to the enemy Core four seconds later — plus 1 for each Bell Tower your team controls. The Bell Towers are the map's Forts and Keeps: destroying them flips them to you. Holding all six at once triggers an automatic bombardment."
+      "fr": "Les idoles ont 40 points de vie et ne peuvent pas être attaquées directement. On les entame par les autels, qui s'élèvent à partir de 3:00 : six secondes d'incantation pour en capturer un, puis 1 point de dégât à l'idole adverse quatre secondes plus tard — plus 1 par clocher que ton équipe contrôle. Les clochers sont les forts de la carte, un par voie et par équipe : les détruire les fait passer chez toi. Tenir les six d'un coup déclenche un bombardement automatique.",
+      "en": "The Cores have 40 Health and cannot be attacked directly. You chip at them through the Altars, which rise from 3:00 onward: a six-second channel to capture one, then 1 damage to the enemy Core four seconds later — plus 1 for each Bell Tower your team controls. The Bell Towers are the map's Forts, one per lane for each team: destroying them flips them to you. Holding all six at once triggers an automatic bombardment."
     },
     "tips": [
       {
@@ -2648,8 +2648,8 @@ const BATTLEGROUNDS = [
         "en": "Three possible Punishers: the Arcane one with rotating beams, the Frost one with bombs that root and disable structures, and the Mortar one with firebombs."
       },
       {
-        "fr": "Un dominateur saute sur les portes et sur les héros, inflige des dégâts et étourdit. Il vise les portes en priorité, sans se laisser distraire.",
-        "en": "A Punisher jumps on gates and Heroes, dealing damage and stunning. It goes for gates first and does not take the bait."
+        "fr": "Un dominateur bondit sur les héros proches, inflige des dégâts et étourdit. Il ne saute plus par-dessus les portes : il les abat en priorité, sans se laisser distraire.",
+        "en": "A Punisher leaps onto nearby Heroes, dealing damage and stunning. It no longer jumps over gates: it smashes them first and does not take the bait."
       },
       {
         "fr": "Prends le camp de siège allié du milieu à 0:30, puis le camp neutre du bas si tu as l'avantage.",
@@ -2991,7 +2991,7 @@ const BATTLEGROUNDS = [
     "id": "champs-eternite",
     "enabled": true,
     "name": {
-      "fr": "Champs de l'éternité",
+      "fr": "Champ de l'éternité",
       "en": "Battlefield of Eternity"
     },
     "image": "assets/maps/champs-eternite/portrait.jpg",
@@ -3006,11 +3006,11 @@ const BATTLEGROUNDS = [
     },
     "tips": [
       {
-        "fr": "L'objectif tombe à 3:00, puis 1:45 après la mort du dernier Immortel parti en ligne. Arriver cinq secondes en retard offre 25 % d'avance à l'adversaire ; dix secondes, 50 %.",
+        "fr": "L'objectif tombe à 3:00, puis 1:45 après la mort du dernier Immortel parti dans une voie. Arriver cinq secondes en retard offre 25 % d'avance à l'adversaire ; dix secondes, 50 %.",
         "en": "The objective starts at 3:00, then 1:45 after the last laning Immortal dies. Showing up five seconds late hands the enemy a 25% lead; ten seconds, 50%."
       },
       {
-        "fr": "Les deux Immortels ne se blessent pas entre eux. Seuls les héros peuvent entamer celui d'en face — frapper le vôtre ne sert à rien.",
+        "fr": "Les deux Immortels ne se blessent pas entre eux. Seuls les héros peuvent entamer celui d'en face — frapper le tien ne sert à rien.",
         "en": "The two Immortals deal no damage to each other. Only Heroes can bring the opposing one down — hitting your own achieves nothing."
       },
       {
@@ -3022,7 +3022,7 @@ const BATTLEGROUNDS = [
         "en": "At 50% health the Immortals take ten seconds to swap places, and cannot be damaged meanwhile. That is the window to reposition, heal, or take a camp."
       },
       {
-        "fr": "Leurs deux attaques ont 14 secondes de recharge, 16 une fois en ligne : l'une projette et étourdit une demi-seconde, l'autre frappe une zone après deux secondes et étourdit deux secondes. Les deux tuent un serviteur d'un seul coup.",
+        "fr": "Leurs deux attaques ont 14 secondes de recharge, 16 une fois dans une voie : l'une projette et étourdit une demi-seconde, l'autre frappe une zone après deux secondes et étourdit deux secondes. Les deux tuent un serviteur d'un seul coup.",
         "en": "Their two attacks have a 14-second cooldown, 16 once in a lane: one knocks back and stuns for half a second, the other hits an area after a two-second delay and stuns for two. Both one-shot minions."
       },
       {
@@ -3038,7 +3038,7 @@ const BATTLEGROUNDS = [
         "en": "Taking the Bruiser camp around 2:45 lands it with the minion wave, right before the phase begins."
       },
       {
-        "fr": "Les camps disparaissent dès que les Immortels entrent en ligne — sauf si des mercenaires y sont déjà engagés — et reviennent à la mort de l'Immortel.",
+        "fr": "Les camps disparaissent dès que les Immortels partent dans les voies — sauf si des mercenaires y sont déjà engagés — et reviennent à la mort de l'Immortel.",
         "en": "Camps vanish as soon as the Immortals enter the lanes — unless mercenaries are already fighting there — and come back when the Immortal dies."
       },
       {
@@ -3642,7 +3642,7 @@ const BATTLEGROUNDS = [
         "en": "The Watch Tower between mid and top gives vision on the middle Temple. It is what tells you whether the phase is contested."
       },
       {
-        "fr": "Prends le premier camp de bruisers allié à 1:05 pour qu'il arrive en ligne avec la vague.",
+        "fr": "Prends le premier camp de bruisers allié à 1:05 pour qu'il arrive dans la voie avec la vague.",
         "en": "Take the first allied Bruiser Camp at 1:05 so it reaches the lane with the wave."
       },
       {
@@ -3987,13 +3987,13 @@ const BATTLEGROUNDS = [
       "en": "Doubloons taken from chests and mercenaries, handed to the ghost pirate who then opens fire."
     },
     "objectives": {
-      "fr": "Premier objectif à 1:30, puis toutes les trois minutes. Il faut livrer 8 doublons à Cœur-Noir, plus 2 de plus à chaque paiement déjà effectué par ton équipe, avec cinq secondes d'incantation. Payé, il bombarde : 12 boulets en 40 secondes, 3 000 points de dégâts chacun sur les structures, les bastions encaissant 20 % de moins. Les doublons viennent des coffres au trésor — 5 par coffre — et des camps de mercenaires, qui en donnent 2 chacun.",
-      "en": "First objective at 1:30, then every three minutes. You hand Blackheart 8 Doubloons, plus 2 more for every payment your team has already made, with a five-second channel. Once paid, he bombards: 12 cannonballs over 40 seconds, 3,000 damage each against structures, with Keeps taking 20% less. Doubloons come from Treasure Chests — 5 apiece — and from mercenary camps, worth 2 each."
+      "fr": "Premier objectif à 1:30, puis toutes les trois minutes. Il faut livrer 8 doublons à Cœur-Noir, plus 2 de plus à chaque paiement déjà effectué par ton équipe, avec cinq secondes d'incantation. Payé, il bombarde : 12 boulets en 40 secondes, 2 875 points de dégâts chacun sur les structures, les bastions et l'idole encaissant 20 % de moins. Les doublons viennent des coffres au trésor — 5 par coffre — et des camps de mercenaires, qui en donnent 2 chacun.",
+      "en": "First objective at 1:30, then every three minutes. You hand Blackheart 8 Doubloons, plus 2 more for every payment your team has already made, with a five-second channel. Once paid, he bombards: 12 cannonballs over 40 seconds, 2,875 damage each against structures, with Keeps and the Core taking 20% less. Doubloons come from Treasure Chests — 5 apiece — and from mercenary camps, worth 2 each."
     },
     "tips": [
       {
-        "fr": "Va payer dès que tu portes 5 doublons ou plus. Mourir avec, c'est les semer sur place.",
-        "en": "Go and pay as soon as you carry 5 Doubloons or more. Dying with them scatters the lot."
+        "fr": "Va payer dès que tu portes 5 doublons ou plus. Mourir avec, c'est en semer la moitié sur place.",
+        "en": "Go and pay as soon as you carry 5 Doubloons or more. Dying with them scatters half of them."
       },
       {
         "fr": "Le premier bombardement fait presque tomber deux tours, une porte et un fort. Casse une tour avant, et le fort tombe pour de bon.",
@@ -4008,8 +4008,8 @@ const BATTLEGROUNDS = [
         "en": "Send the Heroes who hit fast and often to open chests: it is tick rate that counts, not big hits."
       },
       {
-        "fr": "Les coffres arrivent par vagues croissantes : un au début sur la voie du haut, puis deux, puis trois.",
-        "en": "Chests come in growing waves: one at first on the top lane, then two, then three."
+        "fr": "Les coffres arrivent par vagues croissantes : un seul à la première phase, sur la voie du haut, deux aux deux phases suivantes, puis trois.",
+        "en": "Chests come in growing waves: a single one in the first phase, on the top lane, two in the next two phases, then three."
       },
       {
         "fr": "Les deux tours de guet entre le milieu et le bas couvrent la zone de paiement. Les tenir, c'est voir venir le porteur adverse.",
@@ -4454,7 +4454,7 @@ const BATTLEGROUNDS = [
       "en": "Two shrines to hold at once, then a Hero sent into the statue to become the Dragon Knight."
     },
     "objectives": {
-      "fr": "Deux sanctuaires apparaissent à 1:30, puis deux minutes après la mort du chevalier dragon. Il faut tenir les deux en même temps pour activer la statue de la voie du milieu : quatre secondes pour capturer un sanctuaire neutre, huit s'il est à l'adversaire. La statue active, un héros s'y rend et incarne le chevalier dragon pendant trois secondes d'incantation. Il tient 55 secondes, plus 2 par minute de jeu écoulée.",
+      "fr": "Deux sanctuaires apparaissent à 1:30, puis deux minutes après la mort du chevalier dragon. Il faut tenir les deux en même temps pour activer la statue de la voie du milieu : quatre secondes pour capturer un sanctuaire neutre, huit s'il est à l'adversaire. La statue active, un héros s'y rend et incarne le chevalier dragon au bout de trois secondes d'incantation. Il tient 55 secondes, plus 2 par minute de jeu écoulée.",
       "en": "Two Shrines appear at 1:30, then two minutes after the Dragon Knight dies. You have to hold both at once to activate the statue in the middle lane: four seconds to capture a neutral Shrine, eight if the enemy holds it. With the statue active, a Hero walks up and becomes the Dragon Knight over a three-second channel. It lasts 55 seconds, plus 2 per minute of game time elapsed."
     },
     "tips": [
@@ -4554,7 +4554,7 @@ const BATTLEGROUNDS = [
           "en": "Bruiser Camp — top, left"
         },
         "description": {
-          "fr": "Deux camps entre la voie du haut et celle du milieu, un de chaque côté. Trois chevaliers et un sorcier, qui pose un champ d'armure des sorts autour des unités proches. Disponibles à 0:30, ils réapparaissent 4:00 après avoir été pris. À capturer vers 1:30 pour qu'ils arrivent en ligne avec la vague.",
+          "fr": "Deux camps entre la voie du haut et celle du milieu, un de chaque côté. Trois chevaliers et un sorcier, qui pose un champ d'armure des sorts autour des unités proches. Disponibles à 0:30, ils réapparaissent 4:00 après avoir été pris. À capturer vers 1:30 pour qu'ils arrivent dans la voie avec la vague.",
           "en": "Two camps between the top and middle lanes, one on each side. Three Knights and a Wizard, who lays a Spell Armor field around nearby units. Available at 0:30, back 4:00 after being taken. Worth capturing around 1:30 so they reach the lane with the wave."
         },
         "image": "assets/maps/comte-du-dragon/captures/2.jpg"
@@ -4569,7 +4569,7 @@ const BATTLEGROUNDS = [
           "en": "Bruiser Camp — top, right"
         },
         "description": {
-          "fr": "Deux camps entre la voie du haut et celle du milieu, un de chaque côté. Trois chevaliers et un sorcier, qui pose un champ d'armure des sorts autour des unités proches. Disponibles à 0:30, ils réapparaissent 4:00 après avoir été pris. À capturer vers 1:30 pour qu'ils arrivent en ligne avec la vague.",
+          "fr": "Deux camps entre la voie du haut et celle du milieu, un de chaque côté. Trois chevaliers et un sorcier, qui pose un champ d'armure des sorts autour des unités proches. Disponibles à 0:30, ils réapparaissent 4:00 après avoir été pris. À capturer vers 1:30 pour qu'ils arrivent dans la voie avec la vague.",
           "en": "Two camps between the top and middle lanes, one on each side. Three Knights and a Wizard, who lays a Spell Armor field around nearby units. Available at 0:30, back 4:00 after being taken. Worth capturing around 1:30 so they reach the lane with the wave."
         },
         "image": "assets/maps/comte-du-dragon/captures/2.jpg"
@@ -5249,7 +5249,7 @@ const BATTLEGROUNDS = [
     "image": "assets/maps/laboratoire-braxis/portrait.jpg",
     "minimapImage": "assets/maps/laboratoire-braxis/minimap.jpg",
     "headline": {
-      "fr": "Deux balises à capturer pour remplir sa cellule de Zergs — et les vagues partent des deux côtés à la fois.",
+      "fr": "Deux balises à capturer pour remplir sa cellule de zergs — et les vagues partent des deux côtés à la fois.",
       "en": "Two beacons to capture to fill your cell with Zerg — and the waves go out on both sides at once."
     },
     "objectives": {
@@ -5544,7 +5544,7 @@ const BATTLEGROUNDS = [
         "x": 26,
         "y": 51.5,
         "name": {
-          "fr": "Fontaine de soins — devant le noyau, gauche",
+          "fr": "Fontaine de soins — devant l'idole, gauche",
           "en": "Healing fountain — in front of the Core, left"
         },
         "description": {
@@ -5619,7 +5619,7 @@ const BATTLEGROUNDS = [
         "x": 68.9,
         "y": 48.9,
         "name": {
-          "fr": "Fontaine de soins — devant le noyau, droite",
+          "fr": "Fontaine de soins — devant l'idole, droite",
           "en": "Healing fountain — in front of the Core, right"
         },
         "description": {
@@ -5645,8 +5645,8 @@ const BATTLEGROUNDS = [
       "en": "Warheads scattered across the map: picking one up arms a nuke, dying with it loses it."
     },
     "objectives": {
-      "fr": "Les ogives apparaissent à partir de 3:00, deux à quatre à la fois, réparties sur les trois voies ; elles reviennent 2:55 après que toutes ont été ramassées. Cinq secondes d'incantation pour en prendre une, puis trois secondes d'incantation et quatre de délai avant l'explosion. L'impact inflige 1 750 points, plus 70 par minute pendant 25 minutes, et enflamme les structures dix secondes. Forts, bastions et idoles encaissent 125 % de dégâts en plus.",
-      "en": "Warheads appear from 3:00 onward, two to four at a time, spread across the three lanes; they come back 2:55 after all of them are picked up. A five-second channel to take one, then a three-second channel and a four-second delay before it detonates. Impact deals 1,750 damage, plus 70 per minute for 25 minutes, and sets structures alight for ten seconds. Forts, Keeps and Cores take 125% more damage."
+      "fr": "Les ogives apparaissent à partir de 3:00, deux à quatre à la fois, réparties sur les trois voies ; elles reviennent 2:55 après que toutes ont été ramassées. Cinq secondes d'incantation pour en prendre une, puis trois secondes d'incantation et quatre de délai avant l'explosion. L'impact inflige 1 750 points, plus 70 par minute pendant 25 minutes, et enflamme les structures douze secondes. Forts et bastions encaissent 125 % de dégâts en plus, l'idole 100 %.",
+      "en": "Warheads appear from 3:00 onward, two to four at a time, spread across the three lanes; they come back 2:55 after all of them are picked up. A five-second channel to take one, then a three-second channel and a four-second delay before it detonates. Impact deals 1,750 damage, plus 70 per minute for 25 minutes, and sets structures alight for twelve seconds. Forts and Keeps take 125% more damage, the Core 100%."
     },
     "tips": [
       {
