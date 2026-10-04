@@ -647,8 +647,8 @@ const BATTLEGROUNDS = [
         "x": 25.6,
         "y": 38.3,
         "name": {
-          "fr": "Fontaine de soins — haut, gauche",
-          "en": "Healing fountain — top, left"
+          "fr": "Fontaine de soins — bastion haut, gauche",
+          "en": "Healing fountain — top keep, left"
         },
         "description": {
           "fr": "Deux minutes de recharge. À dépenser avant 1:00 pour la retrouver disponible au premier objectif.",
@@ -662,8 +662,8 @@ const BATTLEGROUNDS = [
         "x": 31.6,
         "y": 52.8,
         "name": {
-          "fr": "Fontaine de soins — milieu, gauche",
-          "en": "Healing fountain — middle, left"
+          "fr": "Fontaine de soins — bastion milieu, gauche",
+          "en": "Healing fountain — middle keep, left"
         },
         "description": {
           "fr": "Deux minutes de recharge. À dépenser avant 1:00 pour la retrouver disponible au premier objectif.",
@@ -677,8 +677,8 @@ const BATTLEGROUNDS = [
         "x": 27.7,
         "y": 62.4,
         "name": {
-          "fr": "Fontaine de soins — bas, gauche",
-          "en": "Healing fountain — bottom, left"
+          "fr": "Fontaine de soins — bastion bas, gauche",
+          "en": "Healing fountain — bottom keep, left"
         },
         "description": {
           "fr": "Deux minutes de recharge. À dépenser avant 1:00 pour la retrouver disponible au premier objectif.",
@@ -692,8 +692,8 @@ const BATTLEGROUNDS = [
         "x": 72.4,
         "y": 35.8,
         "name": {
-          "fr": "Fontaine de soins — haut, droite",
-          "en": "Healing fountain — top, right"
+          "fr": "Fontaine de soins — bastion haut, droite",
+          "en": "Healing fountain — top keep, right"
         },
         "description": {
           "fr": "Deux minutes de recharge. À dépenser avant 1:00 pour la retrouver disponible au premier objectif.",
@@ -707,8 +707,8 @@ const BATTLEGROUNDS = [
         "x": 68.4,
         "y": 45.3,
         "name": {
-          "fr": "Fontaine de soins — milieu, droite",
-          "en": "Healing fountain — middle, right"
+          "fr": "Fontaine de soins — bastion milieu, droite",
+          "en": "Healing fountain — middle keep, right"
         },
         "description": {
           "fr": "Deux minutes de recharge. À dépenser avant 1:00 pour la retrouver disponible au premier objectif.",
@@ -722,8 +722,98 @@ const BATTLEGROUNDS = [
         "x": 74.7,
         "y": 60.2,
         "name": {
-          "fr": "Fontaine de soins — bas, droite",
-          "en": "Healing fountain — bottom, right"
+          "fr": "Fontaine de soins — bastion bas, droite",
+          "en": "Healing fountain — bottom keep, right"
+        },
+        "description": {
+          "fr": "Deux minutes de recharge. À dépenser avant 1:00 pour la retrouver disponible au premier objectif.",
+          "en": "Two-minute cooldown. Spend it before 1:00 to have it back for the first objective."
+        },
+        "image": ""
+      },
+      {
+        "id": "palfmutq9sf40",
+        "type": "fontaine",
+        "x": 37.9,
+        "y": 28,
+        "name": {
+          "fr": "Fontaine de soins — fort haut, gauche",
+          "en": "Healing fountain — top fort, left"
+        },
+        "description": {
+          "fr": "Deux minutes de recharge. À dépenser avant 1:00 pour la retrouver disponible au premier objectif.",
+          "en": "Two-minute cooldown. Spend it before 1:00 to have it back for the first objective."
+        },
+        "image": ""
+      },
+      {
+        "id": "palfmutq9sf41",
+        "type": "fontaine",
+        "x": 41.1,
+        "y": 46.5,
+        "name": {
+          "fr": "Fontaine de soins — fort milieu, gauche",
+          "en": "Healing fountain — middle fort, left"
+        },
+        "description": {
+          "fr": "Deux minutes de recharge. À dépenser avant 1:00 pour la retrouver disponible au premier objectif.",
+          "en": "Two-minute cooldown. Spend it before 1:00 to have it back for the first objective."
+        },
+        "image": ""
+      },
+      {
+        "id": "palfmutq9sf42",
+        "type": "fontaine",
+        "x": 44.5,
+        "y": 73.1,
+        "name": {
+          "fr": "Fontaine de soins — fort bas, gauche",
+          "en": "Healing fountain — bottom fort, left"
+        },
+        "description": {
+          "fr": "Deux minutes de recharge. À dépenser avant 1:00 pour la retrouver disponible au premier objectif.",
+          "en": "Two-minute cooldown. Spend it before 1:00 to have it back for the first objective."
+        },
+        "image": ""
+      },
+      {
+        "id": "palfmutq9sf43",
+        "type": "fontaine",
+        "x": 55.3,
+        "y": 25.5,
+        "name": {
+          "fr": "Fontaine de soins — fort haut, droite",
+          "en": "Healing fountain — top fort, right"
+        },
+        "description": {
+          "fr": "Deux minutes de recharge. À dépenser avant 1:00 pour la retrouver disponible au premier objectif.",
+          "en": "Two-minute cooldown. Spend it before 1:00 to have it back for the first objective."
+        },
+        "image": ""
+      },
+      {
+        "id": "palfmutq9sf44",
+        "type": "fontaine",
+        "x": 58.8,
+        "y": 51.9,
+        "name": {
+          "fr": "Fontaine de soins — fort milieu, droite",
+          "en": "Healing fountain — middle fort, right"
+        },
+        "description": {
+          "fr": "Deux minutes de recharge. À dépenser avant 1:00 pour la retrouver disponible au premier objectif.",
+          "en": "Two-minute cooldown. Spend it before 1:00 to have it back for the first objective."
+        },
+        "image": ""
+      },
+      {
+        "id": "palfmutq9sf45",
+        "type": "fontaine",
+        "x": 61.9,
+        "y": 70.3,
+        "name": {
+          "fr": "Fontaine de soins — fort bas, droite",
+          "en": "Healing fountain — bottom fort, right"
         },
         "description": {
           "fr": "Deux minutes de recharge. À dépenser avant 1:00 pour la retrouver disponible au premier objectif.",
