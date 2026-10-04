@@ -4,6 +4,30 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=1280" />
   <title>Eowea Maps - Cartes HotS</title>
+  <!-- Sans cette balise, Google compose lui-même l'extrait en recopiant le texte visible
+       de la page : barre de recherche, liens des réseaux sociaux. -->
+  <meta name="description" content="Les cartes Heroes of the Storm d'Eowea : pour chaque champ de bataille, l'objectif, les points d'intérêt sur la minimap et des conseils pour bien la jouer." />
+
+  <!-- Sans slash final, GitHub Pages renvoie une 301 vers .../maps/. Cette balise
+       désigne l'adresse avec slash comme la bonne, pour que Google et les robots
+       d'aperçu ne traitent pas les deux formes comme deux pages distinctes. -->
+  <link rel="canonical" href="https://eowea.github.io/maps/" />
+
+  <!-- Open Graph : ce qu'affichent Discord, X et Facebook quand on partage le lien.
+       og:site_name sert aussi à Google, qui sinon devine le nom du site tout seul. -->
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Eowea Maps" />
+  <meta property="og:locale" content="fr_FR" />
+  <meta property="og:url" content="https://eowea.github.io/maps/" />
+  <meta property="og:title" content="Eowea Maps - Cartes HotS" />
+  <meta property="og:description" content="Les cartes Heroes of the Storm d'Eowea : pour chaque champ de bataille, l'objectif, les points d'intérêt sur la minimap et des conseils pour bien la jouer." />
+
+  <!-- Carte « summary » et non « summary_large_image » : faute de bannière, la grande
+       carte s'afficherait avec un cadre vide. Ajouter une image de 1200×630 et une
+       balise og:image permettra de passer à summary_large_image. -->
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Eowea Maps - Cartes HotS" />
+  <meta name="twitter:description" content="Les cartes Heroes of the Storm d'Eowea : pour chaque champ de bataille, l'objectif, les points d'intérêt sur la minimap et des conseils pour bien la jouer." />
   <link rel="icon" type="image/png" href="https://static.wikia.nocookie.net/allstars_gamepedia/images/e/e5/Emoji_Elements_Pack_Flower.png/">
 
   <!-- Préchargement des polices (réduit le flash de texte au chargement) -->
