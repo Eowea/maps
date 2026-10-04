@@ -2076,7 +2076,13 @@
     cursor: pointer;
     /* drop-shadow épouse la forme découpée, là où box-shadow dessinerait un rectangle. */
     animation: bg-hotspot-pulse 2.4s ease-in-out infinite;
-    transition: transform var(--t), color var(--t);
+    transition: transform var(--t), color var(--t), opacity var(--t), visibility var(--t);
+}
+/* Une famille ouverte dans la liste ne laisse sur la carte que ses propres marqueurs. */
+.bg-hotspot.is-filtered-out {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
 }
 .bg-hotspot::before,
 .bg-hotspot::after {
@@ -2132,7 +2138,9 @@
     color: var(--text-dim);
     text-transform: uppercase;
     letter-spacing: .04em;
+    transition: opacity var(--t);
 }
+.bg-legend-item.is-dim { opacity: .35; }
 .bg-legend-item svg { width: 14px; height: 14px; color: var(--pt-color, var(--blue)); }
 
 /* ── Infobulle du point ──

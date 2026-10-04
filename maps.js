@@ -322,6 +322,8 @@ function bgPointsListHtml(b) {
 }
 
 function renderBgDetail() {
+  // La liste est reconstruite avec toutes ses familles repliées : plus rien à filtrer.
+  bgTypeFiltre = null;
   const b = bgCurrent();
   if (!b) {
     bgEls.detailView.innerHTML = `<div class="empty-state">${bgT('selectPrompt')}</div>`;
@@ -560,6 +562,7 @@ function bgOpenMapZoom() {
       ${bgLegendeHtml(b)}
     </div>`;
   overlay.classList.add('active');
+  bgAppliquerFiltre();   // l'agrandissement montre la même sélection que la fiche
   overlay.querySelector('.map-zoom-close').focus();
 }
 // Renvoie true si elle avait bien quelque chose à fermer, pour que Échap sache
@@ -591,6 +594,35 @@ function bgCloseMapZoom() {
     // et la légende, qui ne sont pas interactifs.
     if (!e.target.closest('.map-zoom-stage')) bgCloseMapZoom();
   });
+})();
+
+/* Ouvrir une famille de points dans la liste ne laisse sur la carte que les marqueurs
+   de ce type : sur une carte à vingt points, c'est ce qui permet de retrouver « les
+   camps » d'un coup d'œil. Une seule famille ouverte à la fois, pour que la liste et
+   la carte disent toujours la même chose. La refermer fait revenir tous les marqueurs. */
+let bgTypeFiltre = null;
+function bgAppliquerFiltre() {
+  document.querySelectorAll('.bg-minimap-stage .bg-hotspot').forEach(m =>
+    m.classList.toggle('is-filtered-out', !!bgTypeFiltre && m.dataset.type !== bgTypeFiltre));
+  document.querySelectorAll('.bg-legend-item').forEach(l =>
+    l.classList.toggle('is-dim', !!bgTypeFiltre && l.dataset.type !== bgTypeFiltre));
+}
+(function bindBgTypeFilter() {
+  // « toggle » ne remonte pas : on l'écoute en phase de capture.
+  bgEls.detailView.addEventListener('toggle', (e) => {
+    const groupe = e.target;
+    if (!groupe.matches || !groupe.matches('details.point-group')) return;
+    if (groupe.open) {
+      bgEls.detailView.querySelectorAll('details.point-group[open]').forEach(g => { if (g !== groupe) g.open = false; });
+      bgTypeFiltre = groupe.dataset.type;
+    } else if (bgTypeFiltre === groupe.dataset.type) {
+      bgTypeFiltre = null;
+    } else {
+      return;   // une famille refermée par la ligne ci-dessus : le filtre est déjà le bon
+    }
+    bgHideHotspotTip(true);   // l'infobulle pourrait pointer sur un marqueur désormais masqué
+    bgAppliquerFiltre();
+  }, true);
 })();
 
 /* Survoler un point de la liste allume son marqueur sur la carte : c'est ce qui relie
