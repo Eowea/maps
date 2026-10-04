@@ -1469,7 +1469,7 @@ const BATTLEGROUNDS = [
       },
       {
         "id": "pmutm0d83dc6m",
-        "x": 49.6,
+        "x": 49.5,
         "y": 45.7,
         "type": "objectif",
         "name": {
