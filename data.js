@@ -3664,8 +3664,8 @@ const BATTLEGROUNDS = [
       {
         "id": "pval47",
         "type": "objectif",
-        "x": 12,
-        "y": 12,
+        "x": 43.1,
+        "y": 28.2,
         "name": {
           "fr": "Tribut — haut, gauche",
           "en": "Tribute — top, left"
@@ -3679,8 +3679,8 @@ const BATTLEGROUNDS = [
       {
         "id": "pmutmu1e901y",
         "type": "objectif",
-        "x": 82,
-        "y": 12,
+        "x": 51.1,
+        "y": 23.8,
         "name": {
           "fr": "Tribut — haut, milieu",
           "en": "Tribute — top, middle"
@@ -3694,8 +3694,8 @@ const BATTLEGROUNDS = [
       {
         "id": "pmutmu1e901z",
         "type": "objectif",
-        "x": 12,
-        "y": 26,
+        "x": 55.4,
+        "y": 35.7,
         "name": {
           "fr": "Tribut — haut, droite",
           "en": "Tribute — top, right"
@@ -3709,8 +3709,8 @@ const BATTLEGROUNDS = [
       {
         "id": "pmutmu1e9020",
         "type": "objectif",
-        "x": 26,
-        "y": 26,
+        "x": 44.9,
+        "y": 62.8,
         "name": {
           "fr": "Tribut — bas, gauche",
           "en": "Tribute — bottom, left"
@@ -3724,8 +3724,8 @@ const BATTLEGROUNDS = [
       {
         "id": "pmutmu1e9021",
         "type": "objectif",
-        "x": 40,
-        "y": 26,
+        "x": 49.5,
+        "y": 74.1,
         "name": {
           "fr": "Tribut — bas, milieu",
           "en": "Tribute — bottom, middle"
@@ -3739,8 +3739,8 @@ const BATTLEGROUNDS = [
       {
         "id": "pmutmu1e9022",
         "type": "objectif",
-        "x": 54,
-        "y": 26,
+        "x": 57.3,
+        "y": 69.8,
         "name": {
           "fr": "Tribut — bas, droite",
           "en": "Tribute — bottom, right"
@@ -3754,8 +3754,8 @@ const BATTLEGROUNDS = [
       {
         "id": "pval48",
         "type": "camp",
-        "x": 26,
-        "y": 12,
+        "x": 30.1,
+        "y": 40.2,
         "name": {
           "fr": "Camp de siège — géants, haut gauche",
           "en": "Siege Camp — Giants, top left"
@@ -3769,8 +3769,8 @@ const BATTLEGROUNDS = [
       {
         "id": "pmutmu1e9023",
         "type": "camp",
-        "x": 68,
-        "y": 26,
+        "x": 70.3,
+        "y": 58.1,
         "name": {
           "fr": "Camp de siège — géants, bas droite",
           "en": "Siege Camp — Giants, bottom right"
@@ -3784,8 +3784,8 @@ const BATTLEGROUNDS = [
       {
         "id": "pval49",
         "type": "camp",
-        "x": 40,
-        "y": 12,
+        "x": 35.9,
+        "y": 61.8,
         "name": {
           "fr": "Camp de bruisers — chevaliers, milieu gauche",
           "en": "Bruiser Camp — Knights, middle left"
@@ -3799,8 +3799,8 @@ const BATTLEGROUNDS = [
       {
         "id": "pmutmu1e9024",
         "type": "camp",
-        "x": 82,
-        "y": 26,
+        "x": 63.7,
+        "y": 36.9,
         "name": {
           "fr": "Camp de bruisers — chevaliers, milieu droite",
           "en": "Bruiser Camp — Knights, middle right"
@@ -3814,8 +3814,8 @@ const BATTLEGROUNDS = [
       {
         "id": "pval50",
         "type": "camp",
-        "x": 54,
-        "y": 12,
+        "x": 60.2,
+        "y": 23.8,
         "name": {
           "fr": "Camp de boss — golem sépulcral, haut droite",
           "en": "Boss Camp — Grave Golem, top right"
@@ -3829,8 +3829,8 @@ const BATTLEGROUNDS = [
       {
         "id": "pmutmu1e9025",
         "type": "camp",
-        "x": 12,
-        "y": 40,
+        "x": 40.6,
+        "y": 74.8,
         "name": {
           "fr": "Camp de boss — golem sépulcral, bas gauche",
           "en": "Boss Camp — Grave Golem, bottom left"
@@ -3844,8 +3844,8 @@ const BATTLEGROUNDS = [
       {
         "id": "pval51",
         "type": "tour",
-        "x": 68,
-        "y": 12,
+        "x": 36.6,
+        "y": 31,
         "name": {
           "fr": "Tour de guet — haut, gauche",
           "en": "Watch Tower — top, left"
@@ -3859,8 +3859,8 @@ const BATTLEGROUNDS = [
       {
         "id": "pmutmu1e9026",
         "type": "tour",
-        "x": 26,
-        "y": 40,
+        "x": 63.6,
+        "y": 67.9,
         "name": {
           "fr": "Tour de guet — bas, droite",
           "en": "Watch Tower — bottom, right"
@@ -3874,11 +3874,11 @@ const BATTLEGROUNDS = [
       {
         "id": "pmutmu1e9027",
         "type": "fontaine",
-        "x": 40,
-        "y": 40,
+        "x": 17.5,
+        "y": 36.5,
         "name": {
-          "fr": "Fontaine de soins — côté gauche",
-          "en": "Healing fountain — left side"
+          "fr": "Fontaine de soins — bastion haut, gauche",
+          "en": "Healing fountain — top keep, left"
         },
         "description": {
           "fr": "Deux minutes de recharge après utilisation. Savoir si celle d'en face est disponible change la valeur d'un plongeon autant que les points de vie restants.",
@@ -3887,19 +3887,169 @@ const BATTLEGROUNDS = [
         "image": ""
       },
       {
+        "id": "pvalmutv5xgt0",
+        "type": "fontaine",
+        "description": {
+          "fr": "Deux minutes de recharge après utilisation. Savoir si celle d'en face est disponible change la valeur d'un plongeon autant que les points de vie restants.",
+          "en": "Two-minute cooldown after use. Knowing whether the enemy one is up changes the worth of a dive as much as their remaining health does."
+        },
+        "image": "",
+        "x": 26.2,
+        "y": 54.4,
+        "name": {
+          "fr": "Fontaine de soins — bastion milieu, gauche",
+          "en": "Healing fountain — middle keep, left"
+        }
+      },
+      {
+        "id": "pvalmutv5xgt1",
+        "type": "fontaine",
+        "description": {
+          "fr": "Deux minutes de recharge après utilisation. Savoir si celle d'en face est disponible change la valeur d'un plongeon autant que les points de vie restants.",
+          "en": "Two-minute cooldown after use. Knowing whether the enemy one is up changes the worth of a dive as much as their remaining health does."
+        },
+        "image": "",
+        "x": 19.6,
+        "y": 67,
+        "name": {
+          "fr": "Fontaine de soins — bastion bas, gauche",
+          "en": "Healing fountain — bottom keep, left"
+        }
+      },
+      {
+        "id": "pvalmutv5xgt2",
+        "type": "fontaine",
+        "description": {
+          "fr": "Deux minutes de recharge après utilisation. Savoir si celle d'en face est disponible change la valeur d'un plongeon autant que les points de vie restants.",
+          "en": "Two-minute cooldown after use. Knowing whether the enemy one is up changes the worth of a dive as much as their remaining health does."
+        },
+        "image": "",
+        "x": 39.1,
+        "y": 13.9,
+        "name": {
+          "fr": "Fontaine de soins — fort haut, gauche",
+          "en": "Healing fountain — top fort, left"
+        }
+      },
+      {
+        "id": "pvalmutv5xgt3",
+        "type": "fontaine",
+        "description": {
+          "fr": "Deux minutes de recharge après utilisation. Savoir si celle d'en face est disponible change la valeur d'un plongeon autant que les points de vie restants.",
+          "en": "Two-minute cooldown after use. Knowing whether the enemy one is up changes the worth of a dive as much as their remaining health does."
+        },
+        "image": "",
+        "x": 39.4,
+        "y": 46.3,
+        "name": {
+          "fr": "Fontaine de soins — fort milieu, gauche",
+          "en": "Healing fountain — middle fort, left"
+        }
+      },
+      {
+        "id": "pvalmutv5xgt4",
+        "type": "fontaine",
+        "description": {
+          "fr": "Deux minutes de recharge après utilisation. Savoir si celle d'en face est disponible change la valeur d'un plongeon autant que les points de vie restants.",
+          "en": "Two-minute cooldown after use. Knowing whether the enemy one is up changes the worth of a dive as much as their remaining health does."
+        },
+        "image": "",
+        "x": 41,
+        "y": 83.6,
+        "name": {
+          "fr": "Fontaine de soins — fort bas, gauche",
+          "en": "Healing fountain — bottom fort, left"
+        }
+      },
+      {
         "id": "pmutmu1e9028",
         "type": "fontaine",
-        "x": 54,
-        "y": 40,
+        "x": 80.9,
+        "y": 32.6,
         "name": {
-          "fr": "Fontaine de soins — côté droit",
-          "en": "Healing fountain — right side"
+          "fr": "Fontaine de soins — bastion haut, droite",
+          "en": "Healing fountain — top keep, right"
         },
         "description": {
           "fr": "Deux minutes de recharge après utilisation. Savoir si celle d'en face est disponible change la valeur d'un plongeon autant que les points de vie restants.",
           "en": "Two-minute cooldown after use. Knowing whether the enemy one is up changes the worth of a dive as much as their remaining health does."
         },
         "image": ""
+      },
+      {
+        "id": "pvalmutv5xgt5",
+        "type": "fontaine",
+        "description": {
+          "fr": "Deux minutes de recharge après utilisation. Savoir si celle d'en face est disponible change la valeur d'un plongeon autant que les points de vie restants.",
+          "en": "Two-minute cooldown after use. Knowing whether the enemy one is up changes the worth of a dive as much as their remaining health does."
+        },
+        "image": "",
+        "x": 74.3,
+        "y": 45.2,
+        "name": {
+          "fr": "Fontaine de soins — bastion milieu, droite",
+          "en": "Healing fountain — middle keep, right"
+        }
+      },
+      {
+        "id": "pvalmutv5xgt6",
+        "type": "fontaine",
+        "description": {
+          "fr": "Deux minutes de recharge après utilisation. Savoir si celle d'en face est disponible change la valeur d'un plongeon autant que les points de vie restants.",
+          "en": "Two-minute cooldown after use. Knowing whether the enemy one is up changes the worth of a dive as much as their remaining health does."
+        },
+        "image": "",
+        "x": 83,
+        "y": 63,
+        "name": {
+          "fr": "Fontaine de soins — bastion bas, droite",
+          "en": "Healing fountain — bottom keep, right"
+        }
+      },
+      {
+        "id": "pvalmutv5xgt7",
+        "type": "fontaine",
+        "description": {
+          "fr": "Deux minutes de recharge après utilisation. Savoir si celle d'en face est disponible change la valeur d'un plongeon autant que les points de vie restants.",
+          "en": "Two-minute cooldown after use. Knowing whether the enemy one is up changes the worth of a dive as much as their remaining health does."
+        },
+        "image": "",
+        "x": 59.5,
+        "y": 16.2,
+        "name": {
+          "fr": "Fontaine de soins — fort haut, droite",
+          "en": "Healing fountain — top fort, right"
+        }
+      },
+      {
+        "id": "pvalmutv5xgt8",
+        "type": "fontaine",
+        "description": {
+          "fr": "Deux minutes de recharge après utilisation. Savoir si celle d'en face est disponible change la valeur d'un plongeon autant que les points de vie restants.",
+          "en": "Two-minute cooldown after use. Knowing whether the enemy one is up changes the worth of a dive as much as their remaining health does."
+        },
+        "image": "",
+        "x": 61.1,
+        "y": 53.3,
+        "name": {
+          "fr": "Fontaine de soins — fort milieu, droite",
+          "en": "Healing fountain — middle fort, right"
+        }
+      },
+      {
+        "id": "pvalmutv5xgt9",
+        "type": "fontaine",
+        "description": {
+          "fr": "Deux minutes de recharge après utilisation. Savoir si celle d'en face est disponible change la valeur d'un plongeon autant que les points de vie restants.",
+          "en": "Two-minute cooldown after use. Knowing whether the enemy one is up changes the worth of a dive as much as their remaining health does."
+        },
+        "image": "",
+        "x": 61.4,
+        "y": 85.7,
+        "name": {
+          "fr": "Fontaine de soins — fort bas, droite",
+          "en": "Healing fountain — bottom fort, right"
+        }
       }
     ],
     "guideVideos": []
