@@ -769,8 +769,8 @@ const BATTLEGROUNDS = [
       "en": "Two Prison Camps to take and hold: each one releases a Cavalry that charges down the lanes. The Cores are replaced by Generals."
     },
     "objectives": {
-      "fr": "Premier objectif à 3:00, puis toutes les 1:50 à 2:30. Chaque équipe libère la cavalerie enfermée dans le camp adverse : trois secondes d'incantation pour lancer la capture, puis un décompte de 25 secondes — 10 de plus à chaque phase, jusqu'à 55. Les camps se reprennent, héros comme serviteurs peuvent les retourner. La cavalerie libérée descend les trois voies et donne 30 % de vitesse et 10 % de dégâts aux héros alliés proches.",
-      "en": "First objective at 3:00, then every 1:50 to 2:30. Each team frees the Cavalry held in the enemy camp: a three-second channel starts the capture, then a 25-second countdown — 10 more each phase, up to 55. Camps can be retaken, by Heroes and Minions alike. The freed Cavalry marches down all three lanes and grants nearby allied Heroes 30% Movement Speed and 10% more damage."
+      "fr": "Premier objectif à 3:00, puis toutes les 1:50 à 2:30, deux secondes de moins par minute de jeu écoulée. Chaque équipe libère la cavalerie enfermée dans le camp adverse : trois secondes d'incantation pour lancer la capture, puis un décompte de 25 secondes — 10 de plus à chaque phase, jusqu'à 55. La première équipe à le terminer l'emporte. Les camps se reprennent, héros comme serviteurs peuvent les retourner. La cavalerie libérée descend les trois voies et donne 30 % de vitesse et 10 % de dégâts aux héros alliés proches.",
+      "en": "First objective at 3:00, then every 1:50 to 2:30, two seconds shorter per minute of game time elapsed. Each team frees the Cavalry held in the enemy camp: a three-second channel starts the capture, then a 25-second countdown — 10 more each phase, up to 55. The first team to finish it wins. Camps can be retaken, by Heroes and Minions alike. The freed Cavalry marches down all three lanes and grants nearby allied Heroes 30% Movement Speed and 10% more damage."
     },
     "tips": [
       {
@@ -1260,8 +1260,8 @@ const BATTLEGROUNDS = [
       "en": "Queen Nightshade grows Seeds guarded by Shamblers. Gather three and a Garden Terror burrows to every lane."
     },
     "objectives": {
-      "fr": "Premier objectif à 2:30. La reine Belladone fait pousser une graine, gardée par des traîne-racines qu'il faut abattre ; ramasser la graine demande six secondes d'incantation. Trois graines réunies font surgir une terreur de jardin sur chaque voie. Chacune répand une prolifération qui neutralise les structures ennemies jusqu'à dix secondes et leur inflige 10 % de leur vie maximale par seconde. Les graines suivantes arrivent 0:50 à 1:20 après une récolte, ou 1:30 à 2:00 après la mort des terreurs.",
-      "en": "First objective at 2:30. Queen Nightshade grows a Seed, guarded by Shamblers that have to be cleared; picking the Seed up takes a six-second channel. Three Seeds bring out a Garden Terror in every lane. Each spreads an Overgrowth that disables enemy Structures for up to ten seconds and deals 10% of their maximum Health per second. The next Seeds arrive 0:50 to 1:20 after a pickup, or 1:30 to 2:00 after the Terrors die."
+      "fr": "Premier objectif à 2:30. La reine Belladone fait pousser une graine, gardée par des traîne-racines qu'il faut abattre ; ramasser la graine demande six secondes d'incantation. Trois graines réunies font surgir une terreur de jardin sur chaque voie. Chacune plante une prolifération qui neutralise les structures ennemies tant qu'elle vit : elle perd 10 % de sa vie maximale par seconde, soit dix secondes au plus. Les graines suivantes arrivent 0:50 à 1:20 après une récolte, ou 1:30 à 2:00 après la mort des terreurs.",
+      "en": "First objective at 2:30. Queen Nightshade grows a Seed, guarded by Shamblers that have to be cleared; picking the Seed up takes a six-second channel. Three Seeds bring out a Garden Terror in every lane. Each plants an Overgrowth that disables enemy Structures for as long as it lives: it loses 10% of its maximum Health per second, so ten seconds at most. The next Seeds arrive 0:50 to 1:20 after a pickup, or 1:30 to 2:00 after the Terrors die."
     },
     "tips": [
       {
@@ -1675,7 +1675,7 @@ const BATTLEGROUNDS = [
   },
   {
     "id": "temple-hanamura",
-    "enabled": true,
+    "enabled": false,
     "name": {
       "fr": "Temple d'Hanamura",
       "en": "Hanamura Temple"
@@ -1687,8 +1687,8 @@ const BATTLEGROUNDS = [
       "en": "A single payload at the centre, contested by both teams. Escorted to its destination, it bombards the enemy forts."
     },
     "objectives": {
-      "fr": "Un convoi, et un seul, apparaît au centre toutes les trois minutes. Il avance tant que des héros se tiennent à côté : un héros donne 50 % de vitesse, deux 60 %, trois 70 % — au-delà, rien de plus. Trois trajets possibles, de 16 à 36 secondes selon le nombre d'escorteurs. Arrivé à destination, le convoi tire 12 salves en 15 secondes, à 2 280 points de dégâts par tir sur les structures ; les idoles encaissent 20 % de moins. L'équipe victorieuse récupère des globes de régénération.",
-      "en": "One payload, and only one, spawns at the centre every three minutes. It moves as long as Heroes stand beside it: one Hero gives 50% speed, two 60%, three 70% — beyond that, nothing more. Three possible routes, 16 to 36 seconds depending on the escort. On arrival the payload fires 12 shots over 15 seconds, 2,280 damage each against structures; Cores take 20% less. The winning team picks up Regeneration Globes."
+      "fr": "Un convoi, et un seul, apparaît au centre à 3:00, puis trois minutes après chaque livraison. Il avance tant que des héros se tiennent à côté : un héros donne 50 % de vitesse, deux 60 %, trois 70 % — au-delà, rien de plus. Trois trajets possibles, de 16 à 36 secondes de parcours : chaque livraison fait évoluer le trajet de l'équipe qui l'a réussie. Arrivé à destination, le convoi tire 12 salves en 15 secondes, à 2 280 points de dégâts par tir sur les structures ; les idoles encaissent 20 % de moins. L'équipe victorieuse récupère des globes de régénération.",
+      "en": "One payload, and only one, spawns at the centre at 3:00, then three minutes after each delivery. It moves as long as Heroes stand beside it: one Hero gives 50% speed, two 60%, three 70% — beyond that, nothing more. Three possible routes, 16 to 36 seconds long: each delivery upgrades the route of the team that made it. On arrival the payload fires 12 shots over 15 seconds, 2,280 damage each against structures; Cores take 20% less. The winning team picks up Regeneration Globes."
     },
     "tips": [
       {
@@ -3804,8 +3804,8 @@ const BATTLEGROUNDS = [
       "en": "Temples to capture and hold, under fire from Guardians trying to take them back."
     },
     "objectives": {
-      "fr": "Jusqu'à deux temples s'activent à la fois, à partir de 3:00, puis deux minutes après la fin d'une phase. Se tenir sur un temple non contesté le capture en deux secondes ; il tire ensuite une fois par seconde pendant 40 secondes, à 450 points de dégâts par tir, plus 20 par minute de jeu. Chaque temple sort un gardien et deux défenseurs, puis deux défenseurs de plus. Le gardien projette les ennemis toutes les 12 secondes ; les défenseurs, eux, ne réapparaissent pas.",
-      "en": "Up to two Temples activate at once, from 3:00 onward, then two minutes after a phase ends. Standing on an uncontested Temple captures it in two seconds; it then fires once per second for 40 seconds, at 450 damage a shot, plus 20 per minute of game time. Each Temple spawns a Guardian and two Defenders, then two more Defenders. The Guardian knocks enemies back every 12 seconds; the Defenders do not respawn."
+      "fr": "Jusqu'à deux temples s'activent à la fois, à partir de 3:00, puis deux minutes après la fin d'une phase. Se tenir sur un temple non contesté le capture en deux secondes ; il tire ensuite une fois par seconde pendant 40 secondes, à 450 points de dégâts par tir, plus 20 par minute de jeu, puis enchaîne 5 tirs bonus pour l'équipe qui le tient. Chaque temple sort un gardien et deux défenseurs, puis deux défenseurs de plus. Le gardien projette les ennemis toutes les 12 secondes ; les défenseurs, eux, ne réapparaissent pas.",
+      "en": "Up to two Temples activate at once, from 3:00 onward, then two minutes after a phase ends. Standing on an uncontested Temple captures it in two seconds; it then fires once per second for 40 seconds, at 450 damage a shot, plus 20 per minute of game time, then fires 5 bonus shots for the team holding it. Each Temple spawns a Guardian and two Defenders, then two more Defenders. The Guardian knocks enemies back every 12 seconds; the Defenders do not respawn."
     },
     "tips": [
       {
@@ -4190,8 +4190,8 @@ const BATTLEGROUNDS = [
       "en": "Doubloons taken from chests and mercenaries, handed to the ghost pirate who then opens fire."
     },
     "objectives": {
-      "fr": "Premier objectif à 1:30, puis toutes les trois minutes. Il faut livrer 8 doublons à Cœur-Noir, plus 2 de plus à chaque paiement déjà effectué par ton équipe, avec cinq secondes d'incantation. Payé, il bombarde : 12 boulets en 40 secondes, 2 875 points de dégâts chacun sur les structures, les bastions et l'idole encaissant 20 % de moins. Les doublons viennent des coffres au trésor — 5 par coffre — et des camps de mercenaires, qui en donnent 2 chacun.",
-      "en": "First objective at 1:30, then every three minutes. You hand Blackheart 8 Doubloons, plus 2 more for every payment your team has already made, with a five-second channel. Once paid, he bombards: 12 cannonballs over 40 seconds, 2,875 damage each against structures, with Keeps and the Core taking 20% less. Doubloons come from Treasure Chests — 5 apiece — and from mercenary camps, worth 2 each."
+      "fr": "Le premier coffre apparaît à 1:30, les suivants par vagues, environ toutes les quatre minutes. Cœur-Noir accepte les doublons à tout moment, sauf pendant un bombardement : il faut lui livrer 8 doublons à Cœur-Noir, plus 2 de plus à chaque paiement déjà effectué par ton équipe, avec cinq secondes d'incantation. Payé, il bombarde : 12 boulets en 40 secondes, 2 875 points de dégâts chacun sur les structures, les bastions et l'idole encaissant 20 % de moins. Les doublons viennent des coffres au trésor — 5 par coffre — et des camps de mercenaires, qui en donnent 2 chacun.",
+      "en": "The first chest appears at 1:30, the next ones in waves, roughly every four minutes. Blackheart takes Doubloons at any time except during a bombardment: you hand him 8 Doubloons, plus 2 more for every payment your team has already made, with a five-second channel. Once paid, he bombards: 12 cannonballs over 40 seconds, 2,875 damage each against structures, with Keeps and the Core taking 20% less. Doubloons come from Treasure Chests — 5 apiece — and from mercenary camps, worth 2 each."
     },
     "tips": [
       {
@@ -4269,8 +4269,8 @@ const BATTLEGROUNDS = [
           "en": "Treasure Chest — top"
         },
         "description": {
-          "fr": "Cinq doublons par coffre. Le premier apparaît à 1:30 sur la voie du haut, puis toutes les trois minutes, par deux puis par trois.",
-          "en": "Five Doubloons per chest. The first appears at 1:30 on the top lane, then every three minutes, in twos and then threes."
+          "fr": "Cinq doublons par coffre. Le premier apparaît à 1:30 sur la voie du haut, puis par vagues, environ toutes les quatre minutes : par deux, puis par trois.",
+          "en": "Five Doubloons per chest. The first appears at 1:30 on the top lane, then in waves, roughly every four minutes: in twos, then threes."
         },
         "image": "assets/maps/baie-coeur-noir/captures/1.jpg"
       },
@@ -4284,8 +4284,8 @@ const BATTLEGROUNDS = [
           "en": "Treasure Chest — middle"
         },
         "description": {
-          "fr": "Cinq doublons par coffre. Le premier apparaît à 1:30 sur la voie du haut, puis toutes les trois minutes, par deux puis par trois.",
-          "en": "Five Doubloons per chest. The first appears at 1:30 on the top lane, then every three minutes, in twos and then threes."
+          "fr": "Cinq doublons par coffre. Le premier apparaît à 1:30 sur la voie du haut, puis par vagues, environ toutes les quatre minutes : par deux, puis par trois.",
+          "en": "Five Doubloons per chest. The first appears at 1:30 on the top lane, then in waves, roughly every four minutes: in twos, then threes."
         },
         "image": "assets/maps/baie-coeur-noir/captures/1.jpg"
       },
@@ -4299,8 +4299,8 @@ const BATTLEGROUNDS = [
           "en": "Treasure Chest — bottom"
         },
         "description": {
-          "fr": "Cinq doublons par coffre. Le premier apparaît à 1:30 sur la voie du haut, puis toutes les trois minutes, par deux puis par trois.",
-          "en": "Five Doubloons per chest. The first appears at 1:30 on the top lane, then every three minutes, in twos and then threes."
+          "fr": "Cinq doublons par coffre. Le premier apparaît à 1:30 sur la voie du haut, puis par vagues, environ toutes les quatre minutes : par deux, puis par trois.",
+          "en": "Five Doubloons per chest. The first appears at 1:30 on the top lane, then in waves, roughly every four minutes: in twos, then threes."
         },
         "image": "assets/maps/baie-coeur-noir/captures/1.jpg"
       },
@@ -5924,8 +5924,8 @@ const BATTLEGROUNDS = [
       "en": "Warheads scattered across the map: picking one up arms a nuke, dying with it loses it."
     },
     "objectives": {
-      "fr": "Les ogives apparaissent à partir de 3:00, deux à quatre à la fois, réparties sur les trois voies ; elles reviennent 2:55 après que toutes ont été ramassées. Cinq secondes d'incantation pour en prendre une, puis trois secondes d'incantation et quatre de délai avant l'explosion. L'impact inflige 1 750 points, plus 70 par minute pendant 25 minutes, et enflamme les structures dix secondes. Forts, bastions et idoles encaissent 125 % de dégâts en plus.",
-      "en": "Warheads appear from 3:00 onward, two to four at a time, spread across the three lanes; they come back 2:55 after all of them are picked up. A five-second channel to take one, then a three-second channel and a four-second delay before it detonates. Impact deals 1,750 damage, plus 70 per minute for 25 minutes, and sets structures alight for ten seconds. Forts, Keeps and Cores take 125% more damage."
+      "fr": "Les ogives apparaissent à partir de 3:00, deux à la fois le plus souvent — trois possibles à la première phase, trois ou quatre à la quatrième —, réparties sur les trois voies ; elles reviennent 2:55 après que toutes ont été ramassées. Cinq secondes d'incantation pour en prendre une, puis trois secondes d'incantation et quatre de délai avant l'explosion. L'impact inflige 1 750 points, plus 70 par minute pendant 25 minutes, et enflamme les structures dix secondes. Forts, bastions et idoles encaissent 125 % de dégâts en plus.",
+      "en": "Warheads appear from 3:00 onward, usually two at a time — up to three in the first phase, three or four in the fourth —, spread across the three lanes; they come back 2:55 after all of them are picked up. A five-second channel to take one, then a three-second channel and a four-second delay before it detonates. Impact deals 1,750 damage, plus 70 per minute for 25 minutes, and sets structures alight for ten seconds. Forts, Keeps and Cores take 125% more damage."
     },
     "tips": [
       {
