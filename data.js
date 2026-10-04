@@ -2428,21 +2428,6 @@ const BATTLEGROUNDS = [
         "image": ""
       },
       {
-        "id": "pmutmu1e801q",
-        "type": "camp",
-        "x": 26,
-        "y": 12,
-        "name": {
-          "fr": "Camp à doublons — entre haut et milieu, droite",
-          "en": "Doubloon Camp — between top and middle, right"
-        },
-        "description": {
-          "fr": "Deux camps de deux pirates squelettes. Ils ne poussent pas de voie : ils donnent deux doublons. Disponibles à 0:30, ils réapparaissent 2:30 après.",
-          "en": "Two camps of two Skeletal Pirates. They do not push a lane: they hand over two Doubloons. Available at 0:30, back 2:30 after."
-        },
-        "image": ""
-      },
-      {
         "id": "pmutlywxjq0no",
         "type": "camp",
         "x": 64,
@@ -2520,8 +2505,23 @@ const BATTLEGROUNDS = [
       {
         "id": "pmutmu1e901s",
         "type": "camp",
-        "x": 68,
-        "y": 12,
+        "x": 32.3,
+        "y": 34.8,
+        "name": {
+          "fr": "Camp de bruisers — haut, droite",
+          "en": "Bruiser Camp — top, right"
+        },
+        "description": {
+          "fr": "Trois chevaliers et un sorcier, qui pose un champ d'armure des sorts autour des unités proches. Comme tous les camps de la carte, il rapporte deux doublons. Disponible à 0:30, il réapparaît 4:00 après avoir été pris.",
+          "en": "Three Knights and a Wizard, who lays a Spell Armor field around nearby units. Like every camp on this map, it pays two Doubloons. Available at 0:30, back 4:00 after being taken."
+        },
+        "image": ""
+      },
+      {
+        "id": "pmutnocty2ymj",
+        "type": "camp",
+        "x": 67.4,
+        "y": 35,
         "name": {
           "fr": "Camp de bruisers — haut, droite",
           "en": "Bruiser Camp — top, right"
@@ -2535,8 +2535,8 @@ const BATTLEGROUNDS = [
       {
         "id": "pmutmu1e901t",
         "type": "camp",
-        "x": 82,
-        "y": 12,
+        "x": 49.6,
+        "y": 90.4,
         "name": {
           "fr": "Camp de bruisers — bas",
           "en": "Bruiser Camp — bottom"
@@ -2550,8 +2550,8 @@ const BATTLEGROUNDS = [
       {
         "id": "pmutmu1e901u",
         "type": "tour",
-        "x": 12,
-        "y": 26,
+        "x": 41.3,
+        "y": 63.3,
         "name": {
           "fr": "Tour de guet — gauche",
           "en": "Watch Tower — left"
@@ -2565,8 +2565,8 @@ const BATTLEGROUNDS = [
       {
         "id": "pmutmu1e901v",
         "type": "tour",
-        "x": 26,
-        "y": 26,
+        "x": 57,
+        "y": 63.3,
         "name": {
           "fr": "Tour de guet — droite",
           "en": "Watch Tower — right"
@@ -2580,8 +2580,38 @@ const BATTLEGROUNDS = [
       {
         "id": "pmutmu1e901w",
         "type": "fontaine",
-        "x": 40,
-        "y": 26,
+        "x": 37.2,
+        "y": 22.5,
+        "name": {
+          "fr": "Fontaine de soins — côté gauche",
+          "en": "Healing fountain — left side"
+        },
+        "description": {
+          "fr": "Deux minutes de recharge après utilisation. Savoir si celle d'en face est disponible change la valeur d'un plongeon autant que les points de vie restants.",
+          "en": "Two-minute cooldown after use. Knowing whether the enemy one is up changes the worth of a dive as much as their remaining health does."
+        },
+        "image": ""
+      },
+      {
+        "id": "pmutnovld3wh1",
+        "type": "fontaine",
+        "x": 37.6,
+        "y": 85.8,
+        "name": {
+          "fr": "Fontaine de soins — côté gauche",
+          "en": "Healing fountain — left side"
+        },
+        "description": {
+          "fr": "Deux minutes de recharge après utilisation. Savoir si celle d'en face est disponible change la valeur d'un plongeon autant que les points de vie restants.",
+          "en": "Two-minute cooldown after use. Knowing whether the enemy one is up changes the worth of a dive as much as their remaining health does."
+        },
+        "image": ""
+      },
+      {
+        "id": "pmutnouk4z7im",
+        "type": "fontaine",
+        "x": 39.4,
+        "y": 33.8,
         "name": {
           "fr": "Fontaine de soins — côté gauche",
           "en": "Healing fountain — left side"
@@ -2595,8 +2625,38 @@ const BATTLEGROUNDS = [
       {
         "id": "pmutmu1e901x",
         "type": "fontaine",
-        "x": 68,
-        "y": 26,
+        "x": 61.9,
+        "y": 23,
+        "name": {
+          "fr": "Fontaine de soins — côté droit",
+          "en": "Healing fountain — right side"
+        },
+        "description": {
+          "fr": "Deux minutes de recharge après utilisation. Savoir si celle d'en face est disponible change la valeur d'un plongeon autant que les points de vie restants.",
+          "en": "Two-minute cooldown after use. Knowing whether the enemy one is up changes the worth of a dive as much as their remaining health does."
+        },
+        "image": ""
+      },
+      {
+        "id": "pmutnpxef0of5",
+        "type": "fontaine",
+        "x": 61.5,
+        "y": 86.3,
+        "name": {
+          "fr": "Fontaine de soins — côté droit",
+          "en": "Healing fountain — right side"
+        },
+        "description": {
+          "fr": "Deux minutes de recharge après utilisation. Savoir si celle d'en face est disponible change la valeur d'un plongeon autant que les points de vie restants.",
+          "en": "Two-minute cooldown after use. Knowing whether the enemy one is up changes the worth of a dive as much as their remaining health does."
+        },
+        "image": ""
+      },
+      {
+        "id": "pmutnpwqx37v1",
+        "type": "fontaine",
+        "x": 60,
+        "y": 33.8,
         "name": {
           "fr": "Fontaine de soins — côté droit",
           "en": "Healing fountain — right side"
