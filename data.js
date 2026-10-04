@@ -263,8 +263,23 @@ const BATTLEGROUNDS = [
         "x": 16,
         "y": 37.5,
         "name": {
-          "fr": "Camp de sapeurs",
-          "en": "Sapper Camp"
+          "fr": "Camp de sapeurs — haut",
+          "en": "Sapper Camp — top"
+        },
+        "description": {
+          "fr": "Un au centre de chaque ligne. Trois sapeurs qui foncent sur la première structure venue et explosent dessus. Disponible à 0:30, réapparaît 2:30 après avoir été pris. Un étourdissement, un silence ou une projection suffit à interrompre leur course.",
+          "en": "One in the middle of each lane. Three Sappers that sprint at the nearest structure and explode on it. Available at 0:30, respawns 2:30 after being taken. A stun, a silence or a knockback is enough to stop their run."
+        },
+        "image": ""
+      },
+      {
+        "id": "pmutmu1e8000",
+        "type": "camp",
+        "x": 12,
+        "y": 12,
+        "name": {
+          "fr": "Camp de sapeurs — bas",
+          "en": "Sapper Camp — bottom"
         },
         "description": {
           "fr": "Un au centre de chaque ligne. Trois sapeurs qui foncent sur la première structure venue et explosent dessus. Disponible à 0:30, réapparaît 2:30 après avoir été pris. Un étourdissement, un silence ou une projection suffit à interrompre leur course.",
@@ -278,12 +293,147 @@ const BATTLEGROUNDS = [
         "x": 16,
         "y": 65.5,
         "name": {
-          "fr": "Camp de géants de siège",
-          "en": "Siege Camp"
+          "fr": "Camp de géants de siège — haut, gauche",
+          "en": "Siege Camp — top, left"
         },
         "description": {
           "fr": "À gauche de la ligne du haut et à droite de la ligne du bas. Deux géants qui lancent des rochers esquivables et infligent 100 % de dégâts supplémentaires aux structures, sans avoir besoin de s'en approcher. Disponible à 0:30, réapparaît 3:00 après avoir été pris.",
           "en": "Left side of the top lane, right side of the bottom lane. Two Siege Giants that throw dodgeable boulders and deal 100% bonus damage to structures, without having to close in. Available at 0:30, respawns 3:00 after being taken."
+        },
+        "image": ""
+      },
+      {
+        "id": "pmutmu1e8001",
+        "type": "camp",
+        "x": 26,
+        "y": 12,
+        "name": {
+          "fr": "Camp de géants de siège — bas, droite",
+          "en": "Siege Camp — bottom, right"
+        },
+        "description": {
+          "fr": "À gauche de la ligne du haut et à droite de la ligne du bas. Deux géants qui lancent des rochers esquivables et infligent 100 % de dégâts supplémentaires aux structures, sans avoir besoin de s'en approcher. Disponible à 0:30, réapparaît 3:00 après avoir été pris.",
+          "en": "Left side of the top lane, right side of the bottom lane. Two Siege Giants that throw dodgeable boulders and deal 100% bonus damage to structures, without having to close in. Available at 0:30, respawns 3:00 after being taken."
+        },
+        "image": ""
+      },
+      {
+        "id": "pmutmu1e8002",
+        "type": "objectif",
+        "x": 40,
+        "y": 12,
+        "name": {
+          "fr": "Entrée de la mine — voie du haut",
+          "en": "Mine entrance — top lane"
+        },
+        "description": {
+          "fr": "L'un des quatre puits de la mine : au milieu de la voie du haut, au milieu de celle du bas, et près de chaque tour de guet. On y entre en interagissant avec le puits. Sous terre, la vision des héros tombe de 12 à 6,5.",
+          "en": "One of the four Mine Shafts: middle of the top lane, middle of the bottom lane, and near each Watch Tower. Interact with the shaft to go in. Underground, Hero vision drops from 12 to 6.5."
+        },
+        "image": ""
+      },
+      {
+        "id": "pmutmu1e8003",
+        "type": "objectif",
+        "x": 54,
+        "y": 12,
+        "name": {
+          "fr": "Entrée de la mine — voie du bas",
+          "en": "Mine entrance — bottom lane"
+        },
+        "description": {
+          "fr": "L'un des quatre puits de la mine : au milieu de la voie du haut, au milieu de celle du bas, et près de chaque tour de guet. On y entre en interagissant avec le puits. Sous terre, la vision des héros tombe de 12 à 6,5.",
+          "en": "One of the four Mine Shafts: middle of the top lane, middle of the bottom lane, and near each Watch Tower. Interact with the shaft to go in. Underground, Hero vision drops from 12 to 6.5."
+        },
+        "image": ""
+      },
+      {
+        "id": "pmutmu1e8004",
+        "type": "objectif",
+        "x": 68,
+        "y": 12,
+        "name": {
+          "fr": "Entrée de la mine — gauche",
+          "en": "Mine entrance — left"
+        },
+        "description": {
+          "fr": "L'un des quatre puits de la mine : au milieu de la voie du haut, au milieu de celle du bas, et près de chaque tour de guet. On y entre en interagissant avec le puits. Sous terre, la vision des héros tombe de 12 à 6,5.",
+          "en": "One of the four Mine Shafts: middle of the top lane, middle of the bottom lane, and near each Watch Tower. Interact with the shaft to go in. Underground, Hero vision drops from 12 to 6.5."
+        },
+        "image": ""
+      },
+      {
+        "id": "pmutmu1e8005",
+        "type": "objectif",
+        "x": 82,
+        "y": 12,
+        "name": {
+          "fr": "Entrée de la mine — droite",
+          "en": "Mine entrance — right"
+        },
+        "description": {
+          "fr": "L'un des quatre puits de la mine : au milieu de la voie du haut, au milieu de celle du bas, et près de chaque tour de guet. On y entre en interagissant avec le puits. Sous terre, la vision des héros tombe de 12 à 6,5.",
+          "en": "One of the four Mine Shafts: middle of the top lane, middle of the bottom lane, and near each Watch Tower. Interact with the shaft to go in. Underground, Hero vision drops from 12 to 6.5."
+        },
+        "image": ""
+      },
+      {
+        "id": "pmutmu1e8006",
+        "type": "tour",
+        "x": 12,
+        "y": 26,
+        "name": {
+          "fr": "Tour de guet — gauche",
+          "en": "Watch Tower — left"
+        },
+        "description": {
+          "fr": "Près de l'entrée gauche de la mine. Elle donne la vision sur le puits voisin : qui la tient voit qui entre dans la mine et qui en sort. On la capture en restant dans la zone ; elle redevient neutre après 45 secondes sans personne.",
+          "en": "Near the left entrance to the Mines. It gives vision of the nearby shaft: whoever holds it sees who goes in and out. Capture it by standing in the area; it turns neutral again after 45 seconds unoccupied."
+        },
+        "image": ""
+      },
+      {
+        "id": "pmutmu1e8007",
+        "type": "tour",
+        "x": 26,
+        "y": 26,
+        "name": {
+          "fr": "Tour de guet — droite",
+          "en": "Watch Tower — right"
+        },
+        "description": {
+          "fr": "Le symétrique de la tour de gauche, près de l'entrée droite de la mine. Même rôle : voir qui emprunte le puits voisin.",
+          "en": "The mirror of the left tower, near the right entrance to the Mines. Same job: seeing who uses the nearby shaft."
+        },
+        "image": ""
+      },
+      {
+        "id": "pmutmu1e8008",
+        "type": "fontaine",
+        "x": 40,
+        "y": 26,
+        "name": {
+          "fr": "Fontaine de soins — côté gauche",
+          "en": "Healing fountain — left side"
+        },
+        "description": {
+          "fr": "Deux minutes de recharge après utilisation. Savoir si celle d'en face est disponible change la valeur d'un plongeon autant que les points de vie restants.",
+          "en": "Two-minute cooldown after use. Knowing whether the enemy one is up changes the worth of a dive as much as their remaining health does."
+        },
+        "image": ""
+      },
+      {
+        "id": "pmutmu1e8009",
+        "type": "fontaine",
+        "x": 54,
+        "y": 26,
+        "name": {
+          "fr": "Fontaine de soins — côté droit",
+          "en": "Healing fountain — right side"
+        },
+        "description": {
+          "fr": "Deux minutes de recharge après utilisation. Savoir si celle d'en face est disponible change la valeur d'un plongeon autant que les points de vie restants.",
+          "en": "Two-minute cooldown after use. Knowing whether the enemy one is up changes the worth of a dive as much as their remaining health does."
         },
         "image": ""
       }
@@ -343,12 +493,57 @@ const BATTLEGROUNDS = [
     "hotspots": [
       {
         "id": "ppas1",
+        "type": "objectif",
         "x": 12,
         "y": 12,
-        "type": "objectif",
         "name": {
-          "fr": "Camp d'emprisonnement",
-          "en": "Prison Camp"
+          "fr": "Camp d'emprisonnement — haut, gauche",
+          "en": "Prison Camp — top, left"
+        },
+        "description": {
+          "fr": "Un par équipe. Trois secondes d'incantation lancent la capture ; l'adversaire peut la mettre en pause en incantant à son tour, et l'arrêter après trois secondes sans interruption. Des gardes sortent des maisons voisines — un au départ, jusqu'à quatre à la quatrième phase.",
+          "en": "One per team. A three-second channel starts the capture; the enemy can pause it by channelling in turn, and stop it after three uninterrupted seconds. Guards come out of the nearby houses — one at first, up to four by the fourth phase."
+        },
+        "image": ""
+      },
+      {
+        "id": "pmutmu1e800a",
+        "type": "objectif",
+        "x": 82,
+        "y": 12,
+        "name": {
+          "fr": "Camp d'emprisonnement — haut, droite",
+          "en": "Prison Camp — top, right"
+        },
+        "description": {
+          "fr": "Un par équipe. Trois secondes d'incantation lancent la capture ; l'adversaire peut la mettre en pause en incantant à son tour, et l'arrêter après trois secondes sans interruption. Des gardes sortent des maisons voisines — un au départ, jusqu'à quatre à la quatrième phase.",
+          "en": "One per team. A three-second channel starts the capture; the enemy can pause it by channelling in turn, and stop it after three uninterrupted seconds. Guards come out of the nearby houses — one at first, up to four by the fourth phase."
+        },
+        "image": ""
+      },
+      {
+        "id": "pmutmu1e800b",
+        "type": "objectif",
+        "x": 12,
+        "y": 26,
+        "name": {
+          "fr": "Camp d'emprisonnement — bas, gauche",
+          "en": "Prison Camp — bottom, left"
+        },
+        "description": {
+          "fr": "Un par équipe. Trois secondes d'incantation lancent la capture ; l'adversaire peut la mettre en pause en incantant à son tour, et l'arrêter après trois secondes sans interruption. Des gardes sortent des maisons voisines — un au départ, jusqu'à quatre à la quatrième phase.",
+          "en": "One per team. A three-second channel starts the capture; the enemy can pause it by channelling in turn, and stop it after three uninterrupted seconds. Guards come out of the nearby houses — one at first, up to four by the fourth phase."
+        },
+        "image": ""
+      },
+      {
+        "id": "pmutmu1e800c",
+        "type": "objectif",
+        "x": 26,
+        "y": 26,
+        "name": {
+          "fr": "Camp d'emprisonnement — bas, droite",
+          "en": "Prison Camp — bottom, right"
         },
         "description": {
           "fr": "Un par équipe. Trois secondes d'incantation lancent la capture ; l'adversaire peut la mettre en pause en incantant à son tour, et l'arrêter après trois secondes sans interruption. Des gardes sortent des maisons voisines — un au départ, jusqu'à quatre à la quatrième phase.",
@@ -358,12 +553,27 @@ const BATTLEGROUNDS = [
       },
       {
         "id": "ppas2",
+        "type": "autre",
         "x": 26,
         "y": 12,
-        "type": "autre",
         "name": {
-          "fr": "Général",
-          "en": "General"
+          "fr": "Général — gauche",
+          "en": "General — left"
+        },
+        "description": {
+          "fr": "Remplace l'idole de chaque équipe. Il charge toutes les 6 secondes, tourbillonne toutes les 12, et récupère environ 1 % de vie par seconde hors combat. Sa vie maximale monte de 405 points par minute pendant vingt minutes.",
+          "en": "Replaces each team's Core. He charges every 6 seconds, whirlwinds every 12, and regains about 1% Health per second out of combat. His maximum Health rises by 405 per minute for twenty minutes."
+        },
+        "image": ""
+      },
+      {
+        "id": "pmutmu1e800d",
+        "type": "autre",
+        "x": 40,
+        "y": 26,
+        "name": {
+          "fr": "Général — droite",
+          "en": "General — right"
         },
         "description": {
           "fr": "Remplace l'idole de chaque équipe. Il charge toutes les 6 secondes, tourbillonne toutes les 12, et récupère environ 1 % de vie par seconde hors combat. Sa vie maximale monte de 405 points par minute pendant vingt minutes.",
@@ -373,12 +583,27 @@ const BATTLEGROUNDS = [
       },
       {
         "id": "ppas3",
+        "type": "camp",
         "x": 40,
         "y": 12,
-        "type": "camp",
         "name": {
-          "fr": "Camp de siège — gnolls",
-          "en": "Siege Camp — Gnolls"
+          "fr": "Camp de siège — gnolls, milieu gauche",
+          "en": "Siege Camp — Gnolls, middle left"
+        },
+        "description": {
+          "fr": "Deux camps sur la voie du milieu, trois gnolls chacun. Ils réduisent l'armure des structures qu'ils frappent. Disponibles à 0:30, ils réapparaissent 1:30 après avoir été pris — le délai le plus court de toutes les cartes.",
+          "en": "Two camps on the middle lane, three Gnolls each. They reduce the Armor of the structures they hit. Available at 0:30, back 1:30 after being taken — the shortest respawn of any map."
+        },
+        "image": ""
+      },
+      {
+        "id": "pmutmu1e800e",
+        "type": "camp",
+        "x": 54,
+        "y": 26,
+        "name": {
+          "fr": "Camp de siège — gnolls, milieu droite",
+          "en": "Siege Camp — Gnolls, middle right"
         },
         "description": {
           "fr": "Deux camps sur la voie du milieu, trois gnolls chacun. Ils réduisent l'armure des structures qu'ils frappent. Disponibles à 0:30, ils réapparaissent 1:30 après avoir été pris — le délai le plus court de toutes les cartes.",
@@ -388,12 +613,27 @@ const BATTLEGROUNDS = [
       },
       {
         "id": "ppas4",
+        "type": "camp",
         "x": 54,
         "y": 12,
-        "type": "camp",
         "name": {
-          "fr": "Camp de boss — géant de glace",
-          "en": "Boss Camp — Ice Giant"
+          "fr": "Camp de boss — géant de glace, haut",
+          "en": "Boss Camp — Ice Giant, top"
+        },
+        "description": {
+          "fr": "Un de chaque côté, sur les voies du haut et du bas. Disponible à 5:00, réapparaît 5:00 après avoir été pris. Immunisé contre la corruption.",
+          "en": "One on each side, on the top and bottom lanes. Available at 5:00, back 5:00 after being taken. Immune to Bribe."
+        },
+        "image": ""
+      },
+      {
+        "id": "pmutmu1e800f",
+        "type": "camp",
+        "x": 68,
+        "y": 26,
+        "name": {
+          "fr": "Camp de boss — géant de glace, bas",
+          "en": "Boss Camp — Ice Giant, bottom"
         },
         "description": {
           "fr": "Un de chaque côté, sur les voies du haut et du bas. Disponible à 5:00, réapparaît 5:00 après avoir été pris. Immunisé contre la corruption.",
@@ -403,12 +643,27 @@ const BATTLEGROUNDS = [
       },
       {
         "id": "ppas5",
+        "type": "fontaine",
         "x": 68,
         "y": 12,
-        "type": "fontaine",
         "name": {
-          "fr": "Fontaine de soins",
-          "en": "Healing fountain"
+          "fr": "Fontaine de soins — côté gauche",
+          "en": "Healing fountain — left side"
+        },
+        "description": {
+          "fr": "Deux minutes de recharge. À dépenser avant 1:00 pour la retrouver disponible au premier objectif.",
+          "en": "Two-minute cooldown. Spend it before 1:00 to have it back for the first objective."
+        },
+        "image": ""
+      },
+      {
+        "id": "pmutmu1e800g",
+        "type": "fontaine",
+        "x": 82,
+        "y": 26,
+        "name": {
+          "fr": "Fontaine de soins — côté droit",
+          "en": "Healing fountain — right side"
         },
         "description": {
           "fr": "Deux minutes de recharge. À dépenser avant 1:00 pour la retrouver disponible au premier objectif.",
@@ -465,12 +720,87 @@ const BATTLEGROUNDS = [
     "hotspots": [
       {
         "id": "pjar6",
+        "type": "objectif",
         "x": 12,
         "y": 12,
-        "type": "objectif",
         "name": {
-          "fr": "Graine",
-          "en": "Seed"
+          "fr": "Graine — haut, gauche",
+          "en": "Seed — top, left"
+        },
+        "description": {
+          "fr": "Invoquée régulièrement par la reine Belladone et gardée par des traîne-racines. Six secondes d'incantation pour la ramasser. Trois graines suffisent à lancer les terreurs de jardin.",
+          "en": "Summoned periodically by Queen Nightshade and guarded by Shamblers. A six-second channel to pick it up. Three Seeds are enough to launch the Garden Terrors."
+        },
+        "image": ""
+      },
+      {
+        "id": "pmutmu1e800h",
+        "type": "objectif",
+        "x": 68,
+        "y": 12,
+        "name": {
+          "fr": "Graine — haut, milieu",
+          "en": "Seed — top, middle"
+        },
+        "description": {
+          "fr": "Invoquée régulièrement par la reine Belladone et gardée par des traîne-racines. Six secondes d'incantation pour la ramasser. Trois graines suffisent à lancer les terreurs de jardin.",
+          "en": "Summoned periodically by Queen Nightshade and guarded by Shamblers. A six-second channel to pick it up. Three Seeds are enough to launch the Garden Terrors."
+        },
+        "image": ""
+      },
+      {
+        "id": "pmutmu1e800i",
+        "type": "objectif",
+        "x": 82,
+        "y": 12,
+        "name": {
+          "fr": "Graine — haut, droite",
+          "en": "Seed — top, right"
+        },
+        "description": {
+          "fr": "Invoquée régulièrement par la reine Belladone et gardée par des traîne-racines. Six secondes d'incantation pour la ramasser. Trois graines suffisent à lancer les terreurs de jardin.",
+          "en": "Summoned periodically by Queen Nightshade and guarded by Shamblers. A six-second channel to pick it up. Three Seeds are enough to launch the Garden Terrors."
+        },
+        "image": ""
+      },
+      {
+        "id": "pmutmu1e800j",
+        "type": "objectif",
+        "x": 12,
+        "y": 26,
+        "name": {
+          "fr": "Graine — bas, gauche",
+          "en": "Seed — bottom, left"
+        },
+        "description": {
+          "fr": "Invoquée régulièrement par la reine Belladone et gardée par des traîne-racines. Six secondes d'incantation pour la ramasser. Trois graines suffisent à lancer les terreurs de jardin.",
+          "en": "Summoned periodically by Queen Nightshade and guarded by Shamblers. A six-second channel to pick it up. Three Seeds are enough to launch the Garden Terrors."
+        },
+        "image": ""
+      },
+      {
+        "id": "pmutmu1e800k",
+        "type": "objectif",
+        "x": 26,
+        "y": 26,
+        "name": {
+          "fr": "Graine — bas, milieu",
+          "en": "Seed — bottom, middle"
+        },
+        "description": {
+          "fr": "Invoquée régulièrement par la reine Belladone et gardée par des traîne-racines. Six secondes d'incantation pour la ramasser. Trois graines suffisent à lancer les terreurs de jardin.",
+          "en": "Summoned periodically by Queen Nightshade and guarded by Shamblers. A six-second channel to pick it up. Three Seeds are enough to launch the Garden Terrors."
+        },
+        "image": ""
+      },
+      {
+        "id": "pmutmu1e800l",
+        "type": "objectif",
+        "x": 40,
+        "y": 26,
+        "name": {
+          "fr": "Graine — bas, droite",
+          "en": "Seed — bottom, right"
         },
         "description": {
           "fr": "Invoquée régulièrement par la reine Belladone et gardée par des traîne-racines. Six secondes d'incantation pour la ramasser. Trois graines suffisent à lancer les terreurs de jardin.",
@@ -480,12 +810,57 @@ const BATTLEGROUNDS = [
       },
       {
         "id": "pjar7",
+        "type": "camp",
         "x": 26,
         "y": 12,
-        "type": "camp",
         "name": {
-          "fr": "Camp de siège — géants",
-          "en": "Siege Camp — Giants"
+          "fr": "Camp de siège — haut, gauche",
+          "en": "Siege Camp — top, left"
+        },
+        "description": {
+          "fr": "Quatre camps — à gauche de la voie du haut, deux au milieu, à droite de la voie du bas —, deux géants de siège chacun. Ils infligent 100 % de dégâts supplémentaires aux structures. Disponibles à 0:30, ils réapparaissent 3:00 après avoir été pris.",
+          "en": "Four camps — left of the top lane, two in the middle, right of the bottom lane — with two Siege Giants each. They deal 100% bonus damage to Structures. Available at 0:30, back 3:00 after being taken."
+        },
+        "image": ""
+      },
+      {
+        "id": "pmutmu1e800m",
+        "type": "camp",
+        "x": 54,
+        "y": 26,
+        "name": {
+          "fr": "Camp de siège — milieu, gauche",
+          "en": "Siege Camp — middle, left"
+        },
+        "description": {
+          "fr": "Trois camps, un par voie, deux géants de siège chacun. Ils infligent 100 % de dégâts supplémentaires aux structures. Disponibles à 0:30, ils réapparaissent 3:00 après avoir été pris.",
+          "en": "Three camps, one per lane, two Siege Giants each. They deal 100% bonus damage to Structures. Available at 0:30, back 3:00 after being taken."
+        },
+        "image": ""
+      },
+      {
+        "id": "pmutmu1e800n",
+        "type": "camp",
+        "x": 68,
+        "y": 26,
+        "name": {
+          "fr": "Camp de siège — milieu, droite",
+          "en": "Siege Camp — middle, right"
+        },
+        "description": {
+          "fr": "Trois camps, un par voie, deux géants de siège chacun. Ils infligent 100 % de dégâts supplémentaires aux structures. Disponibles à 0:30, ils réapparaissent 3:00 après avoir été pris.",
+          "en": "Three camps, one per lane, two Siege Giants each. They deal 100% bonus damage to Structures. Available at 0:30, back 3:00 after being taken."
+        },
+        "image": ""
+      },
+      {
+        "id": "pmutmu1e800o",
+        "type": "camp",
+        "x": 82,
+        "y": 26,
+        "name": {
+          "fr": "Camp de siège — bas, droite",
+          "en": "Siege Camp — bottom, right"
         },
         "description": {
           "fr": "Trois camps, un par voie, deux géants de siège chacun. Ils infligent 100 % de dégâts supplémentaires aux structures. Disponibles à 0:30, ils réapparaissent 3:00 après avoir été pris.",
@@ -495,12 +870,27 @@ const BATTLEGROUNDS = [
       },
       {
         "id": "pjar8",
+        "type": "camp",
         "x": 40,
         "y": 12,
-        "type": "camp",
         "name": {
-          "fr": "Camp de bruisers — chevaliers",
-          "en": "Bruiser Camp — Knights"
+          "fr": "Camp de bruisers — haut, droite",
+          "en": "Bruiser Camp — top, right"
+        },
+        "description": {
+          "fr": "Deux camps, sur les voies du haut et du bas : trois chevaliers et un sorcier. Le sorcier pose un champ d'armure des sorts autour des unités proches. Disponibles à 0:30, ils réapparaissent 4:00 après.",
+          "en": "Two camps, on the top and bottom lanes: three Knights and a Wizard. The Wizard lays a Spell Armor field around nearby units. Available at 0:30, back 4:00 after."
+        },
+        "image": ""
+      },
+      {
+        "id": "pmutmu1e800p",
+        "type": "camp",
+        "x": 12,
+        "y": 40,
+        "name": {
+          "fr": "Camp de bruisers — bas, gauche",
+          "en": "Bruiser Camp — bottom, left"
         },
         "description": {
           "fr": "Deux camps, sur les voies du haut et du bas : trois chevaliers et un sorcier. Le sorcier pose un champ d'armure des sorts autour des unités proches. Disponibles à 0:30, ils réapparaissent 4:00 après.",
@@ -510,12 +900,27 @@ const BATTLEGROUNDS = [
       },
       {
         "id": "pjar9",
+        "type": "fontaine",
         "x": 54,
         "y": 12,
-        "type": "fontaine",
         "name": {
-          "fr": "Fontaine de soins",
-          "en": "Healing fountain"
+          "fr": "Fontaine de soins — côté gauche",
+          "en": "Healing fountain — left side"
+        },
+        "description": {
+          "fr": "Deux minutes de recharge. Avec un objectif toutes les minutes environ, elle se gère comme une ressource de phase.",
+          "en": "Two-minute cooldown. With an objective roughly every minute, treat it as a per-phase resource."
+        },
+        "image": ""
+      },
+      {
+        "id": "pmutmu1e800q",
+        "type": "fontaine",
+        "x": 26,
+        "y": 40,
+        "name": {
+          "fr": "Fontaine de soins — côté droit",
+          "en": "Healing fountain — right side"
         },
         "description": {
           "fr": "Deux minutes de recharge. Avec un objectif toutes les minutes environ, elle se gère comme une ressource de phase.",
@@ -572,9 +977,9 @@ const BATTLEGROUNDS = [
     "hotspots": [
       {
         "id": "ptem10",
+        "type": "objectif",
         "x": 12,
         "y": 12,
-        "type": "objectif",
         "name": {
           "fr": "Convoi",
           "en": "Payload"
@@ -587,12 +992,27 @@ const BATTLEGROUNDS = [
       },
       {
         "id": "ptem11",
+        "type": "tour",
         "x": 26,
         "y": 12,
-        "type": "tour",
         "name": {
-          "fr": "Camp de reconnaissance",
-          "en": "Recon Camp"
+          "fr": "Camp de reconnaissance — haut",
+          "en": "Recon Camp — top"
+        },
+        "description": {
+          "fr": "Deux camps au centre, en haut et en bas. Une fois pris, le camp se comporte comme une tour de guet et donne la vision. Il réapparaît une seconde après : on peut le reprendre en permanence.",
+          "en": "Two camps at the centre, top and bottom. Once taken, the camp behaves as a watch tower and grants vision. It comes back one second later: it can be retaken constantly."
+        },
+        "image": ""
+      },
+      {
+        "id": "pmutmu1e800r",
+        "type": "tour",
+        "x": 82,
+        "y": 12,
+        "name": {
+          "fr": "Camp de reconnaissance — bas",
+          "en": "Recon Camp — bottom"
         },
         "description": {
           "fr": "Deux camps au centre, en haut et en bas. Une fois pris, le camp se comporte comme une tour de guet et donne la vision. Il réapparaît une seconde après : on peut le reprendre en permanence.",
@@ -602,12 +1022,27 @@ const BATTLEGROUNDS = [
       },
       {
         "id": "ptem12",
+        "type": "camp",
         "x": 40,
         "y": 12,
-        "type": "camp",
         "name": {
-          "fr": "Camp de fortification",
-          "en": "Fortification Camp"
+          "fr": "Camp de fortification — haut, gauche",
+          "en": "Fortification Camp — top, left"
+        },
+        "description": {
+          "fr": "Deux camps. Ils laissent une tourelle à ramasser, qui inflige 90 dégâts par seconde pendant 45 secondes une fois posée. Disponibles à 0:30, ils réapparaissent 2:30 après.",
+          "en": "Two camps. They drop a Turret to pick up, dealing 90 damage per second for 45 seconds once placed. Available at 0:30, back 2:30 after."
+        },
+        "image": ""
+      },
+      {
+        "id": "pmutmu1e800s",
+        "type": "camp",
+        "x": 12,
+        "y": 26,
+        "name": {
+          "fr": "Camp de fortification — bas, droite",
+          "en": "Fortification Camp — bottom, right"
         },
         "description": {
           "fr": "Deux camps. Ils laissent une tourelle à ramasser, qui inflige 90 dégâts par seconde pendant 45 secondes une fois posée. Disponibles à 0:30, ils réapparaissent 2:30 après.",
@@ -617,12 +1052,27 @@ const BATTLEGROUNDS = [
       },
       {
         "id": "ptem13",
+        "type": "camp",
         "x": 54,
         "y": 12,
-        "type": "camp",
         "name": {
-          "fr": "Camp de samouraïs",
-          "en": "Samurai Camp"
+          "fr": "Camp de samouraïs — haut, droite",
+          "en": "Samurai Camp — top, right"
+        },
+        "description": {
+          "fr": "Deux camps. Ils envoient une unité d'élite dans la voie correspondante, dont la taillade horizontale revient toutes les 8 secondes. Disponibles à 0:30, ils réapparaissent 2:30 après.",
+          "en": "Two camps. They send an elite unit into the matching lane, whose Horizontal Slash comes back every 8 seconds. Available at 0:30, back 2:30 after."
+        },
+        "image": ""
+      },
+      {
+        "id": "pmutmu1e800t",
+        "type": "camp",
+        "x": 26,
+        "y": 26,
+        "name": {
+          "fr": "Camp de samouraïs — bas, gauche",
+          "en": "Samurai Camp — bottom, left"
         },
         "description": {
           "fr": "Deux camps. Ils envoient une unité d'élite dans la voie correspondante, dont la taillade horizontale revient toutes les 8 secondes. Disponibles à 0:30, ils réapparaissent 2:30 après.",
@@ -632,12 +1082,27 @@ const BATTLEGROUNDS = [
       },
       {
         "id": "ptem14",
+        "type": "fontaine",
         "x": 68,
         "y": 12,
-        "type": "fontaine",
         "name": {
-          "fr": "Fontaine de soins",
-          "en": "Healing fountain"
+          "fr": "Fontaine de soins — côté gauche",
+          "en": "Healing fountain — left side"
+        },
+        "description": {
+          "fr": "Plusieurs fontaines réparties sur les deux voies, deux minutes de recharge chacune.",
+          "en": "Several fountains spread along both lanes, two-minute cooldown each."
+        },
+        "image": ""
+      },
+      {
+        "id": "pmutmu1e800u",
+        "type": "fontaine",
+        "x": 40,
+        "y": 26,
+        "name": {
+          "fr": "Fontaine de soins — côté droit",
+          "en": "Healing fountain — right side"
         },
         "description": {
           "fr": "Plusieurs fontaines réparties sur les deux voies, deux minutes de recharge chacune.",
@@ -694,9 +1159,9 @@ const BATTLEGROUNDS = [
     "hotspots": [
       {
         "id": "pfon15",
+        "type": "objectif",
         "x": 12,
         "y": 12,
-        "type": "objectif",
         "name": {
           "fr": "Point de contrôle",
           "en": "Control point"
@@ -709,12 +1174,27 @@ const BATTLEGROUNDS = [
       },
       {
         "id": "pfon16",
+        "type": "camp",
         "x": 26,
         "y": 12,
-        "type": "camp",
         "name": {
-          "fr": "Camp de siège",
-          "en": "Siege Camp"
+          "fr": "Camp de siège — haut, gauche",
+          "en": "Siege Camp — top, left"
+        },
+        "description": {
+          "fr": "Deux camps sur la voie du haut, des fantassins d'assaut. Disponibles à 0:30, ils réapparaissent 3:00 après avoir été pris.",
+          "en": "Two camps on the top lane, Assault Troopers. Available at 0:30, back 3:00 after being taken."
+        },
+        "image": ""
+      },
+      {
+        "id": "pmutmu1e800v",
+        "type": "camp",
+        "x": 82,
+        "y": 12,
+        "name": {
+          "fr": "Camp de siège — haut, droite",
+          "en": "Siege Camp — top, right"
         },
         "description": {
           "fr": "Deux camps sur la voie du haut, des fantassins d'assaut. Disponibles à 0:30, ils réapparaissent 3:00 après avoir été pris.",
@@ -724,12 +1204,27 @@ const BATTLEGROUNDS = [
       },
       {
         "id": "pfon17",
+        "type": "camp",
         "x": 40,
         "y": 12,
-        "type": "camp",
         "name": {
-          "fr": "Camp de fortification",
-          "en": "Fortification Camp"
+          "fr": "Camp de fortification — gauche",
+          "en": "Fortification Camp — left"
+        },
+        "description": {
+          "fr": "Deux camps entre le milieu et le bas. Ils laissent une tourelle à ramasser et à poser où tu veux. Disponibles à 0:30, ils réapparaissent 2:30 après.",
+          "en": "Two camps between mid and bottom. They drop a Turret to pick up and place where you like. Available at 0:30, back 2:30 after."
+        },
+        "image": ""
+      },
+      {
+        "id": "pmutmu1e800w",
+        "type": "camp",
+        "x": 12,
+        "y": 26,
+        "name": {
+          "fr": "Camp de fortification — droite",
+          "en": "Fortification Camp — right"
         },
         "description": {
           "fr": "Deux camps entre le milieu et le bas. Ils laissent une tourelle à ramasser et à poser où tu veux. Disponibles à 0:30, ils réapparaissent 2:30 après.",
@@ -739,9 +1234,9 @@ const BATTLEGROUNDS = [
       },
       {
         "id": "pfon18",
+        "type": "camp",
         "x": 54,
         "y": 12,
-        "type": "camp",
         "name": {
           "fr": "Camp de soutien",
           "en": "Support Camp"
@@ -754,12 +1249,27 @@ const BATTLEGROUNDS = [
       },
       {
         "id": "pfon19",
+        "type": "fontaine",
         "x": 68,
         "y": 12,
-        "type": "fontaine",
         "name": {
-          "fr": "Fontaine de soins",
-          "en": "Healing fountain"
+          "fr": "Fontaine de soins — côté gauche",
+          "en": "Healing fountain — left side"
+        },
+        "description": {
+          "fr": "Deux fontaines, deux minutes de recharge. L'objectif revenant toutes les trois minutes, elle est presque toujours disponible au bon moment.",
+          "en": "Two fountains, two-minute cooldown. With the objective every three minutes, it is nearly always up when it matters."
+        },
+        "image": ""
+      },
+      {
+        "id": "pmutmu1e800x",
+        "type": "fontaine",
+        "x": 26,
+        "y": 26,
+        "name": {
+          "fr": "Fontaine de soins — côté droit",
+          "en": "Healing fountain — right side"
         },
         "description": {
           "fr": "Deux fontaines, deux minutes de recharge. L'objectif revenant toutes les trois minutes, elle est presque toujours disponible au bon moment.",
@@ -820,12 +1330,57 @@ const BATTLEGROUNDS = [
     "hotspots": [
       {
         "id": "ptou20",
+        "type": "objectif",
         "x": 12,
         "y": 12,
-        "type": "objectif",
         "name": {
-          "fr": "Autel",
-          "en": "Altar"
+          "fr": "Autel — haut, gauche",
+          "en": "Altar — top, left"
+        },
+        "description": {
+          "fr": "S'élève périodiquement à partir de 3:00. Six secondes d'incantation pour le capturer. Quatre secondes plus tard, l'idole adverse perd 1 point de vie, plus 1 par clocher que tu contrôles.",
+          "en": "Rises periodically from 3:00 onward. A six-second channel to capture. Four seconds later the enemy Core loses 1 Health, plus 1 for each Bell Tower you control."
+        },
+        "image": ""
+      },
+      {
+        "id": "pmutmu1e800y",
+        "type": "objectif",
+        "x": 68,
+        "y": 12,
+        "name": {
+          "fr": "Autel — haut, droite",
+          "en": "Altar — top, right"
+        },
+        "description": {
+          "fr": "S'élève périodiquement à partir de 3:00. Six secondes d'incantation pour le capturer. Quatre secondes plus tard, l'idole adverse perd 1 point de vie, plus 1 par clocher que tu contrôles.",
+          "en": "Rises periodically from 3:00 onward. A six-second channel to capture. Four seconds later the enemy Core loses 1 Health, plus 1 for each Bell Tower you control."
+        },
+        "image": ""
+      },
+      {
+        "id": "pmutmu1e800z",
+        "type": "objectif",
+        "x": 82,
+        "y": 12,
+        "name": {
+          "fr": "Autel — milieu",
+          "en": "Altar — middle"
+        },
+        "description": {
+          "fr": "S'élève périodiquement à partir de 3:00. Six secondes d'incantation pour le capturer. Quatre secondes plus tard, l'idole adverse perd 1 point de vie, plus 1 par clocher que tu contrôles.",
+          "en": "Rises periodically from 3:00 onward. A six-second channel to capture. Four seconds later the enemy Core loses 1 Health, plus 1 for each Bell Tower you control."
+        },
+        "image": ""
+      },
+      {
+        "id": "pmutmu1e8010",
+        "type": "objectif",
+        "x": 12,
+        "y": 26,
+        "name": {
+          "fr": "Autel — bas",
+          "en": "Altar — bottom"
         },
         "description": {
           "fr": "S'élève périodiquement à partir de 3:00. Six secondes d'incantation pour le capturer. Quatre secondes plus tard, l'idole adverse perd 1 point de vie, plus 1 par clocher que tu contrôles.",
@@ -835,9 +1390,9 @@ const BATTLEGROUNDS = [
       },
       {
         "id": "ptou21",
+        "type": "objectif",
         "x": 26,
         "y": 12,
-        "type": "objectif",
         "name": {
           "fr": "Clocher",
           "en": "Bell Tower"
@@ -850,12 +1405,42 @@ const BATTLEGROUNDS = [
       },
       {
         "id": "ptou22",
+        "type": "camp",
         "x": 40,
         "y": 12,
-        "type": "camp",
         "name": {
-          "fr": "Camp de sapeurs",
-          "en": "Sapper Camp"
+          "fr": "Camp de sapeurs — haut",
+          "en": "Sapper Camp — top"
+        },
+        "description": {
+          "fr": "Trois camps : un en haut, deux en bas. Trois sapeurs qui poussent la voie ; escortés dans la zone mortelle adverse, ils lancent leur tête sur l'idole pour 1 point chacun. Disponibles à 0:30, ils réapparaissent 2:30 après.",
+          "en": "Three camps: one top, two bottom. Three Sappers that push the lane; escorted into the enemy Kill Zone, they launch their heads at the Core for 1 damage each. Available at 0:30, back 2:30 after."
+        },
+        "image": ""
+      },
+      {
+        "id": "pmutmu1e8011",
+        "type": "camp",
+        "x": 26,
+        "y": 26,
+        "name": {
+          "fr": "Camp de sapeurs — bas, gauche",
+          "en": "Sapper Camp — bottom, left"
+        },
+        "description": {
+          "fr": "Trois camps : un en haut, deux en bas. Trois sapeurs qui poussent la voie ; escortés dans la zone mortelle adverse, ils lancent leur tête sur l'idole pour 1 point chacun. Disponibles à 0:30, ils réapparaissent 2:30 après.",
+          "en": "Three camps: one top, two bottom. Three Sappers that push the lane; escorted into the enemy Kill Zone, they launch their heads at the Core for 1 damage each. Available at 0:30, back 2:30 after."
+        },
+        "image": ""
+      },
+      {
+        "id": "pmutmu1e8012",
+        "type": "camp",
+        "x": 40,
+        "y": 26,
+        "name": {
+          "fr": "Camp de sapeurs — bas, droite",
+          "en": "Sapper Camp — bottom, right"
         },
         "description": {
           "fr": "Trois camps : un en haut, deux en bas. Trois sapeurs qui poussent la voie ; escortés dans la zone mortelle adverse, ils lancent leur tête sur l'idole pour 1 point chacun. Disponibles à 0:30, ils réapparaissent 2:30 après.",
@@ -865,9 +1450,9 @@ const BATTLEGROUNDS = [
       },
       {
         "id": "ptou23",
+        "type": "camp",
         "x": 54,
         "y": 12,
-        "type": "camp",
         "name": {
           "fr": "Camp de boss — cavalier sans tête",
           "en": "Boss Camp — Headless Horseman"
@@ -875,6 +1460,66 @@ const BATTLEGROUNDS = [
         "description": {
           "fr": "Un seul camp, entre les voies du haut et du milieu. Pris, il disparaît et inflige 4 points à l'idole adverse cinq secondes plus tard. Immunisé contre la corruption. Disponible à 5:00, il réapparaît 5:00 après.",
           "en": "A single camp, between the top and middle lanes. Once taken it vanishes and deals 4 damage to the enemy Core five seconds later. Immune to Bribe. Available at 5:00, back 5:00 after."
+        },
+        "image": ""
+      },
+      {
+        "id": "pmutmu1e8013",
+        "type": "autre",
+        "x": 54,
+        "y": 26,
+        "name": {
+          "fr": "Portail — gauche",
+          "en": "Waygate — left"
+        },
+        "description": {
+          "fr": "Relie l'idole au centre du champ de bataille, près du buisson de la voie du milieu, en deux secondes d'incantation. Fermé en début de partie, il ouvre vers 12:00, plus tard si des autels sont actifs. Aller simple : impossible de rentrer à la base par là.",
+          "en": "Links the Core to the middle of the battlefield, near the middle-lane bush, on a two-second channel. Closed early on, it opens around 12:00, later if Altars are active. One way only: you cannot go back to base through it."
+        },
+        "image": ""
+      },
+      {
+        "id": "pmutmu1e8014",
+        "type": "autre",
+        "x": 68,
+        "y": 26,
+        "name": {
+          "fr": "Portail — droite",
+          "en": "Waygate — right"
+        },
+        "description": {
+          "fr": "Relie l'idole au centre du champ de bataille, près du buisson de la voie du milieu, en deux secondes d'incantation. Fermé en début de partie, il ouvre vers 12:00, plus tard si des autels sont actifs. Aller simple : impossible de rentrer à la base par là.",
+          "en": "Links the Core to the middle of the battlefield, near the middle-lane bush, on a two-second channel. Closed early on, it opens around 12:00, later if Altars are active. One way only: you cannot go back to base through it."
+        },
+        "image": ""
+      },
+      {
+        "id": "pmutmu1e8015",
+        "type": "fontaine",
+        "x": 82,
+        "y": 26,
+        "name": {
+          "fr": "Fontaine de soins — côté gauche",
+          "en": "Healing fountain — left side"
+        },
+        "description": {
+          "fr": "Deux minutes de recharge après utilisation. Savoir si celle d'en face est disponible change la valeur d'un plongeon autant que les points de vie restants.",
+          "en": "Two-minute cooldown after use. Knowing whether the enemy one is up changes the worth of a dive as much as their remaining health does."
+        },
+        "image": ""
+      },
+      {
+        "id": "pmutmu1e8016",
+        "type": "fontaine",
+        "x": 12,
+        "y": 40,
+        "name": {
+          "fr": "Fontaine de soins — côté droit",
+          "en": "Healing fountain — right side"
+        },
+        "description": {
+          "fr": "Deux minutes de recharge après utilisation. Savoir si celle d'en face est disponible change la valeur d'un plongeon autant que les points de vie restants.",
+          "en": "Two-minute cooldown after use. Knowing whether the enemy one is up changes the worth of a dive as much as their remaining health does."
         },
         "image": ""
       }
@@ -931,12 +1576,42 @@ const BATTLEGROUNDS = [
     "hotspots": [
       {
         "id": "psan24",
+        "type": "objectif",
         "x": 12,
         "y": 12,
-        "type": "objectif",
         "name": {
-          "fr": "Sanctuaire",
-          "en": "Shrine"
+          "fr": "Sanctuaire — haut",
+          "en": "Shrine — top"
+        },
+        "description": {
+          "fr": "Trois emplacements possibles : au-dessus de la voie du haut, au-dessus du milieu, ou entre le milieu et le bas. Le sanctuaire accumule de la puissance et s'allume à 3:00, puis trois minutes après la mort du dominateur.",
+          "en": "Three possible spots: above the top lane, above mid, or between mid and bottom. The shrine gathers power and lights up at 3:00, then three minutes after the Punisher dies."
+        },
+        "image": ""
+      },
+      {
+        "id": "pmutmu1e8017",
+        "type": "objectif",
+        "x": 82,
+        "y": 12,
+        "name": {
+          "fr": "Sanctuaire — milieu",
+          "en": "Shrine — middle"
+        },
+        "description": {
+          "fr": "Trois emplacements possibles : au-dessus de la voie du haut, au-dessus du milieu, ou entre le milieu et le bas. Le sanctuaire accumule de la puissance et s'allume à 3:00, puis trois minutes après la mort du dominateur.",
+          "en": "Three possible spots: above the top lane, above mid, or between mid and bottom. The shrine gathers power and lights up at 3:00, then three minutes after the Punisher dies."
+        },
+        "image": ""
+      },
+      {
+        "id": "pmutmu1e8018",
+        "type": "objectif",
+        "x": 12,
+        "y": 26,
+        "name": {
+          "fr": "Sanctuaire — bas",
+          "en": "Shrine — bottom"
         },
         "description": {
           "fr": "Trois emplacements possibles : au-dessus de la voie du haut, au-dessus du milieu, ou entre le milieu et le bas. Le sanctuaire accumule de la puissance et s'allume à 3:00, puis trois minutes après la mort du dominateur.",
@@ -946,9 +1621,9 @@ const BATTLEGROUNDS = [
       },
       {
         "id": "psan25",
+        "type": "objectif",
         "x": 26,
         "y": 12,
-        "type": "objectif",
         "name": {
           "fr": "Dominateur",
           "en": "Punisher"
@@ -961,12 +1636,42 @@ const BATTLEGROUNDS = [
       },
       {
         "id": "psan26",
+        "type": "camp",
         "x": 40,
         "y": 12,
-        "type": "camp",
         "name": {
-          "fr": "Camp de siège — empaleurs",
-          "en": "Siege Camp — Impalers"
+          "fr": "Camp de siège — empaleurs, milieu gauche",
+          "en": "Siege Camp — Impalers, middle left"
+        },
+        "description": {
+          "fr": "Deux camps au milieu, un en bas, trois empaleurs chacun. Disponibles à 0:30, ils réapparaissent 3:00 après avoir été pris.",
+          "en": "Two camps at mid, one at the bottom, three Impalers each. Available at 0:30, back 3:00 after being taken."
+        },
+        "image": ""
+      },
+      {
+        "id": "pmutmu1e8019",
+        "type": "camp",
+        "x": 26,
+        "y": 26,
+        "name": {
+          "fr": "Camp de siège — empaleurs, milieu droite",
+          "en": "Siege Camp — Impalers, middle right"
+        },
+        "description": {
+          "fr": "Deux camps au milieu, un en bas, trois empaleurs chacun. Disponibles à 0:30, ils réapparaissent 3:00 après avoir été pris.",
+          "en": "Two camps at mid, one at the bottom, three Impalers each. Available at 0:30, back 3:00 after being taken."
+        },
+        "image": ""
+      },
+      {
+        "id": "pmutmu1e801a",
+        "type": "camp",
+        "x": 40,
+        "y": 26,
+        "name": {
+          "fr": "Camp de siège — empaleurs, bas",
+          "en": "Siege Camp — Impalers, bottom"
         },
         "description": {
           "fr": "Deux camps au milieu, un en bas, trois empaleurs chacun. Disponibles à 0:30, ils réapparaissent 3:00 après avoir été pris.",
@@ -976,12 +1681,27 @@ const BATTLEGROUNDS = [
       },
       {
         "id": "psan27",
+        "type": "camp",
         "x": 54,
         "y": 12,
-        "type": "camp",
         "name": {
-          "fr": "Camp de bruisers — damnés",
-          "en": "Bruiser Camp — Fallen"
+          "fr": "Camp de bruisers — damnés, haut gauche",
+          "en": "Bruiser Camp — Fallen, top left"
+        },
+        "description": {
+          "fr": "Deux camps sur la voie du haut : un chaman damné et deux molosses. Le chaman réinvoque des molosses au fil du combat. Disponibles à 0:30, ils réapparaissent 4:00 après.",
+          "en": "Two camps on the top lane: a Fallen Shaman and two Hounds. The Shaman keeps summoning new Hounds as the fight goes on. Available at 0:30, back 4:00 after."
+        },
+        "image": ""
+      },
+      {
+        "id": "pmutmu1e801b",
+        "type": "camp",
+        "x": 54,
+        "y": 26,
+        "name": {
+          "fr": "Camp de bruisers — damnés, haut droite",
+          "en": "Bruiser Camp — Fallen, top right"
         },
         "description": {
           "fr": "Deux camps sur la voie du haut : un chaman damné et deux molosses. Le chaman réinvoque des molosses au fil du combat. Disponibles à 0:30, ils réapparaissent 4:00 après.",
@@ -991,12 +1711,27 @@ const BATTLEGROUNDS = [
       },
       {
         "id": "psan28",
+        "type": "fontaine",
         "x": 68,
         "y": 12,
-        "type": "fontaine",
         "name": {
-          "fr": "Fontaine de soins",
-          "en": "Healing fountain"
+          "fr": "Fontaine de soins — côté gauche",
+          "en": "Healing fountain — left side"
+        },
+        "description": {
+          "fr": "Deux fontaines, deux minutes de recharge chacune.",
+          "en": "Two fountains, two-minute cooldown each."
+        },
+        "image": ""
+      },
+      {
+        "id": "pmutmu1e801c",
+        "type": "fontaine",
+        "x": 68,
+        "y": 26,
+        "name": {
+          "fr": "Fontaine de soins — côté droit",
+          "en": "Healing fountain — right side"
         },
         "description": {
           "fr": "Deux fontaines, deux minutes de recharge chacune.",
@@ -1141,6 +1876,51 @@ const BATTLEGROUNDS = [
           "en": "Two-minute cooldown. On a map where the objective comes back every 1:45, knowing whether the fountain is up matters as much as the health bars."
         },
         "image": ""
+      },
+      {
+        "id": "pmutmu1e801d",
+        "type": "fontaine",
+        "x": 12,
+        "y": 12,
+        "name": {
+          "fr": "Fontaine de soins — côté démoniaque",
+          "en": "Healing fountain — demonic side"
+        },
+        "description": {
+          "fr": "Deux minutes de recharge. Sur une carte où la phase d'objectif revient toutes les 1:45, savoir si la fontaine est disponible pèse autant que les points de vie restants.",
+          "en": "Two-minute cooldown. On a map where the objective comes back every 1:45, knowing whether the fountain is up matters as much as the health bars."
+        },
+        "image": ""
+      },
+      {
+        "id": "pmutmu1e801e",
+        "type": "camp",
+        "x": 40,
+        "y": 12,
+        "name": {
+          "fr": "Camp de siège — empaleurs, haut",
+          "en": "Siege Camp — Impalers, top"
+        },
+        "description": {
+          "fr": "Trois empaleurs : des unités à distance qui frappent les structures sans s'exposer, mais nettoient mal les vagues. Le camp disparaît quand un Immortel part en voie et revient à sa mort.",
+          "en": "Three Impalers: ranged units that hit Structures from safety but clear waves poorly. The camp disappears when an Immortal goes down a lane and comes back when it dies."
+        },
+        "image": ""
+      },
+      {
+        "id": "pmutmu1e801f",
+        "type": "camp",
+        "x": 54,
+        "y": 12,
+        "name": {
+          "fr": "Camp de siège — empaleurs, bas",
+          "en": "Siege Camp — Impalers, bottom"
+        },
+        "description": {
+          "fr": "Trois empaleurs : des unités à distance qui frappent les structures sans s'exposer, mais nettoient mal les vagues. Le camp disparaît quand un Immortel part en voie et revient à sa mort.",
+          "en": "Three Impalers: ranged units that hit Structures from safety but clear waves poorly. The camp disappears when an Immortal goes down a lane and comes back when it dies."
+        },
+        "image": ""
       }
     ],
     "guideVideos": []
@@ -1191,9 +1971,9 @@ const BATTLEGROUNDS = [
     "hotspots": [
       {
         "id": "ptom29",
+        "type": "objectif",
         "x": 12,
         "y": 12,
-        "type": "objectif",
         "name": {
           "fr": "Autel de la reine araignée",
           "en": "Spider Queen's Altar"
@@ -1206,12 +1986,27 @@ const BATTLEGROUNDS = [
       },
       {
         "id": "ptom30",
+        "type": "camp",
         "x": 26,
         "y": 12,
-        "type": "camp",
         "name": {
-          "fr": "Camp de bruisers — chevaliers",
-          "en": "Bruiser Camp — Knights"
+          "fr": "Camp de bruisers — chevaliers, milieu gauche",
+          "en": "Bruiser Camp — Knights, middle left"
+        },
+        "description": {
+          "fr": "Deux camps sur la voie du milieu : trois chevaliers et un sorcier, qui pose un champ d'armure des sorts. Disponibles à 0:30, ils réapparaissent 4:00 après.",
+          "en": "Two camps on the middle lane: three Knights and a Wizard, who lays a Spell Armor field. Available at 0:30, back 4:00 after."
+        },
+        "image": ""
+      },
+      {
+        "id": "pmutmu1e801g",
+        "type": "camp",
+        "x": 68,
+        "y": 12,
+        "name": {
+          "fr": "Camp de bruisers — chevaliers, milieu droite",
+          "en": "Bruiser Camp — Knights, middle right"
         },
         "description": {
           "fr": "Deux camps sur la voie du milieu : trois chevaliers et un sorcier, qui pose un champ d'armure des sorts. Disponibles à 0:30, ils réapparaissent 4:00 après.",
@@ -1221,9 +2016,9 @@ const BATTLEGROUNDS = [
       },
       {
         "id": "ptom31",
+        "type": "camp",
         "x": 40,
         "y": 12,
-        "type": "camp",
         "name": {
           "fr": "Camp de siège — géants",
           "en": "Siege Camp — Giants"
@@ -1236,9 +2031,9 @@ const BATTLEGROUNDS = [
       },
       {
         "id": "ptom32",
+        "type": "camp",
         "x": 54,
         "y": 12,
-        "type": "camp",
         "name": {
           "fr": "Camp de boss — golem de sable",
           "en": "Boss Camp — Sand Golem"
@@ -1246,6 +2041,36 @@ const BATTLEGROUNDS = [
         "description": {
           "fr": "Sur la voie du haut. Disponible à 5:00, il réapparaît 5:00 après avoir été pris. Immunisé contre la corruption. Le garder en combat empêche le camp de disparaître pendant la phase des tisserands.",
           "en": "On the top lane. Available at 5:00, back 5:00 after being taken. Immune to Bribe. Keeping it engaged stops the camp vanishing during the Webweaver phase."
+        },
+        "image": ""
+      },
+      {
+        "id": "pmutmu1e801h",
+        "type": "fontaine",
+        "x": 82,
+        "y": 12,
+        "name": {
+          "fr": "Fontaine de soins — côté gauche",
+          "en": "Healing fountain — left side"
+        },
+        "description": {
+          "fr": "Deux minutes de recharge après utilisation. Savoir si celle d'en face est disponible change la valeur d'un plongeon autant que les points de vie restants.",
+          "en": "Two-minute cooldown after use. Knowing whether the enemy one is up changes the worth of a dive as much as their remaining health does."
+        },
+        "image": ""
+      },
+      {
+        "id": "pmutmu1e801i",
+        "type": "fontaine",
+        "x": 12,
+        "y": 26,
+        "name": {
+          "fr": "Fontaine de soins — côté droit",
+          "en": "Healing fountain — right side"
+        },
+        "description": {
+          "fr": "Deux minutes de recharge après utilisation. Savoir si celle d'en face est disponible change la valeur d'un plongeon autant que les points de vie restants.",
+          "en": "Two-minute cooldown after use. Knowing whether the enemy one is up changes the worth of a dive as much as their remaining health does."
         },
         "image": ""
       }
@@ -1302,12 +2127,42 @@ const BATTLEGROUNDS = [
     "hotspots": [
       {
         "id": "ptem33",
+        "type": "objectif",
         "x": 12,
         "y": 12,
-        "type": "objectif",
         "name": {
-          "fr": "Temple",
-          "en": "Temple"
+          "fr": "Temple — haut",
+          "en": "Temple — top"
+        },
+        "description": {
+          "fr": "Deux temples actifs au maximum par phase, selon une rotation : haut et milieu d'abord, bas ensuite, puis variable. Deux secondes pour le capturer, 40 tirs plus 5 bonus à 450 dégâts chacun.",
+          "en": "Two active Temples at most per phase, on a rotation: top and mid first, bottom next, then variable. Two seconds to capture, 40 shots plus 5 bonus at 450 damage each."
+        },
+        "image": ""
+      },
+      {
+        "id": "pmutmu1e801j",
+        "type": "objectif",
+        "x": 82,
+        "y": 12,
+        "name": {
+          "fr": "Temple — milieu",
+          "en": "Temple — middle"
+        },
+        "description": {
+          "fr": "Deux temples actifs au maximum par phase, selon une rotation : haut et milieu d'abord, bas ensuite, puis variable. Deux secondes pour le capturer, 40 tirs plus 5 bonus à 450 dégâts chacun.",
+          "en": "Two active Temples at most per phase, on a rotation: top and mid first, bottom next, then variable. Two seconds to capture, 40 shots plus 5 bonus at 450 damage each."
+        },
+        "image": ""
+      },
+      {
+        "id": "pmutmu1e801k",
+        "type": "objectif",
+        "x": 12,
+        "y": 26,
+        "name": {
+          "fr": "Temple — bas",
+          "en": "Temple — bottom"
         },
         "description": {
           "fr": "Deux temples actifs au maximum par phase, selon une rotation : haut et milieu d'abord, bas ensuite, puis variable. Deux secondes pour le capturer, 40 tirs plus 5 bonus à 450 dégâts chacun.",
@@ -1317,9 +2172,9 @@ const BATTLEGROUNDS = [
       },
       {
         "id": "ptem34",
+        "type": "tour",
         "x": 26,
         "y": 12,
-        "type": "tour",
         "name": {
           "fr": "Tour de guet",
           "en": "Watch Tower"
@@ -1332,12 +2187,27 @@ const BATTLEGROUNDS = [
       },
       {
         "id": "ptem35",
+        "type": "camp",
         "x": 40,
         "y": 12,
-        "type": "camp",
         "name": {
-          "fr": "Camp de bruisers — chevaliers",
-          "en": "Bruiser Camp — Knights"
+          "fr": "Camp de bruisers — chevaliers, haut gauche",
+          "en": "Bruiser Camp — Knights, top left"
+        },
+        "description": {
+          "fr": "Deux camps sur la voie du haut : trois chevaliers et un sorcier, qui pose un champ d'armure des sorts. Disponibles à 0:30, ils réapparaissent 4:00 après.",
+          "en": "Two camps on the top lane: three Knights and a Wizard, who lays a Spell Armor field. Available at 0:30, back 4:00 after."
+        },
+        "image": ""
+      },
+      {
+        "id": "pmutmu1e801l",
+        "type": "camp",
+        "x": 26,
+        "y": 26,
+        "name": {
+          "fr": "Camp de bruisers — chevaliers, haut droite",
+          "en": "Bruiser Camp — Knights, top right"
         },
         "description": {
           "fr": "Deux camps sur la voie du haut : trois chevaliers et un sorcier, qui pose un champ d'armure des sorts. Disponibles à 0:30, ils réapparaissent 4:00 après.",
@@ -1347,12 +2217,27 @@ const BATTLEGROUNDS = [
       },
       {
         "id": "ptem36",
+        "type": "camp",
         "x": 54,
         "y": 12,
-        "type": "camp",
         "name": {
-          "fr": "Camp de siège — géants",
-          "en": "Siege Camp — Giants"
+          "fr": "Camp de siège — géants, bas gauche",
+          "en": "Siege Camp — Giants, bottom left"
+        },
+        "description": {
+          "fr": "Deux camps sur la voie du bas, deux géants chacun. Leurs rochers sont esquivables, et ils infligent 100 % de dégâts supplémentaires aux structures. Disponibles à 0:30, ils réapparaissent 3:00 après.",
+          "en": "Two camps on the bottom lane, two Giants each. Their stones are dodgeable, and they deal 100% bonus damage to Structures. Available at 0:30, back 3:00 after."
+        },
+        "image": ""
+      },
+      {
+        "id": "pmutmu1e801m",
+        "type": "camp",
+        "x": 40,
+        "y": 26,
+        "name": {
+          "fr": "Camp de siège — géants, bas droite",
+          "en": "Siege Camp — Giants, bottom right"
         },
         "description": {
           "fr": "Deux camps sur la voie du bas, deux géants chacun. Leurs rochers sont esquivables, et ils infligent 100 % de dégâts supplémentaires aux structures. Disponibles à 0:30, ils réapparaissent 3:00 après.",
@@ -1362,9 +2247,9 @@ const BATTLEGROUNDS = [
       },
       {
         "id": "ptem37",
+        "type": "camp",
         "x": 68,
         "y": 12,
-        "type": "camp",
         "name": {
           "fr": "Camp de boss — golem de sable",
           "en": "Boss Camp — Sand Golem"
@@ -1372,6 +2257,36 @@ const BATTLEGROUNDS = [
         "description": {
           "fr": "Sur la voie du bas. Écrasement toutes les 10 secondes, tourbillon de sable toutes les 15. Immunisé contre la corruption. Disponible à 5:00, il réapparaît 5:00 après.",
           "en": "On the bottom lane. Mega Smash every 10 seconds, Whirling Sands every 15. Immune to Bribe. Available at 5:00, back 5:00 after."
+        },
+        "image": ""
+      },
+      {
+        "id": "pmutmu1e801n",
+        "type": "fontaine",
+        "x": 54,
+        "y": 26,
+        "name": {
+          "fr": "Fontaine de soins — côté gauche",
+          "en": "Healing fountain — left side"
+        },
+        "description": {
+          "fr": "Deux minutes de recharge après utilisation. Savoir si celle d'en face est disponible change la valeur d'un plongeon autant que les points de vie restants.",
+          "en": "Two-minute cooldown after use. Knowing whether the enemy one is up changes the worth of a dive as much as their remaining health does."
+        },
+        "image": ""
+      },
+      {
+        "id": "pmutmu1e801o",
+        "type": "fontaine",
+        "x": 68,
+        "y": 26,
+        "name": {
+          "fr": "Fontaine de soins — côté droit",
+          "en": "Healing fountain — right side"
+        },
+        "description": {
+          "fr": "Deux minutes de recharge après utilisation. Savoir si celle d'en face est disponible change la valeur d'un plongeon autant que les points de vie restants.",
+          "en": "Two-minute cooldown after use. Knowing whether the enemy one is up changes the worth of a dive as much as their remaining health does."
         },
         "image": ""
       }
@@ -1424,9 +2339,9 @@ const BATTLEGROUNDS = [
     "hotspots": [
       {
         "id": "pbai38",
+        "type": "objectif",
         "x": 49.6,
         "y": 60.2,
-        "type": "objectif",
         "name": {
           "fr": "Cœur-Noir",
           "en": "Blackheart"
@@ -1439,9 +2354,9 @@ const BATTLEGROUNDS = [
       },
       {
         "id": "pbai39",
+        "type": "objectif",
         "x": 49.5,
         "y": 27.1,
-        "type": "objectif",
         "name": {
           "fr": "Coffre au trésor",
           "en": "Treasure Chest"
@@ -1454,9 +2369,9 @@ const BATTLEGROUNDS = [
       },
       {
         "id": "pmutm0i5v0w9t",
+        "type": "objectif",
         "x": 49.6,
         "y": 72,
-        "type": "objectif",
         "name": {
           "fr": "Coffre au trésor",
           "en": "Treasure Chest"
@@ -1469,9 +2384,9 @@ const BATTLEGROUNDS = [
       },
       {
         "id": "pmutm0d83dc6m",
+        "type": "objectif",
         "x": 49.5,
         "y": 45.7,
-        "type": "objectif",
         "name": {
           "fr": "Coffre au trésor",
           "en": "Treasure Chest"
@@ -1484,9 +2399,9 @@ const BATTLEGROUNDS = [
       },
       {
         "id": "pbai40",
+        "type": "camp",
         "x": 34.3,
         "y": 62.4,
-        "type": "camp",
         "name": {
           "fr": "Camp à doublons — pirates squelettes",
           "en": "Doubloon Camp — Skeletal Pirates"
@@ -1498,10 +2413,40 @@ const BATTLEGROUNDS = [
         "image": ""
       },
       {
+        "id": "pmutmu1e801p",
+        "type": "camp",
+        "x": 12,
+        "y": 12,
+        "name": {
+          "fr": "Camp à doublons — entre haut et milieu, gauche",
+          "en": "Doubloon Camp — between top and middle, left"
+        },
+        "description": {
+          "fr": "Deux camps de deux pirates squelettes. Ils ne poussent pas de voie : ils donnent deux doublons. Disponibles à 0:30, ils réapparaissent 2:30 après.",
+          "en": "Two camps of two Skeletal Pirates. They do not push a lane: they hand over two Doubloons. Available at 0:30, back 2:30 after."
+        },
+        "image": ""
+      },
+      {
+        "id": "pmutmu1e801q",
+        "type": "camp",
+        "x": 26,
+        "y": 12,
+        "name": {
+          "fr": "Camp à doublons — entre haut et milieu, droite",
+          "en": "Doubloon Camp — between top and middle, right"
+        },
+        "description": {
+          "fr": "Deux camps de deux pirates squelettes. Ils ne poussent pas de voie : ils donnent deux doublons. Disponibles à 0:30, ils réapparaissent 2:30 après.",
+          "en": "Two camps of two Skeletal Pirates. They do not push a lane: they hand over two Doubloons. Available at 0:30, back 2:30 after."
+        },
+        "image": ""
+      },
+      {
         "id": "pmutlywxjq0no",
+        "type": "camp",
         "x": 64,
         "y": 62.9,
-        "type": "camp",
         "name": {
           "fr": "Camp à doublons — pirates squelettes",
           "en": "Doubloon Camp — Skeletal Pirates"
@@ -1514,9 +2459,9 @@ const BATTLEGROUNDS = [
       },
       {
         "id": "pbai41",
+        "type": "camp",
         "x": 30.1,
         "y": 71.1,
-        "type": "camp",
         "name": {
           "fr": "Camp de siège — géants",
           "en": "Siege Camp — Giants"
@@ -1529,9 +2474,9 @@ const BATTLEGROUNDS = [
       },
       {
         "id": "pmutlzc8zyokd",
+        "type": "camp",
         "x": 69,
         "y": 71.1,
-        "type": "camp",
         "name": {
           "fr": "Camp de siège — géants",
           "en": "Siege Camp — Giants"
@@ -1544,9 +2489,9 @@ const BATTLEGROUNDS = [
       },
       {
         "id": "pbai42",
+        "type": "camp",
         "x": 49.5,
         "y": 7.8,
-        "type": "camp",
         "name": {
           "fr": "Camp de boss — golem sépulcral",
           "en": "Boss Camp — Grave Golem"
@@ -1554,6 +2499,111 @@ const BATTLEGROUNDS = [
         "description": {
           "fr": "Sur la voie du haut. Immunisé contre la corruption, il rapporte lui aussi deux doublons. Disponible à 5:00, il réapparaît 5:00 après.",
           "en": "On the top lane. Immune to Bribe, it also pays two Doubloons. Available at 5:00, back 5:00 after."
+        },
+        "image": ""
+      },
+      {
+        "id": "pmutmu1e901r",
+        "type": "camp",
+        "x": 40,
+        "y": 12,
+        "name": {
+          "fr": "Camp de bruisers — haut, gauche",
+          "en": "Bruiser Camp — top, left"
+        },
+        "description": {
+          "fr": "Trois chevaliers et un sorcier, qui pose un champ d'armure des sorts autour des unités proches. Comme tous les camps de la carte, il rapporte deux doublons. Disponible à 0:30, il réapparaît 4:00 après avoir été pris.",
+          "en": "Three Knights and a Wizard, who lays a Spell Armor field around nearby units. Like every camp on this map, it pays two Doubloons. Available at 0:30, back 4:00 after being taken."
+        },
+        "image": ""
+      },
+      {
+        "id": "pmutmu1e901s",
+        "type": "camp",
+        "x": 68,
+        "y": 12,
+        "name": {
+          "fr": "Camp de bruisers — haut, droite",
+          "en": "Bruiser Camp — top, right"
+        },
+        "description": {
+          "fr": "Trois chevaliers et un sorcier, qui pose un champ d'armure des sorts autour des unités proches. Comme tous les camps de la carte, il rapporte deux doublons. Disponible à 0:30, il réapparaît 4:00 après avoir été pris.",
+          "en": "Three Knights and a Wizard, who lays a Spell Armor field around nearby units. Like every camp on this map, it pays two Doubloons. Available at 0:30, back 4:00 after being taken."
+        },
+        "image": ""
+      },
+      {
+        "id": "pmutmu1e901t",
+        "type": "camp",
+        "x": 82,
+        "y": 12,
+        "name": {
+          "fr": "Camp de bruisers — bas",
+          "en": "Bruiser Camp — bottom"
+        },
+        "description": {
+          "fr": "Trois chevaliers et un sorcier, qui pose un champ d'armure des sorts autour des unités proches. Comme tous les camps de la carte, il rapporte deux doublons. Disponible à 0:30, il réapparaît 4:00 après avoir été pris.",
+          "en": "Three Knights and a Wizard, who lays a Spell Armor field around nearby units. Like every camp on this map, it pays two Doubloons. Available at 0:30, back 4:00 after being taken."
+        },
+        "image": ""
+      },
+      {
+        "id": "pmutmu1e901u",
+        "type": "tour",
+        "x": 12,
+        "y": 26,
+        "name": {
+          "fr": "Tour de guet — gauche",
+          "en": "Watch Tower — left"
+        },
+        "description": {
+          "fr": "Entre la voie du milieu et celle du bas, sur les chemins qui mènent à Cœur-Noir. La tenir, c'est voir qui part livrer des doublons. On la capture en restant dans la zone ; elle redevient neutre après 45 secondes sans personne.",
+          "en": "Between the middle and bottom lanes, on the paths leading to Blackheart. Holding it means seeing who goes to turn in Doubloons. Capture it by standing in the area; it turns neutral again after 45 seconds unoccupied."
+        },
+        "image": ""
+      },
+      {
+        "id": "pmutmu1e901v",
+        "type": "tour",
+        "x": 26,
+        "y": 26,
+        "name": {
+          "fr": "Tour de guet — droite",
+          "en": "Watch Tower — right"
+        },
+        "description": {
+          "fr": "Entre la voie du milieu et celle du bas, sur les chemins qui mènent à Cœur-Noir. La tenir, c'est voir qui part livrer des doublons. On la capture en restant dans la zone ; elle redevient neutre après 45 secondes sans personne.",
+          "en": "Between the middle and bottom lanes, on the paths leading to Blackheart. Holding it means seeing who goes to turn in Doubloons. Capture it by standing in the area; it turns neutral again after 45 seconds unoccupied."
+        },
+        "image": ""
+      },
+      {
+        "id": "pmutmu1e901w",
+        "type": "fontaine",
+        "x": 40,
+        "y": 26,
+        "name": {
+          "fr": "Fontaine de soins — côté gauche",
+          "en": "Healing fountain — left side"
+        },
+        "description": {
+          "fr": "Deux minutes de recharge après utilisation. Savoir si celle d'en face est disponible change la valeur d'un plongeon autant que les points de vie restants.",
+          "en": "Two-minute cooldown after use. Knowing whether the enemy one is up changes the worth of a dive as much as their remaining health does."
+        },
+        "image": ""
+      },
+      {
+        "id": "pmutmu1e901x",
+        "type": "fontaine",
+        "x": 68,
+        "y": 26,
+        "name": {
+          "fr": "Fontaine de soins — côté droit",
+          "en": "Healing fountain — right side"
+        },
+        "description": {
+          "fr": "Deux minutes de recharge après utilisation. Savoir si celle d'en face est disponible change la valeur d'un plongeon autant que les points de vie restants.",
+          "en": "Two-minute cooldown after use. Knowing whether the enemy one is up changes the worth of a dive as much as their remaining health does."
         },
         "image": ""
       }
@@ -1606,10 +2656,9 @@ const BATTLEGROUNDS = [
     "hotspots": [
       {
         "id": "pdrg1",
+        "type": "objectif",
         "x": 12,
         "y": 12,
-        "type": "objectif",
-        "image": "assets/maps/comte-du-dragon/captures/5.jpg",
         "name": {
           "fr": "Sanctuaire du soleil",
           "en": "Sun Shrine"
@@ -1617,14 +2666,14 @@ const BATTLEGROUNDS = [
         "description": {
           "fr": "L'un des deux sanctuaires à tenir. Quatre secondes pour le capturer s'il est neutre, huit s'il appartient à l'adversaire. Le tenir seul ne sert à rien : la statue ne s'active que si les deux sont à toi en même temps.",
           "en": "One of the two Shrines to hold. Four seconds to capture if neutral, eight if the enemy owns it. Holding it alone achieves nothing: the statue only activates when both are yours at the same time."
-        }
+        },
+        "image": "assets/maps/comte-du-dragon/captures/5.jpg"
       },
       {
         "id": "pdrg2",
+        "type": "objectif",
         "x": 26,
         "y": 12,
-        "type": "objectif",
-        "image": "assets/maps/comte-du-dragon/captures/3.jpg",
         "name": {
           "fr": "Sanctuaire de la lune",
           "en": "Moon Shrine"
@@ -1632,14 +2681,14 @@ const BATTLEGROUNDS = [
         "description": {
           "fr": "Le second sanctuaire, mêmes règles que celui du soleil. C'est la simultanéité qui compte : perdre l'un pendant qu'on prend l'autre remet le compteur à zéro.",
           "en": "The second Shrine, same rules as the Sun one. Simultaneity is what counts: losing one while taking the other puts you back to nothing."
-        }
+        },
+        "image": "assets/maps/comte-du-dragon/captures/3.jpg"
       },
       {
         "id": "pdrg3",
+        "type": "objectif",
         "x": 40,
         "y": 12,
-        "type": "objectif",
-        "image": "assets/maps/comte-du-dragon/objectifs/2.jpg",
         "name": {
           "fr": "Statue du chevalier dragon",
           "en": "Dragon Knight's statue"
@@ -1647,14 +2696,14 @@ const BATTLEGROUNDS = [
         "description": {
           "fr": "Au centre de la voie du milieu. Les deux sanctuaires tenus l'activent ; un héros s'y rend alors et incante trois secondes pour incarner le dragon. Il tient 55 secondes, plus 2 par minute de jeu écoulée. La statue redevient disponible deux minutes après la mort du chevalier.",
           "en": "At the centre of the middle lane. Both Shrines held activate it; a Hero then walks up and channels for three seconds to become the Dragon. It lasts 55 seconds, plus 2 per minute of game time elapsed. The statue comes back two minutes after the Dragon Knight dies."
-        }
+        },
+        "image": "assets/maps/comte-du-dragon/objectifs/2.jpg"
       },
       {
         "id": "pdrg4",
+        "type": "objectif",
         "x": 54,
         "y": 12,
-        "type": "objectif",
-        "image": "assets/maps/comte-du-dragon/captures/4.jpg",
         "name": {
           "fr": "Chevalier dragon",
           "en": "Dragon Knight"
@@ -1662,14 +2711,14 @@ const BATTLEGROUNDS = [
         "description": {
           "fr": "Ce qui sort de la statue. Souffle de flammes toutes les 6 secondes, charge sauvage toutes les 10 — elle projette et frappe pour 450 points, plus 17 par minute. Il inflige 100 % de dégâts supplémentaires aux structures et aux serviteurs, encaisse 60 % de moins des structures, et explose à sa mort.",
           "en": "What comes out of the statue. Flame Breath every 6 seconds, Savage Charge every 10 — it knocks back and hits for 450, plus 17 per minute. It deals 100% bonus damage to Structures and Minions, takes 60% less from Structures, and explodes when it dies."
-        }
+        },
+        "image": "assets/maps/comte-du-dragon/captures/4.jpg"
       },
       {
         "id": "pdrg5",
+        "type": "camp",
         "x": 68,
         "y": 12,
-        "type": "camp",
-        "image": "assets/maps/comte-du-dragon/captures/2.jpg",
         "name": {
           "fr": "Camp de bruisers — haut, côté bleu",
           "en": "Bruiser Camp — top, blue side"
@@ -1677,14 +2726,14 @@ const BATTLEGROUNDS = [
         "description": {
           "fr": "Trois chevaliers et un sorcier. Le sorcier pose un champ d'armure des sorts qui réduit les dégâts subis par les unités proches. Disponible à 0:30, il réapparaît 4:00 après avoir été pris. À capturer vers 1:30 pour qu'il arrive en ligne avec la vague.",
           "en": "Three Knights and a Wizard. The Wizard lays a Spell Armor field that cuts the damage nearby units take. Available at 0:30, back 4:00 after being taken. Worth capturing around 1:30 so it reaches the lane with the wave."
-        }
+        },
+        "image": "assets/maps/comte-du-dragon/captures/2.jpg"
       },
       {
         "id": "pdrg6",
+        "type": "camp",
         "x": 82,
         "y": 12,
-        "type": "camp",
-        "image": "assets/maps/comte-du-dragon/captures/2.jpg",
         "name": {
           "fr": "Camp de bruisers — haut, côté rouge",
           "en": "Bruiser Camp — top, red side"
@@ -1692,14 +2741,14 @@ const BATTLEGROUNDS = [
         "description": {
           "fr": "Le symétrique du camp d'en face, même composition. Sur cette carte les bruisers sont en haut et le siège en bas : la voie du haut se dispute donc plus longtemps.",
           "en": "The mirror of the camp opposite, same composition. On this map the Bruisers sit at the top and the Siege camps at the bottom: the top lane is contested longer as a result."
-        }
+        },
+        "image": "assets/maps/comte-du-dragon/captures/2.jpg"
       },
       {
         "id": "pdrg7",
+        "type": "camp",
         "x": 12,
         "y": 26,
-        "type": "camp",
-        "image": "assets/maps/comte-du-dragon/captures/2.jpg",
         "name": {
           "fr": "Camp de bruisers — bas",
           "en": "Bruiser Camp — bottom"
@@ -1707,14 +2756,14 @@ const BATTLEGROUNDS = [
         "description": {
           "fr": "Le cinquième camp de la carte, seul de son espèce en bas. Trois chevaliers et un sorcier, comme ceux du haut. Disponible à 0:30, il réapparaît 4:00 après.",
           "en": "The map's fifth camp, the only one of its kind at the bottom. Three Knights and a Wizard, like those at the top. Available at 0:30, back 4:00 after."
-        }
+        },
+        "image": "assets/maps/comte-du-dragon/captures/2.jpg"
       },
       {
         "id": "pdrg8",
+        "type": "camp",
         "x": 26,
         "y": 26,
-        "type": "camp",
-        "image": "",
         "name": {
           "fr": "Camp de siège — bas, côté bleu",
           "en": "Siege Camp — bottom, blue side"
@@ -1722,14 +2771,14 @@ const BATTLEGROUNDS = [
         "description": {
           "fr": "Deux géants de siège. Leurs rochers sont esquivables, et ils infligent 100 % de dégâts supplémentaires aux structures. Disponible à 0:30, il réapparaît 3:00 après. À prendre vers 0:42 pour qu'il parte avec la vague.",
           "en": "Two Siege Giants. Their stones are dodgeable, and they deal 100% bonus damage to Structures. Available at 0:30, back 3:00 after. Worth taking around 0:42 so it leaves with the wave."
-        }
+        },
+        "image": ""
       },
       {
         "id": "pdrg9",
+        "type": "camp",
         "x": 40,
         "y": 26,
-        "type": "camp",
-        "image": "",
         "name": {
           "fr": "Camp de siège — bas, côté rouge",
           "en": "Siege Camp — bottom, red side"
@@ -1737,14 +2786,14 @@ const BATTLEGROUNDS = [
         "description": {
           "fr": "Le symétrique du précédent, même composition. Les deux camps de siège sont sur la voie du bas, à l'opposé des bruisers.",
           "en": "The mirror of the previous one, same composition. Both Siege camps sit on the bottom lane, opposite the Bruisers."
-        }
+        },
+        "image": ""
       },
       {
         "id": "pdrg10",
+        "type": "fontaine",
         "x": 54,
         "y": 26,
-        "type": "fontaine",
-        "image": "",
         "name": {
           "fr": "Fontaine de soins — côté bleu",
           "en": "Healing fountain — blue side"
@@ -1752,14 +2801,14 @@ const BATTLEGROUNDS = [
         "description": {
           "fr": "Deux minutes de recharge. L'objectif revenant deux minutes après la mort du dragon, la fontaine se dépense dès qu'elle est prête plutôt que d'être gardée : elle sera de nouveau là au moment voulu.",
           "en": "Two-minute cooldown. With the objective back two minutes after the Dragon dies, spend the fountain as soon as it is up rather than saving it: it will be there again when it matters."
-        }
+        },
+        "image": ""
       },
       {
         "id": "pdrg11",
+        "type": "fontaine",
         "x": 68,
         "y": 26,
-        "type": "fontaine",
-        "image": "",
         "name": {
           "fr": "Fontaine de soins — côté rouge",
           "en": "Healing fountain — red side"
@@ -1767,7 +2816,8 @@ const BATTLEGROUNDS = [
         "description": {
           "fr": "La fontaine adverse. Savoir si elle est disponible change la valeur d'un plongeon dans leur base autant que leurs points de vie restants.",
           "en": "The enemy fountain. Knowing whether it is up changes the worth of diving their base as much as their remaining health does."
-        }
+        },
+        "image": ""
       }
     ],
     "guideVideos": []
@@ -1818,12 +2868,87 @@ const BATTLEGROUNDS = [
     "hotspots": [
       {
         "id": "pval47",
+        "type": "objectif",
         "x": 12,
         "y": 12,
-        "type": "objectif",
         "name": {
-          "fr": "Tribut du seigneur corbeau",
-          "en": "Raven Lord's Tribute"
+          "fr": "Tribut — haut, gauche",
+          "en": "Tribute — top, left"
+        },
+        "description": {
+          "fr": "Six secondes d'incantation pour s'en emparer. Trois tributs déclenchent la malédiction : 70 secondes pendant lesquelles les forts adverses ne tirent plus et leurs serviteurs tombent à un point de vie.",
+          "en": "A six-second channel to claim it. Three Tributes trigger the Curse: 70 seconds during which enemy Forts stop firing and their Minions drop to one Health."
+        },
+        "image": ""
+      },
+      {
+        "id": "pmutmu1e901y",
+        "type": "objectif",
+        "x": 82,
+        "y": 12,
+        "name": {
+          "fr": "Tribut — haut, milieu",
+          "en": "Tribute — top, middle"
+        },
+        "description": {
+          "fr": "Six secondes d'incantation pour s'en emparer. Trois tributs déclenchent la malédiction : 70 secondes pendant lesquelles les forts adverses ne tirent plus et leurs serviteurs tombent à un point de vie.",
+          "en": "A six-second channel to claim it. Three Tributes trigger the Curse: 70 seconds during which enemy Forts stop firing and their Minions drop to one Health."
+        },
+        "image": ""
+      },
+      {
+        "id": "pmutmu1e901z",
+        "type": "objectif",
+        "x": 12,
+        "y": 26,
+        "name": {
+          "fr": "Tribut — haut, droite",
+          "en": "Tribute — top, right"
+        },
+        "description": {
+          "fr": "Six secondes d'incantation pour s'en emparer. Trois tributs déclenchent la malédiction : 70 secondes pendant lesquelles les forts adverses ne tirent plus et leurs serviteurs tombent à un point de vie.",
+          "en": "A six-second channel to claim it. Three Tributes trigger the Curse: 70 seconds during which enemy Forts stop firing and their Minions drop to one Health."
+        },
+        "image": ""
+      },
+      {
+        "id": "pmutmu1e9020",
+        "type": "objectif",
+        "x": 26,
+        "y": 26,
+        "name": {
+          "fr": "Tribut — bas, gauche",
+          "en": "Tribute — bottom, left"
+        },
+        "description": {
+          "fr": "Six secondes d'incantation pour s'en emparer. Trois tributs déclenchent la malédiction : 70 secondes pendant lesquelles les forts adverses ne tirent plus et leurs serviteurs tombent à un point de vie.",
+          "en": "A six-second channel to claim it. Three Tributes trigger the Curse: 70 seconds during which enemy Forts stop firing and their Minions drop to one Health."
+        },
+        "image": ""
+      },
+      {
+        "id": "pmutmu1e9021",
+        "type": "objectif",
+        "x": 40,
+        "y": 26,
+        "name": {
+          "fr": "Tribut — bas, milieu",
+          "en": "Tribute — bottom, middle"
+        },
+        "description": {
+          "fr": "Six secondes d'incantation pour s'en emparer. Trois tributs déclenchent la malédiction : 70 secondes pendant lesquelles les forts adverses ne tirent plus et leurs serviteurs tombent à un point de vie.",
+          "en": "A six-second channel to claim it. Three Tributes trigger the Curse: 70 seconds during which enemy Forts stop firing and their Minions drop to one Health."
+        },
+        "image": ""
+      },
+      {
+        "id": "pmutmu1e9022",
+        "type": "objectif",
+        "x": 54,
+        "y": 26,
+        "name": {
+          "fr": "Tribut — bas, droite",
+          "en": "Tribute — bottom, right"
         },
         "description": {
           "fr": "Six secondes d'incantation pour s'en emparer. Trois tributs déclenchent la malédiction : 70 secondes pendant lesquelles les forts adverses ne tirent plus et leurs serviteurs tombent à un point de vie.",
@@ -1833,12 +2958,27 @@ const BATTLEGROUNDS = [
       },
       {
         "id": "pval48",
+        "type": "camp",
         "x": 26,
         "y": 12,
-        "type": "camp",
         "name": {
-          "fr": "Camp de siège — géants",
-          "en": "Siege Camp — Giants"
+          "fr": "Camp de siège — géants, haut gauche",
+          "en": "Siege Camp — Giants, top left"
+        },
+        "description": {
+          "fr": "Deux camps, deux géants chacun, dont les rochers sont esquivables. 100 % de dégâts supplémentaires aux structures. Disponibles à 0:30, ils réapparaissent 3:00 après.",
+          "en": "Two camps, two Giants each, whose stones are dodgeable. 100% bonus damage to Structures. Available at 0:30, back 3:00 after."
+        },
+        "image": ""
+      },
+      {
+        "id": "pmutmu1e9023",
+        "type": "camp",
+        "x": 68,
+        "y": 26,
+        "name": {
+          "fr": "Camp de siège — géants, bas droite",
+          "en": "Siege Camp — Giants, bottom right"
         },
         "description": {
           "fr": "Deux camps, deux géants chacun, dont les rochers sont esquivables. 100 % de dégâts supplémentaires aux structures. Disponibles à 0:30, ils réapparaissent 3:00 après.",
@@ -1848,12 +2988,27 @@ const BATTLEGROUNDS = [
       },
       {
         "id": "pval49",
+        "type": "camp",
         "x": 40,
         "y": 12,
-        "type": "camp",
         "name": {
-          "fr": "Camp de bruisers — chevaliers",
-          "en": "Bruiser Camp — Knights"
+          "fr": "Camp de bruisers — chevaliers, milieu gauche",
+          "en": "Bruiser Camp — Knights, middle left"
+        },
+        "description": {
+          "fr": "Deux camps de trois chevaliers et un sorcier, qui pose un champ d'armure des sorts autour des unités proches. Disponibles à 0:30, ils réapparaissent 4:00 après.",
+          "en": "Two camps of three Knights and a Wizard, who lays a Spell Armor field around nearby units. Available at 0:30, back 4:00 after."
+        },
+        "image": ""
+      },
+      {
+        "id": "pmutmu1e9024",
+        "type": "camp",
+        "x": 82,
+        "y": 26,
+        "name": {
+          "fr": "Camp de bruisers — chevaliers, milieu droite",
+          "en": "Bruiser Camp — Knights, middle right"
         },
         "description": {
           "fr": "Deux camps de trois chevaliers et un sorcier, qui pose un champ d'armure des sorts autour des unités proches. Disponibles à 0:30, ils réapparaissent 4:00 après.",
@@ -1863,12 +3018,27 @@ const BATTLEGROUNDS = [
       },
       {
         "id": "pval50",
+        "type": "camp",
         "x": 54,
         "y": 12,
-        "type": "camp",
         "name": {
-          "fr": "Camp de boss — golem sépulcral",
-          "en": "Boss Camp — Grave Golem"
+          "fr": "Camp de boss — golem sépulcral, haut droite",
+          "en": "Boss Camp — Grave Golem, top right"
+        },
+        "description": {
+          "fr": "Deux camps sur cette carte. Écrasement toutes les 10 secondes, racines toutes les 15. Immunisés contre la corruption. Disponibles à 5:00, ils réapparaissent 5:00 après.",
+          "en": "Two camps on this map. Mega Smash every 10 seconds, Binding Roots every 15. Immune to Bribe. Available at 5:00, back 5:00 after."
+        },
+        "image": ""
+      },
+      {
+        "id": "pmutmu1e9025",
+        "type": "camp",
+        "x": 12,
+        "y": 40,
+        "name": {
+          "fr": "Camp de boss — golem sépulcral, bas gauche",
+          "en": "Boss Camp — Grave Golem, bottom left"
         },
         "description": {
           "fr": "Deux camps sur cette carte. Écrasement toutes les 10 secondes, racines toutes les 15. Immunisés contre la corruption. Disponibles à 5:00, ils réapparaissent 5:00 après.",
@@ -1878,16 +3048,61 @@ const BATTLEGROUNDS = [
       },
       {
         "id": "pval51",
+        "type": "tour",
         "x": 68,
         "y": 12,
-        "type": "tour",
         "name": {
-          "fr": "Tour de guet",
-          "en": "Watch Tower"
+          "fr": "Tour de guet — haut, gauche",
+          "en": "Watch Tower — top, left"
         },
         "description": {
           "fr": "Deux tours, près des camps de siège. Elles ne donnent la vision que tant que le fort de la voie latérale voisine tient encore.",
           "en": "Two towers, near the Siege Camps. They only give vision while the Fort in the adjacent side lane still stands."
+        },
+        "image": ""
+      },
+      {
+        "id": "pmutmu1e9026",
+        "type": "tour",
+        "x": 26,
+        "y": 40,
+        "name": {
+          "fr": "Tour de guet — bas, droite",
+          "en": "Watch Tower — bottom, right"
+        },
+        "description": {
+          "fr": "Deux tours, près des camps de siège. Elles ne donnent la vision que tant que le fort de la voie latérale voisine tient encore.",
+          "en": "Two towers, near the Siege Camps. They only give vision while the Fort in the adjacent side lane still stands."
+        },
+        "image": ""
+      },
+      {
+        "id": "pmutmu1e9027",
+        "type": "fontaine",
+        "x": 40,
+        "y": 40,
+        "name": {
+          "fr": "Fontaine de soins — côté gauche",
+          "en": "Healing fountain — left side"
+        },
+        "description": {
+          "fr": "Deux minutes de recharge après utilisation. Savoir si celle d'en face est disponible change la valeur d'un plongeon autant que les points de vie restants.",
+          "en": "Two-minute cooldown after use. Knowing whether the enemy one is up changes the worth of a dive as much as their remaining health does."
+        },
+        "image": ""
+      },
+      {
+        "id": "pmutmu1e9028",
+        "type": "fontaine",
+        "x": 54,
+        "y": 40,
+        "name": {
+          "fr": "Fontaine de soins — côté droit",
+          "en": "Healing fountain — right side"
+        },
+        "description": {
+          "fr": "Deux minutes de recharge après utilisation. Savoir si celle d'en face est disponible change la valeur d'un plongeon autant que les points de vie restants.",
+          "en": "Two-minute cooldown after use. Knowing whether the enemy one is up changes the worth of a dive as much as their remaining health does."
         },
         "image": ""
       }
@@ -1940,12 +3155,27 @@ const BATTLEGROUNDS = [
     "hotspots": [
       {
         "id": "plab52",
+        "type": "objectif",
         "x": 12,
         "y": 12,
-        "type": "objectif",
         "name": {
-          "fr": "Balise",
-          "en": "Beacon"
+          "fr": "Balise — haut",
+          "en": "Beacon — top"
+        },
+        "description": {
+          "fr": "Deux balises. Trois secondes de capture si elle est neutre, six si l'adversaire la tient. La progression monte de 2 % toutes les 0,75 seconde et remplit la cellule de détention de zergs.",
+          "en": "Two Beacons. Three seconds to capture if neutral, six if the enemy holds it. Progress climbs 2% every 0.75 seconds and fills the Holding Cell with Zerg."
+        },
+        "image": ""
+      },
+      {
+        "id": "pmutmu1e9029",
+        "type": "objectif",
+        "x": 82,
+        "y": 12,
+        "name": {
+          "fr": "Balise — bas",
+          "en": "Beacon — bottom"
         },
         "description": {
           "fr": "Deux balises. Trois secondes de capture si elle est neutre, six si l'adversaire la tient. La progression monte de 2 % toutes les 0,75 seconde et remplit la cellule de détention de zergs.",
@@ -1955,12 +3185,27 @@ const BATTLEGROUNDS = [
       },
       {
         "id": "plab53",
+        "type": "objectif",
         "x": 26,
         "y": 12,
-        "type": "objectif",
         "name": {
-          "fr": "Cellule de détention",
-          "en": "Holding Cell"
+          "fr": "Cellule de détention — gauche",
+          "en": "Holding Cell — left"
+        },
+        "description": {
+          "fr": "Une par équipe. Dès que l'une est pleine, les deux s'ouvrent : ta vague et celle d'en face partent ensemble, dans des voies opposées. La composition dépend du pourcentage atteint.",
+          "en": "One per team. As soon as either is full, both open: your wave and theirs leave together, into opposite lanes. The composition depends on the percentage reached."
+        },
+        "image": ""
+      },
+      {
+        "id": "pmutmu1e902a",
+        "type": "objectif",
+        "x": 12,
+        "y": 26,
+        "name": {
+          "fr": "Cellule de détention — droite",
+          "en": "Holding Cell — right"
         },
         "description": {
           "fr": "Une par équipe. Dès que l'une est pleine, les deux s'ouvrent : ta vague et celle d'en face partent ensemble, dans des voies opposées. La composition dépend du pourcentage atteint.",
@@ -1970,12 +3215,27 @@ const BATTLEGROUNDS = [
       },
       {
         "id": "plab54",
+        "type": "camp",
         "x": 40,
         "y": 12,
-        "type": "camp",
         "name": {
-          "fr": "Camp de siège — hellions",
-          "en": "Siege Camp — Hellbats"
+          "fr": "Camp de siège — hellions, haut droite",
+          "en": "Siege Camp — Hellbats, top right"
+        },
+        "description": {
+          "fr": "Un camp par voie, deux hellions chacun. Disponibles à 0:30, ils réapparaissent 3:00 après avoir été pris.",
+          "en": "One camp per lane, two Hellbats each. Available at 0:30, back 3:00 after being taken."
+        },
+        "image": ""
+      },
+      {
+        "id": "pmutmu1e902b",
+        "type": "camp",
+        "x": 26,
+        "y": 26,
+        "name": {
+          "fr": "Camp de siège — hellions, bas gauche",
+          "en": "Siege Camp — Hellbats, bottom left"
         },
         "description": {
           "fr": "Un camp par voie, deux hellions chacun. Disponibles à 0:30, ils réapparaissent 3:00 après avoir été pris.",
@@ -1985,12 +3245,27 @@ const BATTLEGROUNDS = [
       },
       {
         "id": "plab55",
+        "type": "camp",
         "x": 54,
         "y": 12,
-        "type": "camp",
         "name": {
-          "fr": "Camp de bruisers — goliaths",
-          "en": "Bruiser Camp — Goliaths"
+          "fr": "Camp de bruisers — goliaths, haut gauche",
+          "en": "Bruiser Camp — Goliaths, top left"
+        },
+        "description": {
+          "fr": "Un camp par voie : trois goliaths et un corbeau. Disponibles à 0:30, ils réapparaissent 4:00 après.",
+          "en": "One camp per lane: three Goliaths and a Raven. Available at 0:30, back 4:00 after."
+        },
+        "image": ""
+      },
+      {
+        "id": "pmutmu1e902c",
+        "type": "camp",
+        "x": 40,
+        "y": 26,
+        "name": {
+          "fr": "Camp de bruisers — goliaths, bas droite",
+          "en": "Bruiser Camp — Goliaths, bottom right"
         },
         "description": {
           "fr": "Un camp par voie : trois goliaths et un corbeau. Disponibles à 0:30, ils réapparaissent 4:00 après.",
@@ -2000,9 +3275,9 @@ const BATTLEGROUNDS = [
       },
       {
         "id": "plab56",
+        "type": "camp",
         "x": 68,
         "y": 12,
-        "type": "camp",
         "name": {
           "fr": "Camp de boss — archange",
           "en": "Boss Camp — Archangel"
@@ -2010,6 +3285,66 @@ const BATTLEGROUNDS = [
         "description": {
           "fr": "Au centre de la carte. Immunisé contre la corruption. Disponible à 5:00, il réapparaît 5:00 après. Le prendre tôt demande une composition faite pour ça.",
           "en": "At the centre of the map. Immune to Bribe. Available at 5:00, back 5:00 after. Taking it early asks for a composition built for it."
+        },
+        "image": ""
+      },
+      {
+        "id": "pmutmu1e902d",
+        "type": "autre",
+        "x": 54,
+        "y": 26,
+        "name": {
+          "fr": "Générateur de globes — haut",
+          "en": "Globe Spawner — top"
+        },
+        "description": {
+          "fr": "Un générateur au-dessus de la voie du haut, un autre sous celle du bas. Ils sont placés de façon qu'un héros qui tient la balise voisine ne puisse pas ramasser le globe de régénération sans la quitter.",
+          "en": "One spawner above the top lane, another below the bottom lane. They sit where a Hero holding the nearby Beacon cannot grab the Regeneration Globe without leaving it."
+        },
+        "image": ""
+      },
+      {
+        "id": "pmutmu1e902e",
+        "type": "autre",
+        "x": 68,
+        "y": 26,
+        "name": {
+          "fr": "Générateur de globes — bas",
+          "en": "Globe Spawner — bottom"
+        },
+        "description": {
+          "fr": "Un générateur au-dessus de la voie du haut, un autre sous celle du bas. Ils sont placés de façon qu'un héros qui tient la balise voisine ne puisse pas ramasser le globe de régénération sans la quitter.",
+          "en": "One spawner above the top lane, another below the bottom lane. They sit where a Hero holding the nearby Beacon cannot grab the Regeneration Globe without leaving it."
+        },
+        "image": ""
+      },
+      {
+        "id": "pmutmu1e902f",
+        "type": "fontaine",
+        "x": 82,
+        "y": 26,
+        "name": {
+          "fr": "Fontaine de soins — côté gauche",
+          "en": "Healing fountain — left side"
+        },
+        "description": {
+          "fr": "Deux minutes de recharge après utilisation. Savoir si celle d'en face est disponible change la valeur d'un plongeon autant que les points de vie restants.",
+          "en": "Two-minute cooldown after use. Knowing whether the enemy one is up changes the worth of a dive as much as their remaining health does."
+        },
+        "image": ""
+      },
+      {
+        "id": "pmutmu1e902g",
+        "type": "fontaine",
+        "x": 12,
+        "y": 40,
+        "name": {
+          "fr": "Fontaine de soins — côté droit",
+          "en": "Healing fountain — right side"
+        },
+        "description": {
+          "fr": "Deux minutes de recharge après utilisation. Savoir si celle d'en face est disponible change la valeur d'un plongeon autant que les points de vie restants.",
+          "en": "Two-minute cooldown after use. Knowing whether the enemy one is up changes the worth of a dive as much as their remaining health does."
         },
         "image": ""
       }
@@ -2066,12 +3401,132 @@ const BATTLEGROUNDS = [
     "hotspots": [
       {
         "id": "pmen57",
+        "type": "objectif",
         "x": 12,
         "y": 12,
-        "type": "objectif",
         "name": {
-          "fr": "Ogive",
-          "en": "Warhead"
+          "fr": "Ogive — haut, gauche",
+          "en": "Warhead — top, left"
+        },
+        "description": {
+          "fr": "Deux à quatre apparaissent à la fois sur les trois voies. Cinq secondes d'incantation pour en ramasser une, puis trois secondes pour la lancer et quatre de délai avant l'explosion.",
+          "en": "Two to four appear at a time across the three lanes. A five-second channel to pick one up, then three seconds to launch and a four-second delay before it lands."
+        },
+        "image": ""
+      },
+      {
+        "id": "pmutmu1e902h",
+        "type": "objectif",
+        "x": 82,
+        "y": 12,
+        "name": {
+          "fr": "Ogive — haut, centre",
+          "en": "Warhead — top, centre"
+        },
+        "description": {
+          "fr": "Deux à quatre apparaissent à la fois sur les trois voies. Cinq secondes d'incantation pour en ramasser une, puis trois secondes pour la lancer et quatre de délai avant l'explosion.",
+          "en": "Two to four appear at a time across the three lanes. A five-second channel to pick one up, then three seconds to launch and a four-second delay before it lands."
+        },
+        "image": ""
+      },
+      {
+        "id": "pmutmu1e902i",
+        "type": "objectif",
+        "x": 12,
+        "y": 26,
+        "name": {
+          "fr": "Ogive — haut, droite",
+          "en": "Warhead — top, right"
+        },
+        "description": {
+          "fr": "Deux à quatre apparaissent à la fois sur les trois voies. Cinq secondes d'incantation pour en ramasser une, puis trois secondes pour la lancer et quatre de délai avant l'explosion.",
+          "en": "Two to four appear at a time across the three lanes. A five-second channel to pick one up, then three seconds to launch and a four-second delay before it lands."
+        },
+        "image": ""
+      },
+      {
+        "id": "pmutmu1e902j",
+        "type": "objectif",
+        "x": 26,
+        "y": 26,
+        "name": {
+          "fr": "Ogive — milieu, gauche",
+          "en": "Warhead — middle, left"
+        },
+        "description": {
+          "fr": "Deux à quatre apparaissent à la fois sur les trois voies. Cinq secondes d'incantation pour en ramasser une, puis trois secondes pour la lancer et quatre de délai avant l'explosion.",
+          "en": "Two to four appear at a time across the three lanes. A five-second channel to pick one up, then three seconds to launch and a four-second delay before it lands."
+        },
+        "image": ""
+      },
+      {
+        "id": "pmutmu1e902k",
+        "type": "objectif",
+        "x": 40,
+        "y": 26,
+        "name": {
+          "fr": "Ogive — milieu, centre",
+          "en": "Warhead — middle, centre"
+        },
+        "description": {
+          "fr": "Deux à quatre apparaissent à la fois sur les trois voies. Cinq secondes d'incantation pour en ramasser une, puis trois secondes pour la lancer et quatre de délai avant l'explosion.",
+          "en": "Two to four appear at a time across the three lanes. A five-second channel to pick one up, then three seconds to launch and a four-second delay before it lands."
+        },
+        "image": ""
+      },
+      {
+        "id": "pmutmu1e902l",
+        "type": "objectif",
+        "x": 54,
+        "y": 26,
+        "name": {
+          "fr": "Ogive — milieu, droite",
+          "en": "Warhead — middle, right"
+        },
+        "description": {
+          "fr": "Deux à quatre apparaissent à la fois sur les trois voies. Cinq secondes d'incantation pour en ramasser une, puis trois secondes pour la lancer et quatre de délai avant l'explosion.",
+          "en": "Two to four appear at a time across the three lanes. A five-second channel to pick one up, then three seconds to launch and a four-second delay before it lands."
+        },
+        "image": ""
+      },
+      {
+        "id": "pmutmu1e902m",
+        "type": "objectif",
+        "x": 68,
+        "y": 26,
+        "name": {
+          "fr": "Ogive — bas, gauche",
+          "en": "Warhead — bottom, left"
+        },
+        "description": {
+          "fr": "Deux à quatre apparaissent à la fois sur les trois voies. Cinq secondes d'incantation pour en ramasser une, puis trois secondes pour la lancer et quatre de délai avant l'explosion.",
+          "en": "Two to four appear at a time across the three lanes. A five-second channel to pick one up, then three seconds to launch and a four-second delay before it lands."
+        },
+        "image": ""
+      },
+      {
+        "id": "pmutmu1e902n",
+        "type": "objectif",
+        "x": 82,
+        "y": 26,
+        "name": {
+          "fr": "Ogive — bas, centre",
+          "en": "Warhead — bottom, centre"
+        },
+        "description": {
+          "fr": "Deux à quatre apparaissent à la fois sur les trois voies. Cinq secondes d'incantation pour en ramasser une, puis trois secondes pour la lancer et quatre de délai avant l'explosion.",
+          "en": "Two to four appear at a time across the three lanes. A five-second channel to pick one up, then three seconds to launch and a four-second delay before it lands."
+        },
+        "image": ""
+      },
+      {
+        "id": "pmutmu1e902o",
+        "type": "objectif",
+        "x": 12,
+        "y": 40,
+        "name": {
+          "fr": "Ogive — bas, droite",
+          "en": "Warhead — bottom, right"
         },
         "description": {
           "fr": "Deux à quatre apparaissent à la fois sur les trois voies. Cinq secondes d'incantation pour en ramasser une, puis trois secondes pour la lancer et quatre de délai avant l'explosion.",
@@ -2081,12 +3536,27 @@ const BATTLEGROUNDS = [
       },
       {
         "id": "pmen58",
+        "type": "tour",
         "x": 26,
         "y": 12,
-        "type": "tour",
         "name": {
-          "fr": "Tour de guet",
-          "en": "Watch Tower"
+          "fr": "Tour de guet — au-dessus du milieu",
+          "en": "Watch Tower — above the middle"
+        },
+        "description": {
+          "fr": "Deux tours, qui donnent la vision sur les entrées du tunnel d'égout. Il faut rester dans la zone jusqu'à la capture, et elles redeviennent neutres après 45 secondes sans personne.",
+          "en": "Two towers, giving vision on the Sewage Tunnel mouths. You have to stay in the area until capture, and they go neutral again after 45 seconds unoccupied."
+        },
+        "image": ""
+      },
+      {
+        "id": "pmutmu1e902p",
+        "type": "tour",
+        "x": 26,
+        "y": 40,
+        "name": {
+          "fr": "Tour de guet — sous le milieu",
+          "en": "Watch Tower — below the middle"
         },
         "description": {
           "fr": "Deux tours, qui donnent la vision sur les entrées du tunnel d'égout. Il faut rester dans la zone jusqu'à la capture, et elles redeviennent neutres après 45 secondes sans personne.",
@@ -2096,12 +3566,27 @@ const BATTLEGROUNDS = [
       },
       {
         "id": "pmen59",
+        "type": "autre",
         "x": 40,
         "y": 12,
-        "type": "autre",
         "name": {
-          "fr": "Tunnel d'égout",
-          "en": "Sewage Tunnel"
+          "fr": "Tunnel d'égout — entrée du haut",
+          "en": "Sewage Tunnel — top entrance"
+        },
+        "description": {
+          "fr": "Relie la voie du haut à celle du bas, deux secondes d'incantation pour le traverser. C'est lui qui rend les rotations possibles sur cette carte.",
+          "en": "Links the top lane to the bottom one, a two-second channel to go through. It is what makes rotations possible on this map."
+        },
+        "image": ""
+      },
+      {
+        "id": "pmutmu1e902q",
+        "type": "autre",
+        "x": 40,
+        "y": 40,
+        "name": {
+          "fr": "Tunnel d'égout — entrée du bas",
+          "en": "Sewage Tunnel — bottom entrance"
         },
         "description": {
           "fr": "Relie la voie du haut à celle du bas, deux secondes d'incantation pour le traverser. C'est lui qui rend les rotations possibles sur cette carte.",
@@ -2111,12 +3596,27 @@ const BATTLEGROUNDS = [
       },
       {
         "id": "pmen60",
+        "type": "camp",
         "x": 54,
         "y": 12,
-        "type": "camp",
         "name": {
-          "fr": "Camp de siège — hellions",
-          "en": "Siege Camp — Hellbats"
+          "fr": "Camp de siège — hellions, bas gauche",
+          "en": "Siege Camp — Hellbats, bottom left"
+        },
+        "description": {
+          "fr": "Deux camps sur la voie du bas. Leurs hellions réduisent l'armure des structures de 4 points, cumulables jusqu'à 20. Disponibles à 0:30, ils réapparaissent 3:00 après.",
+          "en": "Two camps on the bottom lane. Their Hellbats reduce Structure Armor by 4, stacking up to 20. Available at 0:30, back 3:00 after."
+        },
+        "image": ""
+      },
+      {
+        "id": "pmutmu1e902r",
+        "type": "camp",
+        "x": 54,
+        "y": 40,
+        "name": {
+          "fr": "Camp de siège — hellions, bas droite",
+          "en": "Siege Camp — Hellbats, bottom right"
         },
         "description": {
           "fr": "Deux camps sur la voie du bas. Leurs hellions réduisent l'armure des structures de 4 points, cumulables jusqu'à 20. Disponibles à 0:30, ils réapparaissent 3:00 après.",
@@ -2126,16 +3626,76 @@ const BATTLEGROUNDS = [
       },
       {
         "id": "pmen61",
+        "type": "camp",
         "x": 68,
         "y": 12,
-        "type": "camp",
         "name": {
-          "fr": "Camp de bruisers — goliaths",
-          "en": "Bruiser Camp — Goliaths"
+          "fr": "Camp de bruisers — goliaths, haut gauche",
+          "en": "Bruiser Camp — Goliaths, top left"
         },
         "description": {
           "fr": "Deux camps sur la voie du haut : trois goliaths et un corbeau, dont le missile traqueur révèle sa cible. Disponibles à 0:30, ils réapparaissent 4:00 après.",
           "en": "Two camps on the top lane: three Goliaths and a Raven, whose seeker missile reveals its target. Available at 0:30, back 4:00 after."
+        },
+        "image": ""
+      },
+      {
+        "id": "pmutmu1e902s",
+        "type": "camp",
+        "x": 68,
+        "y": 40,
+        "name": {
+          "fr": "Camp de bruisers — goliaths, haut droite",
+          "en": "Bruiser Camp — Goliaths, top right"
+        },
+        "description": {
+          "fr": "Deux camps sur la voie du haut : trois goliaths et un corbeau, dont le missile traqueur révèle sa cible. Disponibles à 0:30, ils réapparaissent 4:00 après.",
+          "en": "Two camps on the top lane: three Goliaths and a Raven, whose seeker missile reveals its target. Available at 0:30, back 4:00 after."
+        },
+        "image": ""
+      },
+      {
+        "id": "pmutmu1e902t",
+        "type": "camp",
+        "x": 82,
+        "y": 40,
+        "name": {
+          "fr": "Camp de boss — haut",
+          "en": "Boss Camp — top"
+        },
+        "description": {
+          "fr": "Sur la voie du haut. Un boss gluant qui crache une flaque de vase à esquiver toutes les 14 secondes, puis fait éclore des larves quelques secondes après. Immunisé contre la corruption. Disponible à 5:00, il réapparaît 5:00 après avoir été pris.",
+          "en": "On the top lane. A Slime Boss that spits a slime pool to dodge every 14 seconds, then hatches spawn pods a few seconds later. Immune to Bribe. Available at 5:00, back 5:00 after being taken."
+        },
+        "image": ""
+      },
+      {
+        "id": "pmutmu1e902u",
+        "type": "fontaine",
+        "x": 12,
+        "y": 54,
+        "name": {
+          "fr": "Fontaine de soins — côté gauche",
+          "en": "Healing fountain — left side"
+        },
+        "description": {
+          "fr": "Deux minutes de recharge après utilisation. Savoir si celle d'en face est disponible change la valeur d'un plongeon autant que les points de vie restants.",
+          "en": "Two-minute cooldown after use. Knowing whether the enemy one is up changes the worth of a dive as much as their remaining health does."
+        },
+        "image": ""
+      },
+      {
+        "id": "pmutmu1e902v",
+        "type": "fontaine",
+        "x": 26,
+        "y": 54,
+        "name": {
+          "fr": "Fontaine de soins — côté droit",
+          "en": "Healing fountain — right side"
+        },
+        "description": {
+          "fr": "Deux minutes de recharge après utilisation. Savoir si celle d'en face est disponible change la valeur d'un plongeon autant que les points de vie restants.",
+          "en": "Two-minute cooldown after use. Knowing whether the enemy one is up changes the worth of a dive as much as their remaining health does."
         },
         "image": ""
       }
