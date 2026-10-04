@@ -245,6 +245,26 @@ const BATTLEGROUNDS = [
       {
         "fr": "La mine est pleine de murs infranchissables. Les compétences de contrôle et de déplacement y valent bien plus qu'en surface, dans un sens comme dans l'autre.",
         "en": "The mine is full of impassable terrain. Crowd control and mobility Abilities are worth far more down there than above ground — for both teams."
+      },
+      {
+        "fr": "Utilise la fontaine avant 1:00 : elle sera de nouveau prête quand la mine ouvrira à 3:00.",
+        "en": "Use the fountain before 1:00: it will be ready again when the mine opens at 3:00."
+      },
+      {
+        "fr": "Les os lumineux près du milieu de chaque voie annoncent où sortiront les golems : le tien du côté des os les plus proches de ton idole.",
+        "en": "The glowing bones near the middle of each lane show where the Golems will come out: yours on the side of the bones closest to your Core."
+      },
+      {
+        "fr": "Place la caméra au centre de la partie haute du champ de bataille : tu aperçois le cœur de la mine et vois si l'adversaire attaque le golem.",
+        "en": "Move the camera to the centre of the upper battlefield: you can peek into the heart of the mine and see whether the enemy is hitting the Golem."
+      },
+      {
+        "fr": "Le golem souterrain lâche aussi un globe de régénération à 70 % et à 30 % de vie.",
+        "en": "The underground Golem also drops a Regeneration Globe at 70% and 30% Health."
+      },
+      {
+        "fr": "Juste avant qu'un golem sorte en voie, contrôle les héros adverses près de son point d'apparition : ils encaisseront ses premiers coups.",
+        "en": "Right before a Golem comes out in lane, crowd control enemy Heroes near its spawn point: they will eat its first hits."
       }
     ],
     "guideVideos": [
@@ -773,6 +793,22 @@ const BATTLEGROUNDS = [
       {
         "fr": "Les gardes des camps ne se régénèrent pas : inutile de les tuer si tu peux simplement lancer la capture.",
         "en": "Camp Guards do not regenerate: no need to kill them if you can simply start the capture."
+      },
+      {
+        "fr": "Les camps d'emprisonnement alternent entre le haut et le bas : tu sais toujours où se jouera le prochain objectif.",
+        "en": "The Prison Camps alternate between top and bottom: you always know where the next objective will be."
+      },
+      {
+        "fr": "Juste avant de remporter l'objectif, prépare les vagues pour que ta cavalerie atteigne les structures adverses en même temps dans les trois voies.",
+        "en": "Right before winning the objective, set up the waves so your Cavalry reaches enemy structures at the same time in all three lanes."
+      },
+      {
+        "fr": "Les gardes d'un camp isolé — en haut à droite, en bas à gauche — se promènent autour de lui sans te toucher. Les héros à invocations ou à clones peuvent même lancer la capture seuls.",
+        "en": "The Guards of an isolated camp — top right, bottom left — can be kited around it without taking damage. Heroes with summons or clones can even start the capture alone."
+      },
+      {
+        "fr": "Une tentative ratée sur le général ne sert à rien : hors combat, il récupère toute sa vie. Mieux vaut abattre un bastion.",
+        "en": "A failed attempt on the General is wasted: out of combat, it regains all its Health. Better to take down a Keep."
       }
     ],
     "hotspots": [
@@ -1240,6 +1276,26 @@ const BATTLEGROUNDS = [
       {
         "fr": "Les traîne-racines qui gardent la graine se tuent vite à plusieurs. Seul, l'incantation de six secondes sera interrompue.",
         "en": "The Shamblers guarding the Seed die fast to several Heroes. Alone, the six-second channel will be interrupted."
+      },
+      {
+        "fr": "La première graine apparaît toujours en bas à gauche ou en bas à droite. Une graine n'est jamais sur la même rangée que la précédente, et trois graines de suite occupent trois colonnes différentes : dès la deuxième, toute la suite est prévisible.",
+        "en": "The first Seed always appears bottom left or bottom right. A Seed is never in the same row as the previous one, and three Seeds in a row take three different columns: from the second one on, the whole sequence is predictable."
+      },
+      {
+        "fr": "Pas prêt à contester ? Ne tue pas les traîne-racines : ils ralentiront l'adversaire pendant que ton équipe se regroupe.",
+        "en": "Not ready to contest? Leave the Shamblers alive: they will slow the enemy down while your team regroups."
+      },
+      {
+        "fr": "Pour aller vite, un héros attire les traîne-racines pendant qu'un autre lance l'incantation sur la graine.",
+        "en": "To be quick, one Hero pulls the Shamblers while another channels the Seed."
+      },
+      {
+        "fr": "Utilise la fontaine avant 0:30 : elle sera de nouveau prête pour la première graine à 2:30.",
+        "en": "Use the fountain before 0:30: it will be ready again for the first Seed at 2:30."
+      },
+      {
+        "fr": "L'idole lance une graine sous un héros proche toutes les 5 secondes : ceux qui restent dedans sont métamorphosés 3 secondes.",
+        "en": "The Core lobs a seed under a nearby Hero every 5 seconds: those caught in it are polymorphed for 3 seconds."
       }
     ],
     "hotspots": [
@@ -1645,8 +1701,28 @@ const BATTLEGROUNDS = [
         "en": "At a high level it is common to ignore the objective area entirely and push elsewhere while the enemy escorts."
       },
       {
-        "fr": "Le terrain entre les deux voies est infranchissable tant que le convoi n'est pas actif. Les rotations coûtent cher : anticipe-les.",
-        "en": "The ground between the two lanes is impassable while the payload is inactive. Rotations are expensive: plan them early."
+        "fr": "Tant que le convoi n'est pas apparu, son emplacement au centre est un trou : on ne passe pas par le milieu. L'équipe qui tient les deux camps de reconnaissance voit alors chaque passage d'un côté à l'autre.",
+        "en": "Until the Payload spawns, its spot in the centre is a hole: you cannot cut through the middle. The team holding both Recon Camps then sees every crossing from one side to the other."
+      },
+      {
+        "fr": "Le samouraï vise le héros le plus proche : attire sa taillade vers un mur pour épargner tes alliés.",
+        "en": "The Samurai targets the closest Hero: bait its slash towards a wall to spare your allies."
+      },
+      {
+        "fr": "Si les deux camps sont disponibles, commence par celui du samouraï : il réapparaîtra plus tôt.",
+        "en": "If both camps are up, start with the Samurai: it will respawn sooner."
+      },
+      {
+        "fr": "Chaque capture d'un camp de reconnaissance rapporte de l'expérience : laisse l'adversaire le nettoyer et vole-le à la dernière seconde.",
+        "en": "Every Recon Camp capture gives experience: let the enemy clear it and steal it at the last second."
+      },
+      {
+        "fr": "Même près de livrer le convoi, recule si l'adversaire a l'avantage — sauf si sa propre livraison lui offrirait la victoire.",
+        "en": "Even close to delivering the Payload, back off if the enemy has the advantage — unless their own delivery would win them the game."
+      },
+      {
+        "fr": "Les tirs du convoi visent la voie la moins entamée. Forts et bastions ne sont visés qu'une fois leurs tours et leurs portes tombées.",
+        "en": "The Payload's shots target the least damaged lane. Forts and Keeps are only targeted once their towers and gates are down."
       }
     ],
     "hotspots": [
@@ -1892,13 +1968,13 @@ const BATTLEGROUNDS = [
       "en": "Control points that unlock a giant mech, the Triglav Protector, crewed by two players."
     },
     "objectives": {
-      "fr": "Un point de contrôle s'active à 3:00, puis toutes les trois minutes après la mort du méca, en alternant entre trois emplacements : milieu, haut, puis bas. La capture progresse de 2 % par seconde, soit une cinquantaine de secondes, et se met en pause si le point est abandonné plus de douze secondes. L'équipe qui la termine reçoit le protecteur Triglav, un véhicule à deux places : un pilote, un artilleur. Occupées toutes les deux, ses dégâts bonus et la vitesse de recharge de ses compétences montent de 40 %. Le méca dure 50 secondes, plus 3 par minute de jeu écoulée.",
-      "en": "A control point activates at 3:00, then every three minutes after the mech dies, cycling through three locations: middle, top, then bottom. Capture builds at 2% per second, around fifty seconds in all, and pauses if the point is left for more than twelve seconds. The team that finishes it gets the Triglav Protector, a two-seat vehicle: one pilot, one gunner. With both seats filled, its bonus damage and cooldown speed rise by 40%. The mech lasts 50 seconds, plus 3 per minute of game time elapsed."
+      "fr": "Un point de contrôle s'active à 3:00, puis toutes les trois minutes après la mort du méca, en alternant entre trois emplacements : milieu, haut, puis bas. La capture progresse de 2 % par seconde sur 45 secondes et se met en pause si le point est abandonné plus de douze secondes. L'équipe qui la termine reçoit le protecteur Triglav, un véhicule à deux places : un pilote, un artilleur. Occupées toutes les deux, ses dégâts bonus et la vitesse de recharge de ses compétences montent de 40 %. Le méca dure 50 secondes, plus 3 par minute de jeu écoulée.",
+      "en": "A control point activates at 3:00, then every three minutes after the mech dies, cycling through three locations: middle, top, then bottom. Capture builds at 2% per second over 45 seconds and pauses if the point is left for more than twelve seconds. The team that finishes it gets the Triglav Protector, a two-seat vehicle: one pilot, one gunner. With both seats filled, its bonus damage and cooldown speed rise by 40%. The mech lasts 50 seconds, plus 3 per minute of game time elapsed."
     },
     "tips": [
       {
-        "fr": "Quitte le point avant 74 % de progression si tu dois lâcher : au-delà, tu offres le méca à l'adversaire.",
-        "en": "Leave the point before 74% progress if you have to give it up: past that, you hand the mech to the enemy."
+        "fr": "Si personne ne conteste, sortir du point à 74 % suffit : il gagne encore 26 % tout seul et le méca est à toi. Pour attendre tes alliés avant de le lancer, sors avant 74 %.",
+        "en": "If nobody contests, stepping off the point at 74% is enough: it gains another 26% on its own and the mech is yours. To wait for your allies before triggering it, step off before 74%."
       },
       {
         "fr": "Le poing-fusée du pilote neutralise une structure pendant 4 secondes et tue les serviteurs d'un coup. La charge inflige 500 % de dégâts supplémentaires aux bâtiments.",
@@ -1919,6 +1995,26 @@ const BATTLEGROUNDS = [
       {
         "fr": "À haut niveau, beaucoup d'équipes ignorent l'objectif et vont chercher la valeur ailleurs, en défendant contre le véhicule par le placement.",
         "en": "At a high level many teams ignore the objective and look for value elsewhere, defending against the vehicle by positioning."
+      },
+      {
+        "fr": "Mets un héros fragile aux commandes : s'il restait dehors pendant que les héros résistants sont dans le méca, ta ligne arrière serait exposée.",
+        "en": "Put a squishy Hero in the pilot seat: left outside while the durable Heroes sit in the mech, your backline would be exposed."
+      },
+      {
+        "fr": "La place d'artilleur peut rester libre : un allié en danger pourra s'y réfugier. Les dégâts n'interrompent pas l'incantation pour monter.",
+        "en": "The gunner seat can stay empty: an ally in danger can take shelter in it. Damage does not interrupt the channel to climb in."
+      },
+      {
+        "fr": "Confie l'émetteur biotique à un héros qui n'est pas soigneur : il pourra soigner ton soigneur s'il est contrôlé, ou l'équipe s'il est mort.",
+        "en": "Hand the Biotic Emitter to a non-Healer: they can heal your Healer if they are crowd controlled, or the team if they are dead."
+      },
+      {
+        "fr": "Si tout va bien, garde tourelles et émetteurs pour la fin de partie. Si tu vas mourir, pose-les avant qu'on te les vole.",
+        "en": "If things go well, store Turrets and Emitters for the late game. If you are about to die, drop them before they get stolen."
+      },
+      {
+        "fr": "Un véhicule a deux ressources, sa vie et sa durée. S'il expire avec beaucoup de vie, tu as joué trop prudemment ; s'il meurt tôt, trop agressivement.",
+        "en": "A vehicle has two resources, its Health and its duration. If it times out with lots of Health, you played too safe; if it dies early, too aggressively."
       }
     ],
     "hotspots": [
@@ -2239,8 +2335,8 @@ const BATTLEGROUNDS = [
       "en": "The Cores cannot be touched: you win by activating Altars, and every Bell Tower you hold adds damage."
     },
     "objectives": {
-      "fr": "Les idoles ont 40 points de vie et ne peuvent pas être attaquées directement. On les entame par les autels, qui s'élèvent à partir de 3:00 : six secondes d'incantation pour en capturer un, puis 1 point de dégât à l'idole adverse quatre secondes plus tard — plus 1 par clocher que ton équipe contrôle. Les clochers sont les forts de la carte, un par voie et par équipe : les détruire les fait passer chez toi. Tenir les six d'un coup déclenche un bombardement automatique.",
-      "en": "The Cores have 40 Health and cannot be attacked directly. You chip at them through the Altars, which rise from 3:00 onward: a six-second channel to capture one, then 1 damage to the enemy Core four seconds later — plus 1 for each Bell Tower your team controls. The Bell Towers are the map's Forts, one per lane for each team: destroying them flips them to you. Holding all six at once triggers an automatic bombardment."
+      "fr": "Les idoles ont 40 points de vie et ne peuvent pas être attaquées directement. On les entame par les autels, qui s'élèvent à partir de 3:00 : six secondes d'incantation pour en capturer un, puis 1 point de dégât à l'idole adverse quatre secondes plus tard — plus 1 par clocher que ton équipe contrôle. Les clochers sont les forts de la carte — un par voie et par équipe, devenus bastions vers 12:00 — : les détruire les fait passer chez toi. Tenir les six d'un coup déclenche un bombardement automatique.",
+      "en": "The Cores have 40 Health and cannot be attacked directly. You chip at them through the Altars, which rise from 3:00 onward: a six-second channel to capture one, then 1 damage to the enemy Core four seconds later — plus 1 for each Bell Tower your team controls. The Bell Towers are the map's Forts — one per lane for each team, upgraded to Keeps around 12:00 —: destroying them flips them to you. Holding all six at once triggers an automatic bombardment."
     },
     "tips": [
       {
@@ -2270,6 +2366,26 @@ const BATTLEGROUNDS = [
       {
         "fr": "Le portail qui relie chaque idole au centre s'ouvre vers 12:00, plus tard si des autels sont actifs. Deux secondes d'incantation pour le traverser.",
         "en": "The Waygate linking each Core to the centre opens around 12:00, later if Altars are active. A two-second channel to go through."
+      },
+      {
+        "fr": "Les deux autels du haut apparaissent toujours ensemble. La 1re et la 5e phase comptent trois autels, et les six premières configurations ne se répètent pas : en les notant, tu connais d'avance la 5e, la 6e et la 10e.",
+        "en": "The two top Altars always appear together. The 1st and 5th phases have three Altars, and the first six layouts never repeat: by keeping track, you know the 5th, 6th and 10th in advance."
+      },
+      {
+        "fr": "Ne prends le cavalier sans tête que si l'idole adverse a 4 points de vie ou moins, ou si l'adversaire pourrait s'en servir pour gagner. Le reste du temps, frapper les structures rapporte plus.",
+        "en": "Only take the Headless Horseman if the enemy Core has 4 Health or less, or if the enemy could use it to win. The rest of the time, hitting structures pays more."
+      },
+      {
+        "fr": "Si tu reprends le clocher du bas, défends-le : l'adversaire ne doit pas le récupérer gratuitement avant la phase suivante.",
+        "en": "If you take the bottom Bell Tower, defend it: the enemy must not get it back for free before the next phase."
+      },
+      {
+        "fr": "Une projection qui pousse un adversaire dans ta zone mortelle suffit souvent à le tuer. Ses dégâts sont physiques : l'armure physique et l'esquive les réduisent, pas l'armure des sorts.",
+        "en": "A knockback that pushes an enemy into your Kill Zone is often enough to kill them. Its damage is physical: Physical Armor and Evade reduce it, Spell Armor does not."
+      },
+      {
+        "fr": "Utilise la fontaine avant 1:00 : elle sera de nouveau prête pour les premiers autels à 3:00.",
+        "en": "Use the fountain before 1:00: it will be ready again for the first Altars at 3:00."
       }
     ],
     "hotspots": [
@@ -2648,8 +2764,8 @@ const BATTLEGROUNDS = [
         "en": "Three possible Punishers: the Arcane one with rotating beams, the Frost one with bombs that root and disable structures, and the Mortar one with firebombs."
       },
       {
-        "fr": "Un dominateur bondit sur les héros proches, inflige des dégâts et étourdit. Il ne saute plus par-dessus les portes : il les abat en priorité, sans se laisser distraire.",
-        "en": "A Punisher leaps onto nearby Heroes, dealing damage and stunning. It no longer jumps over gates: it smashes them first and does not take the bait."
+        "fr": "Un dominateur saute sur les portes et sur les héros, inflige des dégâts et étourdit. Il vise les portes en priorité — sans plus bondir par-dessus — : ne reste pas collé à une porte en défense.",
+        "en": "A Punisher jumps on gates and Heroes, dealing damage and stunning. It goes for gates first — without leaping over them anymore —: do not stand right by a gate on defence."
       },
       {
         "fr": "Prends le camp de siège allié du milieu à 0:30, puis le camp neutre du bas si tu as l'avantage.",
@@ -2666,6 +2782,26 @@ const BATTLEGROUNDS = [
       {
         "fr": "L'idole tire deux salves d'orbes glacées toutes les 12 secondes, à 5 % de vie maximale et 1,5 seconde d'immobilisation.",
         "en": "The Core fires two volleys of Frozen Orbs every 12 seconds, for 5% maximum Health and a 1.5-second root."
+      },
+      {
+        "fr": "La couleur du sanctuaire, ou son icône sur la minicarte, annonce le prochain dominateur : orange pour le mortier, bleu pour le glacial, violet pour l'arcanique.",
+        "en": "The Shrine's colour, or its minimap icon, tells you the next Punisher: orange for Mortar, blue for Frost, purple for Arcane."
+      },
+      {
+        "fr": "Avec l'avantage, s'arrêter à 39 gardiens retarde le dominateur : le temps que tes alliés réapparaissent ou que le palier de talents suivant arrive.",
+        "en": "With the advantage, stopping at 39 Guardians delays the Punisher: time for your allies to respawn or for the next talent tier to arrive."
+      },
+      {
+        "fr": "Les gardiens te suivent : regroupe-les en te déplaçant, puis achève-les avec des zones. L'adversaire essaiera de te voler les derniers coups — fais de même.",
+        "en": "Guardians follow you: group them up by moving around, then finish them with area damage. The enemy will try to steal last hits — do the same."
+      },
+      {
+        "fr": "Objectif perdu : recule et tue le dominateur vite, sans mourir. Ne t'acharne pas à sauver une structure presque détruite.",
+        "en": "Objective lost: fall back and kill the Punisher quickly, without dying. Do not fight to save a structure that is nearly gone."
+      },
+      {
+        "fr": "Utilise la fontaine avant 1:00 : elle sera de nouveau prête pour le premier sanctuaire à 3:00.",
+        "en": "Use the fountain before 1:00: it will be ready again for the first Shrine at 3:00."
       }
     ],
     "hotspots": [
@@ -3044,6 +3180,22 @@ const BATTLEGROUNDS = [
       {
         "fr": "L'idole tire deux salves d'orbes glacées toutes les 12 secondes : elles explosent pour 5 % de vie maximale et immobilisent 1,5 seconde. Plonger sur une idole n'est jamais gratuit.",
         "en": "The Core fires two volleys of Frozen Orbs every 12 seconds: they explode for 5% maximum Health and root for 1.5 seconds. Diving a Core is never free."
+      },
+      {
+        "fr": "Les icônes de la minicarte, visibles bien avant la phase, désignent l'Immortel à attaquer (haches croisées) et celui à défendre (bouclier).",
+        "en": "The minimap icons, visible well before the phase, mark the Immortal to attack (crossed axes) and the one to defend (shield)."
+      },
+      {
+        "fr": "Les buissons aident à choisir : près de buissons de leur couleur, les Immortels se défendent mieux ; près de buissons de la couleur opposée, la course est plus facile.",
+        "en": "The bushes help you decide: next to bushes of their own colour, Immortals are easier to defend; next to bushes of the opposite colour, racing is easier."
+      },
+      {
+        "fr": "Au premier affrontement, les places sont fixes : Ilarian au sud et Beleth au nord, puis Ilarian à l'est et Beleth à l'ouest après l'échange.",
+        "en": "In the first fight, positions are fixed: Ilarian south and Beleth north, then Ilarian east and Beleth west after the swap."
+      },
+      {
+        "fr": "Utilise la fontaine avant 1:00 : elle sera de nouveau prête pour le premier affrontement à 3:00.",
+        "en": "Use the fountain before 1:00: it will be ready again for the first fight at 3:00."
       }
     ],
     "hotspots": [
@@ -3331,6 +3483,26 @@ const BATTLEGROUNDS = [
       {
         "fr": "Les camps disparaissent quand les tisserands sortent, sauf ceux déjà en combat, et reviennent à leur mort.",
         "en": "Camps vanish when the Webweavers come out, except those already fighting, and return when they die."
+      },
+      {
+        "fr": "L'objectif est toujours actif : utilise la fontaine dès qu'elle est prête.",
+        "en": "The objective is always active: use the fountain whenever it is up."
+      },
+      {
+        "fr": "Appuie sur Tab pour voir quel adversaire porte le plus de gemmes : empêche-le de payer, ou tue-le quand personne n'est là pour les ramasser.",
+        "en": "Press Tab to see which enemy carries the most Gems: stop them from paying, or kill them when nobody is around to pick them up."
+      },
+      {
+        "fr": "Quand ton équipe paie, donne de la vision dans les buissons proches : une embuscade fait tout perdre.",
+        "en": "When your team pays, get vision in the nearby bushes: an ambush costs everything."
+      },
+      {
+        "fr": "Entre la voie du milieu et celle du haut, pas besoin de monture : elles sont toutes proches.",
+        "en": "Between the middle and top lanes, no need to mount up: they are very close."
+      },
+      {
+        "fr": "Juste avant l'apparition du golem de sable, reste du côté adverse pour y attirer son tourbillon : un adversaire qui vient le voler aura les tornades sur son chemin.",
+        "en": "Right before the Sand Golem spawns, stand on the enemy side to bait its Whirling Sands there: an enemy coming to steal it will have tornadoes in the way."
       }
     ],
     "hotspots": [
@@ -3652,6 +3824,26 @@ const BATTLEGROUNDS = [
       {
         "fr": "Après 10:00 avec l'avantage, prends le boss et pousse avec lui pendant que l'adversaire garde les temples.",
         "en": "After 10:00 with the advantage, take the Boss and push with it while the enemy watches the Temples."
+      },
+      {
+        "fr": "Quitte un temple à deux tirs de la fin : il tire encore ces deux-là, puis enchaîne seul ses 5 tirs bonus.",
+        "en": "Leave a Temple with two shots left: it still fires those two, then its 5 bonus shots on its own."
+      },
+      {
+        "fr": "Les phases suivent un ordre : haut et milieu d'abord, puis le bas seul, puis le bas avec le haut ou le milieu.",
+        "en": "Phases follow an order: top and middle first, then bottom alone, then bottom with top or middle."
+      },
+      {
+        "fr": "La deuxième phase n'a qu'un temple : c'est celle qu'il faut gagner. Abîmer les structures du haut avant la première aide à y abattre le fort avec le temple du haut.",
+        "en": "The second phase has only one Temple: that is the one to win. Damaging top structures before the first phase helps take the top Fort with the top Temple."
+      },
+      {
+        "fr": "Tue d'abord les défenseurs de ton côté du temple : tu prendras moins de dégâts quand l'adversaire arrivera.",
+        "en": "Kill the Defenders on your side of the Temple first: you will take less damage when the enemy shows up."
+      },
+      {
+        "fr": "Après 10:00, garde la vision sur le camp de boss pour que l'adversaire ne le prenne pas sans réponse.",
+        "en": "After 10:00, keep vision on the Boss Camp so the enemy cannot take it unanswered."
       }
     ],
     "hotspots": [
@@ -4008,12 +4200,36 @@ const BATTLEGROUNDS = [
         "en": "Send the Heroes who hit fast and often to open chests: it is tick rate that counts, not big hits."
       },
       {
-        "fr": "Les coffres arrivent par vagues croissantes : un seul à la première phase, sur la voie du haut, deux aux deux phases suivantes, puis trois.",
-        "en": "Chests come in growing waves: a single one in the first phase, on the top lane, two in the next two phases, then three."
+        "fr": "Les coffres arrivent par vagues croissantes : un seul à la première phase, sur la voie du haut, puis deux pendant quelques phases, puis trois.",
+        "en": "Chests come in growing waves: a single one in the first phase, on the top lane, then two for a few phases, then three."
       },
       {
         "fr": "Les deux tours de guet entre le milieu et le bas couvrent la zone de paiement. Les tenir, c'est voir venir le porteur adverse.",
         "en": "The two Watch Towers between mid and bottom cover the turn-in area. Holding them means seeing the enemy carrier coming."
+      },
+      {
+        "fr": "Prends les camps à doublons dès qu'ils réapparaissent : ils se font seul et rapportent 2 doublons chacun.",
+        "en": "Take the Doubloon Camps whenever they respawn: anyone can solo them and they are worth 2 Doubloons each."
+      },
+      {
+        "fr": "Confie les doublons aux héros mobiles : ils échappent plus facilement aux combats et évitent d'en semer la moitié en mourant.",
+        "en": "Give the Doubloons to mobile Heroes: they escape fights more easily and avoid dropping half of them on death."
+      },
+      {
+        "fr": "Les doublons tombés au sol ne disparaissent pas : l'adversaire peut les ramasser. Appuie sur Tab pour voir qui en porte le plus en face.",
+        "en": "Doubloons dropped on the ground do not disappear: the enemy can pick them up. Press Tab to see who carries the most on their side."
+      },
+      {
+        "fr": "Profite d'un bombardement pour prendre des camps : la pression sur les voies latérales aidera à payer le suivant.",
+        "en": "Use a bombardment to take camps: pressure on the side lanes will help you pay for the next one."
+      },
+      {
+        "fr": "Le bombardement vise d'abord la voie du haut, puis celle du bas, puis le milieu.",
+        "en": "The bombardment targets the top lane first, then the bottom lane, then the middle."
+      },
+      {
+        "fr": "L'objectif est toujours actif : utilise la fontaine dès qu'elle est prête.",
+        "en": "The objective is always active: use the fountain whenever it is up."
       }
     ],
     "hotspots": [
@@ -4481,6 +4697,22 @@ const BATTLEGROUNDS = [
       {
         "fr": "La fontaine s'utilise dès qu'elle est prête plutôt que d'être gardée pour l'objectif : celui-ci revient trop souvent pour qu'on l'attende.",
         "en": "Use the fountain as soon as it is up rather than saving it for the objective: that comes back too often to wait for."
+      },
+      {
+        "fr": "Enchaîner ton camp de siège, le camp de bruisers neutre du bas puis le camp de siège adverse vaut un camp de boss.",
+        "en": "Chaining your Siege Camp, the neutral bottom Bruiser Camp and then the enemy Siege Camp is worth a Boss Camp."
+      },
+      {
+        "fr": "Si ton héros peut sauter par-dessus le relief, sers-t'en pour entrer dans un sanctuaire ou en sortir.",
+        "en": "If your Hero can jump over terrain, use it to get into or out of a Shrine."
+      },
+      {
+        "fr": "Contre le chevalier dragon, les dégâts en pourcentage de vie font merveille. Si sa charge sauvage te vise, un effet imblocable l'annule.",
+        "en": "Against the Dragon Knight, percent-Health damage works wonders. If its Savage Charge targets you, an Unstoppable effect cancels it."
+      },
+      {
+        "fr": "Les camps disparaissent dès que le chevalier dragon est activé, sauf ceux déjà en combat, et reviennent à sa mort.",
+        "en": "Camps vanish as soon as the Dragon Knight is activated, except those already in combat, and come back when it dies."
       }
     ],
     "hotspots": [
@@ -4833,16 +5065,36 @@ const BATTLEGROUNDS = [
         "en": "Contest Tributes four-strong and leave the fifth to defend against enemy mercenaries."
       },
       {
-        "fr": "Prends les camps dès 0:30 : la première phase n'arrive qu'à 3:00, tu as le temps d'en enchaîner deux.",
-        "en": "Take the camps from 0:30: the first phase only lands at 3:00, so there is time for two of them."
+        "fr": "Nettoie un camp dès 0:30, en fonction du prochain tribut. S'il est du côté de ton camp de siège, prends le camp de bruisers et capture-le à 1:00 : il part devant tes serviteurs. Sinon, prends le camp de siège et capture-le à 1:05 : il part derrière eux.",
+        "en": "Clear a camp from 0:30, depending on the next Tribute. If it is on the side of your Siege Camp, take the Bruiser Camp and capture it at 1:00: it heads out ahead of your minions. Otherwise, take the Siege Camp and capture it at 1:05: it heads out behind them."
       },
       {
-        "fr": "Les deux tours de guet donnent la vision près des camps de siège, mais seulement tant que le fort de la voie latérale voisine tient encore.",
-        "en": "The two Watch Towers give vision near the Siege Camps, but only while the Fort in the adjacent side lane still stands."
+        "fr": "Les tributs suivent des règles : le premier apparaît toujours dans la colonne du milieu, en haut ou en bas ; jamais deux fois de suite au même endroit ; jamais trois fois de suite sur la même rangée. De quoi anticiper le suivant.",
+        "en": "Tributes follow rules: the first always appears in the middle column, top or bottom; never twice in a row in the same spot; never three times in a row in the same row. Enough to anticipate the next one."
       },
       {
-        "fr": "Après 10:00 avec l'avantage, prends les camps de boss et pousse avec eux : il y en a deux sur cette carte.",
-        "en": "After 10:00 with the advantage, take the Boss Camps and push with them: there are two on this map."
+        "fr": "Utilise la fontaine avant 1:00 : avec deux minutes de recharge, elle sera de nouveau prête pour le premier tribut à 3:00.",
+        "en": "Use the fountain before 1:00: with its two-minute cooldown, it will be ready again for the first Tribute at 3:00."
+      },
+      {
+        "fr": "À deux tributs, si tu viens d'éliminer l'équipe adverse sur le troisième, ne le ramasse pas tout de suite : prends d'abord un camp de boss, puis le tribut. La malédiction tombera avec le golem en voie.",
+        "en": "On two Tributes, if you have just wiped the enemy team at the third, do not collect it straight away: take a Boss Camp first, then the Tribute. The Curse lands with the Golem in lane."
+      },
+      {
+        "fr": "Les deux tours de guet, près des camps de siège, donnent la vision sur les chemins qui mènent aux tributs. On les capture en restant dans la zone ; elles redeviennent neutres après 45 secondes sans personne.",
+        "en": "The two Watch Towers, near the Siege Camps, give vision over the paths leading to the Tributes. Capture them by standing in the area; they turn neutral again after 45 seconds unoccupied."
+      },
+      {
+        "fr": "Après 10:00 avec l'avantage, prends les camps de boss — idéalement dans les 15 dernières secondes d'une malédiction alliée — et pousse avec le dernier : il y en a deux sur cette carte. Si l'adversaire en prend un, commence l'autre pour lui refuser le doublé.",
+        "en": "After 10:00 with the advantage, take the Boss Camps — ideally in the last 15 seconds of an allied Curse — and push with the last one: there are two on this map. If the enemy takes one, start the other to deny them the pair."
+      },
+      {
+        "fr": "Les camps restent actifs pendant les tributs comme pendant la malédiction : il y a toujours un mercenaire à prendre ou à défendre.",
+        "en": "Camps stay active during Tributes and during the Curse alike: there is always a mercenary to take or to defend against."
+      },
+      {
+        "fr": "L'idole maudit un héros proche toutes les 3 secondes : 5 % de sa vie maximale et 75 points d'armure en moins pendant 4 secondes. Plonger dessus coûte cher.",
+        "en": "The Core curses a nearby Hero every 3 seconds: 5% of their maximum Health and 75 Armor lost for 4 seconds. Diving it is costly."
       }
     ],
     "hotspots": [
@@ -5036,8 +5288,8 @@ const BATTLEGROUNDS = [
           "en": "Watch Tower — top, left"
         },
         "description": {
-          "fr": "Deux tours, près des camps de siège. Elles ne donnent la vision que tant que le fort de la voie latérale voisine tient encore.",
-          "en": "Two towers, near the Siege Camps. They only give vision while the Fort in the adjacent side lane still stands."
+          "fr": "Deux tours, près des camps de siège. Elles donnent la vision sur les chemins qui mènent aux tributs. On la capture en restant dans la zone ; elle redevient neutre après 45 secondes sans personne.",
+          "en": "Two towers, near the Siege Camps. They give vision over the paths leading to the Tributes. Capture one by standing in the area; it turns neutral again after 45 seconds unoccupied."
         },
         "image": ""
       },
@@ -5051,8 +5303,8 @@ const BATTLEGROUNDS = [
           "en": "Watch Tower — bottom, right"
         },
         "description": {
-          "fr": "Deux tours, près des camps de siège. Elles ne donnent la vision que tant que le fort de la voie latérale voisine tient encore.",
-          "en": "Two towers, near the Siege Camps. They only give vision while the Fort in the adjacent side lane still stands."
+          "fr": "Deux tours, près des camps de siège. Elles donnent la vision sur les chemins qui mènent aux tributs. On la capture en restant dans la zone ; elle redevient neutre après 45 secondes sans personne.",
+          "en": "Two towers, near the Siege Camps. They give vision over the paths leading to the Tributes. Capture one by standing in the area; it turns neutral again after 45 seconds unoccupied."
         },
         "image": ""
       },
@@ -5280,6 +5532,22 @@ const BATTLEGROUNDS = [
       {
         "fr": "Les zergs s'en prennent aux héros, pas seulement aux structures. S'engager pendant une vague est plus risqué qu'il n'y paraît.",
         "en": "The Zerg go for Heroes, not just structures. Engaging during a wave is riskier than it looks."
+      },
+      {
+        "fr": "La couleur des cages au milieu des voies annonce où partira chaque vague : la tienne côté cage bleue, celle d'en face côté cage rouge.",
+        "en": "The colour of the cages in the middle of the lanes shows where each wave will go: yours on the blue-cage side, theirs on the red-cage side."
+      },
+      {
+        "fr": "Objectif gagné de loin (100 % contre 25 %) : pousse avec ta vague. Gagné de peu (100 % contre 75 %) : défends contre celle d'en face, sauf si la tienne peut finir l'idole.",
+        "en": "Objective won by a lot (100% against 25%): push with your wave. Won narrowly (100% against 75%): defend against theirs, unless yours can finish the Core."
+      },
+      {
+        "fr": "Les zergs résistent à 50 % aux contrôles. Les gardiens et les ultralisks larguent des capsules avec 3 zerglings et 1 hydralisk : envoie tes meilleurs nettoyeurs de vague contre la vague adverse.",
+        "en": "The Zerg have 50% crowd-control resistance. Guardians and Ultralisks drop pods with 3 Zerglings and 1 Hydralisk: send your best waveclear against the enemy wave."
+      },
+      {
+        "fr": "L'objectif est long à gagner : utilise la fontaine dès qu'elle est prête.",
+        "en": "The objective takes a long time to win: use the fountain whenever it is up."
       }
     ],
     "hotspots": [
@@ -5645,8 +5913,8 @@ const BATTLEGROUNDS = [
       "en": "Warheads scattered across the map: picking one up arms a nuke, dying with it loses it."
     },
     "objectives": {
-      "fr": "Les ogives apparaissent à partir de 3:00, deux à quatre à la fois, réparties sur les trois voies ; elles reviennent 2:55 après que toutes ont été ramassées. Cinq secondes d'incantation pour en prendre une, puis trois secondes d'incantation et quatre de délai avant l'explosion. L'impact inflige 1 750 points, plus 70 par minute pendant 25 minutes, et enflamme les structures douze secondes. Forts et bastions encaissent 125 % de dégâts en plus, l'idole 100 %.",
-      "en": "Warheads appear from 3:00 onward, two to four at a time, spread across the three lanes; they come back 2:55 after all of them are picked up. A five-second channel to take one, then a three-second channel and a four-second delay before it detonates. Impact deals 1,750 damage, plus 70 per minute for 25 minutes, and sets structures alight for twelve seconds. Forts and Keeps take 125% more damage, the Core 100%."
+      "fr": "Les ogives apparaissent à partir de 3:00, deux à quatre à la fois, réparties sur les trois voies ; elles reviennent 2:55 après que toutes ont été ramassées. Cinq secondes d'incantation pour en prendre une, puis trois secondes d'incantation et quatre de délai avant l'explosion. L'impact inflige 1 750 points, plus 70 par minute pendant 25 minutes, et enflamme les structures dix secondes. Forts, bastions et idoles encaissent 125 % de dégâts en plus.",
+      "en": "Warheads appear from 3:00 onward, two to four at a time, spread across the three lanes; they come back 2:55 after all of them are picked up. A five-second channel to take one, then a three-second channel and a four-second delay before it detonates. Impact deals 1,750 damage, plus 70 per minute for 25 minutes, and sets structures alight for ten seconds. Forts, Keeps and Cores take 125% more damage."
     },
     "tips": [
       {
@@ -5676,6 +5944,26 @@ const BATTLEGROUNDS = [
       {
         "fr": "Une ogive non lancée est perdue à la mort. Entre la garder et la tirer sur une tour, tirer vaut toujours mieux que mourir avec.",
         "en": "An unlaunched Warhead is lost on death. Between holding it and firing it at a Tower, firing always beats dying with it."
+      },
+      {
+        "fr": "Une ogive cesse de monter en puissance dès qu'elle est ramassée : celle prise à 3:05 frappe environ 700 points de moins que celle prise à 13:05.",
+        "en": "A Warhead stops scaling as soon as it is picked up: one taken at 3:05 hits for about 700 less than one taken at 13:05."
+      },
+      {
+        "fr": "Une incantation interrompue bloque l'ogive 5 secondes. En défense, reste près de tes structures : l'adversaire tentera de tirer depuis les côtés, derrière le relief qui entoure les forts.",
+        "en": "An interrupted channel puts the Warhead on a 5-second cooldown. On defence, stay near your structures: the enemy will try to fire from the sides, behind the terrain around the Forts."
+      },
+      {
+        "fr": "Les attaques de base des héros prolongent la brûlure des structures touchées : tire tes ogives accompagné, avec des serviteurs pour encaisser les tirs.",
+        "en": "Heroes' Basic Attacks extend the burn on structures hit: launch your Warheads with company, and minions to tank the shots."
+      },
+      {
+        "fr": "Pour finir la partie, vise l'idole un peu du côté de ton équipe : l'impact repousse aussi les adversaires loin de toi.",
+        "en": "To end the game, aim at the Core slightly towards your team: the impact also zones the enemy away from you."
+      },
+      {
+        "fr": "Utilise la fontaine avant 1:00 : elle sera de nouveau prête pour les premières ogives à 3:00.",
+        "en": "Use the fountain before 1:00: it will be ready again for the first Warheads at 3:00."
       }
     ],
     "hotspots": [
