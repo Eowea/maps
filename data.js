@@ -3824,7 +3824,7 @@ const BATTLEGROUNDS = [
           "fr": "Six secondes d'incantation pour s'en emparer. Trois tributs déclenchent la malédiction : 70 secondes pendant lesquelles les forts adverses ne tirent plus et leurs serviteurs tombent à un point de vie.",
           "en": "A six-second channel to claim it. Three Tributes trigger the Curse: 70 seconds during which enemy Forts stop firing and their Minions drop to one Health."
         },
-        "image": ""
+        "image": "assets/maps/val-maudit/captures/1.jpg"
       },
       {
         "id": "pmutmu1e901y",
@@ -3839,7 +3839,7 @@ const BATTLEGROUNDS = [
           "fr": "Six secondes d'incantation pour s'en emparer. Trois tributs déclenchent la malédiction : 70 secondes pendant lesquelles les forts adverses ne tirent plus et leurs serviteurs tombent à un point de vie.",
           "en": "A six-second channel to claim it. Three Tributes trigger the Curse: 70 seconds during which enemy Forts stop firing and their Minions drop to one Health."
         },
-        "image": ""
+        "image": "assets/maps/val-maudit/captures/1.jpg"
       },
       {
         "id": "pmutmu1e901z",
@@ -3854,7 +3854,7 @@ const BATTLEGROUNDS = [
           "fr": "Six secondes d'incantation pour s'en emparer. Trois tributs déclenchent la malédiction : 70 secondes pendant lesquelles les forts adverses ne tirent plus et leurs serviteurs tombent à un point de vie.",
           "en": "A six-second channel to claim it. Three Tributes trigger the Curse: 70 seconds during which enemy Forts stop firing and their Minions drop to one Health."
         },
-        "image": ""
+        "image": "assets/maps/val-maudit/captures/1.jpg"
       },
       {
         "id": "pmutmu1e9020",
@@ -3869,7 +3869,7 @@ const BATTLEGROUNDS = [
           "fr": "Six secondes d'incantation pour s'en emparer. Trois tributs déclenchent la malédiction : 70 secondes pendant lesquelles les forts adverses ne tirent plus et leurs serviteurs tombent à un point de vie.",
           "en": "A six-second channel to claim it. Three Tributes trigger the Curse: 70 seconds during which enemy Forts stop firing and their Minions drop to one Health."
         },
-        "image": ""
+        "image": "assets/maps/val-maudit/captures/1.jpg"
       },
       {
         "id": "pmutmu1e9021",
@@ -3884,7 +3884,7 @@ const BATTLEGROUNDS = [
           "fr": "Six secondes d'incantation pour s'en emparer. Trois tributs déclenchent la malédiction : 70 secondes pendant lesquelles les forts adverses ne tirent plus et leurs serviteurs tombent à un point de vie.",
           "en": "A six-second channel to claim it. Three Tributes trigger the Curse: 70 seconds during which enemy Forts stop firing and their Minions drop to one Health."
         },
-        "image": ""
+        "image": "assets/maps/val-maudit/captures/1.jpg"
       },
       {
         "id": "pmutmu1e9022",
@@ -3899,7 +3899,7 @@ const BATTLEGROUNDS = [
           "fr": "Six secondes d'incantation pour s'en emparer. Trois tributs déclenchent la malédiction : 70 secondes pendant lesquelles les forts adverses ne tirent plus et leurs serviteurs tombent à un point de vie.",
           "en": "A six-second channel to claim it. Three Tributes trigger the Curse: 70 seconds during which enemy Forts stop firing and their Minions drop to one Health."
         },
-        "image": ""
+        "image": "assets/maps/val-maudit/captures/1.jpg"
       },
       {
         "id": "pval48",
@@ -3974,7 +3974,7 @@ const BATTLEGROUNDS = [
           "fr": "Deux camps sur cette carte. Écrasement toutes les 10 secondes, racines toutes les 15. Immunisés contre la corruption. Disponibles à 5:00, ils réapparaissent 5:00 après.",
           "en": "Two camps on this map. Mega Smash every 10 seconds, Binding Roots every 15. Immune to Bribe. Available at 5:00, back 5:00 after."
         },
-        "image": ""
+        "image": "assets/maps/val-maudit/captures/4.jpg"
       },
       {
         "id": "pmutmu1e9025",
@@ -3989,7 +3989,7 @@ const BATTLEGROUNDS = [
           "fr": "Deux camps sur cette carte. Écrasement toutes les 10 secondes, racines toutes les 15. Immunisés contre la corruption. Disponibles à 5:00, ils réapparaissent 5:00 après.",
           "en": "Two camps on this map. Mega Smash every 10 seconds, Binding Roots every 15. Immune to Bribe. Available at 5:00, back 5:00 after."
         },
-        "image": ""
+        "image": "assets/maps/val-maudit/captures/4.jpg"
       },
       {
         "id": "pval51",

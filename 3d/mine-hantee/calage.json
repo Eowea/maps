@@ -1,0 +1,9 @@
+{
+  "commentaire": "Passage des coordonnées du jeu (cases) aux pixels de la minimap du site. Surface et souterrain sont affichés côte à côte sur l'image, chacun avec son propre décalage.",
+  "hauteurReference": 8.9,
+  "zones": [
+    { "nom": "surface",    "siY": [121, 999], "x0": 48,  "px0": 1057, "y0": 183, "py0": 1450, "pxParCase": 22.53 },
+    { "nom": "souterrain", "siY": [-999, 121], "x0": 144, "px0": 6775, "y0": 64,  "py0": 1371, "pxParCase": 22.4 }
+  ],
+  "limitePx": 5850
+}

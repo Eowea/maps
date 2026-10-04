@@ -70,7 +70,8 @@
   <select id="choixCarte"></select>
   <button id="vueJeu" class="actif" title="Caméra inclinée, comme en jeu">Vue jeu</button>
   <button id="vueDessus" title="Vue de dessus, comme la minimap">Vue de dessus</button>
-  <label title="Hauteur du relief déduit de l'image">Relief <input id="relief" type="range" min="0" max="10" step="0.5" value="4"></label>
+  <label title="Hauteur du relief">Relief <input id="relief" type="range" min="0" max="10" step="0.5" value="4"></label>
+  <button id="decors" class="actif" hidden title="Bâtiments, arbres et rochers extraits du jeu">Décors 3D</button>
 </div>
 <div class="legende" id="legende"></div>
 <div class="aide">Glisser : tourner · Molette : zoom · Clic droit : déplacer · Survol d'un point : détail</div>
@@ -85,6 +86,7 @@
 <script type="module">
 import * as THREE from 'three';
 import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
+import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
 
 /* Types de points : mêmes couleurs et symboles que le site (repris de maps.js). */
 const TYPES = {"objectif":{"libelle":"Objectif","icone":"<svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><g transform=\"translate(1 -0.5)\"><path d=\"M5 21V4\"/><path d=\"M5 4h12l-3 4 3 4H5\"/></g></svg>","couleur":"#f5c451"},"camp":{"libelle":"Camp de mercenaires","icone":"<svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><g transform=\"translate(0 0.5)\"><path d=\"M14.5 17.5 3 6V3h3l11.5 11.5\"/><path d=\"M13 19l6-6\"/><path d=\"M16 16l4 4\"/><path d=\"M14.5 6.5 18 3h3v3l-3.5 3.5\"/><path d=\"M5 14l4 4\"/><path d=\"M7 17l-3 3\"/></g></svg>","couleur":"#ff9f43"},"batiment":{"libelle":"Bâtiment","icone":"<svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M7 21V10L5 7V3h3v2h2V3h4v2h2V3h3v4l-2 3v11z\"/><path d=\"M10 21v-4a2 2 0 0 1 4 0v4\"/></svg>","couleur":"#b794f6"},"tour":{"libelle":"Tour de guet","icone":"<svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M2 12s3.8-6.5 10-6.5S22 12 22 12s-3.8 6.5-10 6.5S2 12 2 12z\"/><circle cx=\"12\" cy=\"12\" r=\"2.6\"/></svg>","couleur":"#6ec6ff"},"fontaine":{"libelle":"Fontaine de soins","icone":"<svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><g transform=\"translate(0 0.5)\"><path d=\"M12 3s6 6.5 6 11a6 6 0 0 1-12 0c0-4.5 6-11 6-11z\"/></g></svg>","couleur":"#5fd48a"},"autre":{"libelle":"Autre","icone":"<svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><g transform=\"translate(0 0.25)\"><path d=\"M12 21s-7-6.2-7-11.5a7 7 0 0 1 14 0C19 14.8 12 21 12 21z\"/><circle cx=\"12\" cy=\"9.5\" r=\"2.5\"/></g></svg>","couleur":"#6f9bff"}};
@@ -137,8 +139,33 @@ function lireHauteurs(img) {
   }
   for (let i = 0; i < hauteurs.length; i++) hauteurs[i] = (hauteurs[i] - min) / (max - min || 1);
 }
+/* Données extraites du jeu (dossier 3d/<carte>/) : vrai relief, décors et bâtiments.
+   Le calage relie les cases du jeu aux pixels de la minimap du site. */
+let jeu = null;   // { calage, terrain, dim, largImg, hautImg }
+const zonePourPx = (px) => jeu.calage.zones[px < jeu.calage.limitePx ? 0 : 1];
+const zonePourY = (y) => jeu.calage.zones.find(z => y >= z.siY[0] && y < z.siY[1]) || jeu.calage.zones[0];
+function caseVersPx(x, y) {
+  const z = zonePourY(y);
+  return { px: z.px0 + (x - z.x0) * z.pxParCase, py: z.py0 - (y - z.y0) * z.pxParCase, k: z.pxParCase };
+}
+function hauteurJeu(x, y) {
+  const [w, h] = jeu.dim;
+  const cx = Math.min(w - 1, Math.max(0, x)), cy = Math.min(h - 1, Math.max(0, y));
+  const x0 = Math.floor(cx), y0 = Math.floor(cy), x1 = Math.min(w - 1, x0 + 1), y1 = Math.min(h - 1, y0 + 1);
+  const fx = cx - x0, fy = cy - y0, T = (a, b) => jeu.terrain[b * w + a];
+  return (T(x0, y0) * (1 - fx) + T(x1, y0) * fx) * (1 - fy) + (T(x0, y1) * (1 - fx) + T(x1, y1) * fx) * fy;
+}
+// Unités du monde 3D par case du jeu, et hauteur du monde pour une altitude du jeu.
+const uniteCase = (k) => k * LARGEUR / jeu.largImg;
+const altitude = (z, k) => (z - jeu.calage.hauteurReference) * uniteCase(k) * (relief / 4);
+
 // u, v entre 0 et 1, v = 0 en haut de l'image.
 function hauteur(u, v) {
+  if (jeu) {
+    const px = u * jeu.largImg, py = v * jeu.hautImg, z = zonePourPx(px);
+    const x = z.x0 + (px - z.px0) / z.pxParCase, y = z.y0 - (py - z.py0) / z.pxParCase;
+    return altitude(hauteurJeu(x, y), z.pxParCase);
+  }
   const x = Math.min(hLarg - 1, Math.max(0, u * (hLarg - 1)));
   const y = Math.min(hHaut - 1, Math.max(0, v * (hHaut - 1)));
   const x0 = Math.floor(x), y0 = Math.floor(y), x1 = Math.min(hLarg - 1, x0 + 1), y1 = Math.min(hHaut - 1, y0 + 1);
@@ -155,7 +182,65 @@ function appliquerRelief() {
   pos.needsUpdate = true;
   terrain.geometry.computeVertexNormals();
   placerTiges();
+  placerDecors();
 }
+
+/* ── Décors et bâtiments du jeu ────────────────────────────────────────────
+   Un InstancedMesh par maillage de modèle : 1 750 objets en une centaine d'appels de
+   dessin au lieu de plusieurs milliers. */
+const decors = new THREE.Group();
+scene.add(decors);
+let instancesJeu = [];        // [{ maillages: [{mesh, local}], liste: [[x,y,z,rot,s,pitch,roll]] }]
+const chargeur = new GLTFLoader();
+const m4 = new THREE.Matrix4(), q = new THREE.Quaternion(), e = new THREE.Euler(), s3 = new THREE.Vector3(), p3 = new THREE.Vector3();
+
+async function chargerDecors(dossier, scene3d) {
+  const parModele = scene3d.modeles.map(() => []);
+  for (const inst of scene3d.instances) parModele[inst[0]].push(inst.slice(1));
+  instancesJeu = [];
+  await Promise.all(scene3d.modeles.map((nom, k) => new Promise(res => {
+    if (!parModele[k].length) return res();
+    chargeur.load(`${dossier}/models/${nom}.glb`, (g) => {
+      g.scene.updateMatrixWorld(true);
+      const maillages = [];
+      g.scene.traverse(o => {
+        if (!o.isMesh) return;
+        const im = new THREE.InstancedMesh(o.geometry, o.material, parModele[k].length);
+        im.frustumCulled = false;
+        maillages.push({ mesh: im, local: o.matrixWorld.clone() });
+        decors.add(im);
+      });
+      instancesJeu.push({ maillages, liste: parModele[k] });
+      res();
+    }, undefined, () => res());
+  })));
+  placerDecors();
+}
+
+function placerDecors() {
+  if (!jeu) return;
+  for (const { maillages, liste } of instancesJeu) {
+    liste.forEach(([x, y, z, rot, s, pitch = 0, roll = 0], i) => {
+      const { px, py, k } = caseVersPx(x, y);
+      const sol = z > 0.5 ? z : hauteurJeu(x, y);
+      p3.set(px / jeu.largImg * LARGEUR - LARGEUR / 2, altitude(sol, k), py / jeu.largImg * LARGEUR - profondeur / 2);
+      e.set(pitch, rot, -roll, 'YXZ');
+      q.setFromEuler(e);
+      const t = uniteCase(k) * s;
+      s3.set(t, t, t);
+      m4.compose(p3, q, s3);
+      for (const { mesh, local } of maillages) {
+        mesh.setMatrixAt(i, new THREE.Matrix4().multiplyMatrices(m4, local));
+      }
+    });
+    for (const { mesh } of maillages) mesh.instanceMatrix.needsUpdate = true;
+  }
+}
+
+$('decors').onclick = (ev) => {
+  decors.visible = !decors.visible;
+  ev.currentTarget.classList.toggle('actif', decors.visible);
+};
 
 /* ── Points d'intérêt ──────────────────────────────────────────────────── */
 const HAUTEUR_TIGE = 5;
@@ -261,6 +346,25 @@ async function charger(id) {
   lireHauteurs(img);
   profondeur = LARGEUR * img.height / img.width;
 
+  // Données extraites du jeu, si cette carte en a.
+  decors.clear();
+  instancesJeu = [];
+  jeu = null;
+  const dossier = `3d/${carte.id}`;
+  let scene3d = null;
+  try {
+    const [calage, sc, bin] = await Promise.all([
+      fetch(`${dossier}/calage.json`).then(r => r.ok ? r.json() : null),
+      fetch(`${dossier}/scene.json`).then(r => r.ok ? r.json() : null),
+      fetch(`${dossier}/terrain.bin`).then(r => r.ok ? r.arrayBuffer() : null),
+    ]);
+    if (calage && sc && bin) {
+      jeu = { calage, terrain: new Float32Array(bin), dim: sc.dim, largImg: img.width, hautImg: img.height };
+      scene3d = sc;
+    }
+  } catch { jeu = null; }
+  $('decors').hidden = !jeu;
+
   const tex = new THREE.Texture(img);
   tex.colorSpace = THREE.SRGBColorSpace;
   tex.anisotropy = renderer.capabilities.getMaxAnisotropy();
@@ -273,7 +377,12 @@ async function charger(id) {
 
   creerMarqueurs(carte);
   appliquerRelief();
+  if (scene3d) {
+    $('chargement').textContent = 'Chargement des décors…';
+    await chargerDecors(dossier, scene3d);
+  }
   $('chargement').style.display = 'none';
+  $('chargement').textContent = 'Chargement…';
 }
 
 $('choixCarte').innerHTML = cartes.map(c => `<option value="${c.id}">${esc(c.name.fr)}</option>`).join('');
