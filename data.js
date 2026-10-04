@@ -1218,8 +1218,8 @@ const BATTLEGROUNDS = [
     },
     "tips": [
       {
-        "fr": "Six camps sur cette carte, plus que sur la plupart : trois de siège et trois de bruisers. Il y a toujours quelque chose à prendre.",
-        "en": "Six camps on this map, more than most: three Siege and three Bruiser. There is always something to take."
+        "fr": "Six camps sur cette carte, plus que sur la plupart : quatre de siège et deux de bruisers. Il y a toujours quelque chose à prendre.",
+        "en": "Six camps on this map, more than most: four Siege and two Bruiser. There is always something to take."
       },
       {
         "fr": "Prends le camp de siège du milieu entre 0:30 et 0:42 : il arrive en ligne devant tes serviteurs.",
@@ -1246,101 +1246,101 @@ const BATTLEGROUNDS = [
       {
         "id": "pjar6",
         "type": "objectif",
-        "x": 12,
-        "y": 12,
+        "x": 42,
+        "y": 36,
         "name": {
           "fr": "Graine — haut, gauche",
           "en": "Seed — top, left"
         },
         "description": {
-          "fr": "Invoquée régulièrement par la reine Belladone et gardée par des traîne-racines. Six secondes d'incantation pour la ramasser. Trois graines suffisent à lancer les terreurs de jardin.",
-          "en": "Summoned periodically by Queen Nightshade and guarded by Shamblers. A six-second channel to pick it up. Three Seeds are enough to launch the Garden Terrors."
+          "fr": "Six emplacements possibles, trois dans le jardin du haut et trois dans celui du bas. Invoquée régulièrement par la reine Belladone et gardée par des traîne-racines. Six secondes d'incantation pour la ramasser. Trois graines suffisent à lancer les terreurs de jardin.",
+          "en": "Six possible spots, three in the upper garden and three in the lower one. Summoned periodically by Queen Nightshade and guarded by Shamblers. A six-second channel to pick it up. Three Seeds are enough to launch the Garden Terrors."
         },
         "image": ""
       },
       {
         "id": "pmutmu1e800h",
         "type": "objectif",
-        "x": 68,
-        "y": 12,
+        "x": 48.9,
+        "y": 33.4,
         "name": {
           "fr": "Graine — haut, milieu",
           "en": "Seed — top, middle"
         },
         "description": {
-          "fr": "Invoquée régulièrement par la reine Belladone et gardée par des traîne-racines. Six secondes d'incantation pour la ramasser. Trois graines suffisent à lancer les terreurs de jardin.",
-          "en": "Summoned periodically by Queen Nightshade and guarded by Shamblers. A six-second channel to pick it up. Three Seeds are enough to launch the Garden Terrors."
+          "fr": "Six emplacements possibles, trois dans le jardin du haut et trois dans celui du bas. Invoquée régulièrement par la reine Belladone et gardée par des traîne-racines. Six secondes d'incantation pour la ramasser. Trois graines suffisent à lancer les terreurs de jardin.",
+          "en": "Six possible spots, three in the upper garden and three in the lower one. Summoned periodically by Queen Nightshade and guarded by Shamblers. A six-second channel to pick it up. Three Seeds are enough to launch the Garden Terrors."
         },
         "image": ""
       },
       {
         "id": "pmutmu1e800i",
         "type": "objectif",
-        "x": 82,
-        "y": 12,
+        "x": 54.4,
+        "y": 37.2,
         "name": {
           "fr": "Graine — haut, droite",
           "en": "Seed — top, right"
         },
         "description": {
-          "fr": "Invoquée régulièrement par la reine Belladone et gardée par des traîne-racines. Six secondes d'incantation pour la ramasser. Trois graines suffisent à lancer les terreurs de jardin.",
-          "en": "Summoned periodically by Queen Nightshade and guarded by Shamblers. A six-second channel to pick it up. Three Seeds are enough to launch the Garden Terrors."
+          "fr": "Six emplacements possibles, trois dans le jardin du haut et trois dans celui du bas. Invoquée régulièrement par la reine Belladone et gardée par des traîne-racines. Six secondes d'incantation pour la ramasser. Trois graines suffisent à lancer les terreurs de jardin.",
+          "en": "Six possible spots, three in the upper garden and three in the lower one. Summoned periodically by Queen Nightshade and guarded by Shamblers. A six-second channel to pick it up. Three Seeds are enough to launch the Garden Terrors."
         },
         "image": ""
       },
       {
         "id": "pmutmu1e800j",
         "type": "objectif",
-        "x": 12,
-        "y": 26,
+        "x": 45.6,
+        "y": 66.3,
         "name": {
           "fr": "Graine — bas, gauche",
           "en": "Seed — bottom, left"
         },
         "description": {
-          "fr": "Invoquée régulièrement par la reine Belladone et gardée par des traîne-racines. Six secondes d'incantation pour la ramasser. Trois graines suffisent à lancer les terreurs de jardin.",
-          "en": "Summoned periodically by Queen Nightshade and guarded by Shamblers. A six-second channel to pick it up. Three Seeds are enough to launch the Garden Terrors."
+          "fr": "Six emplacements possibles, trois dans le jardin du haut et trois dans celui du bas. Invoquée régulièrement par la reine Belladone et gardée par des traîne-racines. Six secondes d'incantation pour la ramasser. Trois graines suffisent à lancer les terreurs de jardin.",
+          "en": "Six possible spots, three in the upper garden and three in the lower one. Summoned periodically by Queen Nightshade and guarded by Shamblers. A six-second channel to pick it up. Three Seeds are enough to launch the Garden Terrors."
         },
         "image": ""
       },
       {
         "id": "pmutmu1e800k",
         "type": "objectif",
-        "x": 26,
-        "y": 26,
+        "x": 51.2,
+        "y": 70.3,
         "name": {
           "fr": "Graine — bas, milieu",
           "en": "Seed — bottom, middle"
         },
         "description": {
-          "fr": "Invoquée régulièrement par la reine Belladone et gardée par des traîne-racines. Six secondes d'incantation pour la ramasser. Trois graines suffisent à lancer les terreurs de jardin.",
-          "en": "Summoned periodically by Queen Nightshade and guarded by Shamblers. A six-second channel to pick it up. Three Seeds are enough to launch the Garden Terrors."
+          "fr": "Six emplacements possibles, trois dans le jardin du haut et trois dans celui du bas. Invoquée régulièrement par la reine Belladone et gardée par des traîne-racines. Six secondes d'incantation pour la ramasser. Trois graines suffisent à lancer les terreurs de jardin.",
+          "en": "Six possible spots, three in the upper garden and three in the lower one. Summoned periodically by Queen Nightshade and guarded by Shamblers. A six-second channel to pick it up. Three Seeds are enough to launch the Garden Terrors."
         },
         "image": ""
       },
       {
         "id": "pmutmu1e800l",
         "type": "objectif",
-        "x": 40,
-        "y": 26,
+        "x": 57.9,
+        "y": 67.9,
         "name": {
           "fr": "Graine — bas, droite",
           "en": "Seed — bottom, right"
         },
         "description": {
-          "fr": "Invoquée régulièrement par la reine Belladone et gardée par des traîne-racines. Six secondes d'incantation pour la ramasser. Trois graines suffisent à lancer les terreurs de jardin.",
-          "en": "Summoned periodically by Queen Nightshade and guarded by Shamblers. A six-second channel to pick it up. Three Seeds are enough to launch the Garden Terrors."
+          "fr": "Six emplacements possibles, trois dans le jardin du haut et trois dans celui du bas. Invoquée régulièrement par la reine Belladone et gardée par des traîne-racines. Six secondes d'incantation pour la ramasser. Trois graines suffisent à lancer les terreurs de jardin.",
+          "en": "Six possible spots, three in the upper garden and three in the lower one. Summoned periodically by Queen Nightshade and guarded by Shamblers. A six-second channel to pick it up. Three Seeds are enough to launch the Garden Terrors."
         },
         "image": ""
       },
       {
         "id": "pjar7",
         "type": "camp",
-        "x": 26,
-        "y": 12,
+        "x": 37,
+        "y": 30.7,
         "name": {
-          "fr": "Camp de siège — haut, gauche",
-          "en": "Siege Camp — top, left"
+          "fr": "Camp de siège — géants, haut gauche",
+          "en": "Siege Camp — Giants, top left"
         },
         "description": {
           "fr": "Quatre camps — à gauche de la voie du haut, deux au milieu, à droite de la voie du bas —, deux géants de siège chacun. Ils infligent 100 % de dégâts supplémentaires aux structures. Disponibles à 0:30, ils réapparaissent 3:00 après avoir été pris.",
@@ -1351,11 +1351,11 @@ const BATTLEGROUNDS = [
       {
         "id": "pmutmu1e800m",
         "type": "camp",
-        "x": 54,
-        "y": 26,
+        "x": 39.7,
+        "y": 63.6,
         "name": {
-          "fr": "Camp de siège — milieu, gauche",
-          "en": "Siege Camp — middle, left"
+          "fr": "Camp de siège — géants, milieu gauche",
+          "en": "Siege Camp — Giants, middle left"
         },
         "description": {
           "fr": "Quatre camps — à gauche de la voie du haut, deux au milieu, à droite de la voie du bas —, deux géants de siège chacun. Ils infligent 100 % de dégâts supplémentaires aux structures. Disponibles à 0:30, ils réapparaissent 3:00 après avoir été pris.",
@@ -1366,11 +1366,11 @@ const BATTLEGROUNDS = [
       {
         "id": "pmutmu1e800n",
         "type": "camp",
-        "x": 68,
-        "y": 26,
+        "x": 60.2,
+        "y": 40.1,
         "name": {
-          "fr": "Camp de siège — milieu, droite",
-          "en": "Siege Camp — middle, right"
+          "fr": "Camp de siège — géants, milieu droite",
+          "en": "Siege Camp — Giants, middle right"
         },
         "description": {
           "fr": "Quatre camps — à gauche de la voie du haut, deux au milieu, à droite de la voie du bas —, deux géants de siège chacun. Ils infligent 100 % de dégâts supplémentaires aux structures. Disponibles à 0:30, ils réapparaissent 3:00 après avoir été pris.",
@@ -1381,11 +1381,11 @@ const BATTLEGROUNDS = [
       {
         "id": "pmutmu1e800o",
         "type": "camp",
-        "x": 82,
-        "y": 26,
+        "x": 63,
+        "y": 72.8,
         "name": {
-          "fr": "Camp de siège — bas, droite",
-          "en": "Siege Camp — bottom, right"
+          "fr": "Camp de siège — géants, bas droite",
+          "en": "Siege Camp — Giants, bottom right"
         },
         "description": {
           "fr": "Quatre camps — à gauche de la voie du haut, deux au milieu, à droite de la voie du bas —, deux géants de siège chacun. Ils infligent 100 % de dégâts supplémentaires aux structures. Disponibles à 0:30, ils réapparaissent 3:00 après avoir été pris.",
@@ -1396,60 +1396,210 @@ const BATTLEGROUNDS = [
       {
         "id": "pjar8",
         "type": "camp",
-        "x": 40,
-        "y": 12,
+        "x": 59,
+        "y": 31.5,
         "name": {
-          "fr": "Camp de bruisers — haut, droite",
-          "en": "Bruiser Camp — top, right"
+          "fr": "Camp de bruisers — chevaliers, haut droite",
+          "en": "Bruiser Camp — Knights, top right"
         },
         "description": {
-          "fr": "Deux camps, sur les voies du haut et du bas : trois chevaliers et un sorcier. Le sorcier pose un champ d'armure des sorts autour des unités proches. Disponibles à 0:30, ils réapparaissent 4:00 après.",
-          "en": "Two camps, on the top and bottom lanes: three Knights and a Wizard. The Wizard lays a Spell Armor field around nearby units. Available at 0:30, back 4:00 after."
+          "fr": "Deux camps, un dans chaque jardin : en haut à droite et en bas à gauche. Trois chevaliers et un sorcier, qui pose un champ d'armure des sorts autour des unités proches. Disponibles à 0:30, ils réapparaissent 4:00 après.",
+          "en": "Two camps, one in each garden: top right and bottom left. Three Knights and a Wizard, who lays a Spell Armor field around nearby units. Available at 0:30, back 4:00 after."
         },
         "image": ""
       },
       {
         "id": "pmutmu1e800p",
         "type": "camp",
-        "x": 12,
-        "y": 40,
+        "x": 41,
+        "y": 72.1,
         "name": {
-          "fr": "Camp de bruisers — bas, gauche",
-          "en": "Bruiser Camp — bottom, left"
+          "fr": "Camp de bruisers — chevaliers, bas gauche",
+          "en": "Bruiser Camp — Knights, bottom left"
         },
         "description": {
-          "fr": "Deux camps, sur les voies du haut et du bas : trois chevaliers et un sorcier. Le sorcier pose un champ d'armure des sorts autour des unités proches. Disponibles à 0:30, ils réapparaissent 4:00 après.",
-          "en": "Two camps, on the top and bottom lanes: three Knights and a Wizard. The Wizard lays a Spell Armor field around nearby units. Available at 0:30, back 4:00 after."
+          "fr": "Deux camps, un dans chaque jardin : en haut à droite et en bas à gauche. Trois chevaliers et un sorcier, qui pose un champ d'armure des sorts autour des unités proches. Disponibles à 0:30, ils réapparaissent 4:00 après.",
+          "en": "Two camps, one in each garden: top right and bottom left. Three Knights and a Wizard, who lays a Spell Armor field around nearby units. Available at 0:30, back 4:00 after."
+        },
+        "image": ""
+      },
+      {
+        "id": "pjar10",
+        "type": "fontaine",
+        "x": 39.2,
+        "y": 23.8,
+        "name": {
+          "fr": "Fontaine de soins — fort haut, gauche",
+          "en": "Healing fountain — top fort, left"
+        },
+        "description": {
+          "fr": "Deux minutes de recharge après utilisation. Savoir si celle d'en face est disponible change la valeur d'un plongeon autant que les points de vie restants.",
+          "en": "Two-minute cooldown after use. Knowing whether the enemy one is up changes the worth of a dive as much as their remaining health does."
+        },
+        "image": ""
+      },
+      {
+        "id": "pjar11",
+        "type": "fontaine",
+        "x": 39.5,
+        "y": 48.1,
+        "name": {
+          "fr": "Fontaine de soins — fort milieu, gauche",
+          "en": "Healing fountain — middle fort, left"
+        },
+        "description": {
+          "fr": "Deux minutes de recharge après utilisation. Savoir si celle d'en face est disponible change la valeur d'un plongeon autant que les points de vie restants.",
+          "en": "Two-minute cooldown after use. Knowing whether the enemy one is up changes the worth of a dive as much as their remaining health does."
+        },
+        "image": ""
+      },
+      {
+        "id": "pjar12",
+        "type": "fontaine",
+        "x": 40.7,
+        "y": 83.3,
+        "name": {
+          "fr": "Fontaine de soins — fort bas, gauche",
+          "en": "Healing fountain — bottom fort, left"
+        },
+        "description": {
+          "fr": "Deux minutes de recharge après utilisation. Savoir si celle d'en face est disponible change la valeur d'un plongeon autant que les points de vie restants.",
+          "en": "Two-minute cooldown after use. Knowing whether the enemy one is up changes the worth of a dive as much as their remaining health does."
         },
         "image": ""
       },
       {
         "id": "pjar9",
         "type": "fontaine",
-        "x": 54,
-        "y": 12,
+        "x": 19.9,
+        "y": 36.4,
         "name": {
-          "fr": "Fontaine de soins — côté gauche",
-          "en": "Healing fountain — left side"
+          "fr": "Fontaine de soins — bastion haut, gauche",
+          "en": "Healing fountain — top keep, left"
         },
         "description": {
-          "fr": "Deux minutes de recharge. Avec un objectif toutes les minutes environ, elle se gère comme une ressource de phase.",
-          "en": "Two-minute cooldown. With an objective roughly every minute, treat it as a per-phase resource."
+          "fr": "Deux minutes de recharge après utilisation. Savoir si celle d'en face est disponible change la valeur d'un plongeon autant que les points de vie restants.",
+          "en": "Two-minute cooldown after use. Knowing whether the enemy one is up changes the worth of a dive as much as their remaining health does."
+        },
+        "image": ""
+      },
+      {
+        "id": "pjar13",
+        "type": "fontaine",
+        "x": 28.2,
+        "y": 56.5,
+        "name": {
+          "fr": "Fontaine de soins — bastion milieu, gauche",
+          "en": "Healing fountain — middle keep, left"
+        },
+        "description": {
+          "fr": "Deux minutes de recharge après utilisation. Savoir si celle d'en face est disponible change la valeur d'un plongeon autant que les points de vie restants.",
+          "en": "Two-minute cooldown after use. Knowing whether the enemy one is up changes the worth of a dive as much as their remaining health does."
+        },
+        "image": ""
+      },
+      {
+        "id": "pjar14",
+        "type": "fontaine",
+        "x": 21.5,
+        "y": 72.1,
+        "name": {
+          "fr": "Fontaine de soins — bastion bas, gauche",
+          "en": "Healing fountain — bottom keep, left"
+        },
+        "description": {
+          "fr": "Deux minutes de recharge après utilisation. Savoir si celle d'en face est disponible change la valeur d'un plongeon autant que les points de vie restants.",
+          "en": "Two-minute cooldown after use. Knowing whether the enemy one is up changes the worth of a dive as much as their remaining health does."
+        },
+        "image": ""
+      },
+      {
+        "id": "pjar15",
+        "type": "fontaine",
+        "x": 59.3,
+        "y": 20.4,
+        "name": {
+          "fr": "Fontaine de soins — fort haut, droite",
+          "en": "Healing fountain — top fort, right"
+        },
+        "description": {
+          "fr": "Deux minutes de recharge après utilisation. Savoir si celle d'en face est disponible change la valeur d'un plongeon autant que les points de vie restants.",
+          "en": "Two-minute cooldown after use. Knowing whether the enemy one is up changes the worth of a dive as much as their remaining health does."
+        },
+        "image": ""
+      },
+      {
+        "id": "pjar16",
+        "type": "fontaine",
+        "x": 60.5,
+        "y": 55.3,
+        "name": {
+          "fr": "Fontaine de soins — fort milieu, droite",
+          "en": "Healing fountain — middle fort, right"
+        },
+        "description": {
+          "fr": "Deux minutes de recharge après utilisation. Savoir si celle d'en face est disponible change la valeur d'un plongeon autant que les points de vie restants.",
+          "en": "Two-minute cooldown after use. Knowing whether the enemy one is up changes the worth of a dive as much as their remaining health does."
+        },
+        "image": ""
+      },
+      {
+        "id": "pjar17",
+        "type": "fontaine",
+        "x": 60.6,
+        "y": 79.4,
+        "name": {
+          "fr": "Fontaine de soins — fort bas, droite",
+          "en": "Healing fountain — bottom fort, right"
+        },
+        "description": {
+          "fr": "Deux minutes de recharge après utilisation. Savoir si celle d'en face est disponible change la valeur d'un plongeon autant que les points de vie restants.",
+          "en": "Two-minute cooldown after use. Knowing whether the enemy one is up changes the worth of a dive as much as their remaining health does."
         },
         "image": ""
       },
       {
         "id": "pmutmu1e800q",
         "type": "fontaine",
-        "x": 26,
-        "y": 40,
+        "x": 78.5,
+        "y": 31.5,
         "name": {
-          "fr": "Fontaine de soins — côté droit",
-          "en": "Healing fountain — right side"
+          "fr": "Fontaine de soins — bastion haut, droite",
+          "en": "Healing fountain — top keep, right"
         },
         "description": {
-          "fr": "Deux minutes de recharge. Avec un objectif toutes les minutes environ, elle se gère comme une ressource de phase.",
-          "en": "Two-minute cooldown. With an objective roughly every minute, treat it as a per-phase resource."
+          "fr": "Deux minutes de recharge après utilisation. Savoir si celle d'en face est disponible change la valeur d'un plongeon autant que les points de vie restants.",
+          "en": "Two-minute cooldown after use. Knowing whether the enemy one is up changes the worth of a dive as much as their remaining health does."
+        },
+        "image": ""
+      },
+      {
+        "id": "pjar18",
+        "type": "fontaine",
+        "x": 71.6,
+        "y": 47,
+        "name": {
+          "fr": "Fontaine de soins — bastion milieu, droite",
+          "en": "Healing fountain — middle keep, right"
+        },
+        "description": {
+          "fr": "Deux minutes de recharge après utilisation. Savoir si celle d'en face est disponible change la valeur d'un plongeon autant que les points de vie restants.",
+          "en": "Two-minute cooldown after use. Knowing whether the enemy one is up changes the worth of a dive as much as their remaining health does."
+        },
+        "image": ""
+      },
+      {
+        "id": "pjar19",
+        "type": "fontaine",
+        "x": 80,
+        "y": 67,
+        "name": {
+          "fr": "Fontaine de soins — bastion bas, droite",
+          "en": "Healing fountain — bottom keep, right"
+        },
+        "description": {
+          "fr": "Deux minutes de recharge après utilisation. Savoir si celle d'en face est disponible change la valeur d'un plongeon autant que les points de vie restants.",
+          "en": "Two-minute cooldown after use. Knowing whether the enemy one is up changes the worth of a dive as much as their remaining health does."
         },
         "image": ""
       }
