@@ -1468,8 +1468,38 @@ const BATTLEGROUNDS = [
         "image": ""
       },
       {
+        "id": "pmutlywxjq0no",
+        "x": 64,
+        "y": 62.9,
+        "type": "camp",
+        "name": {
+          "fr": "Camp à doublons — pirates squelettes",
+          "en": "Doubloon Camp — Skeletal Pirates"
+        },
+        "description": {
+          "fr": "Deux camps de deux pirates squelettes. Ils ne poussent pas de voie : ils donnent deux doublons. Disponibles à 0:30, ils réapparaissent 2:30 après.",
+          "en": "Two camps of two Skeletal Pirates. They do not push a lane: they hand over two Doubloons. Available at 0:30, back 2:30 after."
+        },
+        "image": ""
+      },
+      {
         "id": "pbai41",
         "x": 30.1,
+        "y": 71.1,
+        "type": "camp",
+        "name": {
+          "fr": "Camp de siège — géants",
+          "en": "Siege Camp — Giants"
+        },
+        "description": {
+          "fr": "Deux camps sur la voie du bas, deux géants chacun. Ils rejoignent la voie et rapportent deux doublons. Disponibles à 0:30, ils réapparaissent 3:00 après.",
+          "en": "Two camps on the bottom lane, two Giants each. They join the lane and pay two Doubloons. Available at 0:30, back 3:00 after."
+        },
+        "image": ""
+      },
+      {
+        "id": "pmutlzc8zyokd",
+        "x": 69,
         "y": 71.1,
         "type": "camp",
         "name": {
