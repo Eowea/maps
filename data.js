@@ -1675,7 +1675,7 @@ const BATTLEGROUNDS = [
   },
   {
     "id": "temple-hanamura",
-    "enabled": false,
+    "enabled": true,
     "name": {
       "fr": "Temple d'Hanamura",
       "en": "Hanamura Temple"
@@ -1740,8 +1740,8 @@ const BATTLEGROUNDS = [
       {
         "id": "ptem10",
         "type": "objectif",
-        "x": 50.6,
-        "y": 50.5,
+        "x": 50.3,
+        "y": 50.6,
         "name": {
           "fr": "Convoi",
           "en": "Payload"
@@ -1755,8 +1755,8 @@ const BATTLEGROUNDS = [
       {
         "id": "ptem11",
         "type": "tour",
-        "x": 43.3,
-        "y": 13,
+        "x": 49,
+        "y": 43.5,
         "name": {
           "fr": "Camp de reconnaissance — haut",
           "en": "Recon Camp — top"
@@ -1770,8 +1770,8 @@ const BATTLEGROUNDS = [
       {
         "id": "pmutmu1e800r",
         "type": "tour",
-        "x": 58.1,
-        "y": 87.6,
+        "x": 50.5,
+        "y": 60.5,
         "name": {
           "fr": "Camp de reconnaissance — bas",
           "en": "Recon Camp — bottom"
@@ -1785,8 +1785,8 @@ const BATTLEGROUNDS = [
       {
         "id": "ptem12",
         "type": "camp",
-        "x": 39.9,
-        "y": 39.4,
+        "x": 39.5,
+        "y": 41.5,
         "name": {
           "fr": "Camp de fortification — haut, gauche",
           "en": "Fortification Camp — top, left"
@@ -1800,8 +1800,8 @@ const BATTLEGROUNDS = [
       {
         "id": "pmutmu1e800s",
         "type": "camp",
-        "x": 61.4,
-        "y": 61.1,
+        "x": 60.2,
+        "y": 61.6,
         "name": {
           "fr": "Camp de fortification — bas, droite",
           "en": "Fortification Camp — bottom, right"
@@ -1815,8 +1815,8 @@ const BATTLEGROUNDS = [
       {
         "id": "ptem13",
         "type": "camp",
-        "x": 69.7,
-        "y": 48.4,
+        "x": 63.5,
+        "y": 42.5,
         "name": {
           "fr": "Camp de samouraïs — haut, droite",
           "en": "Samurai Camp — top, right"
@@ -1830,8 +1830,8 @@ const BATTLEGROUNDS = [
       {
         "id": "pmutmu1e800t",
         "type": "camp",
-        "x": 31.6,
-        "y": 52.1,
+        "x": 36,
+        "y": 61.5,
         "name": {
           "fr": "Camp de samouraïs — bas, gauche",
           "en": "Samurai Camp — bottom, left"
@@ -1845,8 +1845,8 @@ const BATTLEGROUNDS = [
       {
         "id": "ptem14",
         "type": "fontaine",
-        "x": 39.1,
-        "y": 23.9,
+        "x": 39,
+        "y": 26.5,
         "name": {
           "fr": "Fontaine de soins — fort haut, gauche",
           "en": "Healing fountain — top fort, left"
@@ -1860,8 +1860,8 @@ const BATTLEGROUNDS = [
       {
         "id": "ptem15",
         "type": "fontaine",
-        "x": 38.8,
-        "y": 77.7,
+        "x": 38.7,
+        "y": 77.2,
         "name": {
           "fr": "Fontaine de soins — fort bas, gauche",
           "en": "Healing fountain — bottom fort, left"
@@ -1875,8 +1875,8 @@ const BATTLEGROUNDS = [
       {
         "id": "ptem16",
         "type": "fontaine",
-        "x": 22.5,
-        "y": 28.8,
+        "x": 23,
+        "y": 34.2,
         "name": {
           "fr": "Fontaine de soins — bastion haut, gauche",
           "en": "Healing fountain — top keep, left"
@@ -1890,8 +1890,8 @@ const BATTLEGROUNDS = [
       {
         "id": "ptem17",
         "type": "fontaine",
-        "x": 23.4,
-        "y": 70.7,
+        "x": 23.2,
+        "y": 65.6,
         "name": {
           "fr": "Fontaine de soins — bastion bas, gauche",
           "en": "Healing fountain — bottom keep, left"
@@ -1905,8 +1905,8 @@ const BATTLEGROUNDS = [
       {
         "id": "pmutmu1e800u",
         "type": "fontaine",
-        "x": 62.5,
-        "y": 22.9,
+        "x": 61.4,
+        "y": 26.3,
         "name": {
           "fr": "Fontaine de soins — fort haut, droite",
           "en": "Healing fountain — top fort, right"
@@ -1920,8 +1920,8 @@ const BATTLEGROUNDS = [
       {
         "id": "ptem18",
         "type": "fontaine",
-        "x": 62.2,
-        "y": 76.7,
+        "x": 61.5,
+        "y": 76.6,
         "name": {
           "fr": "Fontaine de soins — fort bas, droite",
           "en": "Healing fountain — bottom fort, right"
@@ -1935,8 +1935,8 @@ const BATTLEGROUNDS = [
       {
         "id": "ptem19",
         "type": "fontaine",
-        "x": 77.9,
-        "y": 29.9,
+        "x": 76.6,
+        "y": 37.8,
         "name": {
           "fr": "Fontaine de soins — bastion haut, droite",
           "en": "Healing fountain — top keep, right"
@@ -1950,8 +1950,8 @@ const BATTLEGROUNDS = [
       {
         "id": "ptem20",
         "type": "fontaine",
-        "x": 78.8,
-        "y": 71.8,
+        "x": 76.6,
+        "y": 68.8,
         "name": {
           "fr": "Fontaine de soins — bastion bas, droite",
           "en": "Healing fountain — bottom keep, right"
