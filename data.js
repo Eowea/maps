@@ -4195,25 +4195,10 @@ const BATTLEGROUNDS = [
     ],
     "hotspots": [
       {
-        "id": "pmen57",
-        "type": "objectif",
-        "x": 12,
-        "y": 12,
-        "name": {
-          "fr": "Ogive — haut, gauche",
-          "en": "Warhead — top, left"
-        },
-        "description": {
-          "fr": "Deux à quatre apparaissent à la fois sur les trois voies. Cinq secondes d'incantation pour en ramasser une, puis trois secondes pour la lancer et quatre de délai avant l'explosion.",
-          "en": "Two to four appear at a time across the three lanes. A five-second channel to pick one up, then three seconds to launch and a four-second delay before it lands."
-        },
-        "image": ""
-      },
-      {
         "id": "pmutmu1e902h",
         "type": "objectif",
-        "x": 82,
-        "y": 12,
+        "x": 49.3,
+        "y": 23.9,
         "name": {
           "fr": "Ogive — haut, centre",
           "en": "Warhead — top, centre"
@@ -4225,10 +4210,25 @@ const BATTLEGROUNDS = [
         "image": ""
       },
       {
+        "id": "pmen57",
+        "type": "objectif",
+        "x": 43.1,
+        "y": 31.9,
+        "name": {
+          "fr": "Ogive — haut, gauche",
+          "en": "Warhead — top, left"
+        },
+        "description": {
+          "fr": "Deux à quatre apparaissent à la fois sur les trois voies. Cinq secondes d'incantation pour en ramasser une, puis trois secondes pour la lancer et quatre de délai avant l'explosion.",
+          "en": "Two to four appear at a time across the three lanes. A five-second channel to pick one up, then three seconds to launch and a four-second delay before it lands."
+        },
+        "image": ""
+      },
+      {
         "id": "pmutmu1e902i",
         "type": "objectif",
-        "x": 12,
-        "y": 26,
+        "x": 55.6,
+        "y": 31.9,
         "name": {
           "fr": "Ogive — haut, droite",
           "en": "Warhead — top, right"
@@ -4240,25 +4240,10 @@ const BATTLEGROUNDS = [
         "image": ""
       },
       {
-        "id": "pmutmu1e902j",
-        "type": "objectif",
-        "x": 26,
-        "y": 26,
-        "name": {
-          "fr": "Ogive — milieu, gauche",
-          "en": "Warhead — middle, left"
-        },
-        "description": {
-          "fr": "Deux à quatre apparaissent à la fois sur les trois voies. Cinq secondes d'incantation pour en ramasser une, puis trois secondes pour la lancer et quatre de délai avant l'explosion.",
-          "en": "Two to four appear at a time across the three lanes. A five-second channel to pick one up, then three seconds to launch and a four-second delay before it lands."
-        },
-        "image": ""
-      },
-      {
         "id": "pmutmu1e902k",
         "type": "objectif",
-        "x": 40,
-        "y": 26,
+        "x": 49.3,
+        "y": 53,
         "name": {
           "fr": "Ogive — milieu, centre",
           "en": "Warhead — middle, centre"
@@ -4270,10 +4255,25 @@ const BATTLEGROUNDS = [
         "image": ""
       },
       {
+        "id": "pmutmu1e902j",
+        "type": "objectif",
+        "x": 43.1,
+        "y": 56.4,
+        "name": {
+          "fr": "Ogive — milieu, gauche",
+          "en": "Warhead — middle, left"
+        },
+        "description": {
+          "fr": "Deux à quatre apparaissent à la fois sur les trois voies. Cinq secondes d'incantation pour en ramasser une, puis trois secondes pour la lancer et quatre de délai avant l'explosion.",
+          "en": "Two to four appear at a time across the three lanes. A five-second channel to pick one up, then three seconds to launch and a four-second delay before it lands."
+        },
+        "image": ""
+      },
+      {
         "id": "pmutmu1e902l",
         "type": "objectif",
-        "x": 54,
-        "y": 26,
+        "x": 55.4,
+        "y": 56.4,
         "name": {
           "fr": "Ogive — milieu, droite",
           "en": "Warhead — middle, right"
@@ -4285,25 +4285,10 @@ const BATTLEGROUNDS = [
         "image": ""
       },
       {
-        "id": "pmutmu1e902m",
-        "type": "objectif",
-        "x": 68,
-        "y": 26,
-        "name": {
-          "fr": "Ogive — bas, gauche",
-          "en": "Warhead — bottom, left"
-        },
-        "description": {
-          "fr": "Deux à quatre apparaissent à la fois sur les trois voies. Cinq secondes d'incantation pour en ramasser une, puis trois secondes pour la lancer et quatre de délai avant l'explosion.",
-          "en": "Two to four appear at a time across the three lanes. A five-second channel to pick one up, then three seconds to launch and a four-second delay before it lands."
-        },
-        "image": ""
-      },
-      {
         "id": "pmutmu1e902n",
         "type": "objectif",
-        "x": 82,
-        "y": 26,
+        "x": 49.3,
+        "y": 80.5,
         "name": {
           "fr": "Ogive — bas, centre",
           "en": "Warhead — bottom, centre"
@@ -4315,10 +4300,25 @@ const BATTLEGROUNDS = [
         "image": ""
       },
       {
+        "id": "pmutmu1e902m",
+        "type": "objectif",
+        "x": 45.3,
+        "y": 86.4,
+        "name": {
+          "fr": "Ogive — bas, gauche",
+          "en": "Warhead — bottom, left"
+        },
+        "description": {
+          "fr": "Deux à quatre apparaissent à la fois sur les trois voies. Cinq secondes d'incantation pour en ramasser une, puis trois secondes pour la lancer et quatre de délai avant l'explosion.",
+          "en": "Two to four appear at a time across the three lanes. A five-second channel to pick one up, then three seconds to launch and a four-second delay before it lands."
+        },
+        "image": ""
+      },
+      {
         "id": "pmutmu1e902o",
         "type": "objectif",
-        "x": 12,
-        "y": 40,
+        "x": 53.1,
+        "y": 86.4,
         "name": {
           "fr": "Ogive — bas, droite",
           "en": "Warhead — bottom, right"
@@ -4332,8 +4332,8 @@ const BATTLEGROUNDS = [
       {
         "id": "pmen58",
         "type": "tour",
-        "x": 26,
-        "y": 12,
+        "x": 49.4,
+        "y": 37.1,
         "name": {
           "fr": "Tour de guet — au-dessus du milieu",
           "en": "Watch Tower — above the middle"
@@ -4347,8 +4347,8 @@ const BATTLEGROUNDS = [
       {
         "id": "pmutmu1e902p",
         "type": "tour",
-        "x": 26,
-        "y": 40,
+        "x": 49.4,
+        "y": 58.5,
         "name": {
           "fr": "Tour de guet — sous le milieu",
           "en": "Watch Tower — below the middle"
@@ -4362,8 +4362,8 @@ const BATTLEGROUNDS = [
       {
         "id": "pmen59",
         "type": "autre",
-        "x": 40,
-        "y": 12,
+        "x": 49.3,
+        "y": 30,
         "name": {
           "fr": "Tunnel d'égout — entrée du haut",
           "en": "Sewage Tunnel — top entrance"
@@ -4377,8 +4377,8 @@ const BATTLEGROUNDS = [
       {
         "id": "pmutmu1e902q",
         "type": "autre",
-        "x": 40,
-        "y": 40,
+        "x": 49.4,
+        "y": 65.4,
         "name": {
           "fr": "Tunnel d'égout — entrée du bas",
           "en": "Sewage Tunnel — bottom entrance"
@@ -4392,8 +4392,8 @@ const BATTLEGROUNDS = [
       {
         "id": "pmen60",
         "type": "camp",
-        "x": 54,
-        "y": 12,
+        "x": 34.8,
+        "y": 59.5,
         "name": {
           "fr": "Camp de siège — hellions, bas gauche",
           "en": "Siege Camp — Hellbats, bottom left"
@@ -4407,8 +4407,8 @@ const BATTLEGROUNDS = [
       {
         "id": "pmutmu1e902r",
         "type": "camp",
-        "x": 54,
-        "y": 40,
+        "x": 63.9,
+        "y": 59.5,
         "name": {
           "fr": "Camp de siège — hellions, bas droite",
           "en": "Siege Camp — Hellbats, bottom right"
@@ -4422,8 +4422,8 @@ const BATTLEGROUNDS = [
       {
         "id": "pmen61",
         "type": "camp",
-        "x": 68,
-        "y": 12,
+        "x": 36.6,
+        "y": 32.6,
         "name": {
           "fr": "Camp de bruisers — goliaths, haut gauche",
           "en": "Bruiser Camp — Goliaths, top left"
@@ -4437,8 +4437,8 @@ const BATTLEGROUNDS = [
       {
         "id": "pmutmu1e902s",
         "type": "camp",
-        "x": 68,
-        "y": 40,
+        "x": 62.5,
+        "y": 32.6,
         "name": {
           "fr": "Camp de bruisers — goliaths, haut droite",
           "en": "Bruiser Camp — Goliaths, top right"
@@ -4452,8 +4452,8 @@ const BATTLEGROUNDS = [
       {
         "id": "pmutmu1e902t",
         "type": "camp",
-        "x": 82,
-        "y": 40,
+        "x": 49.3,
+        "y": 7.5,
         "name": {
           "fr": "Camp de boss — haut",
           "en": "Boss Camp — top"
@@ -4467,11 +4467,11 @@ const BATTLEGROUNDS = [
       {
         "id": "pmutmu1e902u",
         "type": "fontaine",
-        "x": 12,
-        "y": 54,
+        "x": 21.7,
+        "y": 33.1,
         "name": {
-          "fr": "Fontaine de soins — côté gauche",
-          "en": "Healing fountain — left side"
+          "fr": "Fontaine de soins — bastion haut, gauche",
+          "en": "Healing fountain — top keep, left"
         },
         "description": {
           "fr": "Deux minutes de recharge après utilisation. Savoir si celle d'en face est disponible change la valeur d'un plongeon autant que les points de vie restants.",
@@ -4480,19 +4480,169 @@ const BATTLEGROUNDS = [
         "image": ""
       },
       {
+        "id": "pmenmutuqods0",
+        "type": "fontaine",
+        "description": {
+          "fr": "Deux minutes de recharge après utilisation. Savoir si celle d'en face est disponible change la valeur d'un plongeon autant que les points de vie restants.",
+          "en": "Two-minute cooldown after use. Knowing whether the enemy one is up changes the worth of a dive as much as their remaining health does."
+        },
+        "image": "",
+        "x": 26.5,
+        "y": 44.5,
+        "name": {
+          "fr": "Fontaine de soins — bastion milieu, gauche",
+          "en": "Healing fountain — middle keep, left"
+        }
+      },
+      {
+        "id": "pmenmutuqods1",
+        "type": "fontaine",
+        "description": {
+          "fr": "Deux minutes de recharge après utilisation. Savoir si celle d'en face est disponible change la valeur d'un plongeon autant que les points de vie restants.",
+          "en": "Two-minute cooldown after use. Knowing whether the enemy one is up changes the worth of a dive as much as their remaining health does."
+        },
+        "image": "",
+        "x": 17.7,
+        "y": 58.8,
+        "name": {
+          "fr": "Fontaine de soins — bastion bas, gauche",
+          "en": "Healing fountain — bottom keep, left"
+        }
+      },
+      {
+        "id": "pmenmutuqods2",
+        "type": "fontaine",
+        "description": {
+          "fr": "Deux minutes de recharge après utilisation. Savoir si celle d'en face est disponible change la valeur d'un plongeon autant que les points de vie restants.",
+          "en": "Two-minute cooldown after use. Knowing whether the enemy one is up changes the worth of a dive as much as their remaining health does."
+        },
+        "image": "",
+        "x": 39.8,
+        "y": 22.8,
+        "name": {
+          "fr": "Fontaine de soins — fort haut, gauche",
+          "en": "Healing fountain — top fort, left"
+        }
+      },
+      {
+        "id": "pmenmutuqods3",
+        "type": "fontaine",
+        "description": {
+          "fr": "Deux minutes de recharge après utilisation. Savoir si celle d'en face est disponible change la valeur d'un plongeon autant que les points de vie restants.",
+          "en": "Two-minute cooldown after use. Knowing whether the enemy one is up changes the worth of a dive as much as their remaining health does."
+        },
+        "image": "",
+        "x": 39.5,
+        "y": 49.5,
+        "name": {
+          "fr": "Fontaine de soins — fort milieu, gauche",
+          "en": "Healing fountain — middle fort, left"
+        }
+      },
+      {
+        "id": "pmenmutuqods4",
+        "type": "fontaine",
+        "description": {
+          "fr": "Deux minutes de recharge après utilisation. Savoir si celle d'en face est disponible change la valeur d'un plongeon autant que les points de vie restants.",
+          "en": "Two-minute cooldown after use. Knowing whether the enemy one is up changes the worth of a dive as much as their remaining health does."
+        },
+        "image": "",
+        "x": 37.3,
+        "y": 77.3,
+        "name": {
+          "fr": "Fontaine de soins — fort bas, gauche",
+          "en": "Healing fountain — bottom fort, left"
+        }
+      },
+      {
         "id": "pmutmu1e902v",
         "type": "fontaine",
-        "x": 26,
-        "y": 54,
+        "x": 79.3,
+        "y": 33.7,
         "name": {
-          "fr": "Fontaine de soins — côté droit",
-          "en": "Healing fountain — right side"
+          "fr": "Fontaine de soins — bastion haut, droite",
+          "en": "Healing fountain — top keep, right"
         },
         "description": {
           "fr": "Deux minutes de recharge après utilisation. Savoir si celle d'en face est disponible change la valeur d'un plongeon autant que les points de vie restants.",
           "en": "Two-minute cooldown after use. Knowing whether the enemy one is up changes the worth of a dive as much as their remaining health does."
         },
         "image": ""
+      },
+      {
+        "id": "pmenmutuqods5",
+        "type": "fontaine",
+        "description": {
+          "fr": "Deux minutes de recharge après utilisation. Savoir si celle d'en face est disponible change la valeur d'un plongeon autant que les points de vie restants.",
+          "en": "Two-minute cooldown after use. Knowing whether the enemy one is up changes the worth of a dive as much as their remaining health does."
+        },
+        "image": "",
+        "x": 71.7,
+        "y": 44.4,
+        "name": {
+          "fr": "Fontaine de soins — bastion milieu, droite",
+          "en": "Healing fountain — middle keep, right"
+        }
+      },
+      {
+        "id": "pmenmutuqods6",
+        "type": "fontaine",
+        "description": {
+          "fr": "Deux minutes de recharge après utilisation. Savoir si celle d'en face est disponible change la valeur d'un plongeon autant que les points de vie restants.",
+          "en": "Two-minute cooldown after use. Knowing whether the enemy one is up changes the worth of a dive as much as their remaining health does."
+        },
+        "image": "",
+        "x": 80.1,
+        "y": 58.6,
+        "name": {
+          "fr": "Fontaine de soins — bastion bas, droite",
+          "en": "Healing fountain — bottom keep, right"
+        }
+      },
+      {
+        "id": "pmenmutuqods7",
+        "type": "fontaine",
+        "description": {
+          "fr": "Deux minutes de recharge après utilisation. Savoir si celle d'en face est disponible change la valeur d'un plongeon autant que les points de vie restants.",
+          "en": "Two-minute cooldown after use. Knowing whether the enemy one is up changes the worth of a dive as much as their remaining health does."
+        },
+        "image": "",
+        "x": 58.3,
+        "y": 22.7,
+        "name": {
+          "fr": "Fontaine de soins — fort haut, droite",
+          "en": "Healing fountain — top fort, right"
+        }
+      },
+      {
+        "id": "pmenmutuqods8",
+        "type": "fontaine",
+        "description": {
+          "fr": "Deux minutes de recharge après utilisation. Savoir si celle d'en face est disponible change la valeur d'un plongeon autant que les points de vie restants.",
+          "en": "Two-minute cooldown after use. Knowing whether the enemy one is up changes the worth of a dive as much as their remaining health does."
+        },
+        "image": "",
+        "x": 59.6,
+        "y": 49.8,
+        "name": {
+          "fr": "Fontaine de soins — fort milieu, droite",
+          "en": "Healing fountain — middle fort, right"
+        }
+      },
+      {
+        "id": "pmenmutuqods9",
+        "type": "fontaine",
+        "description": {
+          "fr": "Deux minutes de recharge après utilisation. Savoir si celle d'en face est disponible change la valeur d'un plongeon autant que les points de vie restants.",
+          "en": "Two-minute cooldown after use. Knowing whether the enemy one is up changes the worth of a dive as much as their remaining health does."
+        },
+        "image": "",
+        "x": 61,
+        "y": 77.2,
+        "name": {
+          "fr": "Fontaine de soins — fort bas, droite",
+          "en": "Healing fountain — bottom fort, right"
+        }
       }
     ],
     "guideVideos": []
