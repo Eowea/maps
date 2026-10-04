@@ -273,7 +273,21 @@
   }
   .adm-hotspot.dragging{cursor:grabbing;transform:translate(-50%,-50%) scale(1.2);}
 
-  .adm-point-head{display:flex;align-items:center;gap:10px;margin-bottom:12px;padding-right:28px;flex-wrap:wrap;}
+  /* Fiches de points pliables : seule la tête reste visible, un clic dessus la déplie. */
+  .adm-point-head{display:flex;align-items:center;gap:10px;flex-wrap:wrap;cursor:pointer;user-select:none;}
+  .adm-point.is-open .adm-point-head{margin-bottom:12px;}
+  .adm-point-head strong{flex:1 1 auto;min-width:0;}
+  .adm-point-chevron{flex:0 0 auto;width:12px;color:var(--gold);transition:transform .15s;}
+  .adm-point.is-open .adm-point-chevron{transform:rotate(90deg);}
+  .adm-point-body{display:none;}
+  .adm-point.is-open .adm-point-body{display:block;}
+  .adm-point-actions{display:flex;gap:6px;flex:0 0 auto;}
+  .adm-point-actions button{padding:4px 9px;font-size:12px;}
+  .subitem.adm-point{padding:10px 12px;margin-bottom:8px;}
+  .adm-point:not(.is-open):hover{border-color:var(--gold-border);}
+  .adm-points-toolbar{display:flex;align-items:center;gap:8px;margin:16px 0 10px;}
+  .adm-points-toolbar span{flex:1;font-size:12px;color:var(--text-dim);}
+  .adm-points-toolbar button{padding:4px 10px;font-size:12px;}
   .adm-point-pastille{
     position:relative;flex:0 0 auto;width:26px;height:26px;display:grid;place-items:center;
     color:var(--pt-color,var(--blue));line-height:0;
@@ -1619,14 +1633,19 @@ function renderHotspotsTab(bg){
     const cle = hotspotTypeKey(h.type);
     const nom = h.name?.fr || h.name?.en || '';
     return `
-    <div class="subitem adm-point" data-point="${hi}">
-      <button class="ghost remove-btn" onclick="removeHotspot(${hi})" title="Supprimer ce point">✕</button>
-      <div class="adm-point-head">
+    <div class="subitem adm-point${pointsOuverts.has(h.id) ? ' is-open' : ''}" data-point="${hi}">
+      <div class="adm-point-head" onclick="basculerPoint(${hi}, event)" title="Plier / déplier">
+        <span class="adm-point-chevron">▸</span>
         <span class="adm-point-pastille" data-type="${cle}">${hotspotType(cle).icon}</span>
         <strong data-point-label="${hi}">${escapeHtml(nom || 'Point sans nom')}</strong>
         <span class="adm-coords" data-coords="${hi}">${fmtCoord(h.x)} % / ${fmtCoord(h.y)} %</span>
-        <button class="ghost" onclick="centrerSurPoint(${hi})" title="Montrer ce point sur la carte">◎ Situer</button>
+        <span class="adm-point-actions">
+          <button class="ghost" onclick="centrerSurPoint(${hi})" title="Montrer ce point sur la carte">◎ Situer</button>
+          <button class="ghost" onclick="dupliquerPoint(${hi})" title="Créer une copie juste à côté, avec le même type, les mêmes textes et la même capture">⧉ Dupliquer</button>
+          <button class="ghost" onclick="removeHotspot(${hi})" title="Supprimer ce point">✕</button>
+        </span>
       </div>
+      <div class="adm-point-body">
       <div class="field">
         <label>Type</label>
         <select onchange="changerTypePoint(${hi}, this.value)">
@@ -1651,6 +1670,7 @@ function renderHotspotsTab(bg){
           ${h.image ? `<button class="ghost" onclick="setNested(BATTLEGROUNDS[${i}].hotspots[${hi}],'image',''); renderMapPanel(); selectionnerPoint(${hi});">Retirer</button>` : ''}
         </div>
       </div>
+      </div>
     </div>
   `;
   }).join('');
@@ -1670,7 +1690,13 @@ function renderHotspotsTab(bg){
           ${marqueurs}
         </div>
       </div>
-      ${blocs || '<p style="color:var(--text-dim);font-size:13px;">Aucun point pour le moment — clique sur la carte pour en poser un.</p>'}
+      ${blocs ? `
+        <div class="adm-points-toolbar">
+          <span>${bg.hotspots.length} point${bg.hotspots.length > 1 ? 's' : ''}</span>
+          <button class="ghost" onclick="plierTousPoints(false)">▾ Tout déplier</button>
+          <button class="ghost" onclick="plierTousPoints(true)">▸ Tout plier</button>
+        </div>
+        ${blocs}` : '<p style="color:var(--text-dim);font-size:13px;">Aucun point pour le moment — clique sur la carte pour en poser un.</p>'}
     </div>
   `;
 }
@@ -1689,6 +1715,45 @@ function addHotspotAt(x, y){
   markDirty();
   renderMapPanel();
   selectionnerPoint(bg.hotspots.length - 1);
+}
+
+/* Fiches dépliées, repérées par l'id du point : le panneau se re-rend à chaque
+   changement de type ou d'image, et l'état plié/déplié doit y survivre. */
+const pointsOuverts = new Set();
+
+function ouvrirPoint(hi, ouvert){
+  const h = BATTLEGROUNDS[currentMapIndex]?.hotspots?.[hi];
+  if (!h) return;
+  if (ouvert) pointsOuverts.add(h.id); else pointsOuverts.delete(h.id);
+  document.querySelector(`.adm-point[data-point="${hi}"]`)?.classList.toggle('is-open', ouvert);
+}
+
+function basculerPoint(hi, e){
+  // Les boutons de la tête (Situer, Dupliquer, Supprimer) gardent leur propre action.
+  if (e && e.target.closest('button')) return;
+  const h = BATTLEGROUNDS[currentMapIndex]?.hotspots?.[hi];
+  if (h) ouvrirPoint(hi, !pointsOuverts.has(h.id));
+}
+
+function plierTousPoints(plier){
+  (BATTLEGROUNDS[currentMapIndex]?.hotspots || []).forEach((h, hi) => ouvrirPoint(hi, !plier));
+}
+
+function dupliquerPoint(hi){
+  const bg = BATTLEGROUNDS[currentMapIndex];
+  const source = bg?.hotspots?.[hi];
+  if (!source) return;
+  const copie = JSON.parse(JSON.stringify(source));
+  copie.id = generateHotspotId();
+  // Décalée en diagonale pour ne pas masquer l'original ; elle reste dans la carte.
+  const decaler = (v) => Math.round((v + 4 <= 100 ? v + 4 : v - 4) * 10) / 10;
+  copie.x = decaler(source.x);
+  copie.y = decaler(source.y);
+  bg.hotspots.splice(hi + 1, 0, copie);
+  pointsOuverts.add(copie.id);
+  markDirty();
+  renderMapPanel();
+  selectionnerPoint(hi + 1);
 }
 
 function removeHotspot(hi){
@@ -1724,7 +1789,8 @@ function majCoordsPoint(hi){
   if (h && cible) cible.textContent = `${fmtCoord(h.x)} % / ${fmtCoord(h.y)} %`;
 }
 
-function selectionnerPoint(hi){
+function selectionnerPoint(hi, ouvrir = true){
+  if (ouvrir) ouvrirPoint(hi, true);
   document.querySelectorAll('.adm-point').forEach(el => el.classList.toggle('is-selected', Number(el.dataset.point) === hi));
   document.querySelectorAll('.adm-hotspot').forEach(el => el.classList.toggle('is-selected', Number(el.dataset.point) === hi));
   const bloc = document.querySelector(`.adm-point[data-point="${hi}"]`);
@@ -1792,7 +1858,7 @@ let glissementRecent = false;   // un clic qui termine un glissement ne doit rie
       h.y = d.pos.y;
       markDirty();
       majCoordsPoint(d.index);
-      selectionnerPoint(d.index);
+      selectionnerPoint(d.index, false);   // déplacer un point ne déplie pas sa fiche
     }
     glissementRecent = true;
     setTimeout(() => { glissementRecent = false; }, 0);
