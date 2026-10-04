@@ -16,6 +16,11 @@ const BG_DICT = {
   noVideosYet: { fr: "Aucune vidéo pour le moment.", en: "No videos yet." },
   noTipsYet: { fr: "Aucun conseil pour le moment.", en: "No tips yet." },
   selectPrompt: { fr: "Sélectionne une carte dans la liste.", en: "Select a map from the list." },
+  latestVideoTitle: { fr: "Dernières vidéos", en: "Latest Videos" },
+  patchAnalysisTitle: { fr: "Analyses Patch", en: "Patch Analyses" },
+  heroRotationTitle: { fr: "Rotation gratuite", en: "Free Rotation" },
+  heroRotationError: { fr: "Rotation indisponible pour le moment.", en: "Rotation unavailable right now." },
+  homeLoading: { fr: "Chargement…", en: "Loading…" },
   prevVideo: { fr: "Vidéo précédente", en: "Previous video" },
   nextVideo: { fr: "Vidéo suivante", en: "Next video" },
   // Deux formulations : au bureau l'infobulle suit le survol, au tactile il faut toucher.
@@ -241,6 +246,98 @@ function bindBgCarousel() {
   });
 }
 
+/* ── Accueil, quand aucune carte n'est choisie ─────────────────────────────
+   Même page que l'accueil du site des builds — dernières vidéos, analyses de patch,
+   rotation gratuite — sans la liste des auteurs de builds. Le contenu est lu
+   directement sur le site des builds (même origine, eowea.github.io) : ce qu'on y
+   modifie dans l'admin apparaît ici sans rien recopier. Si ce chargement échoue,
+   les vidéos retombent sur la copie locale de STREAMER_CONFIG. */
+const BG_BUILDS_URL = 'https://eowea.github.io/builds/';
+let bgBuildsPromesse = null;
+let bgBuildsCharges;   // undefined = pas encore de réponse ; null = échec ; objet = contenu
+function bgChargerBuilds() {
+  if (bgBuildsPromesse) return bgBuildsPromesse;
+  const lire = (fichier, expr) => fetch(BG_BUILDS_URL + fichier)
+    .then(r => { if (!r.ok) throw new Error(fichier + ' : ' + r.status); return r.text(); })
+    // Le fichier déclare ses propres constantes : on l'exécute dans sa propre fonction,
+    // ce qui évite tout conflit avec STREAMER_CONFIG et BATTLEGROUNDS de cette page.
+    .then(code => new Function(code + '\n;return ' + expr + ';')());
+  bgBuildsPromesse = Promise.all([
+    lire('data.js', '{ config: STREAMER_CONFIG, heros: HEROES }'),
+    lire('rotations.js', 'HERO_ROTATIONS').catch(() => null),
+  ]).then(([data, rotations]) => ({ ...data, rotations }))
+    .catch(() => null)
+    .then(res => (bgBuildsCharges = res));
+  return bgBuildsPromesse;
+}
+
+// Fenêtre de rotation en cours : elle change les 1er, 8, 15 et 22 de chaque mois
+// (même calcul que sur le site des builds).
+const BG_ROTATION_JOURS = [1, 8, 15, 22];
+function bgFenetreRotation(rotations, auj = new Date()) {
+  if (!Array.isArray(rotations)) return null;
+  const mois = auj.getMonth() + 1, jour = auj.getDate();
+  const debut = BG_ROTATION_JOURS.filter(d => d <= jour).pop() || 1;
+  const entree = rotations.find(r => r[0] === mois && r[1] === debut);
+  if (!entree) return null;
+  const i = BG_ROTATION_JOURS.indexOf(debut);
+  const suivant = i === BG_ROTATION_JOURS.length - 1
+    ? new Date(auj.getFullYear(), mois, 1)
+    : new Date(auj.getFullYear(), mois - 1, BG_ROTATION_JOURS[i + 1]);
+  return {
+    start: new Date(auj.getFullYear(), mois - 1, debut),
+    end: new Date(suivant.getFullYear(), suivant.getMonth(), suivant.getDate() - 1),
+    heroIds: entree[2],
+  };
+}
+
+// Les héros de la rotation mènent à leur fiche sur le site des builds.
+function bgRotationHtml(builds) {
+  const rot = builds ? bgFenetreRotation(builds.rotations) : null;
+  if (!rot || !rot.heroIds.length) return `<div class="empty-state">${bgT('heroRotationError')}</div>`;
+  const fmt = new Intl.DateTimeFormat(bgState.lang === 'en' ? 'en-US' : 'fr-FR', { day: 'numeric', month: 'long' });
+  const cartes = rot.heroIds.map(id => {
+    const h = builds.heros.find(x => x.id === id);
+    if (!h) return '';
+    const nom = bgLoc(h.name);
+    const inner = `
+      <div class="rotation-hero-portrait" data-fallback="${bgEsc(bgInitials(nom))}"><img src="${bgEsc(BG_BUILDS_URL + h.portrait)}" alt="${bgEsc(nom)}" loading="lazy" onerror="this.parentNode.classList.add('fallback');this.remove();" /></div>
+      <div class="rotation-hero-name">${bgEsc(nom)}</div>`;
+    return h.enabled
+      ? `<a class="rotation-hero" href="${BG_BUILDS_URL}#${encodeURIComponent(h.id)}/" title="${bgEsc(nom)}">${inner}</a>`
+      : `<div class="rotation-hero">${inner}</div>`;
+  }).filter(Boolean).join('');
+  return `<div class="rotation-date-range">${bgEsc(fmt.format(rot.start))} – ${bgEsc(fmt.format(rot.end))}</div><div class="rotation-hero-grid">${cartes}</div>`;
+}
+
+function renderBgAccueil() {
+  const dessiner = (builds) => {
+    // L'utilisateur a pu choisir une carte pendant le chargement : on ne l'écrase pas.
+    if (bgCurrent()) return;
+    const config = (builds && builds.config) || STREAMER_CONFIG;
+    const col = (titre, videos) => {
+      const markup = builds === undefined ? '' : bgBuildYoutubeCarouselMarkup(videos || []);
+      const corps = builds === undefined
+        ? `<div class="empty-state">${bgT('homeLoading')}</div>`
+        : markup ? `<section class="guide-video-section">${markup}</section>` : `<div class="empty-state">${bgT('noVideosYet')}</div>`;
+      return `<div class="video-group">
+        <h2 class="section-title" style="text-align:center;margin-bottom:16px;">${bgT(titre)}</h2>
+        ${corps}
+      </div>`;
+    };
+    const rotation = config.showHeroRotation === false ? '' : `<div class="video-group">
+        <h2 class="section-title" style="text-align:center;margin-bottom:16px;">${bgT('heroRotationTitle')}</h2>
+        <section class="rotation-section">${builds === undefined ? `<div class="empty-state">${bgT('homeLoading')}</div>` : bgRotationHtml(builds)}</section>
+      </div>`;
+    bgEls.detailView.innerHTML = `<div class="videos-layout with-guide">${col('latestVideoTitle', config.latestVideos)}${col('patchAnalysisTitle', config.patchVideos)}</div>${rotation}`;
+    bindBgCarousel();
+  };
+  // Déjà chargé : affichage direct. Sinon un squelette, remplacé dès que le site des builds a répondu.
+  if (bgBuildsCharges !== undefined) { dessiner(bgBuildsCharges); return; }
+  dessiner(undefined);
+  bgChargerBuilds().then(dessiner);
+}
+
 function bgOpenYoutubeForceApp(id) {
   const fallbackUrl = `https://www.youtube.com/watch?v=${id}`;
   const ua = navigator.userAgent || '';
@@ -411,10 +508,7 @@ function renderBgDetail() {
   // La liste est reconstruite avec toutes ses familles repliées : plus rien à filtrer.
   bgTypesFiltres.clear();
   const b = bgCurrent();
-  if (!b) {
-    bgEls.detailView.innerHTML = `<div class="empty-state">${bgT('selectPrompt')}</div>`;
-    return;
-  }
+  if (!b) { renderBgAccueil(); return; }
   const tipsHtml = (b.tips||[]).length
     ? `<ul class="bullet-list">${b.tips.map(tip=>`<li>${bgEsc(bgLoc(tip))}</li>`).join('')}</ul>`
     : `<p>${bgEsc(bgT('noTipsYet'))}</p>`;
