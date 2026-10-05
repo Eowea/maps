@@ -1,0 +1,64 @@
+{
+ "cases": [
+  256,
+  216
+ ],
+ "tuilage": [
+  24.0,
+  20.25,
+  -2.25,
+  -3.75
+ ],
+ "textures": [
+  "storm_alterac_1.dds",
+  "storm_alterac_2.dds",
+  "storm_alterac_3.dds",
+  "storm_alterac_4.dds",
+  "storm_alterac_5.dds",
+  "storm_alterac_6.dds",
+  "storm_alterac_7.dds",
+  "storm_alterac_8.dds"
+ ],
+ "gains": [
+  [
+   1.8,
+   1.64,
+   1.78
+  ],
+  [
+   2.27,
+   1.96,
+   2.08
+  ],
+  [
+   1.68,
+   1.59,
+   1.8
+  ],
+  [
+   1.82,
+   1.64,
+   1.78
+  ],
+  [
+   1.55,
+   1.49,
+   1.63
+  ],
+  [
+   1.66,
+   1.53,
+   1.7
+  ],
+  [
+   4.0,
+   2.67,
+   2.46
+  ],
+  [
+   1.79,
+   1.69,
+   1.92
+  ]
+ ]
+}

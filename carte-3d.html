@@ -74,7 +74,7 @@
   <button id="decors" class="actif" hidden title="Bâtiments, arbres et rochers extraits du jeu">Décors 3D</button>
 </div>
 <div class="legende" id="legende"></div>
-<div class="aide">Glisser : tourner · Molette : zoom · Clic droit : déplacer · Survol d'un point : détail</div>
+<div class="aide">Glisser : tourner · Double-clic : centrer · Molette : zoom · Clic droit : déplacer · Survol d'un point : détail</div>
 
 <script src="data.js"></script>
 <script type="importmap">
@@ -87,6 +87,8 @@
 import * as THREE from 'three';
 import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
 import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
+import { MeshoptDecoder } from 'three/addons/libs/meshopt_decoder.module.js';
+import * as SkeletonUtils from 'three/addons/utils/SkeletonUtils.js';
 
 /* Types de points : mêmes couleurs et symboles que le site (repris de maps.js). */
 const TYPES = {"objectif":{"libelle":"Objectif","icone":"<svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><g transform=\"translate(1 -0.5)\"><path d=\"M5 21V4\"/><path d=\"M5 4h12l-3 4 3 4H5\"/></g></svg>","couleur":"#f5c451"},"camp":{"libelle":"Camp de mercenaires","icone":"<svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><g transform=\"translate(0 0.5)\"><path d=\"M14.5 17.5 3 6V3h3l11.5 11.5\"/><path d=\"M13 19l6-6\"/><path d=\"M16 16l4 4\"/><path d=\"M14.5 6.5 18 3h3v3l-3.5 3.5\"/><path d=\"M5 14l4 4\"/><path d=\"M7 17l-3 3\"/></g></svg>","couleur":"#ff9f43"},"batiment":{"libelle":"Bâtiment","icone":"<svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M7 21V10L5 7V3h3v2h2V3h4v2h2V3h3v4l-2 3v11z\"/><path d=\"M10 21v-4a2 2 0 0 1 4 0v4\"/></svg>","couleur":"#b794f6"},"tour":{"libelle":"Tour de guet","icone":"<svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M2 12s3.8-6.5 10-6.5S22 12 22 12s-3.8 6.5-10 6.5S2 12 2 12z\"/><circle cx=\"12\" cy=\"12\" r=\"2.6\"/></svg>","couleur":"#6ec6ff"},"fontaine":{"libelle":"Fontaine de soins","icone":"<svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><g transform=\"translate(0 0.5)\"><path d=\"M12 3s6 6.5 6 11a6 6 0 0 1-12 0c0-4.5 6-11 6-11z\"/></g></svg>","couleur":"#5fd48a"},"autre":{"libelle":"Autre","icone":"<svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><g transform=\"translate(0 0.25)\"><path d=\"M12 21s-7-6.2-7-11.5a7 7 0 0 1 14 0C19 14.8 12 21 12 21z\"/><circle cx=\"12\" cy=\"9.5\" r=\"2.5\"/></g></svg>","couleur":"#6f9bff"}};
@@ -107,17 +109,35 @@ const camera = new THREE.PerspectiveCamera(40, 1, 0.5, 1000);
 const controls = new OrbitControls(camera, renderer.domElement);
 controls.enableDamping = true;
 controls.maxPolarAngle = Math.PI * 0.47;   // jamais sous le terrain
-controls.minDistance = 15;
+controls.minDistance = 5;
 controls.maxDistance = 220;
 controls.screenSpacePanning = false;
 
 // Les textures du jeu sont pensées pour un éclairage généreux : sans ça, tout paraît terne.
 renderer.toneMapping = THREE.ACESFilmicToneMapping;
-renderer.toneMappingExposure = 1.25;
-scene.add(new THREE.HemisphereLight(0xeef3ff, 0x4a4036, 2.0));
-const soleil = new THREE.DirectionalLight(0xfff1dd, 2.4);
-soleil.position.set(-60, 90, 40);
+renderer.toneMappingExposure = 1.6;
+// Éclairage de la Passe d'Alterac (LightData.xml, Storm_WCAV) : lumière principale chaude
+// venue de l'ouest, appoint bleuté de l'est, contre-jour, ambiance froide.
+// Axes : x du jeu → x, altitude → y, y du jeu → −z.
+const ambiance = new THREE.HemisphereLight(0x9aa4e6, 0x48424f, 3.4);
+scene.add(ambiance);
+const soleil = new THREE.DirectionalLight(0xf6e2d2, 3.6);
+soleil.position.set(-61.7, 76.6, 18.1);
 scene.add(soleil);
+const appoint = new THREE.DirectionalLight(0x6070a0, 1.0);
+appoint.position.set(81.6, 48, -32.1);
+scene.add(appoint);
+const contreJour = new THREE.DirectionalLight(0xe2e2c6, 0.8);
+contreJour.position.set(-50.5, 66, -55.5);
+scene.add(contreJour);
+// Ombres portées des bâtiments, arbres et falaises : la carte fait 100 × ~85 unités.
+renderer.shadowMap.enabled = true;
+renderer.shadowMap.type = THREE.PCFSoftShadowMap;
+soleil.castShadow = true;
+soleil.shadow.mapSize.set(4096, 4096);
+Object.assign(soleil.shadow.camera, { left: -70, right: 70, top: 70, bottom: -70, near: 1, far: 300 });
+soleil.shadow.bias = -0.0004;
+soleil.shadow.normalBias = 0.03;
 
 const LARGEUR = 100;            // la carte fait 100 unités de large
 const SEGMENTS = 320;
@@ -188,55 +208,337 @@ function appliquerRelief() {
   placerDecors();
 }
 
+/* ── Sol du jeu ────────────────────────────────────────────────────────────
+   Le sol mélange les 8 textures du terrain selon les poids de t3TextureMasks
+   (sol/poids0.png pour les textures 1-3, poids1 pour 4-6, poids2 pour 7-8). La minimap reste
+   affichée hors du terrain jouable. */
+const chargeurTex = new THREE.TextureLoader();
+const lireTex = (url, opts = {}) => new Promise((res, rej) => chargeurTex.load(url, t => res(Object.assign(t, opts)), undefined, rej));
+
+async function texturerSol(materiau, dossier) {
+  let sol;
+  try { sol = await fetch(`${dossier}/sol/sol.json`).then(r => r.ok ? r.json() : null); } catch { sol = null; }
+  if (!sol) return;
+  const n = sol.textures.length;
+  const aniso = renderer.capabilities.getMaxAnisotropy();
+  const [poids, textures] = await Promise.all([
+    Promise.all([0, 1, 2].map(k => lireTex(`${dossier}/sol/poids${k}.png`, { flipY: false }))),
+    Promise.all(sol.textures.map((_, i) => lireTex(`${dossier}/sol/tex${i + 1}.jpg`, {
+      colorSpace: THREE.SRGBColorSpace, wrapS: THREE.RepeatWrapping, wrapT: THREE.RepeatWrapping, anisotropy: aniso,
+    }))),
+  ]);
+  poids.forEach(t => { t.flipY = false; t.needsUpdate = true; });
+  const z = jeu.calage.zones, z1 = z[1] || z[0];
+  const uniforms = {
+    uPoids0: { value: poids[0] }, uPoids1: { value: poids[1] }, uPoids2: { value: poids[2] },
+    uImg: { value: new THREE.Vector2(jeu.largImg, jeu.hautImg) },
+    uCases: { value: new THREE.Vector2(...sol.cases) },
+    uTuile: { value: new THREE.Vector4(...sol.tuilage) },
+    uZone0: { value: new THREE.Vector4(z[0].px0, z[0].py0, z[0].x0, z[0].y0) }, uK0: { value: z[0].pxParCase },
+    uZone1: { value: new THREE.Vector4(z1.px0, z1.py0, z1.x0, z1.y0) }, uK1: { value: z1.pxParCase },
+    uLimite: { value: jeu.calage.limitePx ?? 1e9 },
+  };
+  // Gains mesurés sur la minimap (sol.json), en sRGB. Leur médiane, c'est l'éclairage du jeu,
+  // que la scène fournit déjà (et qui vaut aussi pour les modèles) : on ne garde que la
+  // teinte propre à chaque texture (la glace bien plus cyan, par exemple).
+  // Une deuxième zone (la mine de Mine hantée) a ses propres gains, bien plus sombres : le
+  // jeu l'éclaire autrement. Rapportés à la médiane de la surface, ils l'assombrissent.
+  const gains = sol.gains || [];
+  const gainsSecond = sol.gainsZones?.[1] || gains;
+  const med = (liste) => [0, 1, 2].map(c => { const v = liste.map(g => g[c]).sort((a, b) => a - b); return v.length ? v[v.length >> 1] : 1; });
+  const mediane = med(gains);
+  // Teinte des décors de chaque zone (la mine : environ un tiers de la lumière, froide).
+  jeu.teintes = (sol.gainsZones || [gains]).map(gz => new THREE.Color(...med(gz).map((g, c) => Math.pow(g / mediane[c], 2.2))));
+  textures.forEach((t, i) => {
+    uniforms['uTex' + i] = { value: t };
+    uniforms['uGain' + i] = { value: new THREE.Vector3(...(gains[i] || mediane).map((g, c) => Math.pow(g / mediane[c], 2.2))) };
+    uniforms['uGainB' + i] = { value: new THREE.Vector3(...(gainsSecond[i] || mediane).map((g, c) => Math.pow(g / mediane[c], 2.2))) };
+  });
+  const echantillons = textures.map((_, i) =>
+    `col += ${'p0.r p0.g p0.b p1.r p1.g p1.b p2.r p2.g'.split(' ')[i]} * (z0 ? uGain${i} : uGainB${i}) * texture2D(uTex${i}, tuv).rgb;`).join('\n      ');
+  materiau.onBeforeCompile = (sh) => {
+    Object.assign(sh.uniforms, uniforms);
+    sh.fragmentShader = `uniform sampler2D uPoids0, uPoids1, uPoids2, ${textures.map((_, i) => 'uTex' + i).join(', ')};
+uniform vec3 ${textures.map((_, i) => 'uGain' + i + ', uGainB' + i).join(', ')};
+uniform vec2 uImg, uCases; uniform vec4 uTuile, uZone0, uZone1; uniform float uK0, uK1, uLimite;
+` + sh.fragmentShader.replace('#include <map_fragment>', `
+    {
+      vec2 px = vec2(vMapUv.x * uImg.x, (1.0 - vMapUv.y) * uImg.y);
+      bool z0 = px.x < uLimite;
+      vec4 zn = z0 ? uZone0 : uZone1; float k = z0 ? uK0 : uK1;
+      vec2 c = vec2(zn.z + (px.x - zn.x) / k, zn.w - (px.y - zn.y) / k);
+      vec4 mini = texture2D(map, vMapUv);
+      if (c.x >= 0.0 && c.y >= 0.0 && c.x <= uCases.x && c.y <= uCases.y) {
+        vec2 m = c / uCases;
+        vec3 p0 = texture2D(uPoids0, m).rgb, p1 = texture2D(uPoids1, m).rgb, p2 = texture2D(uPoids2, m).rgb;
+        vec2 tuv = m * uTuile.xy + uTuile.zw;
+        vec3 col = vec3(0.0);
+      ${echantillons}
+        diffuseColor.rgb *= col / max(dot(p0 + p1 + p2, vec3(1.0)), 1e-3);
+      } else {
+        diffuseColor *= mini;
+      }
+    }`);
+  };
+  materiau.customProgramCacheKey = () => 'sol' + n;
+}
+
 /* ── Décors et bâtiments du jeu ────────────────────────────────────────────
    Un InstancedMesh par maillage de modèle : 1 750 objets en une centaine d'appels de
    dessin au lieu de plusieurs milliers. */
 const decors = new THREE.Group();
 scene.add(decors);
 let instancesJeu = [];        // [{ maillages: [{mesh, local}], liste: [[x,y,z,rot,s,pitch,roll]] }]
-const chargeur = new GLTFLoader();
+// Modèles compressés par gltfpack (quantification + meshopt) : 4 fois plus légers.
+const chargeur = new GLTFLoader().setMeshoptDecoder(MeshoptDecoder);
+// Une texture sert à des dizaines de modèles : sans cache, chacun la retélécharge.
+THREE.Cache.enabled = true;
 const m4 = new THREE.Matrix4(), q = new THREE.Quaternion(), e = new THREE.Euler(), s3 = new THREE.Vector3(), p3 = new THREE.Vector3();
 
 async function chargerDecors(dossier, scene3d) {
+  baseModeles = new URL(`${dossier}/models/`, location.href).href;
   const parModele = scene3d.modeles.map(() => []);
   for (const inst of scene3d.instances) parModele[inst[0]].push(inst.slice(1));
+  const sansMaillage = new Set(scene3d.sansMaillage || []);
+  const animes = new Set(scene3d.animes || []);
+  melangeurs = [];
   instancesJeu = [];
   await Promise.all(scene3d.modeles.map((nom, k) => new Promise(res => {
     if (!parModele[k].length) return res();
-    chargeur.load(`${dossier}/models/${nom}.glb`, (g) => {
+    const emetteurs = scene3d.emetteurs?.[k] || [];
+    // Modèle fait uniquement de particules (rayons de soleil, braseros) : pas de fichier.
+    if (sansMaillage.has(k)) { instancesJeu.push({ nom, maillages: [], liste: parModele[k], emetteurs }); return res(); }
+    chargeur.load(`${dossier}/models/${nom}.glb?v=${scene3d.version || 0}`, (g) => {
+      if (animes.has(k)) { instancesJeu.push({ nom, ...creerAnimes(g, parModele[k], emetteurs) }); return res(); }
       g.scene.updateMatrixWorld(true);
       const maillages = [];
       g.scene.traverse(o => {
         if (!o.isMesh) return;
         const im = new THREE.InstancedMesh(o.geometry, o.material, parModele[k].length);
         im.frustumCulled = false;
+        // Effets (feu, halos, rayons) : additifs ou mélangés, sans ombre ni écriture de
+        // profondeur, légèrement avancés pour ne pas scintiller contre le sol.
+        preparerMaillage(o, im);
         maillages.push({ mesh: im, local: o.matrixWorld.clone() });
         decors.add(im);
       });
-      instancesJeu.push({ maillages, liste: parModele[k] });
+      instancesJeu.push({ nom, maillages, liste: parModele[k], emetteurs });
       res();
     }, undefined, () => res());
   })));
+  await chargerTexturesParticules(dossier, scene3d);
   placerDecors();
+}
+
+const BLANC = new THREE.Color(1, 1, 1);
+
+// Effets (feu, halos, rayons) : additifs ou mélangés, sans ombre ni écriture de profondeur,
+// légèrement avancés pour ne pas scintiller contre le sol. Le reste porte et reçoit l'ombre.
+let baseModeles = '';   // adresse du dossier models/ de la carte, pour les masques des effets
+function preparerMaillage(o, cible = o) {
+  const fx = o.material.userData?.fx;
+  if (fx) {
+    Object.assign(o.material, { transparent: true, depthWrite: false, polygonOffset: true,
+      polygonOffsetFactor: -2, polygonOffsetUnits: -2 });
+    if (fx === 'add') o.material.blending = THREE.AdditiveBlending;
+    // Masque d'opacité (fondu, bords adoucis) : texture à part, sur son propre jeu d'UV.
+    const mq = o.material.userData.masque;
+    if (mq && !o.material.alphaMap) {
+      const t = chargeurTex.load(new URL(mq.uri, baseModeles).href);
+      t.flipY = false;
+      t.wrapS = t.wrapT = THREE.RepeatWrapping;
+      t.channel = mq.texCoord || 0;
+      o.material.alphaMap = t;
+      o.material.needsUpdate = true;
+    }
+    cible.renderOrder = 1;
+  } else {
+    cible.castShadow = cible.receiveShadow = true;
+  }
+}
+
+/* Unités animées (mercenaires, golem, squelettes, villageois) : une copie du modèle par
+   instance, avec son squelette, qui joue en boucle l'animation d'attente du jeu. Chaque
+   copie démarre à un instant différent pour qu'elles ne bougent pas toutes ensemble. */
+let melangeurs = [];
+function creerAnimes(g, liste, emetteurs) {
+  g.scene.traverse(o => { if (o.isMesh) preparerMaillage(o); });
+  const objets = liste.map(() => {
+    const copie = SkeletonUtils.clone(g.scene);
+    copie.matrixAutoUpdate = false;
+    copie.traverse(o => { if (o.isMesh) { o.frustumCulled = false; preparerMaillage(o); } });
+    decors.add(copie);
+    if (g.animations.length) {
+      const m = new THREE.AnimationMixer(copie);
+      const a = m.clipAction(g.animations[0]);
+      a.play();
+      a.time = Math.random() * g.animations[0].duration;
+      melangeurs.push(m);
+    }
+    return copie;
+  });
+  return { maillages: [], liste, emetteurs, objets };
+}
+function matriceInstance([x, y, z, rot, s, pitch = 0, roll = 0], cible) {
+  const { px, py, k } = caseVersPx(x, y);
+  const sol = z > 0.5 ? z : hauteurJeu(x, y);
+  p3.set(px / jeu.largImg * LARGEUR - LARGEUR / 2, altitude(sol, k), py / jeu.largImg * LARGEUR - profondeur / 2);
+  e.set(pitch, rot, -roll, 'YXZ');
+  q.setFromEuler(e);
+  const t = uniteCase(k) * s;
+  s3.set(t, t, t);
+  return cible.compose(p3, q, s3);
+}
+
+function couleurInstance(inst) {
+  const c = new THREE.Color(1, 1, 1);
+  if (jeu.teintes?.length > 1) c.copy(jeu.teintes[jeu.calage.zones.indexOf(zonePourY(inst[1]))] || BLANC);
+  if (inst[7] !== undefined) c.multiply(new THREE.Color(inst[7]));
+  return c;
 }
 
 function placerDecors() {
   if (!jeu) return;
-  for (const { maillages, liste } of instancesJeu) {
-    liste.forEach(([x, y, z, rot, s, pitch = 0, roll = 0], i) => {
-      const { px, py, k } = caseVersPx(x, y);
-      const sol = z > 0.5 ? z : hauteurJeu(x, y);
-      p3.set(px / jeu.largImg * LARGEUR - LARGEUR / 2, altitude(sol, k), py / jeu.largImg * LARGEUR - profondeur / 2);
-      e.set(pitch, rot, -roll, 'YXZ');
-      q.setFromEuler(e);
-      const t = uniteCase(k) * s;
-      s3.set(t, t, t);
-      m4.compose(p3, q, s3);
+  const plusieursZones = jeu.teintes?.length > 1;
+  for (const { maillages, liste, objets } of instancesJeu) {
+    // Couleur d'une instance : assombrissement de sa zone (la mine) × teinte de l'objet
+    // (TintColor de la carte, 8e valeur). Dès qu'une instance en a une, toutes en reçoivent.
+    const colorer = plusieursZones || liste.some(inst => inst[7] !== undefined);
+    liste.forEach((inst, i) => {
+      matriceInstance(inst, m4);
+      const teinte = colorer ? couleurInstance(inst) : null;
+      if (objets) {
+        objets[i].matrix.copy(m4);
+        objets[i].matrixWorldNeedsUpdate = true;
+        // Les unités ne prennent que la teinte propre de l'objet, pas l'assombrissement de
+        // la mine : le jeu les garde lisibles (leurs textures sont déjà sombres).
+        const propre = inst[7] !== undefined ? new THREE.Color(inst[7]) : null;
+        if (propre && !objets[i].userData.teinte) {   // une seule fois par copie
+          objets[i].userData.teinte = true;
+          objets[i].traverse(o => {
+            if (o.isMesh && !o.material.userData?.fx) { o.material = o.material.clone(); o.material.color.multiply(propre); }
+          });
+        }
+      }
       for (const { mesh, local } of maillages) {
         mesh.setMatrixAt(i, new THREE.Matrix4().multiplyMatrices(m4, local));
+        if (teinte && !mesh.material.userData?.fx) mesh.setColorAt(i, teinte);
       }
     });
-    for (const { mesh } of maillages) mesh.instanceMatrix.needsUpdate = true;
+    for (const { mesh } of maillages) {
+      mesh.instanceMatrix.needsUpdate = true;
+      if (mesh.instanceColor) mesh.instanceColor.needsUpdate = true;
+    }
+  }
+  construireParticules();
+}
+
+/* ── Particules ────────────────────────────────────────────────────────────
+   Les émetteurs des modèles (feu des braseros, lucioles, rayons, braises) sont rejoués
+   en boucle sur la carte de la GPU : chaque particule a sa graine, sa direction dans le
+   cône d'émission et son point de départ dans la zone ; le shader la fait vivre (trajet,
+   gravité, taille et couleur début → milieu → fin). Un groupe de points par texture. */
+const particules = new THREE.Group();
+decors.add(particules);
+const texturesParticules = new Map();
+const horloge = new THREE.Clock();
+const uniformesParticules = { uTemps: { value: 0 }, uEcran: { value: 1 } };
+
+async function chargerTexturesParticules(dossier, scene3d) {
+  const noms = new Set(Object.values(scene3d.emetteurs || {}).flat().map(em => em.tex));
+  texturesParticules.clear();
+  await Promise.all([...noms].map(nom => new Promise(res => chargeurTex.load(`${dossier}/textures/${nom}`, t => {
+    t.colorSpace = THREE.SRGBColorSpace;
+    texturesParticules.set(nom, t); res();
+  }, undefined, () => res()))));
+}
+
+const VERTEX_PARTICULES = `
+  uniform float uTemps, uEcran;
+  attribute vec3 aDir; attribute vec4 aVie;      // graine, durée, vitesse, gravité
+  attribute vec3 aTailles; attribute float aMilieu;
+  attribute vec4 aC0, aC1, aC2;
+  varying vec4 vCouleur;
+  void main() {
+    float t = fract(uTemps / aVie.y + aVie.x);
+    float age = t * aVie.y;
+    vec3 p = position + aDir * aVie.z * age + vec3(0.0, 0.5 * aVie.w * age * age, 0.0);
+    float m = clamp(aMilieu, 0.05, 0.95);
+    float taille = t < m ? mix(aTailles.x, aTailles.y, t / m) : mix(aTailles.y, aTailles.z, (t - m) / (1.0 - m));
+    vCouleur = t < m ? mix(aC0, aC1, t / m) : mix(aC1, aC2, (t - m) / (1.0 - m));
+    vec4 mv = modelViewMatrix * vec4(p, 1.0);
+    gl_PointSize = clamp(taille * uEcran / -mv.z, 1.0, 256.0);
+    gl_Position = projectionMatrix * mv;
+  }`;
+const FRAGMENT_PARTICULES = `
+  uniform sampler2D uTex; uniform float uAdditif;
+  varying vec4 vCouleur;
+  void main() {
+    vec4 c = texture2D(uTex, gl_PointCoord) * vCouleur;
+    if (c.a < 0.003 && uAdditif < 0.5) discard;
+    gl_FragColor = uAdditif > 0.5 ? vec4(c.rgb * vCouleur.a, 1.0) : c;
+    #include <colorspace_fragment>
+  }`;
+
+const ALEA = (() => { let s = 1; return () => (s = (s * 16807) % 2147483647) / 2147483647; })();
+const vTmp = new THREE.Vector3(), vAxe = new THREE.Vector3(), vPerp = new THREE.Vector3(), qTmp = new THREE.Quaternion();
+
+function construireParticules() {
+  if (!particules.parent) decors.add(particules);   // decors.clear() au changement de carte
+  for (const p of [...particules.children]) { p.geometry.dispose(); p.material.dispose(); particules.remove(p); }
+  const groupes = new Map();
+  const mat = new THREE.Matrix4(), rot = new THREE.Matrix3();
+  for (const { liste, emetteurs } of instancesJeu) {
+    if (!emetteurs?.length) continue;
+    for (const inst of liste) {
+      matriceInstance(inst, mat);
+      const echelle = s3.x;   // unités du monde par unité du modèle
+      rot.setFromMatrix4(mat);
+      for (const em of emetteurs) {
+        const tex = texturesParticules.get(em.tex);
+        if (!tex) continue;
+        const cle = em.tex + '|' + em.mode;
+        if (!groupes.has(cle)) groupes.set(cle, { tex, mode: em.mode, a: { position: [], aDir: [], aVie: [], aTailles: [], aMilieu: [], aC0: [], aC1: [], aC2: [] } });
+        const a = groupes.get(cle).a;
+        vAxe.fromArray(em.axe).applyMatrix3(rot).normalize();
+        for (let n = 0; n < em.nombre; n++) {
+          // Départ dans la zone d'émission (0 point, 1 plan, 2 sphère, 3 boîte, 4 cylindre).
+          const r = em.rayon, z = em.zoneTaille;
+          let ox = 0, oy = 0, oz = 0;
+          if (em.zone === 1 || em.zone === 3) { ox = (ALEA() - .5) * z[0]; oz = (ALEA() - .5) * z[1]; oy = em.zone === 3 ? (ALEA() - .5) * z[2] : 0; }
+          else if (em.zone === 2) { const u = ALEA() * 2 * Math.PI, v = Math.acos(2 * ALEA() - 1), l = r * Math.cbrt(ALEA()); ox = l * Math.sin(v) * Math.cos(u); oz = l * Math.sin(v) * Math.sin(u); oy = l * Math.cos(v); }
+          else if (em.zone === 4) { const u = ALEA() * 2 * Math.PI, l = r * Math.sqrt(ALEA()); ox = l * Math.cos(u); oz = l * Math.sin(u); oy = (ALEA() - .5) * z[2]; }
+          vTmp.set(em.pos[0] + ox, em.pos[1] + oy, em.pos[2] + oz).applyMatrix4(mat);
+          a.position.push(vTmp.x, vTmp.y, vTmp.z);
+          // Direction au hasard dans le cône autour de l'axe de l'os.
+          const angle = ALEA() * Math.min(em.cone, Math.PI);
+          vPerp.set(1, 0, 0); if (Math.abs(vAxe.x) > .9) vPerp.set(0, 0, 1);
+          vPerp.cross(vAxe).normalize();
+          qTmp.setFromAxisAngle(vAxe, ALEA() * 2 * Math.PI);
+          vPerp.applyQuaternion(qTmp);
+          vTmp.copy(vAxe).multiplyScalar(Math.cos(angle)).addScaledVector(vPerp, Math.sin(angle));
+          a.aDir.push(vTmp.x, vTmp.y, vTmp.z);
+          a.aVie.push(ALEA(), Math.max(em.vie, 0.1), em.vitesse * echelle, em.gravite * echelle);
+          a.aTailles.push(...em.tailles.map(t => t * echelle * 2));
+          a.aMilieu.push(em.milieu);
+          for (const [c, nomC] of [[0, 'aC0'], [1, 'aC1'], [2, 'aC2']]) a[nomC].push(...em.couleurs[c].map(v => v / 255));
+        }
+      }
+    }
+  }
+  for (const { tex, mode, a } of groupes.values()) {
+    const g = new THREE.BufferGeometry();
+    const tailles = { position: 3, aDir: 3, aVie: 4, aTailles: 3, aMilieu: 1, aC0: 4, aC1: 4, aC2: 4 };
+    for (const [nom, n] of Object.entries(tailles)) g.setAttribute(nom, new THREE.Float32BufferAttribute(a[nom], n));
+    const m = new THREE.ShaderMaterial({
+      uniforms: { ...uniformesParticules, uTex: { value: tex }, uAdditif: { value: mode === 'add' ? 1 : 0 } },
+      vertexShader: VERTEX_PARTICULES, fragmentShader: FRAGMENT_PARTICULES,
+      transparent: true, depthWrite: false, blending: mode === 'add' ? THREE.AdditiveBlending : THREE.NormalBlending,
+    });
+    const pts = new THREE.Points(g, m);
+    pts.frustumCulled = false;
+    pts.renderOrder = 2;
+    particules.add(pts);
   }
 }
 
@@ -335,6 +637,20 @@ function vue(type) {
   controls.update();
 }
 $('vueJeu').onclick = () => vue('jeu');
+// Double-clic : recentre la caméra sur le point visé du sol, en gardant l'angle de vue.
+const rayon = new THREE.Raycaster(), souris = new THREE.Vector2();
+renderer.domElement.addEventListener('dblclick', (ev) => {
+  if (!terrain) return;
+  const r = renderer.domElement.getBoundingClientRect();
+  souris.set((ev.clientX - r.left) / r.width * 2 - 1, -(ev.clientY - r.top) / r.height * 2 + 1);
+  rayon.setFromCamera(souris, camera);
+  const touche = rayon.intersectObject(terrain)[0];
+  if (!touche) return;
+  const decalage = touche.point.clone().sub(controls.target);
+  controls.target.add(decalage);
+  camera.position.add(decalage);
+  controls.update();
+});
 $('vueDessus').onclick = () => vue('dessus');
 $('relief').oninput = (e) => { relief = Number(e.target.value); if (terrain) appliquerRelief(); };
 $('relief').value = relief;   // le navigateur peut restaurer une ancienne valeur du curseur
@@ -359,7 +675,7 @@ async function charger(id) {
   try {
     const [calage, sc, bin] = await Promise.all([
       fetch(`${dossier}/calage.json`).then(r => r.ok ? r.json() : null),
-      fetch(`${dossier}/scene.json`).then(r => r.ok ? r.json() : null),
+      fetch(`${dossier}/scene.json`, { cache: 'no-cache' }).then(r => r.ok ? r.json() : null),
       fetch(`${dossier}/terrain.bin`).then(r => r.ok ? r.arrayBuffer() : null),
     ]);
     if (calage && sc && bin) {
@@ -377,7 +693,10 @@ async function charger(id) {
   if (terrain) { scene.remove(terrain); terrain.geometry.dispose(); terrain.material.map?.dispose(); terrain.material.dispose(); }
   const geo = new THREE.PlaneGeometry(LARGEUR, profondeur, SEGMENTS, Math.round(SEGMENTS * profondeur / LARGEUR));
   geo.rotateX(-Math.PI / 2);
-  terrain = new THREE.Mesh(geo, new THREE.MeshStandardMaterial({ map: tex, roughness: 1, metalness: 0 }));
+  const materiau = new THREE.MeshStandardMaterial({ map: tex, roughness: 1, metalness: 0 });
+  if (jeu) await texturerSol(materiau, dossier);
+  terrain = new THREE.Mesh(geo, materiau);
+  terrain.receiveShadow = true;
   scene.add(terrain);
 
   creerMarqueurs(carte);
@@ -399,14 +718,22 @@ function redimensionner() {
   renderer.setSize(innerWidth, innerHeight, false);
   camera.aspect = innerWidth / innerHeight;
   camera.updateProjectionMatrix();
+  // Taille des particules : pixels par unité du monde à distance 1.
+  uniformesParticules.uEcran.value = renderer.getDrawingBufferSize(new THREE.Vector2()).y / (2 * Math.tan(THREE.MathUtils.degToRad(camera.fov) / 2));
 }
 addEventListener('resize', redimensionner);
 redimensionner();
 vue('jeu');
 charger($('choixCarte').value);
 
+// Débogage : ?debug dans l'adresse expose la scène à la console.
+if (new URLSearchParams(location.search).has('debug')) window.carte3d = { THREE, scene, camera, controls, decors, get instances() { return instancesJeu; }, get jeu() { return jeu; }, hauteurJeu, caseVersPx, altitude };
+
 renderer.setAnimationLoop(() => {
   controls.update();
+  const dt = horloge.getDelta();
+  uniformesParticules.uTemps.value = horloge.elapsedTime;
+  for (const m of melangeurs) m.update(dt);
   renderer.render(scene, camera);
   if (points.length && points[0].sommet) placerMarqueurs();
 });
