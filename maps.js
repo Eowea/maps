@@ -41,7 +41,7 @@ const BG_DICT = {
   vue3dBeta: { fr: "bêta", en: "beta" },
   vue3dTitre: { fr: "Vue 3D de la carte (bêta)", en: "3D map view (beta)" },
   vue3dTexte: { fr: "Cette vue est en version bêta : certains éléments peuvent manquer ou s'afficher incorrectement.", en: "This view is in beta: some elements may be missing or display incorrectly." },
-  vue3dChargement: { fr: "Le chargement peut être long (environ 20 Mo de modèles et de textures) selon ta connexion et ta machine.", en: "Loading may take a while (about 20 MB of models and textures) depending on your connection and device." },
+  vue3dChargement: { fr: "Le chargement peut être long (20 à 30 Mo de modèles et de textures) selon ta connexion et ta machine.", en: "Loading may take a while (20 to 30 MB of models and textures) depending on your connection and device." },
   vue3dLancer: { fr: "Lancer la vue 3D", en: "Launch the 3D view" },
   vue3dAnnuler: { fr: "Annuler", en: "Cancel" },
   vue3dFermer: { fr: "Fermer la vue 3D", en: "Close the 3D view" },
@@ -739,7 +739,7 @@ function bgShowHotspotTip(declencheur) {
    ont un bouton sur leur minimap. Comme le chargement pèse une vingtaine de Mo, un
    avertissement le précède ; la vue s'ouvre ensuite en plein écran, dans un cadre,
    sans quitter la fiche. */
-const BG_VUES_3D = new Set(['mine-hantee']);
+const BG_VUES_3D = new Set(['mine-hantee', 'passe-alterac']);
 
 function bgBoutonVue3dHtml(b) {
   if (!BG_VUES_3D.has(b.id)) return '';

@@ -2556,6 +2556,8 @@
 .vue3d-overlay.active { display: grid; }
 .vue3d-overlay[data-etape="vue"] { padding: 0; background: #0b0f17; }
 html.vue3d-ouverte, html.vue3d-ouverte body { overflow: hidden; }
+/* Le bouton « remonter » de la page passerait par-dessus la vue 3D. */
+html.vue3d-ouverte #backToTop { display: none; }
 
 .vue3d-dialogue {
     position: relative;

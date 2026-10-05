@@ -74,8 +74,6 @@
   <select id="choixCarte"></select>
   <button id="vueJeu" class="actif" title="Caméra inclinée, comme en jeu">Vue jeu</button>
   <button id="vueDessus" title="Vue de dessus, comme la minimap">Vue de dessus</button>
-  <label title="Hauteur du relief">Relief <input id="relief" type="range" autocomplete="off" min="0" max="10" step="0.5" value="4"></label>
-  <button id="decors" class="actif" hidden title="Bâtiments, arbres et rochers extraits du jeu">Décors 3D</button>
 </div>
 <div class="legende" id="legende"></div>
 <div class="aide">Glisser : tourner · Double-clic : centrer · Molette : zoom · Clic droit : déplacer · Survol d'un point : détail</div>
@@ -145,6 +143,7 @@ soleil.shadow.normalBias = 0.03;
 
 const LARGEUR = 100;            // la carte fait 100 unités de large
 const SEGMENTS = 320;
+// relief : hauteur du terrain (4 = échelle du jeu), fixe depuis le retrait du curseur.
 let terrain = null, hauteurs = null, hLarg = 0, hHaut = 0, profondeur = 0, relief = 4;
 let tiges = null, points = [];
 const typesMasques = new Set();
@@ -613,10 +612,6 @@ function construireParticules() {
   }
 }
 
-$('decors').onclick = (ev) => {
-  decors.visible = !decors.visible;
-  ev.currentTarget.classList.toggle('actif', decors.visible);
-};
 
 /* ── Points d'intérêt ──────────────────────────────────────────────────── */
 const HAUTEUR_TIGE = 5;
@@ -725,8 +720,6 @@ renderer.domElement.addEventListener('dblclick', (ev) => {
   controls.update();
 });
 $('vueDessus').onclick = () => vue('dessus');
-$('relief').oninput = (e) => { relief = Number(e.target.value); if (terrain) appliquerRelief(); };
-$('relief').value = relief;   // le navigateur peut restaurer une ancienne valeur du curseur
 
 /* ── Chargement d'une carte ────────────────────────────────────────────── */
 async function charger(id) {
@@ -757,7 +750,6 @@ async function charger(id) {
       scene3d = sc;
     }
   } catch { jeu = null; }
-  $('decors').hidden = !jeu;
 
   const tex = new THREE.Texture(img);
   tex.colorSpace = THREE.SRGBColorSpace;
