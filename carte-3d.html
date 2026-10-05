@@ -208,6 +208,7 @@ function appliquerRelief() {
   for (let i = 0; i < pos.count; i++) pos.setY(i, hauteur(uv.getX(i), 1 - uv.getY(i)));
   pos.needsUpdate = true;
   terrain.geometry.computeVertexNormals();
+  placerTrous();
   placerTiges();
   placerDecors();
 }
@@ -219,15 +220,77 @@ function appliquerRelief() {
 const chargeurTex = new THREE.TextureLoader();
 const lireTex = (url, opts = {}) => new Promise((res, rej) => chargeurTex.load(url, t => res(Object.assign(t, opts)), undefined, rej));
 
+/* Trous du terrain (cases marquées par le jeu) : un masque pour le sol, et dessous un
+   puits sombre — ou, sous les plateformes de départ, le portail bleu. */
+function masqueTrous(sol) {
+  const [w, h] = sol.cases;
+  const data = new Uint8Array(w * h);
+  for (const [x, y] of sol.casesTrous || []) data[y * w + x] = 255;
+  const t = new THREE.DataTexture(data, w, h, THREE.RedFormat);
+  t.magFilter = t.minFilter = THREE.LinearFilter;
+  t.needsUpdate = true;
+  return t;
+}
+
+let puits = null;
+function texturePuits(portail) {
+  const c = document.createElement('canvas'); c.width = c.height = 256;
+  const g = c.getContext('2d');
+  const d = g.createRadialGradient(128, 128, 8, 128, 128, 128);
+  if (portail) {
+    // Vortex : centre sombre étoilé, bord lumineux bleu clair (comme en jeu).
+    d.addColorStop(0, '#060a24'); d.addColorStop(.45, '#16286e'); d.addColorStop(.72, '#3f74d8'); d.addColorStop(.88, '#d6ecff'); d.addColorStop(1, '#5d8fe0');
+  } else {
+    d.addColorStop(0, '#1a1426'); d.addColorStop(.6, '#0a0910'); d.addColorStop(1, '#030305');
+  }
+  g.fillStyle = d; g.fillRect(0, 0, 256, 256);
+  if (portail) {   // tourbillon : quelques arcs clairs
+    g.lineCap = 'round';
+    for (let k = 0; k < 14; k++) {
+      g.strokeStyle = 'rgba(200,225,255,' + (.12 + (k % 3) * .08) + ')'; g.lineWidth = 2 + (k % 4);
+      g.beginPath(); g.arc(128, 128, 18 + k * 7.5, k * .9, k * .9 + 1.6 + (k % 3) * .5); g.stroke();
+    }
+    g.fillStyle = 'rgba(255,255,255,.8)';
+    for (let k = 0; k < 40; k++) { const a = k * 2.4, r = 10 + (k * 37 % 80); g.fillRect(128 + Math.cos(a) * r, 128 + Math.sin(a) * r, 1.5, 1.5); }
+  }
+  const t = new THREE.CanvasTexture(c);
+  t.colorSpace = THREE.SRGBColorSpace;
+  return t;
+}
+function placerTrous() {
+  if (puits) { puits.traverse(o => { o.geometry?.dispose(); o.material?.map?.dispose(); o.material?.dispose(); }); scene.remove(puits); puits = null; }
+  if (!jeu?.trous?.length) return;
+  puits = new THREE.Group();
+  for (const t of jeu.trous) {
+    const { px, py, k } = caseVersPx(t.x, t.y);
+    const u = uniteCase(k);
+    // Portail : le vortex affleure, juste sous le rebord ; puits : un vrai trou sombre.
+    const portail = t.type === 'portail';
+    const r = (t.rayon + 1.2) * u, prof = (portail ? .35 : 4) * u * Math.max(relief, 1) / 4;
+    const y = altitude(hauteurJeu(t.x, t.y), k);
+    const centre = new THREE.Vector3(px / jeu.largImg * LARGEUR - LARGEUR / 2, y, py / jeu.largImg * LARGEUR - profondeur / 2);
+    const paroi = new THREE.Mesh(new THREE.CylinderGeometry(r, r * .8, prof, 48, 1, true),
+      new THREE.MeshBasicMaterial({ color: 0x07070b, side: THREE.BackSide }));
+    paroi.position.copy(centre).add(new THREE.Vector3(0, -prof / 2 + .01, 0));
+    const fond = new THREE.Mesh(new THREE.CircleGeometry(r * .8, 48),
+      new THREE.MeshBasicMaterial({ map: texturePuits(t.type === 'portail'), toneMapped: t.type !== 'portail' }));
+    fond.rotation.x = -Math.PI / 2;
+    fond.position.copy(centre).add(new THREE.Vector3(0, -prof + .02, 0));
+    if (t.type === 'portail') fond.userData.tourne = true;
+    puits.add(paroi, fond);
+  }
+  scene.add(puits);
+}
+
 async function texturerSol(materiau, dossier) {
   let sol;
-  try { sol = await fetch(`${dossier}/sol/sol.json`).then(r => r.ok ? r.json() : null); } catch { sol = null; }
+  try { sol = await fetch(`${dossier}/sol/sol.json`, { cache: 'no-cache' }).then(r => r.ok ? r.json() : null); } catch { sol = null; }
   if (!sol) return;
   const n = sol.textures.length;
   const aniso = renderer.capabilities.getMaxAnisotropy();
   const [poids, textures] = await Promise.all([
-    Promise.all([0, 1, 2].map(k => lireTex(`${dossier}/sol/poids${k}.png`, { flipY: false }))),
-    Promise.all(sol.textures.map((_, i) => lireTex(`${dossier}/sol/tex${i + 1}.jpg`, {
+    Promise.all([0, 1, 2].map(k => lireTex(`${dossier}/sol/poids${k}.png?v=${sol.version || 0}`, { flipY: false }))),
+    Promise.all(sol.textures.map((_, i) => lireTex(`${dossier}/sol/tex${i + 1}.jpg?v=${sol.version || 0}`, {
       colorSpace: THREE.SRGBColorSpace, wrapS: THREE.RepeatWrapping, wrapT: THREE.RepeatWrapping, anisotropy: aniso,
     }))),
   ]);
@@ -241,7 +304,9 @@ async function texturerSol(materiau, dossier) {
     uZone0: { value: new THREE.Vector4(z[0].px0, z[0].py0, z[0].x0, z[0].y0) }, uK0: { value: z[0].pxParCase },
     uZone1: { value: new THREE.Vector4(z1.px0, z1.py0, z1.x0, z1.y0) }, uK1: { value: z1.pxParCase },
     uLimite: { value: jeu.calage.limitePx ?? 1e9 },
+    uTrous: { value: masqueTrous(sol) },
   };
+  jeu.trous = sol.trous || [];
   // Gains mesurés sur la minimap (sol.json), en sRGB. Leur médiane, c'est l'éclairage du jeu,
   // que la scène fournit déjà (et qui vaut aussi pour les modèles) : on ne garde que la
   // teinte propre à chaque texture (la glace bien plus cyan, par exemple).
@@ -262,7 +327,7 @@ async function texturerSol(materiau, dossier) {
     `col += ${'p0.r p0.g p0.b p1.r p1.g p1.b p2.r p2.g'.split(' ')[i]} * (z0 ? uGain${i} : uGainB${i}) * texture2D(uTex${i}, tuv).rgb;`).join('\n      ');
   materiau.onBeforeCompile = (sh) => {
     Object.assign(sh.uniforms, uniforms);
-    sh.fragmentShader = `uniform sampler2D uPoids0, uPoids1, uPoids2, ${textures.map((_, i) => 'uTex' + i).join(', ')};
+    sh.fragmentShader = `uniform sampler2D uTrous, uPoids0, uPoids1, uPoids2, ${textures.map((_, i) => 'uTex' + i).join(', ')};
 uniform vec3 ${textures.map((_, i) => 'uGain' + i + ', uGainB' + i).join(', ')};
 uniform vec2 uImg, uCases; uniform vec4 uTuile, uZone0, uZone1; uniform float uK0, uK1, uLimite;
 ` + sh.fragmentShader.replace('#include <map_fragment>', `
@@ -274,6 +339,8 @@ uniform vec2 uImg, uCases; uniform vec4 uTuile, uZone0, uZone1; uniform float uK
       vec4 mini = texture2D(map, vMapUv);
       if (c.x >= 0.0 && c.y >= 0.0 && c.x <= uCases.x && c.y <= uCases.y) {
         vec2 m = c / uCases;
+        // Trou du terrain (grand puits, portails) : le jeu n'y dessine pas le sol.
+        if (texture2D(uTrous, m).r > 0.5) discard;
         vec3 p0 = texture2D(uPoids0, m).rgb, p1 = texture2D(uPoids1, m).rgb, p2 = texture2D(uPoids2, m).rgb;
         vec2 tuv = m * uTuile.xy + uTuile.zw;
         vec3 col = vec3(0.0);
@@ -680,9 +747,9 @@ async function charger(id) {
   let scene3d = null;
   try {
     const [calage, sc, bin] = await Promise.all([
-      fetch(`${dossier}/calage.json`).then(r => r.ok ? r.json() : null),
+      fetch(`${dossier}/calage.json`, { cache: 'no-cache' }).then(r => r.ok ? r.json() : null),
       fetch(`${dossier}/scene.json`, { cache: 'no-cache' }).then(r => r.ok ? r.json() : null),
-      fetch(`${dossier}/terrain.bin`).then(r => r.ok ? r.arrayBuffer() : null),
+      fetch(`${dossier}/terrain.bin`, { cache: 'no-cache' }).then(r => r.ok ? r.arrayBuffer() : null),
     ]);
     if (calage && sc && bin) {
       jeu = { calage, terrain: new Float32Array(bin), dim: sc.dim, largImg: img.width, hautImg: img.height,
@@ -740,13 +807,14 @@ vue('jeu');
 charger($('choixCarte').value);
 
 // Débogage : ?debug dans l'adresse expose la scène à la console.
-if (new URLSearchParams(location.search).has('debug')) window.carte3d = { THREE, scene, camera, controls, decors, get instances() { return instancesJeu; }, get jeu() { return jeu; }, hauteurJeu, caseVersPx, altitude };
+if (new URLSearchParams(location.search).has('debug')) window.carte3d = { THREE, scene, camera, controls, decors, get instances() { return instancesJeu; }, get jeu() { return jeu; }, get melangeurs() { return melangeurs; }, hauteurJeu, caseVersPx, altitude };
 
 renderer.setAnimationLoop(() => {
   controls.update();
   const dt = horloge.getDelta();
   uniformesParticules.uTemps.value = horloge.elapsedTime;
   for (const m of melangeurs) m.update(dt);
+  puits?.children.forEach(o => { if (o.userData.tourne) o.rotation.z += dt * .4; });
   renderer.render(scene, camera);
   if (points.length && points[0].sommet) placerMarqueurs();
 });
