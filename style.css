@@ -2519,7 +2519,7 @@
 /* ── Vue 3D (bêta) : bouton sur la minimap, avertissement, vue plein écran ── */
 .bg-vue3d-btn {
     position: absolute;
-    top: 10px; right: 10px;
+    bottom: 10px; right: 10px;
     z-index: 4;
     display: inline-flex; align-items: center; gap: 7px;
     padding: 7px 12px;
