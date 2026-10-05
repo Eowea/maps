@@ -37,6 +37,14 @@ const BG_DICT = {
   closeZoomHint: { fr: "Clique hors de la carte ou appuie sur Échap pour fermer", en: "Click outside the map or press Esc to close" },
   closeZoomHintTouch: { fr: "Touche hors de la carte pour fermer", en: "Tap outside the map to close" },
   closeZoom: { fr: "Fermer l'agrandissement", en: "Close the enlarged map" },
+  vue3d: { fr: "Vue 3D", en: "3D view" },
+  vue3dBeta: { fr: "bêta", en: "beta" },
+  vue3dTitre: { fr: "Vue 3D de la carte (bêta)", en: "3D map view (beta)" },
+  vue3dTexte: { fr: "Cette vue est en version bêta : certains éléments peuvent manquer ou s'afficher incorrectement.", en: "This view is in beta: some elements may be missing or display incorrectly." },
+  vue3dChargement: { fr: "Le chargement peut être long (environ 20 Mo de modèles et de textures) selon ta connexion et ta machine.", en: "Loading may take a while (about 20 MB of models and textures) depending on your connection and device." },
+  vue3dLancer: { fr: "Lancer la vue 3D", en: "Launch the 3D view" },
+  vue3dAnnuler: { fr: "Annuler", en: "Cancel" },
+  vue3dFermer: { fr: "Fermer la vue 3D", en: "Close the 3D view" },
   legendFilter: { fr: "Afficher uniquement ce type sur la carte", en: "Show only this type on the map" },
 };
 
@@ -529,6 +537,7 @@ function renderBgDetail() {
           <div class="bg-minimap-stage is-zoomable">
             <img src="${bgEsc(b.minimapImage)}" alt="${bgEsc(bgT('minimap'))} — ${bgEsc(bgLoc(b.name))}" />
             ${marqueursHtml}
+            ${bgBoutonVue3dHtml(b)}
           </div>
         </div>
         ${legendeHtml}
@@ -716,12 +725,91 @@ function bgShowHotspotTip(declencheur) {
   });
   document.addEventListener('keydown', (e) => {
     if (e.key !== 'Escape') return;
-    // Échap ferme d'abord l'agrandissement s'il est ouvert, la bulle sinon.
+    // Échap ferme d'abord la vue 3D ou son avertissement, puis l'agrandissement s'il est
+    // ouvert, la bulle sinon.
+    if (bgFermerVue3d()) return;
     if (!bgCloseMapZoom()) bgHideHotspotTip(true);
   });
   window.addEventListener('resize', bgQueueHotspotTipPosition);
   window.addEventListener('scroll', bgQueueHotspotTipPosition, { passive: true, capture: true });
 })();
+
+/* ── Vue 3D (bêta) ─────────────────────────────────────────────────────────
+   Les cartes dont la version 3D est prête (carte-3d.html, décors du jeu dans 3d/<id>/)
+   ont un bouton sur leur minimap. Comme le chargement pèse une vingtaine de Mo, un
+   avertissement le précède ; la vue s'ouvre ensuite en plein écran, dans un cadre,
+   sans quitter la fiche. */
+const BG_VUES_3D = new Set(['mine-hantee']);
+
+function bgBoutonVue3dHtml(b) {
+  if (!BG_VUES_3D.has(b.id)) return '';
+  return `<button class="bg-vue3d-btn" type="button" aria-haspopup="dialog">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2 3 7v10l9 5 9-5V7z"/><path d="M3 7l9 5 9-5"/><path d="M12 12v10"/></svg>
+      ${bgEsc(bgT('vue3d'))} <span class="bg-vue3d-beta">${bgEsc(bgT('vue3dBeta'))}</span>
+    </button>`;
+}
+
+function bgOverlayVue3d() {
+  let o = document.getElementById('vue3dOverlay');
+  if (!o) {
+    o = document.createElement('div');
+    o.id = 'vue3dOverlay';
+    o.className = 'vue3d-overlay';
+    document.body.appendChild(o);
+    o.addEventListener('click', (e) => {
+      if (e.target.closest('[data-vue3d="annuler"]') || e.target.closest('[data-vue3d="fermer"]')) { bgFermerVue3d(); return; }
+      if (e.target.closest('[data-vue3d="lancer"]')) { bgLancerVue3d(); return; }
+      // Un clic sur le fond referme l'avertissement (pas la vue 3D, trop facile à perdre).
+      if (e.target === o && o.dataset.etape === 'avertissement') bgFermerVue3d();
+    });
+  }
+  return o;
+}
+
+function bgOuvrirAvertissementVue3d() {
+  const b = bgCurrent();
+  if (!b || !BG_VUES_3D.has(b.id)) return;
+  const o = bgOverlayVue3d();
+  o.dataset.etape = 'avertissement';
+  o.innerHTML = `
+    <div class="vue3d-dialogue" role="dialog" aria-modal="true" aria-labelledby="vue3dTitre">
+      <div class="vue3d-badge">${bgEsc(bgT('vue3dBeta'))}</div>
+      <h3 id="vue3dTitre">${bgEsc(bgT('vue3dTitre'))}</h3>
+      <p>${bgEsc(bgT('vue3dTexte'))}</p>
+      <p>${bgEsc(bgT('vue3dChargement'))}</p>
+      <div class="vue3d-actions">
+        <button type="button" class="vue3d-secondaire" data-vue3d="annuler">${bgEsc(bgT('vue3dAnnuler'))}</button>
+        <button type="button" class="vue3d-principal" data-vue3d="lancer">${bgEsc(bgT('vue3dLancer'))}</button>
+      </div>
+    </div>`;
+  o.classList.add('active');
+  o.querySelector('[data-vue3d="lancer"]').focus();
+}
+
+function bgLancerVue3d() {
+  const b = bgCurrent();
+  const o = bgOverlayVue3d();
+  if (!b) return;
+  o.dataset.etape = 'vue';
+  o.innerHTML = `
+    <iframe class="vue3d-cadre" src="carte-3d.html?integre#${encodeURIComponent(b.id)}" title="${bgEsc(bgT('vue3dTitre'))} — ${bgEsc(bgLoc(b.name))}" allow="fullscreen"></iframe>
+    <button class="map-zoom-close vue3d-fermer" type="button" data-vue3d="fermer" aria-label="${bgEsc(bgT('vue3dFermer'))}">✕</button>`;
+  o.classList.add('active');
+  document.documentElement.classList.add('vue3d-ouverte');   // pas de défilement derrière
+  o.querySelector('.vue3d-fermer').focus();
+}
+
+// Renvoie true si elle avait quelque chose à fermer (pour Échap).
+function bgFermerVue3d() {
+  const o = document.getElementById('vue3dOverlay');
+  if (!o || !o.classList.contains('active')) return false;
+  o.classList.remove('active');
+  o.innerHTML = '';   // décharge la scène 3D et libère la mémoire
+  delete o.dataset.etape;
+  document.documentElement.classList.remove('vue3d-ouverte');
+  document.querySelector('.bg-vue3d-btn')?.focus();
+  return true;
+}
 
 /* ── Agrandissement de la carte ───────────────────────────────────────────
    Les minimaps font 5 000 à 8 000 pixels de large et s'affichent sur huit cents :
@@ -761,6 +849,7 @@ function bgCloseMapZoom() {
   // Ouverture : un clic sur la carte de la fiche, mais pas sur un marqueur — celui-ci
   // a déjà son rôle.
   bgEls.detailView.addEventListener('click', (e) => {
+    if (e.target.closest('.bg-vue3d-btn')) { bgOuvrirAvertissementVue3d(); return; }
     if (e.target.closest('.bg-hotspot')) return;
     if (!e.target.closest('.bg-minimap-stage.is-zoomable')) return;
     bgOpenMapZoom();

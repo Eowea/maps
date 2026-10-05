@@ -25,6 +25,7 @@
   .barre label { display: flex; align-items: center; gap: 8px; cursor: default; }
   .barre input[type=range] { width: 110px; }
   .barre button.actif { border-color: var(--gold); color: var(--gold); }
+  body.integre .barre { right: 64px; }
   .titre { font-weight: 700; letter-spacing: .04em; text-transform: uppercase; font-size: 14px; color: var(--gold); margin-right: 6px; }
 
   /* Points d'intérêt : même pastille que sur le site, posée au sommet d'une tige 3D. */
@@ -718,6 +719,13 @@ $('choixCarte').innerHTML = cartes.map(c => `<option value="${c.id}">${esc(c.nam
 $('choixCarte').onchange = (e) => charger(e.target.value);
 const depart = decodeURIComponent(location.hash.slice(1)) || 'passe-alterac';
 $('choixCarte').value = cartes.some(c => c.id === depart) ? depart : cartes[0].id;
+// Intégrée à la fiche d'une carte (bouton « Vue 3D » du site) : une seule carte, pas de
+// sélecteur, et le coin haut droit laissé libre pour la croix de fermeture.
+if (new URLSearchParams(location.search).has('integre')) {
+  document.body.classList.add('integre');
+  $('choixCarte').hidden = true;
+  document.querySelector('.titre').textContent = 'Vue 3D · bêta';
+}
 
 function redimensionner() {
   renderer.setSize(innerWidth, innerHeight, false);
