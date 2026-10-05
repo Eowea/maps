@@ -4,5 +4,6 @@
   "zones": [
     { "nom": "carte", "siY": [-999, 999], "x0": 0, "px0": 248.31, "y0": 0, "py0": 2144.72, "pxParCase": 9.2859 }
   ],
+  "portail": "violet",
   "limitePx": 999999
 }

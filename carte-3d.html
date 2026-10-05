@@ -220,7 +220,8 @@ const chargeurTex = new THREE.TextureLoader();
 const lireTex = (url, opts = {}) => new Promise((res, rej) => chargeurTex.load(url, t => res(Object.assign(t, opts)), undefined, rej));
 
 /* Trous du terrain (cases marquées par le jeu) : un masque pour le sol, et dessous un
-   puits sombre — ou, sous les plateformes de départ, le portail bleu. */
+   puits sombre — ou, sous les plateformes de départ, le portail ; sous la glace d'une
+   rivière (type « eau »), le décor du lac gelé, avec un fond d'eau sombre par sécurité. */
 function masqueTrous(sol) {
   const [w, h] = sol.cases;
   const data = new Uint8Array(w * h);
@@ -232,13 +233,22 @@ function masqueTrous(sol) {
 }
 
 let puits = null;
-function texturePuits(portail) {
+// Teintes du vortex des portails : bleu (Mine hantée), violet (Alterac) — calage.json « portail ».
+const PORTAILS = {
+  bleu: ['#060a24', '#16286e', '#3f74d8', '#d6ecff', '#5d8fe0', '200,225,255'],
+  violet: ['#020205', '#120c34', '#3a2a9a', '#eadcff', '#8a6ee6', '215,200,255'],
+};
+function texturePuits(type) {
+  const portail = type === 'portail';
   const c = document.createElement('canvas'); c.width = c.height = 256;
   const g = c.getContext('2d');
   const d = g.createRadialGradient(128, 128, 8, 128, 128, 128);
+  const p = PORTAILS[jeu?.calage?.portail] || PORTAILS.bleu;
   if (portail) {
-    // Vortex : centre sombre étoilé, bord lumineux bleu clair (comme en jeu).
-    d.addColorStop(0, '#060a24'); d.addColorStop(.45, '#16286e'); d.addColorStop(.72, '#3f74d8'); d.addColorStop(.88, '#d6ecff'); d.addColorStop(1, '#5d8fe0');
+    // Vortex : centre sombre étoilé, bord lumineux (comme en jeu).
+    d.addColorStop(0, p[0]); d.addColorStop(.45, p[1]); d.addColorStop(.72, p[2]); d.addColorStop(.88, p[3]); d.addColorStop(1, p[4]);
+  } else if (type === 'eau') {
+    d.addColorStop(0, '#1a4853'); d.addColorStop(1, '#1f525e');
   } else {
     d.addColorStop(0, '#1a1426'); d.addColorStop(.6, '#0a0910'); d.addColorStop(1, '#030305');
   }
@@ -246,7 +256,7 @@ function texturePuits(portail) {
   if (portail) {   // tourbillon : quelques arcs clairs
     g.lineCap = 'round';
     for (let k = 0; k < 14; k++) {
-      g.strokeStyle = 'rgba(200,225,255,' + (.12 + (k % 3) * .08) + ')'; g.lineWidth = 2 + (k % 4);
+      g.strokeStyle = `rgba(${p[5]},` + (.12 + (k % 3) * .08) + ')'; g.lineWidth = 2 + (k % 4);
       g.beginPath(); g.arc(128, 128, 18 + k * 7.5, k * .9, k * .9 + 1.6 + (k % 3) * .5); g.stroke();
     }
     g.fillStyle = 'rgba(255,255,255,.8)';
@@ -264,15 +274,17 @@ function placerTrous() {
     const { px, py, k } = caseVersPx(t.x, t.y);
     const u = uniteCase(k);
     // Portail : le vortex affleure, juste sous le rebord ; puits : un vrai trou sombre.
-    const portail = t.type === 'portail';
-    const r = (t.rayon + 1.2) * u, prof = (portail ? .35 : 4) * u * Math.max(relief, 1) / 4;
+    const portail = t.type === 'portail', eau = t.type === 'eau';
+    const r = (t.rayon + 1.2) * u, prof = (portail ? .35 : eau ? 3 : 4) * u * Math.max(relief, 1) / 4;
     const y = altitude(hauteurJeu(t.x, t.y), k);
     const centre = new THREE.Vector3(px / jeu.largImg * LARGEUR - LARGEUR / 2, y, py / jeu.largImg * LARGEUR - profondeur / 2);
     const paroi = new THREE.Mesh(new THREE.CylinderGeometry(r, r * .8, prof, 48, 1, true),
       new THREE.MeshBasicMaterial({ color: 0x07070b, side: THREE.BackSide }));
     paroi.position.copy(centre).add(new THREE.Vector3(0, -prof / 2 + .01, 0));
-    const fond = new THREE.Mesh(new THREE.CircleGeometry(r * .8, 48),
-      new THREE.MeshBasicMaterial({ map: texturePuits(t.type === 'portail'), toneMapped: t.type !== 'portail' }));
+    // Eau : pas de paroi, son bord dépasserait du sol autour du trou (anneau sombre).
+    paroi.visible = !eau;
+    const fond = new THREE.Mesh(new THREE.CircleGeometry(eau ? r : r * .8, 48),
+      new THREE.MeshBasicMaterial({ map: texturePuits(t.type), toneMapped: !portail }));
     fond.rotation.x = -Math.PI / 2;
     fond.position.copy(centre).add(new THREE.Vector3(0, -prof + .02, 0));
     if (t.type === 'portail') fond.userData.tourne = true;
