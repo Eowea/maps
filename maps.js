@@ -196,7 +196,13 @@ function renderBgList() {
     </button>`).join('');
 }
 
-function bgBuildYoutubeCarouselMarkup(videos) {
+// `contexte` sert à la mesure d'audience : il dit d'où part le clic (« maps-derniere »,
+// « maps-patch », « carte/val-maudit »), comme sur le site des builds.
+function bgBuildYoutubeCarouselMarkup(videos, contexte) {
+  const slug = (v, id) => {
+    const nom = bgNormalize(v?.title?.fr || v?.title?.en || '').replace(/ /g, '-') || id;
+    return contexte ? contexte + '/' + nom : nom;
+  };
   const slides = (videos||[])
     .map(v => ({ v, id: bgParseYouTubeId(v?.youtubeId||v?.youtubeUrl||v?.url||'') }))
     .filter(x => x.id);
@@ -206,7 +212,7 @@ function bgBuildYoutubeCarouselMarkup(videos) {
   const slidesHtml = slides.map((x, idx) => `
     <div class="combo-slide${idx===0?' is-active':''}" data-index="${idx}">
       <div class="combo-slide-title">${bgEsc(bgLoc(x.v.title) || '')}</div>
-      <a class="combo-stage guide-stage-link" data-yt-id="${x.id}" href="https://www.youtube.com/watch?v=${x.id}"${linkAttrs}>
+      <a class="combo-stage guide-stage-link" data-yt-id="${x.id}" data-video-track="${bgEsc(slug(x.v, x.id))}" data-video-title="${bgEsc(x.v?.title?.fr || x.v?.title?.en || x.id)}" href="https://www.youtube.com/watch?v=${x.id}"${linkAttrs}>
         <img class="combo-poster" src="${bgYtThumb(x.id)}" alt="${bgEsc(bgLoc(x.v.title))}" loading="lazy" />
         <span class="youtube-play"></span>
       </a>
@@ -301,8 +307,8 @@ function renderBgAccueil() {
     // L'utilisateur a pu choisir une carte pendant le chargement : on ne l'écrase pas.
     if (bgCurrent()) return;
     const config = (builds && builds.config) || STREAMER_CONFIG;
-    const col = (titre, videos) => {
-      const markup = builds === undefined ? '' : bgBuildYoutubeCarouselMarkup(videos || []);
+    const col = (titre, videos, contexte) => {
+      const markup = builds === undefined ? '' : bgBuildYoutubeCarouselMarkup(videos || [], contexte);
       const corps = builds === undefined
         ? `<div class="empty-state">${bgT('homeLoading')}</div>`
         : markup ? `<section class="guide-video-section">${markup}</section>` : `<div class="empty-state">${bgT('noVideosYet')}</div>`;
@@ -317,7 +323,7 @@ function renderBgAccueil() {
         <h2 class="section-title" style="text-align:center;margin-bottom:16px;">${bgT('rankedTitle')}</h2>
         <section class="rotation-section">${bgRankedHtml()}</section>
       </div>`;
-    bgEls.detailView.innerHTML = `<div class="videos-layout with-guide">${col('latestVideoTitle', config.latestVideos)}${col('patchAnalysisTitle', config.patchVideos)}</div>${ranked}`;
+    bgEls.detailView.innerHTML = `<div class="videos-layout with-guide">${col('latestVideoTitle', config.latestVideos, 'maps-derniere')}${col('patchAnalysisTitle', config.patchVideos, 'maps-patch')}</div>${ranked}`;
     bindBgCarousel();
   };
   // Déjà chargé : affichage direct. Sinon un squelette, remplacé dès que le site des builds a répondu.
@@ -500,7 +506,7 @@ function renderBgDetail() {
   const tipsHtml = (b.tips||[]).length
     ? `<ul class="bullet-list">${b.tips.map(tip=>`<li>${bgEsc(bgLoc(tip))}</li>`).join('')}</ul>`
     : `<p>${bgEsc(bgT('noTipsYet'))}</p>`;
-  const videoMarkup = bgBuildYoutubeCarouselMarkup(b.guideVideos);
+  const videoMarkup = bgBuildYoutubeCarouselMarkup(b.guideVideos, 'carte/' + b.id);
   const videoSectionHtml = videoMarkup
     ? `<section class="guide-video-section">${videoMarkup}</section>`
     : `<div class="empty-state">${bgT('noVideosYet')}</div>`;
@@ -1018,19 +1024,56 @@ function renderBgFooter() {
   pied.hidden = false;
 }
 
+/* ── Mesure d'audience (GoatCounter) ──
+   Le script est chargé par index.html, avec le même compte que le site des builds :
+   les visites de la page arrivent sous /maps/. On y ajoute des évènements nommés,
+   sur le modèle du site des builds (« heros/… » là-bas, « carte/… » ici). Ni le
+   local ni un dépôt de test ne comptent ; un échec reste toujours silencieux. */
+function bgSiteDeTest() {
+  const h = location.hostname;
+  return !h || h === 'localhost' || h === '127.0.0.1' || /(^|\/)[a-z0-9-]*test(\/|$)/i.test(location.pathname);
+}
+function bgTrack(nom, titre) {
+  try {
+    const a = (typeof STREAMER_CONFIG !== 'undefined' && STREAMER_CONFIG.analytics) || {};
+    if (a.enabled === false || !String(a.goatcounterCode || '').trim() || bgSiteDeTest()) return;
+    if (!window.goatcounter || !window.goatcounter.count) return;
+    window.goatcounter.count({ path: nom, title: titre || nom, event: true });
+  } catch (e) { /* sans effet */ }
+}
+// Ouvrir une carte, depuis la liste ou depuis les cartes en ranked de l'accueil.
+// Le nom français sert de titre, pour qu'une lecture en anglais compte au même endroit.
+function bgOuvrirCarte(id, depuis) {
+  const b = BATTLEGROUNDS.find(x => x.id === id);
+  if (b) bgTrack('carte/' + id, b.name?.fr || id);
+  if (depuis) bgTrack('carte-depuis/' + depuis + '/' + id, (b?.name?.fr || id) + ' (' + depuis + ')');
+  bgState.bgId = id;
+  renderBgAll();
+}
+
 bgEls.bgList.addEventListener('click', (e) => {
   const btn = e.target.closest('[data-bg-id]');
   if (!btn) return;
-  bgState.bgId = btn.dataset.bgId;
-  renderBgAll();
+  bgOuvrirCarte(btn.dataset.bgId);
 });
 // Les cartes en ranked de l'accueil ouvrent leur fiche, puis on remonte en haut de celle-ci.
 bgEls.detailView.addEventListener('click', (e) => {
   const btn = e.target.closest('.ranked-map[data-bg-id]');
   if (!btn) return;
-  bgState.bgId = btn.dataset.bgId;
-  renderBgAll();
+  bgOuvrirCarte(btn.dataset.bgId, 'ranked');
   document.getElementById('detailViewWrap')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+});
+// Vidéos (accueil et vidéos guide d'une carte) et bouton Contact. Écoute posée sur
+// le document : ces éléments sont réécrits à chaque rendu. Elle survit au
+// preventDefault posé sur mobile pour ouvrir l'application YouTube.
+document.addEventListener('click', (e) => {
+  const video = e.target.closest && e.target.closest('.guide-stage-link');
+  if (video) {
+    const chemin = video.dataset.videoTrack || video.dataset.ytId || 'inconnue';
+    bgTrack('video/' + chemin, video.dataset.videoTitle || chemin);
+    return;
+  }
+  if (e.target.closest && e.target.closest('#siteFooter .footer-link')) bgTrack('contact/maps', 'Contact (cartes)');
 });
 
 let bgSearchTimeout;
