@@ -2708,3 +2708,7 @@ html.vue3d-ouverte #backToTop { display: none; }
     gap: 16px;
     min-width: 0;
 }
+
+/* Cartes en ranked (accueil) : même tuile que la rotation des héros, un peu plus
+   large pour des noms comme « Tombe de la reine araignée ». */
+.rotation-hero.ranked-map { width: 96px; }

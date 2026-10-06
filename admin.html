@@ -1477,7 +1477,7 @@ function addBattleground(){
   if (!id) return;
   if (BATTLEGROUNDS.some(b => b.id === id)){ toast('Cet identifiant existe déjà', 'error'); return; }
   BATTLEGROUNDS.push({
-    id, enabled: false,
+    id, enabled: false, ranked: false,
     name: { fr: id, en: id },
     image: '',
     minimapImage: '',
@@ -1570,6 +1570,10 @@ function renderInfosTab(bg){
       <div class="checkbox-row">
         <input type="checkbox" ${bg.enabled?'checked':''} onchange="setNested(BATTLEGROUNDS[${i}],'enabled',this.checked); renderMapList();" />
         <label style="margin:0;text-transform:none;">Carte activée (visible sur le site)</label>
+      </div>
+      <div class="checkbox-row">
+        <input type="checkbox" ${bg.ranked?'checked':''} onchange="setNested(BATTLEGROUNDS[${i}],'ranked',this.checked)" />
+        <label style="margin:0;text-transform:none;">En ranked (affichée dans « Cartes en ranked » sur l'accueil)</label>
       </div>
       <div class="row">
         <div class="field"><label>Nom (FR)</label><input value="${escapeHtml(bg.name?.fr)}" oninput="setNested(BATTLEGROUNDS[${i}],'name.fr',this.value); refreshMapLabels();" /></div>

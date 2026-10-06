@@ -210,6 +210,7 @@ const BATTLEGROUNDS = [
   {
     "id": "mine-hantee",
     "enabled": true,
+    "ranked": true,
     "name": {
       "fr": "Mine Hantée",
       "en": "Haunted Mines"
@@ -758,6 +759,7 @@ const BATTLEGROUNDS = [
   {
     "id": "passe-alterac",
     "enabled": true,
+    "ranked": true,
     "name": {
       "fr": "Passe d'Alterac",
       "en": "Alterac Pass"
@@ -1249,6 +1251,7 @@ const BATTLEGROUNDS = [
   {
     "id": "jardins-de-terreur",
     "enabled": true,
+    "ranked": true,
     "name": {
       "fr": "Jardins de terreur",
       "en": "Garden of Terror"
@@ -1676,6 +1679,7 @@ const BATTLEGROUNDS = [
   {
     "id": "temple-hanamura",
     "enabled": true,
+    "ranked": false,
     "name": {
       "fr": "Temple d'Hanamura",
       "en": "Hanamura Temple"
@@ -1968,6 +1972,7 @@ const BATTLEGROUNDS = [
   {
     "id": "fonderie-volskaya",
     "enabled": true,
+    "ranked": true,
     "name": {
       "fr": "Fonderie Volskaya",
       "en": "Volskaya Foundry"
@@ -2335,6 +2340,7 @@ const BATTLEGROUNDS = [
   {
     "id": "tours-du-destin",
     "enabled": true,
+    "ranked": true,
     "name": {
       "fr": "Tours du destin",
       "en": "Towers of Doom"
@@ -2751,6 +2757,7 @@ const BATTLEGROUNDS = [
   {
     "id": "sanctuaires-infernaux",
     "enabled": true,
+    "ranked": true,
     "name": {
       "fr": "Sanctuaires infernaux",
       "en": "Infernal Shrines"
@@ -3137,6 +3144,7 @@ const BATTLEGROUNDS = [
   {
     "id": "champs-eternite",
     "enabled": true,
+    "ranked": true,
     "name": {
       "fr": "Champs de l'éternité",
       "en": "Battlefield of Eternity"
@@ -3456,6 +3464,7 @@ const BATTLEGROUNDS = [
   {
     "id": "tombe-reine-araignee",
     "enabled": true,
+    "ranked": true,
     "name": {
       "fr": "Tombe de la reine araignée",
       "en": "Tomb of the Spider Queen"
@@ -3793,6 +3802,7 @@ const BATTLEGROUNDS = [
   {
     "id": "temple-celeste",
     "enabled": true,
+    "ranked": true,
     "name": {
       "fr": "Temple céleste",
       "en": "Sky Temple"
@@ -4179,6 +4189,7 @@ const BATTLEGROUNDS = [
   {
     "id": "baie-coeur-noir",
     "enabled": true,
+    "ranked": false,
     "name": {
       "fr": "Baie de Cœur-Noir",
       "en": "Blackheart's Bay"
@@ -4670,6 +4681,7 @@ const BATTLEGROUNDS = [
   {
     "id": "comte-du-dragon",
     "enabled": true,
+    "ranked": true,
     "name": {
       "fr": "Comté du dragon",
       "en": "Dragon Shire"
@@ -5048,6 +5060,7 @@ const BATTLEGROUNDS = [
   {
     "id": "val-maudit",
     "enabled": true,
+    "ranked": true,
     "name": {
       "fr": "Val maudit",
       "en": "Cursed Hollow"
@@ -5505,6 +5518,7 @@ const BATTLEGROUNDS = [
   {
     "id": "laboratoire-braxis",
     "enabled": true,
+    "ranked": true,
     "name": {
       "fr": "Laboratoire de Braxis",
       "en": "Braxis Holdout"
@@ -5913,6 +5927,7 @@ const BATTLEGROUNDS = [
   {
     "id": "menace-nucleaire",
     "enabled": true,
+    "ranked": false,
     "name": {
       "fr": "Menace nucléaire",
       "en": "Warhead Junction"
