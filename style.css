@@ -2554,7 +2554,9 @@
     backdrop-filter: blur(10px);
 }
 .vue3d-overlay.active { display: grid; }
-.vue3d-overlay[data-etape="vue"] { padding: 0; background: #0b0f17; }
+/* En vue 3D, plus de flou d'arrière-plan : le fond est opaque, et le navigateur
+   floutait sinon toute la page derrière la scène à chaque image. */
+.vue3d-overlay[data-etape="vue"] { padding: 0; background: #0b0f17; backdrop-filter: none; }
 html.vue3d-ouverte, html.vue3d-ouverte body { overflow: hidden; }
 /* Le bouton « remonter » de la page passerait par-dessus la vue 3D. */
 html.vue3d-ouverte #backToTop { display: none; }

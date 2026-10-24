@@ -14,7 +14,10 @@
     --gold: #f5c451;
   }
   html, body { margin: 0; height: 100%; background: var(--bg); color: var(--text); font-family: system-ui, 'Segoe UI', sans-serif; overflow: hidden; }
-  #scene { position: fixed; inset: 0; display: block; }
+  /* Taille explicite : sans elle, le canevas prend la taille de sa résolution interne
+     (fenêtre × densité), ce qui le coupait sur un écran haute densité et le rétrécirait
+     quand la résolution adaptative baisse. */
+  #scene { position: fixed; inset: 0; display: block; width: 100%; height: 100%; }
 
   .barre { position: fixed; top: 12px; left: 12px; right: 12px; z-index: 5; display: flex; gap: 8px; align-items: center; flex-wrap: wrap; pointer-events: none; }
   .barre > * { pointer-events: auto; }
@@ -101,8 +104,10 @@ const $ = (id) => document.getElementById(id);
 const esc = (s) => String(s ?? '').replace(/[&<>"]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
 
 /* ── Scène ─────────────────────────────────────────────────────────────── */
-const renderer = new THREE.WebGLRenderer({ canvas: $('scene'), antialias: true });
-renderer.setPixelRatio(Math.min(devicePixelRatio, 2));
+const renderer = new THREE.WebGLRenderer({ canvas: $('scene'), antialias: true, powerPreference: 'high-performance' });
+// Résolution plafonnée à 1,5 : sur un écran haute densité (×2), c'est presque deux fois
+// moins de pixels à dessiner, pour une différence à peine visible avec l'anticrénelage.
+renderer.setPixelRatio(Math.min(devicePixelRatio, 1.5));
 renderer.outputColorSpace = THREE.SRGBColorSpace;
 const scene = new THREE.Scene();
 scene.background = new THREE.Color(0x0b0f17);
@@ -134,7 +139,13 @@ contreJour.position.set(-50.5, 66, -55.5);
 scene.add(contreJour);
 // Ombres portées des bâtiments, arbres et falaises : la carte fait 100 × ~85 unités.
 renderer.shadowMap.enabled = true;
-renderer.shadowMap.type = THREE.PCFSoftShadowMap;
+// PCF plutôt que PCFSoft : bords d'ombre un peu plus nets, filtrage bien moins coûteux.
+renderer.shadowMap.type = THREE.PCFShadowMap;
+// Le soleil et le décor ne bougent pas : l'ombre est calculée une fois, après chaque
+// placement (ombresAJour), et non plus à chaque image — c'était la moitié du travail
+// de rendu, chaque objet étant dessiné une seconde fois pour la carte d'ombre.
+renderer.shadowMap.autoUpdate = false;
+const ombresAJour = () => { renderer.shadowMap.needsUpdate = true; };
 soleil.castShadow = true;
 soleil.shadow.mapSize.set(4096, 4096);
 Object.assign(soleil.shadow.camera, { left: -70, right: 70, top: 70, bottom: -70, near: 1, far: 300 });
@@ -397,7 +408,9 @@ async function chargerDecors(dossier, scene3d) {
       g.scene.traverse(o => {
         if (!o.isMesh) return;
         const im = new THREE.InstancedMesh(o.geometry, o.material, parModele[k].length);
-        im.frustumCulled = false;
+        // Sphère englobante recalculée dans placerDecors : les modèles hors du champ de la
+        // caméra ne sont plus dessinés (gros gain dès qu'on zoome).
+        im.frustumCulled = true;
         // Effets (feu, halos, rayons) : additifs ou mélangés, sans ombre ni écriture de
         // profondeur, légèrement avancés pour ne pas scintiller contre le sol.
         preparerMaillage(o, im);
@@ -436,6 +449,8 @@ function preparerMaillage(o, cible = o) {
     cible.renderOrder = 1;
   } else {
     cible.castShadow = cible.receiveShadow = true;
+    // Les unités animées bougent : leur ombre, calculée une seule fois, resterait figée.
+    if (o.isSkinnedMesh) cible.castShadow = false;
   }
 }
 
@@ -510,9 +525,12 @@ function placerDecors() {
     for (const { mesh } of maillages) {
       mesh.instanceMatrix.needsUpdate = true;
       if (mesh.instanceColor) mesh.instanceColor.needsUpdate = true;
+      mesh.computeBoundingSphere();
     }
   }
   construireParticules();
+  ombresAJour();
+  marqueursAJour();
 }
 
 /* ── Particules ────────────────────────────────────────────────────────────
@@ -644,6 +662,7 @@ function placerTiges() {
   g.setAttribute('color', new THREE.Float32BufferAttribute(couleurs, 3));
   tiges = new THREE.LineSegments(g, new THREE.LineBasicMaterial({ vertexColors: true, transparent: true, opacity: .85 }));
   scene.add(tiges);
+  marqueursAJour();
 }
 
 function creerMarqueurs(carte) {
@@ -691,7 +710,13 @@ $('legende').addEventListener('click', (e) => {
 // Les pastilles HTML suivent leur tige : projetées à l'écran à chaque image, et triées
 // par distance pour que les plus proches passent devant.
 const v = new THREE.Vector3();
+// Repositionner les pastilles touche au DOM (style de chaque pastille, mesure du canevas) :
+// on ne le fait que quand quelque chose a changé — caméra, taille, points affichés.
+let marqueursSales = true;
+const marqueursAJour = () => { marqueursSales = true; };
+controls.addEventListener('change', marqueursAJour);
 function placerMarqueurs() {
+  marqueursSales = false;
   // Projection sur la taille réelle du canevas (et non de la fenêtre).
   const r = renderer.domElement.getBoundingClientRect();
   for (const p of points) {
@@ -804,6 +829,7 @@ function redimensionner() {
   camera.updateProjectionMatrix();
   // Taille des particules : pixels par unité du monde à distance 1.
   uniformesParticules.uEcran.value = renderer.getDrawingBufferSize(new THREE.Vector2()).y / (2 * Math.tan(THREE.MathUtils.degToRad(camera.fov) / 2));
+  marqueursAJour();
 }
 addEventListener('resize', redimensionner);
 redimensionner();
@@ -811,16 +837,40 @@ vue('jeu');
 charger($('choixCarte').value);
 
 // Débogage : ?debug dans l'adresse expose la scène à la console.
-if (new URLSearchParams(location.search).has('debug')) window.carte3d = { THREE, scene, camera, controls, decors, get instances() { return instancesJeu; }, get jeu() { return jeu; }, get melangeurs() { return melangeurs; }, hauteurJeu, caseVersPx, altitude };
+if (new URLSearchParams(location.search).has('debug')) window.carte3d = { THREE, renderer, scene, camera, controls, decors, get instances() { return instancesJeu; }, get jeu() { return jeu; }, get melangeurs() { return melangeurs; }, hauteurJeu, caseVersPx, altitude };
+
+/* Résolution adaptative : sur une machine qui peine (moins de ~45 images/s en moyenne
+   sur une seconde), on baisse un peu la résolution ; elle remonte dès que la marge
+   revient (plus de ~70 images/s). Paliers entre 0,6 et le plafond de 1,5, avec un
+   délai entre deux changements pour éviter le va-et-vient. */
+const RESOLUTION_MAX = Math.min(devicePixelRatio, 1.5), RESOLUTION_MIN = 0.6;
+let resolution = RESOLUTION_MAX, cumulImages = 0, cumulTemps = 0, attente = 0;
+function adapterResolution(dt) {
+  if (dt > 0.25) return;                 // onglet en arrière-plan, chargement : ignoré
+  cumulImages++; cumulTemps += dt;
+  if (cumulTemps < 1) return;
+  const moyenne = cumulTemps / cumulImages;
+  cumulImages = 0; cumulTemps = 0;
+  if (attente > 0) { attente--; return; }
+  let cible = resolution;
+  if (moyenne > 1 / 45) cible = Math.max(RESOLUTION_MIN, resolution - 0.15);
+  else if (moyenne < 1 / 70) cible = Math.min(RESOLUTION_MAX, resolution + 0.15);
+  if (Math.abs(cible - resolution) < 0.01) return;
+  resolution = cible;
+  renderer.setPixelRatio(resolution);
+  redimensionner();
+  attente = 2;
+}
 
 renderer.setAnimationLoop(() => {
   controls.update();
   const dt = horloge.getDelta();
+  adapterResolution(dt);
   uniformesParticules.uTemps.value = horloge.elapsedTime;
   for (const m of melangeurs) m.update(dt);
   puits?.children.forEach(o => { if (o.userData.tourne) o.rotation.z += dt * .4; });
   renderer.render(scene, camera);
-  if (points.length && points[0].sommet) placerMarqueurs();
+  if (marqueursSales && points.length && points[0].sommet) placerMarqueurs();
 });
 </script>
 </body>
