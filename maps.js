@@ -279,146 +279,45 @@ function bgChargerBuilds() {
     // Le fichier déclare ses propres constantes : on l'exécute dans sa propre fonction,
     // ce qui évite tout conflit avec STREAMER_CONFIG et BATTLEGROUNDS de cette page.
     .then(code => new Function(code + '\n;return ' + expr + ';')());
+  // videos.json est facultatif : sans lui, les vidéos retombent sur les listes de data.js.
+  const videos = fetch(BG_BUILDS_URL + 'videos.json', { cache: 'no-cache' })
+    .then(r => (r.ok ? r.json() : null))
+    .catch(() => null);
   bgBuildsPromesse = Promise.all([
     lire('data.js', '{ config: STREAMER_CONFIG }'),
-  ]).then(([data]) => data)
+    videos,
+  ]).then(([data, liste]) => ({ ...data, videos: liste }))
     .catch(() => null)
     .then(res => (bgBuildsCharges = res));
   return bgBuildsPromesse;
 }
 
-/* ── Vidéos de l'accueil lues sur YouTube ──────────────────────────────────
-   Même mécanisme que sur le site des builds (app.js, SOURCES_VIDEOS) : les
-   dernières vidéos de la chaîne (youtubeChannelId) et les premières de la
-   playlist des patchs (patchPlaylistId), lues sur une instance Invidious ;
-   le titre d'origine, affiché en français, vient de l'oEmbed de YouTube.
-   « Dernières vidéos » écarte toute vidéo de la playlist des patchs.
-
-   Les deux sites sont sur la même origine (eowea.github.io) : ils partagent le
-   même cache d'une heure, sous les mêmes clés et au même format. Sans réponse,
-   les listes latestVideos / patchVideos du site des builds servent de secours. */
-const BG_INSTANCES_INVIDIOUS = [
-  'https://invidious.f5.si',
-  'https://inv.nadeko.net',
-  'https://iv.ggtyler.dev',
-  'https://invidious.jing.rocks'
-];
-const BG_DUREE_VIDEOS_AUTO = 60 * 60 * 1000;
+/* ── Vidéos de l'accueil ───────────────────────────────────────────────────
+   Les mêmes que sur le site des builds : son videos.json, réécrit toutes les
+   heures par une tâche GitHub qui lit les flux RSS officiels de YouTube (voir
+   .github/workflows/videos.yml dans le dépôt builds). La tâche écarte déjà les
+   lives, les Shorts et, des « Dernières vidéos », la playlist des patchs. Sans
+   ce fichier, les listes latestVideos / patchVideos du site des builds servent
+   de secours, filtrées de la même façon. */
 const BG_SOURCES_VIDEOS = [
-  {
-    nom: 'derniere', cle: 'eowea_videosChaine', secours: 'latestVideos', idConfig: 'youtubeChannelId', exclure: 'patch',
-    chemin: id => `/api/v1/channels/${encodeURIComponent(id)}/videos`
-  },
-  {
-    nom: 'patch', cle: 'eowea_videosPatch', secours: 'patchVideos', idConfig: 'patchPlaylistId',
-    chemin: id => `/api/v1/playlists/${encodeURIComponent(id)}`
-  }
+  { cle: 'derniere', secours: 'latestVideos', exclure: 'patch' },
+  { cle: 'patch', secours: 'patchVideos' }
 ];
-BG_SOURCES_VIDEOS.forEach(source => { source.chargement = null; });
 
-function bgLireCacheVideos(source, id) {
-  try {
-    const cache = JSON.parse(localStorage.getItem(source.cle) || 'null');
-    if (cache && cache.id === id && Array.isArray(cache.liste) && cache.liste.length) {
-      return { liste: cache.liste, ids: Array.isArray(cache.ids) ? cache.ids : [], date: cache.date || 0 };
-    }
-  } catch (e) { /* navigation privée */ }
-  return null;
-}
+// Restes de l'ancienne lecture via Invidious, gardés dans le navigateur des visiteurs.
+try { localStorage.removeItem('eowea_videosChaine'); localStorage.removeItem('eowea_videosPatch'); } catch (e) { /* navigation privée */ }
 
 const bgIdVideo = v => bgParseYouTubeId(v?.youtubeId || v?.youtubeUrl || v?.url || '');
 
 function bgVideosDeSource(source, config) {
-  const id = config[source.idConfig];
-  const cache = id ? bgLireCacheVideos(source, id) : null;
-  const liste = (cache && cache.liste) || config[source.secours] || [];
+  const auto = bgBuildsCharges && bgBuildsCharges.videos && Array.isArray(bgBuildsCharges.videos[source.cle])
+    ? bgBuildsCharges.videos[source.cle] : [];
+  const liste = auto.length ? auto : (config[source.secours] || []);
   if (!source.exclure) return liste;
-  const exclus = bgIdsExclus(source, config);
+  // « Dernières vidéos » ne reprend pas l'analyse de patch affichée à côté.
+  const autre = BG_SOURCES_VIDEOS.find(s => s.cle === source.exclure);
+  const exclus = new Set(bgVideosDeSource(autre, config).map(bgIdVideo).filter(Boolean));
   return liste.filter(v => !exclus.has(bgIdVideo(v)));
-}
-
-// Toute la playlist est écartée, pas seulement la vidéo affichée, sinon
-// l'analyse de la semaine passée reviendrait dans « Dernières vidéos ».
-function bgIdsExclus(source, config) {
-  const autre = BG_SOURCES_VIDEOS.find(s => s.nom === source.exclure);
-  if (!autre) return new Set();
-  const id = config[autre.idConfig];
-  const cache = id ? bgLireCacheVideos(autre, id) : null;
-  const montrees = bgVideosDeSource(autre, config).map(bgIdVideo);
-  return new Set([...((cache && cache.ids) || []), ...montrees].filter(Boolean));
-}
-
-async function bgLireJson(url, ms) {
-  const ctrl = new AbortController();
-  const minuteur = setTimeout(() => ctrl.abort(), ms);
-  try {
-    const res = await fetch(url, { signal: ctrl.signal });
-    return res.ok ? await res.json() : null;
-  } catch (e) {
-    return null;
-  } finally {
-    clearTimeout(minuteur);
-  }
-}
-
-async function bgTitreOriginal(id) {
-  const lien = encodeURIComponent('https://www.youtube.com/watch?v=' + id);
-  const data = await bgLireJson('https://www.youtube.com/oembed?format=json&url=' + lien, 4000)
-    || await bgLireJson('https://noembed.com/embed?url=' + lien, 4000);
-  return (data && data.title) || '';
-}
-
-// Les vidéos privées ou supprimées restent dans une playlist sous un titre
-// « [Private video] » / « [Deleted video] » : on les écarte.
-async function bgListeDepuisInvidious(source, id) {
-  for (const base of BG_INSTANCES_INVIDIOUS) {
-    const data = await bgLireJson(base + source.chemin(id), 5000);
-    const videos = (data && Array.isArray(data.videos) ? data.videos : [])
-      .filter(v => v && v.videoId && !v.isUpcoming && !v.liveNow && !/^\[(private|deleted)/i.test(v.title || ''));
-    if (videos.length) return videos;
-  }
-  return null;
-}
-
-// Renvoie true si la liste affichée a changé.
-function bgChargerSourceVideos(source, config) {
-  const id = config[source.idConfig];
-  if (!id) return Promise.resolve(false);
-  if (source.chargement) return source.chargement;
-  const cache = bgLireCacheVideos(source, id);
-  if (cache && Date.now() - cache.date < BG_DUREE_VIDEOS_AUTO) return Promise.resolve(false);
-  source.chargement = (async () => {
-    let videos = await bgListeDepuisInvidious(source, id);
-    if (!videos) return false;
-    const ids = videos.map(v => v.videoId);
-    if (source.exclure) {
-      // La playlist se charge en même temps : on attend sa réponse avant de trier.
-      const autre = BG_SOURCES_VIDEOS.find(s => s.nom === source.exclure);
-      if (autre && autre.chargement) await autre.chargement;
-      const exclus = bgIdsExclus(source, config);
-      videos = videos.filter(v => !exclus.has(v.videoId));
-      if (!videos.length) return false;
-    }
-    videos = videos.slice(0, Math.max(1, (config[source.secours] || []).length || 1));
-    const titres = await Promise.all(videos.map(v => bgTitreOriginal(v.videoId)));
-    const liste = videos.map((v, i) => ({
-      title: { fr: titres[i] || v.title || '', en: v.title || titres[i] || '' },
-      youtubeId: v.videoId
-    }));
-    try {
-      localStorage.setItem(source.cle, JSON.stringify({ id, date: Date.now(), liste, ids }));
-    } catch (e) { /* navigation privée */ }
-    return JSON.stringify(liste) !== JSON.stringify(cache && cache.liste);
-  })().finally(() => { source.chargement = null; });
-  return source.chargement;
-}
-
-let bgVideosAutoLancees = false;
-function bgChargerVideosAuto(config) {
-  if (bgVideosAutoLancees) return;
-  bgVideosAutoLancees = true;
-  Promise.all(BG_SOURCES_VIDEOS.map(s => bgChargerSourceVideos(s, config)))
-    .then(changes => { if (changes.some(Boolean) && !bgCurrent()) renderBgAccueil(); });
 }
 
 // Cartes en ranked : celles cochées « En ranked » dans l'admin (champ ranked), dans
@@ -459,7 +358,6 @@ function renderBgAccueil() {
       </div>`;
     bgEls.detailView.innerHTML = `<div class="videos-layout with-guide">${col('latestVideoTitle', bgVideosDeSource(BG_SOURCES_VIDEOS[0], config), 'maps-derniere')}${col('patchAnalysisTitle', bgVideosDeSource(BG_SOURCES_VIDEOS[1], config), 'maps-patch')}</div>${ranked}`;
     bindBgCarousel();
-    if (builds !== undefined) bgChargerVideosAuto(config);
   };
   // Déjà chargé : affichage direct. Sinon un squelette, remplacé dès que le site des builds a répondu.
   if (bgBuildsCharges !== undefined) { dessiner(bgBuildsCharges); return; }
