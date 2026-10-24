@@ -862,10 +862,32 @@ function adapterResolution(dt) {
   attente = 2;
 }
 
+/* Diagnostic : ?fps dans l'adresse affiche en haut à droite les images par seconde,
+   l'image la plus lente de la dernière seconde, la résolution et le travail de rendu.
+   Sert à mesurer sur la machine d'un visiteur ce que les tests ne voient pas. */
+const compteur = new URLSearchParams(location.search).has('fps') ? (() => {
+  const el = document.createElement('div');
+  el.style.cssText = 'position:fixed;top:56px;right:12px;z-index:9;background:rgba(12,17,27,.92);border:1px solid #2a3348;border-radius:6px;padding:6px 10px;font:12px/1.5 ui-monospace,Consolas,monospace;color:#e8ecf4;pointer-events:none;white-space:pre';
+  document.body.appendChild(el);
+  const gl = renderer.getContext(), ext = gl.getExtension('WEBGL_debug_renderer_info');
+  const gpu = ext ? String(gl.getParameter(ext.UNMASKED_RENDERER_WEBGL)).replace(/^ANGLE \(|\)$/g, '').split(',').slice(0, 2).join(',') : '?';
+  let n = 0, total = 0, pire = 0;
+  return (dt) => {
+    n++; total += dt; pire = Math.max(pire, dt);
+    if (total < 1) return;
+    const taille = renderer.getDrawingBufferSize(new THREE.Vector2());
+    el.textContent = `${(n / total).toFixed(0)} images/s · pire ${(pire * 1000).toFixed(0)} ms\n`
+      + `résolution ×${renderer.getPixelRatio().toFixed(2)} · ${taille.x}×${taille.y}\n`
+      + `${renderer.info.render.calls} appels · ${(renderer.info.render.triangles / 1e6).toFixed(1)} M triangles\n${gpu}`;
+    n = 0; total = 0; pire = 0;
+  };
+})() : null;
+
 renderer.setAnimationLoop(() => {
   controls.update();
   const dt = horloge.getDelta();
   adapterResolution(dt);
+  compteur?.(dt);
   uniformesParticules.uTemps.value = horloge.elapsedTime;
   for (const m of melangeurs) m.update(dt);
   puits?.children.forEach(o => { if (o.userData.tourne) o.rotation.z += dt * .4; });
